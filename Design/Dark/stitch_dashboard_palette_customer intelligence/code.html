@@ -1,0 +1,634 @@
+<!DOCTYPE html><html class="dark" lang="en"><svg class="inline-defs-container" aria-hidden="true" style="position:absolute;width:0;height:0;overflow:hidden"></svg><head><meta charset="utf-8"><meta content="width=device-width, initial-scale=1.0" name="viewport"><meta content="web_dashboard" name="shell-type"><link href="https://fonts.googleapis.com" rel="preconnect"><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"><link href="https://fonts.googleapis.com/css2?family=Geist:wght@300;400;500;600;700&amp;family=JetBrains+Mono:wght@400;500;600;700&amp;family=Space+Grotesk:wght@500;600;700&amp;display=swap" rel="stylesheet"><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"><style>@layer base{html,body{margin:0;padding:0;}body{overscroll-behavior:none;background-color:#151120;}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script><script id="tailwind-config">tailwind.config={darkMode:"class",theme:{extend:{colors:{"on-background":"#e8dff5","surface-variant":"#373243","tertiary":"#bcc2ff","error":"#ffb4ab","on-secondary-fixed-variant":"#7000a7","surface-container-high":"#2c2738","on-surface-variant":"#e0bdcd","on-primary-fixed":"#3c002a","secondary":"#e5b4ff","secondary-container":"#9a00e4","tertiary-fixed-dim":"#bcc2ff","on-tertiary-fixed-variant":"#0024d8","secondary-fixed":"#f5d9ff","on-tertiary-container":"#001389","on-error":"#690005","primary-container":"#ff3ac2","on-primary-container":"#55003e","on-secondary-fixed":"#30004b","inverse-primary":"#b30085","on-secondary":"#4f0077","on-secondary-container":"#f3d6ff","inverse-surface":"#e8dff5","tertiary-container":"#7686ff","surface-dim":"#151120","error-container":"#93000a","primary-fixed":"#ffd8ea","on-primary":"#610047","outline":"#a78897","inverse-on-surface":"#332e3f","secondary-fixed-dim":"#e5b4ff","surface-container-highest":"#373243","surface-tint":"#ffaeda","primary-fixed-dim":"#ffaeda","surface-container-low":"#1d1929","on-tertiary":"#00179b","primary":"#ffaeda","on-tertiary-fixed":"#000b62","surface":"#151120","surface-bright":"#3c3748","on-error-container":"#ffdad6","on-surface":"#e8dff5","background":"#151120","tertiary-fixed":"#dfe0ff","outline-variant":"#593f4c","surface-container":"#221d2d","surface-container-lowest":"#100c1b","on-primary-fixed-variant":"#890065"},borderRadius:{"DEFAULT":"0.125rem","lg":"0.25rem","xl":"0.5rem","full":"0.75rem"},spacing:{"space-2xl":"3rem","space-md":"1rem","space-xs":"0.5rem","margin-tablet":"2rem","margin":"1rem","margin-desktop":"3rem","space-2xs":"0.25rem","space-3xl":"4.5rem","gutter":"1.25rem","space-lg":"1.5rem","space-sm":"0.75rem","gutter-desktop":"1.75rem","space-xl":"2rem"},fontFamily:{"headline-lg":["Space Grotesk"],"label-sm":["JetBrains Mono"],"display-hero":["Space Grotesk"],"headline-sm":["Space Grotesk"],"body-sm":["Geist"],"body-lg":["Geist"],"headline-lg-mobile":["Space Grotesk"],"label-lg":["JetBrains Mono"],"label-md":["JetBrains Mono"],"display-hero-mobile":["Space Grotesk"],"headline-md":["Space Grotesk"],"body-md":["Geist"]},fontSize:{"headline-lg":["36px",{"lineHeight":"44px","letterSpacing":"-0.02em","fontWeight":"600"}],"label-sm":["10px",{"lineHeight":"14px","letterSpacing":"0.06em","fontWeight":"600"}],"display-hero":["56px",{"lineHeight":"64px","letterSpacing":"-0.03em","fontWeight":"700"}],"headline-sm":["20px",{"lineHeight":"28px","letterSpacing":"0em","fontWeight":"500"}],"body-sm":["12px",{"lineHeight":"16px","letterSpacing":"0.01em","fontWeight":"400"}],"body-lg":["16px",{"lineHeight":"24px","letterSpacing":"-0.005em","fontWeight":"400"}],"headline-lg-mobile":["26px",{"lineHeight":"34px","letterSpacing":"-0.01em","fontWeight":"600"}],"label-lg":["14px",{"lineHeight":"20px","letterSpacing":"0.02em","fontWeight":"500"}],"label-md":["12px",{"lineHeight":"16px","letterSpacing":"0.04em","fontWeight":"500"}],"display-hero-mobile":["36px",{"lineHeight":"44px","letterSpacing":"-0.02em","fontWeight":"700"}],"headline-md":["24px",{"lineHeight":"32px","letterSpacing":"-0.01em","fontWeight":"600"}],"body-md":["14px",{"lineHeight":"20px","letterSpacing":"0em","fontWeight":"400"}]}}}};</script></head><body class="bg-surface font-body-md text-on-surface antialiased selection:bg-primary-container selection:text-on-primary-container"><aside class="fixed left-0 top-0 h-full w-72 bg-surface-container-lowest/90 backdrop-blur-xl z-50 flex flex-col justify-between shadow-[0_1px_8px_rgba(0,0,0,0.04)]" style="background: rgba(16, 12, 27, 0.88); backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px); border-right: 1px solid rgba(255, 28, 192, 0.12); box-shadow: 4px 0 30px rgba(0, 0, 0, 0.5);"><div class="flex flex-col"><div class="h-16 px-space-lg flex items-center justify-between"><div class="flex items-center gap-space-sm"><div class="w-8 h-8 rounded-lg bg-surface-container-high flex items-center justify-center shadow-[0_0_16px_rgba(255,28,192,0.45)]"><span class="material-symbols-outlined text-primary text-[20px]">insights</span></div><div class="flex flex-col"><span class="font-headline-sm text-headline-sm font-semibold tracking-tight text-on-surface leading-none">EXECUTIVE</span><span class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-widest mt-1">E-Commerce Core</span></div></div></div><div class="px-space-md py-space-xs"><div class="px-space-sm py-space-2xs"><span class="font-label-sm text-label-sm uppercase tracking-wider text-outline">Navigasi Utama</span></div></div><nav class="px-space-md flex flex-col gap-space-2xs"><a class="group relative flex items-center gap-space-sm px-space-md py-space-sm rounded-xl text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all" data-path="ringkasan-eksekutif" href="#"><span class="material-symbols-outlined text-[20px] transition-colors group-hover:text-primary">speed</span><span class="font-body-md text-body-md flex-1">Ringkasan Eksekutif</span></a><a class="group relative flex items-center gap-space-sm px-space-md py-space-sm rounded-xl text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all" data-path="sales-profitabilitas" href="#"><span class="material-symbols-outlined text-[20px] transition-colors group-hover:text-primary">monitoring</span><span class="font-body-md text-body-md flex-1">Sales &amp; Profitabilitas</span></a><a class="group relative flex items-center gap-space-sm px-space-md py-space-sm rounded-xl text-on-surface bg-surface-container-high font-semibold shadow-[0_0_16px_rgba(255,28,192,0.35)] transition-all" data-path="customer-intelligence" href="#"><span class="material-symbols-outlined text-[20px] text-primary">hub</span><span class="font-body-md text-body-md flex-1">Customer Intelligence</span><div class="w-1.5 h-4 rounded-full bg-gradient-to-b from-[#FF1CC0] to-[#B131FA] shadow-[0_0_8px_rgba(255,28,192,0.7)] ml-auto"></div></a><a class="group relative flex items-center gap-space-sm px-space-md py-space-sm rounded-xl text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all" data-path="transaction-explorer" href="#"><span class="material-symbols-outlined text-[20px] transition-colors group-hover:text-primary">receipt_long</span><span class="font-body-md text-body-md flex-1">Transaction Explorer</span></a></nav></div><div class="p-space-md flex flex-col gap-space-sm"><div class="p-space-sm rounded-xl bg-surface-container/50 backdrop-blur-md flex items-center justify-between border border-white/5"><div class="flex items-center gap-space-xs"><div class="w-2 h-2 rounded-full bg-[#00FFA3] shadow-[0_0_6px_rgba(0,255,163,0.8)]"></div><span class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider">Node Synced</span></div><span class="font-label-sm text-label-sm text-tertiary font-mono">v4.8.2</span></div><button class="w-full flex items-center justify-center gap-space-xs px-space-md py-space-sm rounded-xl bg-surface-container hover:bg-surface-container-high text-on-surface-variant hover:text-on-surface transition-all border border-white/5" type="button"><span class="material-symbols-outlined text-[18px]">keyboard_double_arrow_left</span><span class="font-label-md text-label-md font-medium tracking-wide uppercase">Kecilkan</span></button></div></aside><div class="pl-72"><header class="fixed top-0 left-72 right-0 h-16 bg-surface-container-lowest/80 backdrop-blur-xl z-40 flex items-center justify-between px-space-xl" style="background: rgba(21, 17, 32, 0.85); backdrop-filter: blur(16px); -webkit-backdrop-filter: blur(16px); border-bottom: 1px solid rgba(255, 28, 192, 0.15); box-shadow: 0 4px 24px rgba(0, 0, 0, 0.45);"><div class="flex items-center gap-space-md"><div class="flex items-center gap-space-xs font-body-sm text-body-sm text-on-surface-variant"><span class="text-on-surface-variant hover:text-on-surface transition-colors cursor-pointer">Dashboard Sales</span><span class="font-label-sm text-outline">/</span><span class="font-medium text-on-surface">Customer Intelligence</span></div><div class="h-4 w-px bg-surface-variant"></div><div class="flex items-center gap-space-2xs px-space-sm py-space-2xs rounded-full bg-surface-container-high border border-white/10"><span class="material-symbols-outlined text-primary text-[14px]">calendar_today</span><span class="font-label-sm text-label-sm text-on-surface font-medium tracking-wide">2021–2025</span><span class="material-symbols-outlined text-on-surface-variant text-[14px]">expand_more</span></div></div><div class="flex items-center gap-space-md"><div class="flex items-center gap-space-xs"><span class="text-on-surface-variant hover:text-on-surface transition-colors cursor-pointer">Dashboard Sales</span><span class="font-label-sm text-outline">/</span><span class="font-medium text-on-surface">Customer Intelligence</span></div><div class="h-6 w-px bg-surface-variant"></div><div class="flex items-center gap-space-sm"><div class="flex flex-col text-right"><span class="font-label-md text-label-md text-on-surface font-medium leading-none">Chief Officer</span><span class="font-label-sm text-label-sm text-outline-variant mt-1 leading-none">Enterprise</span></div><div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center shadow-[0_0_12px_rgba(255,174,218,0.35)]"><span class="material-symbols-outlined text-on-primary text-[18px]">person</span></div></div></div></header><main class="w-full pt-16 bg-surface min-h-screen"><div class="flex flex-col w-full">
+<!-- Interactive Navigation Synchronizer Script -->
+<script>
+    document.addEventListener("DOMContentLoaded", () => {
+      // Synchronize active sidebar tab to Customer Intelligence
+      const currentNav = document.querySelectorAll("aside nav a");
+      currentNav.forEach(item => {
+        const path = item.getAttribute("data-path");
+        if (path === "customer-intelligence") {
+          item.className = "group relative flex items-center gap-space-sm px-space-md py-space-sm rounded-xl text-on-surface bg-surface-container-high font-semibold shadow-[0_0_16px_rgba(255,28,192,0.35)] transition-all";
+          const icon = item.querySelector(".material-symbols-outlined");
+          if (icon) icon.className = "material-symbols-outlined text-[20px] text-primary";
+          if (!item.querySelector(".rounded-full")) {
+            const ind = document.createElement("div");
+            ind.className = "w-1.5 h-4 rounded-full bg-gradient-to-b from-[#FF1CC0] to-[#B131FA] shadow-[0_0_8px_rgba(255,28,192,0.7)] ml-auto";
+            item.appendChild(ind);
+          }
+        } else {
+          item.className = "group relative flex items-center gap-space-sm px-space-md py-space-sm rounded-xl text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all";
+          const icon = item.querySelector(".material-symbols-outlined");
+          if (icon) icon.className = "material-symbols-outlined text-[20px] transition-colors group-hover:text-primary";
+          const existingInd = item.querySelector(".rounded-full");
+          if (existingInd) existingInd.remove();
+        }
+      });
+    });
+  </script>
+<!-- Ambient Radiant Background Accents -->
+<div class="relative w-full overflow-hidden px-space-xl py-space-lg flex flex-col gap-space-xl">
+<div class="absolute -top-32 -right-24 w-96 h-96 rounded-full bg-secondary-container/15 blur-[120px] pointer-events-none"></div>
+<div class="absolute top-1/3 -left-32 w-[32rem] h-[32rem] rounded-full bg-[#1C3AFF]/10 blur-[140px] pointer-events-none"></div>
+<!-- 1. Header & Filter Bar Section -->
+<div class="flex flex-col gap-space-md">
+<!-- Title & Quick Status -->
+<div class="flex flex-col md:flex-row md:items-center justify-between gap-space-md">
+<div class="flex items-start gap-space-sm">
+<div class="w-12 h-12 rounded-xl bg-surface-container-high flex items-center justify-center shadow-[0_0_24px_rgba(255,28,192,0.35)] shrink-0">
+<span class="material-symbols-outlined text-[#FF1CC0] text-[28px]">hub</span>
+</div>
+<div class="flex flex-col">
+<div class="flex items-center gap-space-xs flex-wrap">
+<h1 class="font-headline-md text-headline-md font-bold tracking-tight text-on-surface">Customer Intelligence</h1>
+<span class="px-space-xs py-0.5 rounded-full bg-surface-container text-tertiary font-label-sm text-label-sm uppercase tracking-wider">Subtle Glass Edition</span>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant mt-1">Performa segmen, profit per pelanggan aktif, dan definisi pelanggan berulang.</p>
+</div>
+</div>
+<!-- Status Tag -->
+<div class="flex items-center gap-space-xs px-space-md py-space-xs rounded-full bg-surface-container-low shadow-[0_4px_16px_rgba(0,0,0,0.3)] self-start md:self-auto">
+<span class="w-2 h-2 rounded-full bg-[#00FFA3] shadow-[0_0_8px_rgba(0,255,163,0.8)]"></span>
+<span class="font-label-sm text-label-sm text-on-surface tracking-wide uppercase">Tanpa filter • Seluruh periode 2021–2025</span>
+</div>
+</div>
+<!-- Filter Controls Strip -->
+<div class="p-space-md rounded-2xl bg-surface-container-lowest/80 backdrop-blur-xl shadow-xl flex flex-wrap items-center justify-between gap-space-md">
+<div class="grid grid-cols-2 sm:grid-cols-3 xl:grid-cols-6 gap-space-sm flex-1 min-w-[320px]">
+<!-- Filter 1: Tahun -->
+<div class="flex flex-col gap-1">
+<label class="font-label-sm text-label-sm uppercase tracking-wider text-outline">Tahun</label>
+<div class="flex items-center justify-between px-space-sm py-space-xs rounded-xl bg-surface-container-low text-on-surface cursor-pointer hover:bg-surface-container-high transition-all">
+<span class="font-body-sm text-body-sm">Semua tahun</span>
+<span class="material-symbols-outlined text-[16px] text-on-surface-variant">expand_more</span>
+</div>
+</div>
+<!-- Filter 2: Dari Bulan -->
+<div class="flex flex-col gap-1">
+<label class="font-label-sm text-label-sm uppercase tracking-wider text-outline">Dari Bulan</label>
+<div class="flex items-center justify-between px-space-sm py-space-xs rounded-xl bg-surface-container-low text-on-surface cursor-pointer hover:bg-surface-container-high transition-all">
+<span class="font-body-sm text-body-sm">Jan 2021</span>
+<span class="material-symbols-outlined text-[16px] text-on-surface-variant">calendar_month</span>
+</div>
+</div>
+<!-- Filter 3: Sampai Bulan -->
+<div class="flex flex-col gap-1">
+<label class="font-label-sm text-label-sm uppercase tracking-wider text-outline">Sampai Bulan</label>
+<div class="flex items-center justify-between px-space-sm py-space-xs rounded-xl bg-surface-container-low text-on-surface cursor-pointer hover:bg-surface-container-high transition-all">
+<span class="font-body-sm text-body-sm">Des 2025</span>
+<span class="material-symbols-outlined text-[16px] text-on-surface-variant">calendar_month</span>
+</div>
+</div>
+<!-- Filter 4: Segmen Pelanggan -->
+<div class="flex flex-col gap-1">
+<label class="font-label-sm text-label-sm uppercase tracking-wider text-outline">Segmen Pelanggan</label>
+<div class="flex items-center justify-between px-space-sm py-space-xs rounded-xl bg-surface-container-low text-on-surface cursor-pointer hover:bg-surface-container-high transition-all">
+<span class="font-body-sm text-body-sm">Semua segmen</span>
+<span class="material-symbols-outlined text-[16px] text-on-surface-variant">group</span>
+</div>
+</div>
+<!-- Filter 5: Sales Channel -->
+<div class="flex flex-col gap-1">
+<label class="font-label-sm text-label-sm uppercase tracking-wider text-outline">Sales Channel</label>
+<div class="flex items-center justify-between px-space-sm py-space-xs rounded-xl bg-surface-container-low text-on-surface cursor-pointer hover:bg-surface-container-high transition-all">
+<span class="font-body-sm text-body-sm">Semua channel</span>
+<span class="material-symbols-outlined text-[16px] text-on-surface-variant">storefront</span>
+</div>
+</div>
+<!-- Filter 6: Status Order -->
+<div class="flex flex-col gap-1">
+<label class="font-label-sm text-label-sm uppercase tracking-wider text-outline">Status Order</label>
+<div class="flex items-center justify-between px-space-sm py-space-xs rounded-xl bg-surface-container-low text-on-surface cursor-pointer hover:bg-surface-container-high transition-all">
+<span class="font-body-sm text-body-sm">Semua status</span>
+<span class="material-symbols-outlined text-[16px] text-on-surface-variant">check_circle</span>
+</div>
+</div>
+</div>
+<button class="h-10 px-space-md rounded-xl bg-surface-container-high hover:bg-primary hover:text-on-primary text-on-surface-variant transition-all flex items-center justify-center gap-space-2xs shadow-md self-end" type="button">
+<span class="material-symbols-outlined text-[18px]">restart_alt</span>
+<span class="font-label-md text-label-md uppercase tracking-wider">Hapus semua filter</span>
+</button>
+</div>
+</div>
+<!-- 2. Top KPI Cards Grid (6 Metric Cards) -->
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 2xl:grid-cols-6 gap-space-md">
+<!-- Card 1 -->
+<div class="p-space-md rounded-2xl bg-surface-container-lowest/80 backdrop-blur-md shadow-lg flex flex-col justify-between hover:bg-surface-container-low transition-all">
+<div class="flex items-center justify-between">
+<span class="font-label-sm text-label-sm uppercase tracking-wider text-outline">Pelanggan Aktif</span>
+<div class="w-8 h-8 rounded-lg bg-secondary-container/30 flex items-center justify-center text-secondary shadow-[0_0_12px_rgba(177,49,250,0.5)]">
+<span class="material-symbols-outlined text-[18px]">person</span>
+</div>
+</div>
+<div class="mt-space-md">
+<div class="font-headline-lg text-headline-lg font-bold text-on-surface tracking-tight leading-none">24,91 <span class="text-tertiary font-headline-sm">ribu</span></div>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-2">Pelanggan bertransaksi</p>
+</div>
+</div>
+<!-- Card 2 -->
+<div class="p-space-md rounded-2xl bg-surface-container-lowest/80 backdrop-blur-md shadow-lg flex flex-col justify-between hover:bg-surface-container-low transition-all">
+<div class="flex items-center justify-between">
+<span class="font-label-sm text-label-sm uppercase tracking-wider text-outline">Pesanan / Pelanggan</span>
+<div class="w-8 h-8 rounded-lg bg-[#1C3AFF]/20 flex items-center justify-center text-tertiary-fixed-dim shadow-[0_0_12px_rgba(28,58,255,0.4)]">
+<span class="material-symbols-outlined text-[18px]">shopping_cart</span>
+</div>
+</div>
+<div class="mt-space-md">
+<div class="font-headline-lg text-headline-lg font-bold text-on-surface tracking-tight leading-none">5,544</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-2">Rasio frekuensi order</p>
+</div>
+</div>
+<!-- Card 3 -->
+<div class="p-space-md rounded-2xl bg-surface-container-lowest/80 backdrop-blur-md shadow-lg flex flex-col justify-between hover:bg-surface-container-low transition-all">
+<div class="flex items-center justify-between">
+<span class="font-label-sm text-label-sm uppercase tracking-wider text-outline">Profit / Pelanggan</span>
+<div class="w-8 h-8 rounded-lg bg-[#FF1CC0]/20 flex items-center justify-center text-[#FF1CC0] shadow-[0_0_12px_rgba(255,28,192,0.5)]">
+<span class="material-symbols-outlined text-[18px]">account_balance_wallet</span>
+</div>
+</div>
+<div class="mt-space-md">
+<div class="font-headline-lg text-headline-lg font-bold text-[#ffaeda] tracking-tight leading-none">$2.377,76</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-2">Laba bersih rerata</p>
+</div>
+</div>
+<!-- Card 4 -->
+<div class="p-space-md rounded-2xl bg-surface-container-lowest/80 backdrop-blur-md shadow-lg flex flex-col justify-between hover:bg-surface-container-low transition-all">
+<div class="flex items-center justify-between">
+<span class="font-label-sm text-label-sm uppercase tracking-wider text-outline">Pelanggan Berulang</span>
+<div class="w-8 h-8 rounded-lg bg-[#00FFA3]/20 flex items-center justify-center text-[#00FFA3] shadow-[0_0_12px_rgba(0,255,163,0.45)]">
+<span class="material-symbols-outlined text-[18px]">autorenew</span>
+</div>
+</div>
+<div class="mt-space-md">
+<div class="font-headline-lg text-headline-lg font-bold text-on-surface tracking-tight leading-none">97,90%</div>
+<p class="font-body-sm text-body-sm text-outline-variant mt-2">Seluruh periode 2021–2025</p>
+</div>
+</div>
+<!-- Card 5 -->
+<div class="p-space-md rounded-2xl bg-surface-container-lowest/80 backdrop-blur-md shadow-lg flex flex-col justify-between hover:bg-surface-container-low transition-all">
+<div class="flex items-center justify-between">
+<span class="font-label-sm text-label-sm uppercase tracking-wider text-outline">Pangsa Margin &gt;20%</span>
+<div class="w-8 h-8 rounded-lg bg-secondary-container/20 flex items-center justify-center text-secondary shadow-[0_0_12px_rgba(177,49,250,0.45)]">
+<span class="material-symbols-outlined text-[18px]">percent</span>
+</div>
+</div>
+<div class="mt-space-md">
+<div class="font-headline-lg text-headline-lg font-bold text-on-surface tracking-tight leading-none">92,01%</div>
+<p class="font-body-sm text-body-sm text-outline-variant mt-2">Seluruh periode 2021–2025</p>
+</div>
+</div>
+<!-- Card 6 -->
+<div class="p-space-md rounded-2xl bg-surface-container-lowest/80 backdrop-blur-md shadow-lg flex flex-col justify-between hover:bg-surface-container-low transition-all">
+<div class="flex items-center justify-between">
+<span class="font-label-sm text-label-sm uppercase tracking-wider text-outline">Rating Pelanggan</span>
+<div class="w-8 h-8 rounded-lg bg-[#1C3AFF]/20 flex items-center justify-center text-tertiary-fixed shadow-[0_0_12px_rgba(28,58,255,0.45)]">
+<span class="material-symbols-outlined text-[18px]">grade</span>
+</div>
+</div>
+<div class="mt-space-md">
+<div class="font-headline-lg text-headline-lg font-bold text-on-surface tracking-tight leading-none">3,677</div>
+<p class="font-body-sm text-body-sm text-outline-variant mt-2">Skala skor 1–5 pesanan</p>
+</div>
+</div>
+</div>
+<!-- 3. Middle Section: Segment Analytics & Charts (2-Column Grid) -->
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-space-lg">
+<!-- Card Left: Distribusi Segmen Pelanggan (Col 5) -->
+<div class="lg:col-span-5 p-space-lg rounded-2xl bg-surface-container-lowest/85 backdrop-blur-xl shadow-xl flex flex-col justify-between">
+<div>
+<div class="flex items-center justify-between">
+<div class="flex flex-col">
+<h3 class="font-headline-sm text-headline-sm font-semibold text-on-surface">Distribusi segmen pelanggan</h3>
+<span class="font-label-sm text-label-sm uppercase text-outline tracking-wider mt-1">Pangsa Net Sales 2021–2025</span>
+</div>
+<span class="px-space-xs py-1 rounded-full bg-surface-container-high text-on-surface-variant font-label-sm text-label-sm">Total 4 Segmen</span>
+</div>
+<!-- Segments Visual Breakdown -->
+<div class="mt-space-lg flex flex-col gap-space-md">
+<!-- Consumer -->
+<div class="flex flex-col gap-1.5">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-space-xs">
+<div class="w-2.5 h-2.5 rounded-sm bg-gradient-to-r from-[#1C3AFF] to-[#FF1CC0]"></div>
+<span class="font-body-md text-body-md font-medium text-on-surface">Consumer</span>
+</div>
+<div class="flex items-center gap-2">
+<span class="font-label-md text-label-md text-on-surface font-semibold">54,75%</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">($86,04M)</span>
+</div>
+</div>
+<div class="w-full h-3 rounded-full bg-surface-container-high overflow-hidden">
+<div class="h-full rounded-full bg-gradient-to-r from-[#1C3AFF] via-[#B131FA] to-[#FF1CC0] shadow-[0_0_10px_rgba(255,28,192,0.6)]" style="width: 54.75%;"></div>
+</div>
+</div>
+<!-- Premium -->
+<div class="flex flex-col gap-1.5">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-space-xs">
+<div class="w-2.5 h-2.5 rounded-sm bg-[#B131FA]"></div>
+<span class="font-body-md text-body-md font-medium text-on-surface">Premium</span>
+</div>
+<div class="flex items-center gap-2">
+<span class="font-label-md text-label-md text-on-surface font-semibold">25,10%</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">($39,45M)</span>
+</div>
+</div>
+<div class="w-full h-3 rounded-full bg-surface-container-high overflow-hidden">
+<div class="h-full rounded-full bg-gradient-to-r from-[#9a00e4] to-[#B131FA] shadow-[0_0_10px_rgba(177,49,250,0.5)]" style="width: 25.10%;"></div>
+</div>
+</div>
+<!-- VIP -->
+<div class="flex flex-col gap-1.5">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-space-xs">
+<div class="w-2.5 h-2.5 rounded-sm bg-[#1C3AFF]"></div>
+<span class="font-body-md text-body-md font-medium text-on-surface">VIP</span>
+</div>
+<div class="flex items-center gap-2">
+<span class="font-label-md text-label-md text-on-surface font-semibold">10,14%</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">($15,93M)</span>
+</div>
+</div>
+<div class="w-full h-3 rounded-full bg-surface-container-high overflow-hidden">
+<div class="h-full rounded-full bg-gradient-to-r from-[#0024d8] to-[#1C3AFF] shadow-[0_0_10px_rgba(28,58,255,0.5)]" style="width: 10.14%;"></div>
+</div>
+</div>
+<!-- Business -->
+<div class="flex flex-col gap-1.5">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-space-xs">
+<div class="w-2.5 h-2.5 rounded-sm bg-[#00FFA3]"></div>
+<span class="font-body-md text-body-md font-medium text-on-surface">Business</span>
+</div>
+<div class="flex items-center gap-2">
+<span class="font-label-md text-label-md text-on-surface font-semibold">10,01%</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">($15,72M)</span>
+</div>
+</div>
+<div class="w-full h-3 rounded-full bg-surface-container-high overflow-hidden">
+<div class="h-full rounded-full bg-gradient-to-r from-[#00ab6c] to-[#00FFA3] shadow-[0_0_10px_rgba(0,255,163,0.5)]" style="width: 10.01%;"></div>
+</div>
+</div>
+</div>
+</div>
+<div class="mt-space-md p-space-sm rounded-xl bg-surface-container-low flex items-center justify-between">
+<div class="flex items-center gap-space-xs">
+<span class="material-symbols-outlined text-[18px] text-tertiary">pie_chart</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Dominasi Pasar: Consumer + Premium</span>
+</div>
+<span class="font-label-md text-label-md font-bold text-primary">79,85%</span>
+</div>
+</div>
+<!-- Card Right: Margin Keseluruhan vs Rata-rata Transaksi (Col 7) -->
+<div class="lg:col-span-7 p-space-lg rounded-2xl bg-surface-container-lowest/85 backdrop-blur-xl shadow-xl flex flex-col justify-between">
+<div>
+<div class="flex flex-col sm:flex-row sm:items-center justify-between gap-space-sm">
+<div class="flex flex-col">
+<h3 class="font-headline-sm text-headline-sm font-semibold text-on-surface">Margin keseluruhan vs rata-rata transaksi per segmen</h3>
+<span class="font-label-sm text-label-sm uppercase text-outline tracking-wider mt-1">Seluruh periode 2021–2025</span>
+</div>
+<!-- Legend -->
+<div class="flex items-center gap-space-sm">
+<div class="flex items-center gap-1.5 px-space-xs py-1 rounded-full bg-surface-container-high">
+<span class="w-2.5 h-2.5 rounded-full bg-[#B131FA] shadow-[0_0_6px_rgba(177,49,250,0.8)]"></span>
+<span class="font-label-sm text-label-sm text-on-surface">Margin (%)</span>
+</div>
+<div class="flex items-center gap-1.5 px-space-xs py-1 rounded-full bg-surface-container-high">
+<span class="w-2.5 h-2.5 rounded-full bg-[#1C3AFF] shadow-[0_0_6px_rgba(28,58,255,0.8)]"></span>
+<span class="font-label-sm text-label-sm text-on-surface">Rerata ($)</span>
+</div>
+</div>
+</div>
+<!-- Luminous SVG Chart Comparison -->
+<div class="mt-space-md w-full h-56 flex flex-col justify-end">
+<svg class="w-full h-full" fill="none" preserveAspectRatio="none" viewBox="0 0 540 200">
+<!-- Horizontal Grid Lines -->
+<line stroke="rgba(255,255,255,0.06)" stroke-dasharray="3 3" x1="40" x2="520" y1="20" y2="20"></line>
+<line stroke="rgba(255,255,255,0.06)" stroke-dasharray="3 3" x1="40" x2="520" y1="65" y2="65"></line>
+<line stroke="rgba(255,255,255,0.06)" stroke-dasharray="3 3" x1="40" x2="520" y1="110" y2="110"></line>
+<line stroke="rgba(255,255,255,0.06)" stroke-dasharray="3 3" x1="40" x2="520" y1="155" y2="155"></line>
+<!-- Axis Labels -->
+<text fill="#a78897" font-family="JetBrains Mono" font-size="10" x="15" y="24">45%</text>
+<text fill="#a78897" font-family="JetBrains Mono" font-size="10" x="15" y="69">35%</text>
+<text fill="#a78897" font-family="JetBrains Mono" font-size="10" x="15" y="114">25%</text>
+<text fill="#a78897" font-family="JetBrains Mono" font-size="10" x="15" y="159">10%</text>
+<!-- Group 1: Consumer (Margin 39.00%, Avg $2.470) -->
+<!-- Bar Margin (Violet) -->
+<rect fill="url(#violetGlow)" height="110" rx="4" width="22" x="75" y="45"></rect>
+<!-- Bar Avg (Electric Blue) -->
+<rect fill="url(#blueGlow)" height="123" rx="4" width="22" x="103" y="32"></rect>
+<text fill="#e8dff5" font-family="Geist" font-size="12" font-weight="500" x="80" y="174">Consumer</text>
+<text fill="#ffaeda" font-family="JetBrains Mono" font-size="10" x="75" y="38">39.0%</text>
+<text fill="#bcc2ff" font-family="JetBrains Mono" font-size="10" x="103" y="25">$2.47k</text>
+<!-- Group 2: Premium (Margin 35.37%, Avg $2.223) -->
+<rect fill="url(#violetGlow)" height="95" rx="4" width="22" x="195" y="60"></rect>
+<rect fill="url(#blueGlow)" height="109" rx="4" width="22" x="223" y="46"></rect>
+<text fill="#e8dff5" font-family="Geist" font-size="12" font-weight="500" x="202" y="174">Premium</text>
+<text fill="#ffaeda" font-family="JetBrains Mono" font-size="10" x="195" y="53">35.4%</text>
+<text fill="#bcc2ff" font-family="JetBrains Mono" font-size="10" x="223" y="39">$2.22k</text>
+<!-- Group 3: VIP (Margin 35.37%, Avg $2.221) -->
+<rect fill="url(#violetGlow)" height="95" rx="4" width="22" x="315" y="60"></rect>
+<rect fill="url(#blueGlow)" height="108" rx="4" width="22" x="343" y="47"></rect>
+<text fill="#e8dff5" font-family="Geist" font-size="12" font-weight="500" x="338" y="174">VIP</text>
+<text fill="#ffaeda" font-family="JetBrains Mono" font-size="10" x="315" y="53">35.4%</text>
+<text fill="#bcc2ff" font-family="JetBrains Mono" font-size="10" x="343" y="40">$2.22k</text>
+<!-- Group 4: Business (Margin 38.73%, Avg $2.420) -->
+<rect fill="url(#violetGlow)" height="108" rx="4" width="22" x="435" y="47"></rect>
+<rect fill="url(#blueGlow)" height="119" rx="4" width="22" x="463" y="36"></rect>
+<text fill="#e8dff5" font-family="Geist" font-size="12" font-weight="500" x="440" y="174">Business</text>
+<text fill="#ffaeda" font-family="JetBrains Mono" font-size="10" x="435" y="40">38.7%</text>
+<text fill="#bcc2ff" font-family="JetBrains Mono" font-size="10" x="463" y="29">$2.42k</text>
+<!-- Gradients definition -->
+<defs>
+<linearGradient id="violetGlow" x1="0" x2="0" y1="0" y2="1">
+<stop offset="0%" stop-color="#FF1CC0"></stop>
+<stop offset="100%" stop-color="#7000a7"></stop>
+</linearGradient>
+<linearGradient id="blueGlow" x1="0" x2="0" y1="0" y2="1">
+<stop offset="0%" stop-color="#7686ff"></stop>
+<stop offset="100%" stop-color="#0024d8"></stop>
+</linearGradient>
+</defs>
+</svg>
+</div>
+</div>
+<div class="mt-space-sm pt-space-xs flex items-center justify-between text-on-surface-variant font-label-sm text-label-sm">
+<span class="">* Rata-rata nilai transaksi per pesanan terkonversi dalam ribuan USD</span>
+<span class="text-[#00FFA3]">Korelasi positif margin tinggi</span>
+</div>
+</div>
+</div>
+<!-- 4. Customer Behavior Breakdown & Discount Analysis (2-Column Grid) -->
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-space-lg">
+<!-- Card Left: Tingkat diskon per segmen (Col 5) -->
+<div class="lg:col-span-5 p-space-lg rounded-2xl bg-surface-container-lowest/85 backdrop-blur-xl shadow-xl flex flex-col justify-between">
+<div>
+<div class="flex flex-col sm:flex-row sm:items-center justify-between gap-space-xs">
+<div class="flex flex-col">
+<h3 class="font-headline-sm text-headline-sm font-semibold text-on-surface">Tingkat diskon per segmen</h3>
+<span class="font-label-sm text-label-sm uppercase text-outline tracking-wider mt-1">Baris vs Terbobot (2021–2025)</span>
+</div>
+<!-- Legend -->
+<div class="flex items-center gap-space-xs">
+<div class="flex items-center gap-1.5 px-space-xs py-1 rounded-full bg-surface-container-high">
+<span class="w-2 h-2 rounded-full bg-[#FF1CC0] shadow-[0_0_6px_rgba(255,28,192,0.8)]"></span>
+<span class="font-label-sm text-label-sm text-on-surface">Baris</span>
+</div>
+<div class="flex items-center gap-1.5 px-space-xs py-1 rounded-full bg-surface-container-high">
+<span class="w-2 h-2 rounded-full bg-[#1C3AFF] shadow-[0_0_6px_rgba(28,58,255,0.8)]"></span>
+<span class="font-label-sm text-label-sm text-on-surface">Terbobot</span>
+</div>
+</div>
+</div>
+<!-- Diskon Grouped Bar Chart -->
+<div class="mt-space-md w-full h-56 flex flex-col justify-end">
+<svg class="w-full h-full" fill="none" preserveAspectRatio="none" viewBox="0 0 460 200">
+<!-- Y-Axis Lines -->
+<line stroke="rgba(255,255,255,0.06)" stroke-dasharray="3 3" x1="35" x2="440" y1="25" y2="25"></line>
+<line stroke="rgba(255,255,255,0.06)" stroke-dasharray="3 3" x1="35" x2="440" y1="65" y2="65"></line>
+<line stroke="rgba(255,255,255,0.06)" stroke-dasharray="3 3" x1="35" x2="440" y1="105" y2="105"></line>
+<line stroke="rgba(255,255,255,0.06)" stroke-dasharray="3 3" x1="35" x2="440" y1="145" y2="145"></line>
+<text fill="#a78897" font-family="JetBrains Mono" font-size="10" x="10" y="28">25%</text>
+<text fill="#a78897" font-family="JetBrains Mono" font-size="10" x="10" y="68">21%</text>
+<text fill="#a78897" font-family="JetBrains Mono" font-size="10" x="10" y="108">14%</text>
+<text fill="#a78897" font-family="JetBrains Mono" font-size="10" x="10" y="148">7%</text>
+<!-- Consumer: Diskon Baris 13.70%, Terbobot 13.52% -->
+<rect fill="#FF1CC0" filter="drop-shadow(0 0 6px rgba(255,28,192,0.5))" height="49" rx="3" width="18" x="65" y="106"></rect>
+<rect fill="#1C3AFF" filter="drop-shadow(0 0 6px rgba(28,58,255,0.5))" height="47" rx="3" width="18" x="88" y="108"></rect>
+<text fill="#e8dff5" font-family="Geist" font-size="11" x="63" y="174">Consumer</text>
+<text fill="#ffaeda" font-family="JetBrains Mono" font-size="9" x="64" y="99">13.7%</text>
+<!-- Premium: Diskon Baris 17.67%, Terbobot 17.45% -->
+<rect fill="#FF1CC0" filter="drop-shadow(0 0 6px rgba(255,28,192,0.5))" height="71" rx="3" width="18" x="165" y="84"></rect>
+<rect fill="#1C3AFF" filter="drop-shadow(0 0 6px rgba(28,58,255,0.5))" height="69" rx="3" width="18" x="188" y="86"></rect>
+<text fill="#e8dff5" font-family="Geist" font-size="11" x="165" y="174">Premium</text>
+<text fill="#ffaeda" font-family="JetBrains Mono" font-size="9" x="164" y="77">17.7%</text>
+<!-- VIP: Diskon Baris 17.78%, Terbobot 17.61% -->
+<rect fill="#FF1CC0" filter="drop-shadow(0 0 6px rgba(255,28,192,0.5))" height="72" rx="3" width="18" x="265" y="83"></rect>
+<rect fill="#1C3AFF" filter="drop-shadow(0 0 6px rgba(28,58,255,0.5))" height="70" rx="3" width="18" x="288" y="85"></rect>
+<text fill="#e8dff5" font-family="Geist" font-size="11" x="274" y="174">VIP</text>
+<text fill="#ffaeda" font-family="JetBrains Mono" font-size="9" x="264" y="76">17.8%</text>
+<!-- Business: Diskon Baris 13.78%, Terbobot 13.60% -->
+<rect fill="#FF1CC0" filter="drop-shadow(0 0 6px rgba(255,28,192,0.5))" height="49" rx="3" width="18" x="365" y="106"></rect>
+<rect fill="#1C3AFF" filter="drop-shadow(0 0 6px rgba(28,58,255,0.5))" height="48" rx="3" width="18" x="388" y="107"></rect>
+<text fill="#e8dff5" font-family="Geist" font-size="11" x="364" y="174">Business</text>
+<text fill="#ffaeda" font-family="JetBrains Mono" font-size="9" x="364" y="99">13.8%</text>
+</svg>
+</div>
+</div>
+<div class="mt-space-sm p-space-xs rounded-xl bg-surface-container-low flex items-center justify-between">
+<span class="font-body-sm text-body-sm text-on-surface-variant">Intensitas Diskon Tertinggi</span>
+<span class="font-label-sm text-label-sm font-semibold text-secondary">VIP (17,78% Baris)</span>
+</div>
+</div>
+<!-- Card Right: Ringkasan perilaku pelanggan (Col 7) -->
+<div class="lg:col-span-7 p-space-lg rounded-2xl bg-surface-container-lowest/85 backdrop-blur-xl shadow-xl flex flex-col justify-between">
+<div class="flex items-center justify-between">
+<div class="flex flex-col">
+<h3 class="font-headline-sm text-headline-sm font-semibold text-on-surface">Ringkasan perilaku pelanggan</h3>
+<span class="font-label-sm text-label-sm uppercase text-outline tracking-wider mt-1">Matriks Definisi &amp; Skala Metrik</span>
+</div>
+<span class="px-space-xs py-1 rounded-full bg-secondary-container/20 text-secondary font-label-sm text-label-sm">8 Key Metrics</span>
+</div>
+<!-- Metric Table -->
+<div class="mt-space-md overflow-x-auto">
+<table class="w-full text-left border-collapse">
+<thead>
+<tr class="border-b border-white/10 text-outline font-label-sm text-label-sm uppercase tracking-wider">
+<th class="pb-2.5 font-semibold">Metrik</th>
+<th class="pb-2.5 font-semibold">Tingkat</th>
+<th class="pb-2.5 font-semibold text-right">Nilai</th>
+<th class="pb-2.5 font-semibold pl-space-md">Definisi Singkat</th>
+</tr>
+</thead>
+<tbody class="divide-y divide-white/5 font-body-sm text-body-sm text-on-surface">
+<tr class="hover:bg-surface-container-high/50 transition-colors">
+<td class="py-2.5 font-medium text-on-surface">Pelanggan aktif</td>
+<td class="py-2.5">
+<span class="px-space-xs py-0.5 rounded-full bg-secondary-container/30 text-secondary font-label-sm text-[10px]">Pelanggan</span>
+</td>
+<td class="py-2.5 text-right font-label-md text-label-md font-semibold text-[#ffaeda]">24,91 ribu</td>
+<td class="py-2.5 pl-space-md text-on-surface-variant">Pelanggan unik yang pernah memesan.</td>
+</tr>
+<tr class="hover:bg-surface-container-high/50 transition-colors">
+<td class="py-2.5 font-medium text-on-surface">Pelanggan berulang</td>
+<td class="py-2.5">
+<span class="px-space-xs py-0.5 rounded-full bg-secondary-container/30 text-secondary font-label-sm text-[10px]">Pelanggan</span>
+</td>
+<td class="py-2.5 text-right font-label-md text-label-md font-semibold text-[#00FFA3]">97,90%</td>
+<td class="py-2.5 pl-space-md text-on-surface-variant">Pelanggan aktif dengan dua pesanan atau lebih.</td>
+</tr>
+<tr class="hover:bg-surface-container-high/50 transition-colors">
+<td class="py-2.5 font-medium text-on-surface">Order per pelanggan</td>
+<td class="py-2.5">
+<span class="px-space-xs py-0.5 rounded-full bg-secondary-container/30 text-secondary font-label-sm text-[10px]">Pelanggan</span>
+</td>
+<td class="py-2.5 text-right font-label-md text-label-md font-semibold text-tertiary">5,544</td>
+<td class="py-2.5 pl-space-md text-on-surface-variant">Total pesanan dibagi pelanggan aktif.</td>
+</tr>
+<tr class="hover:bg-surface-container-high/50 transition-colors">
+<td class="py-2.5 font-medium text-on-surface">Profit per pelanggan</td>
+<td class="py-2.5">
+<span class="px-space-xs py-0.5 rounded-full bg-secondary-container/30 text-secondary font-label-sm text-[10px]">Pelanggan</span>
+</td>
+<td class="py-2.5 text-right font-label-md text-label-md font-semibold text-primary">$2.377,76</td>
+<td class="py-2.5 pl-space-md text-on-surface-variant">Total profit dibagi pelanggan aktif.</td>
+</tr>
+<tr class="hover:bg-surface-container-high/50 transition-colors">
+<td class="py-2.5 font-medium text-on-surface">Transaksi</td>
+<td class="py-2.5">
+<span class="px-space-xs py-0.5 rounded-full bg-[#1C3AFF]/20 text-tertiary-fixed font-label-sm text-[10px]">Transaksi</span>
+</td>
+<td class="py-2.5 text-right font-label-md text-label-md font-semibold text-on-surface">138,12 ribu</td>
+<td class="py-2.5 pl-space-md text-on-surface-variant">Satu pesanan dihitung satu transaksi.</td>
+</tr>
+<tr class="hover:bg-surface-container-high/50 transition-colors">
+<td class="py-2.5 font-medium text-on-surface">Rata-rata nilai transaksi</td>
+<td class="py-2.5">
+<span class="px-space-xs py-0.5 rounded-full bg-[#1C3AFF]/20 text-tertiary-fixed font-label-sm text-[10px]">Transaksi</span>
+</td>
+<td class="py-2.5 text-right font-label-md text-label-md font-semibold text-tertiary">$1.137,76</td>
+<td class="py-2.5 pl-space-md text-on-surface-variant">Rata-rata net sales per pesanan.</td>
+</tr>
+<tr class="hover:bg-surface-container-high/50 transition-colors">
+<td class="py-2.5 font-medium text-on-surface">Pangsa transaksi margin &gt;20%</td>
+<td class="py-2.5">
+<span class="px-space-xs py-0.5 rounded-full bg-[#1C3AFF]/20 text-tertiary-fixed font-label-sm text-[10px]">Transaksi</span>
+</td>
+<td class="py-2.5 text-right font-label-md text-label-md font-semibold text-[#00FFA3]">92,01%</td>
+<td class="py-2.5 pl-space-md text-on-surface-variant">Pesanan dengan margin di atas 20%.</td>
+</tr>
+<tr class="hover:bg-surface-container-high/50 transition-colors">
+<td class="py-2.5 font-medium text-on-surface">Rating pelanggan</td>
+<td class="py-2.5">
+<span class="px-space-xs py-0.5 rounded-full bg-[#1C3AFF]/20 text-tertiary-fixed font-label-sm text-[10px]">Transaksi</span>
+</td>
+<td class="py-2.5 text-right font-label-md text-label-md font-semibold text-secondary">3,677</td>
+<td class="py-2.5 pl-space-md text-on-surface-variant">Rata-rata nilai 1-5 dari pesanan terkirim.</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+<!-- 5. Bottom Section: Comprehensive Segment Comparative Profile Table -->
+<div class="p-space-lg rounded-2xl bg-surface-container-lowest/90 backdrop-blur-xl shadow-2xl flex flex-col gap-space-md">
+<div class="flex flex-col sm:flex-row sm:items-center justify-between gap-space-sm">
+<div class="flex items-center gap-space-sm">
+<div class="w-10 h-10 rounded-xl bg-surface-container-high flex items-center justify-center text-primary shadow-[0_0_16px_rgba(255,28,192,0.35)]">
+<span class="material-symbols-outlined text-[22px]">table_chart</span>
+</div>
+<div class="flex flex-col">
+<h2 class="font-headline-sm text-headline-sm font-bold text-on-surface">Profil komparatif segmen pelanggan</h2>
+<span class="font-label-sm text-label-sm uppercase text-outline tracking-wider">Metrik Agregat Lengkap Periode 2021–2025</span>
+</div>
+</div>
+<div class="flex items-center gap-space-xs">
+<button class="px-space-sm py-1.5 rounded-xl bg-surface-container hover:bg-surface-container-high text-on-surface-variant hover:text-on-surface font-label-sm text-label-sm uppercase tracking-wide flex items-center gap-1 transition-all" type="button">
+<span class="material-symbols-outlined text-[16px]">file_download</span>
+<span class="">Ekspor CSV</span>
+</button>
+</div>
+</div>
+<!-- Comparative Data Table -->
+<div class="overflow-x-auto rounded-xl bg-surface-container-low/50">
+<table class="w-full text-left border-collapse min-w-[1000px]">
+<thead>
+<tr class="bg-surface-container-high/60 text-outline font-label-sm text-label-sm uppercase tracking-wider">
+<th class="py-3.5 px-space-md font-semibold">Segmen</th>
+<th class="py-3.5 px-space-md font-semibold text-right">Pelanggan</th>
+<th class="py-3.5 px-space-md font-semibold text-right">Porsi Pelanggan</th>
+<th class="py-3.5 px-space-md font-semibold text-right">Order</th>
+<th class="py-3.5 px-space-md font-semibold text-right">Net Sales</th>
+<th class="py-3.5 px-space-md font-semibold text-right">Profit</th>
+<th class="py-3.5 px-space-md font-semibold text-right text-primary">Margin Rerata</th>
+<th class="py-3.5 px-space-md font-semibold text-right text-secondary">Profit / Pelanggan</th>
+<th class="py-3.5 px-space-md font-semibold text-right">Order / Pelanggan</th>
+<th class="py-3.5 px-space-md font-semibold text-right">Diskon Baris</th>
+</tr>
+</thead>
+<tbody class="divide-y divide-white/5 font-body-sm text-body-sm text-on-surface">
+<!-- Row 1: Consumer -->
+<tr class="hover:bg-surface-container-high/40 transition-colors">
+<td class="py-4 px-space-md font-semibold text-on-surface flex items-center gap-space-xs">
+<span class="w-2.5 h-2.5 rounded-full bg-gradient-to-r from-[#1C3AFF] to-[#FF1CC0]"></span>
+<span class="">Consumer</span>
+</td>
+<td class="py-4 px-space-md text-right font-label-md text-label-md">13,59 ribu</td>
+<td class="py-4 px-space-md text-right font-label-md text-label-md text-on-surface-variant">54,53%</td>
+<td class="py-4 px-space-md text-right font-label-md text-label-md">75,64 ribu</td>
+<td class="py-4 px-space-md text-right font-label-md text-label-md font-semibold text-on-surface">$86,04 juta</td>
+<td class="py-4 px-space-md text-right font-label-md text-label-md font-semibold text-[#ffaeda]">$33,56 juta</td>
+<td class="py-4 px-space-md text-right font-label-md text-label-md font-bold text-[#FF1CC0]">39,00%</td>
+<td class="py-4 px-space-md text-right font-label-md text-label-md font-bold text-secondary bg-secondary-container/10">$2.470,14</td>
+<td class="py-4 px-space-md text-right font-label-md text-label-md">5,57</td>
+<td class="py-4 px-space-md text-right font-label-md text-label-md text-outline">13,70%</td>
+</tr>
+<!-- Row 2: Premium -->
+<tr class="hover:bg-surface-container-high/40 transition-colors">
+<td class="py-4 px-space-md font-semibold text-on-surface flex items-center gap-space-xs">
+<span class="w-2.5 h-2.5 rounded-full bg-[#B131FA]"></span>
+<span class="">Premium</span>
+</td>
+<td class="py-4 px-space-md text-right font-label-md text-label-md">6,28 ribu</td>
+<td class="py-4 px-space-md text-right font-label-md text-label-md text-on-surface-variant">25,19%</td>
+<td class="py-4 px-space-md text-right font-label-md text-label-md">34,75 ribu</td>
+<td class="py-4 px-space-md text-right font-label-md text-label-md font-semibold text-on-surface">$39,45 juta</td>
+<td class="py-4 px-space-md text-right font-label-md text-label-md font-semibold text-[#ffaeda]">$13,95 juta</td>
+<td class="py-4 px-space-md text-right font-label-md text-label-md font-bold text-on-surface">35,37%</td>
+<td class="py-4 px-space-md text-right font-label-md text-label-md font-bold text-secondary bg-secondary-container/10">$2.223,38</td>
+<td class="py-4 px-space-md text-right font-label-md text-label-md">5,54</td>
+<td class="py-4 px-space-md text-right font-label-md text-label-md text-outline">17,67%</td>
+</tr>
+<!-- Row 3: VIP -->
+<tr class="hover:bg-surface-container-high/40 transition-colors">
+<td class="py-4 px-space-md font-semibold text-on-surface flex items-center gap-space-xs">
+<span class="w-2.5 h-2.5 rounded-full bg-[#1C3AFF]"></span>
+<span class="">VIP</span>
+</td>
+<td class="py-4 px-space-md text-right font-label-md text-label-md">2,54 ribu</td>
+<td class="py-4 px-space-md text-right font-label-md text-label-md text-on-surface-variant">10,18%</td>
+<td class="py-4 px-space-md text-right font-label-md text-label-md">13,96 ribu</td>
+<td class="py-4 px-space-md text-right font-label-md text-label-md font-semibold text-on-surface">$15,93 juta</td>
+<td class="py-4 px-space-md text-right font-label-md text-label-md font-semibold text-[#ffaeda]">$5,63 juta</td>
+<td class="py-4 px-space-md text-right font-label-md text-label-md font-bold text-on-surface">35,37%</td>
+<td class="py-4 px-space-md text-right font-label-md text-label-md font-bold text-secondary bg-secondary-container/10">$2.221,99</td>
+<td class="py-4 px-space-md text-right font-label-md text-label-md">5,50</td>
+<td class="py-4 px-space-md text-right font-label-md text-label-md text-outline">17,78%</td>
+</tr>
+<!-- Row 4: Business -->
+<tr class="hover:bg-surface-container-high/40 transition-colors">
+<td class="py-4 px-space-md font-semibold text-on-surface flex items-center gap-space-xs">
+<span class="w-2.5 h-2.5 rounded-full bg-[#00FFA3]"></span>
+<span class="">Business</span>
+</td>
+<td class="py-4 px-space-md text-right font-label-md text-label-md">2,52 ribu</td>
+<td class="py-4 px-space-md text-right font-label-md text-label-md text-on-surface-variant">10,10%</td>
+<td class="py-4 px-space-md text-right font-label-md text-label-md">13,78 ribu</td>
+<td class="py-4 px-space-md text-right font-label-md text-label-md font-semibold text-on-surface">$15,72 juta</td>
+<td class="py-4 px-space-md text-right font-label-md text-label-md font-semibold text-[#ffaeda]">$6,09 juta</td>
+<td class="py-4 px-space-md text-right font-label-md text-label-md font-bold text-[#FF1CC0]">38,73%</td>
+<td class="py-4 px-space-md text-right font-label-md text-label-md font-bold text-secondary bg-secondary-container/10">$2.420,96</td>
+<td class="py-4 px-space-md text-right font-label-md text-label-md">5,48</td>
+<td class="py-4 px-space-md text-right font-label-md text-label-md text-outline">13,78%</td>
+</tr>
+</tbody>
+</table>
+</div>
+<!-- Footer Micro-Insights Bar -->
+<div class="p-space-sm rounded-xl bg-surface-container-high/40 flex flex-col md:flex-row md:items-center justify-between gap-space-sm text-body-sm text-body-sm text-on-surface-variant">
+<div class="flex items-center gap-space-xs">
+<span class="material-symbols-outlined text-[18px] text-tertiary">lightbulb</span>
+<span class=""><strong>Insight Eksekutif:</strong> Segmen <em>Consumer</em> memimpin volume sekaligus profitabilitas per pelanggan ($2.470,14), didukung tingkat diskon yang lebih disiplin (13,70%).</span>
+</div>
+<div class="flex items-center gap-space-xs font-label-sm text-label-sm uppercase tracking-wider text-outline shrink-0">
+<span class="">Total Database: 24.914 Pelanggan</span>
+</div>
+</div>
+</div>
+<!-- Supplementary Analytical Context Panel with Preserved Visual Image Assets -->
+
+<div class="mt-space-md p-space-sm rounded-xl bg-surface-container-lowest/80 backdrop-blur-xl border border-white/10 flex flex-col sm:flex-row items-center justify-between gap-space-sm text-label-sm font-label-sm shadow-xl"><div class="flex items-center gap-space-xs"><span class="w-2 h-2 rounded-full bg-[#FF1CC0] shadow-[0_0_8px_rgba(255,28,192,0.9)] animate-pulse"></span><span class="text-on-surface font-semibold tracking-wider uppercase">Telemetry Core Active</span><span class="text-outline px-1.5">•</span><span class="text-on-surface-variant uppercase tracking-wider">Customer Intelligence Matrix</span></div><div class="flex items-center gap-space-md text-outline"><span class="tracking-wider">SYNCED WITH DATA LAKEHOUSE · REFRESHED IN REAL-TIME · STATUS OK</span><div class="w-2 h-2 rounded-full bg-[#00FFA3] shadow-[0_0_6px_rgba(0,255,163,0.8)]"></div></div></div></div>
+</div></main></div>
+
+
+</body></html>

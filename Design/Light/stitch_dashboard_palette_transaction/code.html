@@ -1,0 +1,737 @@
+<!DOCTYPE html>
+
+<html lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><meta content="web_dashboard" name="shell-type"/><link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><style>@layer base{html,body{margin:0;padding:0;}body{overscroll-behavior:none;}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config={darkMode:"class",theme:{extend:{colors:{"background":"#f9f9ff","inverse-surface":"#283141","error-container":"#ffdad6","on-error-container":"#93000a","on-secondary-container":"#5d1900","surface-variant":"#dae2f8","on-primary-fixed-variant":"#0039b5","inverse-primary":"#b7c4ff","on-surface":"#131c2b","surface-container-highest":"#dae2f8","primary":"#0037b0","surface-container-lowest":"#ffffff","error":"#ba1a1a","tertiary-fixed-dim":"#7bd8b1","surface":"#f9f9ff","on-primary-fixed":"#001551","outline":"#747686","on-tertiary-fixed-variant":"#00513a","tertiary-fixed":"#97f5cc","on-secondary":"#ffffff","surface-tint":"#2151da","secondary":"#ac3400","primary-fixed":"#dce1ff","surface-container-low":"#f0f3ff","secondary-fixed-dim":"#ffb59d","on-tertiary-fixed":"#002115","surface-container-high":"#dfe8fe","outline-variant":"#c4c5d7","tertiary":"#004f38","secondary-container":"#fd6b36","on-tertiary-container":"#89e7be","secondary-fixed":"#ffdbd0","on-secondary-fixed-variant":"#832600","primary-fixed-dim":"#b7c4ff","on-background":"#131c2b","on-error":"#ffffff","on-primary-container":"#cad3ff","on-secondary-fixed":"#390c00","primary-container":"#1d4ed8","on-surface-variant":"#434655","inverse-on-surface":"#ecf0ff","on-primary":"#ffffff","on-tertiary":"#ffffff","surface-dim":"#d1daf0","surface-bright":"#f9f9ff","tertiary-container":"#00694c","surface-container":"#e8eeff"},borderRadius:{"DEFAULT":"0.125rem","lg":"0.25rem","xl":"0.5rem","full":"0.75rem"},spacing:{"space-lg":"1.5rem","margin":"3rem","space-md":"1rem","space-sm":"0.5rem","space-xl":"2.5rem","margin-mobile":"1.25rem","gutter":"1.5rem","space-xs":"0.25rem","gutter-mobile":"1rem","margin-tablet":"2rem"},fontFamily:{"body-sm":["Plus Jakarta Sans"],"headline-lg-mobile":["Plus Jakarta Sans"],"label-caps":["Plus Jakarta Sans"],"title-md":["Plus Jakarta Sans"],"display-hero-mobile":["Plus Jakarta Sans"],"headline-lg":["Plus Jakarta Sans"],"display-hero":["Plus Jakarta Sans"],"headline-sm":["Plus Jakarta Sans"],"body-md":["Plus Jakarta Sans"],"label-numeric":["Plus Jakarta Sans"],"body-lg":["Plus Jakarta Sans"],"headline-md":["Plus Jakarta Sans"]},fontSize:{"body-sm":["0.8125rem",{"lineHeight":"1.25rem","letterSpacing":"0.005em","fontWeight":"400"}],"headline-lg-mobile":["1.75rem",{"lineHeight":"2.25rem","letterSpacing":"-0.02em","fontWeight":"600"}],"label-caps":["0.6875rem",{"lineHeight":"0.875rem","letterSpacing":"0.08em","fontWeight":"700"}],"title-md":["1.125rem",{"lineHeight":"1.5rem","letterSpacing":"-0.01em","fontWeight":"500"}],"display-hero-mobile":["2.25rem",{"lineHeight":"2.75rem","letterSpacing":"-0.025em","fontWeight":"700"}],"headline-lg":["2.25rem",{"lineHeight":"2.75rem","letterSpacing":"-0.025em","fontWeight":"600"}],"display-hero":["3.25rem",{"lineHeight":"3.75rem","letterSpacing":"-0.035em","fontWeight":"700"}],"headline-sm":["1.25rem",{"lineHeight":"1.625rem","letterSpacing":"-0.015em","fontWeight":"600"}],"body-md":["0.9375rem",{"lineHeight":"1.5rem","letterSpacing":"0em","fontWeight":"400"}],"label-numeric":["0.875rem",{"lineHeight":"1.125rem","letterSpacing":"0.01em","fontWeight":"600"}],"body-lg":["1.0625rem",{"lineHeight":"1.65rem","letterSpacing":"-0.005em","fontWeight":"400"}],"headline-md":["1.5rem",{"lineHeight":"2rem","letterSpacing":"-0.02em","fontWeight":"600"}]}}}}</script></head><body class="bg-[#fbf9f5] font-body-md text-on-surface antialiased"><aside class="fixed left-0 top-0 h-full w-72 bg-[#fbf9f5] z-50 flex flex-col justify-between border-r border-[#e8e2d8]"><div class="flex flex-col"><div class="h-20 px-space-lg flex items-center border-b border-[#e8e2d8]"><div class="flex items-center gap-space-sm"><div class="w-9 h-9 rounded-lg bg-primary-container flex items-center justify-center text-on-primary font-headline-sm text-headline-sm">E</div><div class="flex flex-col"><span class="font-label-caps text-label-caps uppercase tracking-wider text-primary">Executive Suite</span><span class="font-label-numeric text-label-numeric font-semibold text-[#0f172a]">Core Analytics</span></div></div></div><div class="px-space-md pt-space-lg"><span class="px-space-sm font-label-caps text-label-caps uppercase tracking-widest text-outline">Analytical Modules</span><nav class="mt-space-sm flex flex-col gap-space-xs" data-active-classes="bg-primary-container text-on-primary font-semibold shadow-sm"><a class="flex items-center gap-space-md px-space-md py-space-sm rounded-lg text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-all" data-path="ringkasan-eksekutif" href="#"><span class="material-symbols-outlined text-[20px]">dashboard</span><span class="font-body-md text-body-md">Ringkasan Eksekutif</span></a><a class="flex items-center gap-space-md px-space-md py-space-sm rounded-lg text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-all" data-path="sales-dan-profitabilitas" href="#"><span class="material-symbols-outlined text-[20px]">trending_up</span><span class="font-body-md text-body-md">Sales &amp; Profitabilitas</span></a><a class="flex items-center gap-space-md px-space-md py-space-sm rounded-lg text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-all" data-path="customer-intelligence" href="#"><span class="material-symbols-outlined text-[20px]">group</span><span class="font-body-md text-body-md">Customer Intelligence</span></a><a aria-current="page" class="flex items-center gap-space-md px-space-md py-space-sm rounded-lg transition-all bg-primary-container text-on-primary font-semibold shadow-sm" data-path="transaction-explorer" href="#"><span class="material-symbols-outlined text-[20px]">receipt_long</span><span class="font-body-md text-body-md">Transaction Explorer</span></a></nav></div></div><div class="p-space-md border-t border-[#e8e2d8] flex flex-col gap-space-sm bg-surface-container-lowest/60"><div class="flex items-center justify-between px-space-sm"><div class="flex items-center gap-space-xs"><span class="w-2 h-2 rounded-full bg-tertiary-container animate-pulse"></span><span class="font-label-caps text-label-caps text-outline uppercase">Data Core Live · Node Synced</span></div><button class="text-outline hover:text-on-surface transition-colors" type="button"><span class="material-symbols-outlined text-[18px]">first_page</span></button></div></div></aside><div class="pl-72"><header class="fixed top-0 left-72 right-0 z-40 bg-[#fbf9f5]/90 backdrop-blur-md border-b border-[#e8e2d8]"><div class="h-16 px-space-xl flex items-center justify-between border-b border-[#e8e2d8]/60"><div class="flex items-center gap-space-sm font-body-sm text-body-sm text-on-surface-variant"><span class="hover:text-on-surface cursor-pointer">Platform</span><span class="text-outline-variant">/</span><span class="hover:text-on-surface cursor-pointer">Analytics</span><span class="text-outline-variant">/</span><span class="font-label-numeric text-label-numeric text-[#0f172a] font-semibold">Executive Suite</span></div><div class="flex items-center gap-space-md"><div class="flex items-center gap-space-xs bg-surface-container-lowest px-space-md py-1.5 rounded-lg border border-[#e8e2d8]"><span class="material-symbols-outlined text-[18px] text-primary">calendar_today</span><span class="font-label-numeric text-label-numeric text-on-surface font-semibold">2021–2025</span></div><button class="flex items-center gap-1.5 px-space-md py-1.5 rounded-lg bg-surface-container-lowest border border-[#e8e2d8] text-on-surface font-body-sm text-body-sm hover:bg-surface-container transition-colors" type="button"><span class="material-symbols-outlined text-[18px]">tune</span><span>Filter Cepat</span></button><div class="h-5 w-px bg-[#e8e2d8]"></div><button class="w-9 h-9 rounded-lg flex items-center justify-center text-on-surface-variant hover:text-on-surface hover:bg-surface-container transition-colors" type="button"><span class="material-symbols-outlined text-[20px]">light_mode</span></button><div class="relative"><button class="w-9 h-9 rounded-lg flex items-center justify-center text-on-surface-variant hover:text-on-surface hover:bg-surface-container transition-colors" type="button"><span class="material-symbols-outlined text-[20px]">notifications</span></button><span class="absolute top-1.5 right-1.5 w-2 h-2 rounded-full bg-secondary-container"></span></div><div class="h-5 w-px bg-[#e8e2d8]"></div><div class="flex items-center gap-space-sm pl-space-xs"><div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center"><span class="material-symbols-outlined text-on-primary text-[18px]">person</span></div><div class="flex flex-col text-left hidden xl:block"><span class="font-label-numeric text-label-numeric text-[#0f172a] font-semibold leading-none">Chief Officer</span><span class="font-label-caps text-label-caps text-outline uppercase tracking-wider leading-none mt-1">Enterprise</span></div></div></div></div><div class="h-12 px-space-xl flex items-center justify-between bg-surface-container-lowest/50 gap-space-md overflow-x-auto"><div class="flex items-center gap-space-sm flex-nowrap"><div class="flex items-center gap-1 px-space-sm py-1 bg-surface-container-lowest rounded border border-[#e8e2d8] text-on-surface font-body-sm text-body-sm"><span class="font-label-caps text-label-caps uppercase text-outline">Tahun:</span><span class="font-semibold text-[#0f172a]">2024</span><span class="material-symbols-outlined text-[16px] text-outline">expand_more</span></div><div class="flex items-center gap-1 px-space-sm py-1 bg-surface-container-lowest rounded border border-[#e8e2d8] text-on-surface font-body-sm text-body-sm"><span class="font-label-caps text-label-caps uppercase text-outline">Bulan:</span><span class="font-semibold text-[#0f172a]">Jan - Des</span><span class="material-symbols-outlined text-[16px] text-outline">expand_more</span></div><div class="flex items-center gap-1 px-space-sm py-1 bg-surface-container-lowest rounded border border-[#e8e2d8] text-on-surface font-body-sm text-body-sm"><span class="font-label-caps text-label-caps uppercase text-outline">Segmen:</span><span class="font-semibold text-[#0f172a]">Semua</span><span class="material-symbols-outlined text-[16px] text-outline">expand_more</span></div><div class="flex items-center gap-1 px-space-sm py-1 bg-surface-container-lowest rounded border border-[#e8e2d8] text-on-surface font-body-sm text-body-sm"><span class="font-label-caps text-label-caps uppercase text-outline">Channel:</span><span class="font-semibold text-[#0f172a]">Direct Enterprise</span><span class="material-symbols-outlined text-[16px] text-outline">expand_more</span></div><div class="flex items-center gap-1 px-space-sm py-1 bg-surface-container-lowest rounded border border-[#e8e2d8] text-on-surface font-body-sm text-body-sm"><span class="font-label-caps text-label-caps uppercase text-outline">Status:</span><span class="font-semibold text-[#0f172a]">Settled &amp; Complete</span><span class="material-symbols-outlined text-[16px] text-outline">expand_more</span></div></div><button class="flex items-center gap-1 text-secondary hover:text-on-secondary-container transition-colors font-body-sm text-body-sm font-semibold shrink-0" type="button"><span class="material-symbols-outlined text-[16px]">restart_alt</span><span>Hapus semua filter</span></button></div></header><main class="relative pt-28 w-full px-space-xl pb-space-xl bg-[#fbf9f5] min-h-screen"><div class="flex flex-col w-full gap-space-lg">
+<!-- ==========================================
+       SECTION 1: TITLE & EXECUTIVE TELEMETRY BAR
+       ========================================== -->
+<section class="flex flex-col lg:flex-row lg:items-end justify-between gap-space-md pb-space-md">
+<div class="flex items-start gap-space-md">
+<div class="w-12 h-12 rounded-xl bg-primary-container text-on-primary flex items-center justify-center shadow-sm shrink-0">
+<span class="material-symbols-outlined text-[28px]">search_insights</span>
+</div>
+<div class="flex flex-col">
+<div class="flex items-center gap-space-xs mb-1">
+<span class="font-label-caps text-label-caps text-outline uppercase tracking-widest">Modul Analisis Anomali &amp; Arbitrase</span>
+<span class="inline-block w-1 h-1 rounded-full bg-outline-variant"></span>
+<span class="font-label-caps text-label-caps text-primary uppercase font-bold tracking-wider">Algoritma SIM-ANOMALY-v2.4</span>
+</div>
+<h1 class="font-headline-lg text-headline-lg text-on-surface font-semibold tracking-tight">Transaction Explorer</h1>
+<p class="font-body-md text-body-md text-on-surface-variant max-w-2xl mt-0.5">
+          Deteksi dini transaksi revenue tinggi dengan margin tertekan per channel, estimasi opportunity gap, dan simulasi penyehatan harga portofolio.
+        </p>
+</div>
+</div>
+<!-- Action & Badge Group -->
+<div class="flex items-center gap-space-sm flex-wrap self-start lg:self-end">
+<div class="flex items-center gap-1.5 px-space-md py-1.5 rounded-full bg-surface-container text-on-surface text-body-sm font-medium shadow-sm">
+<span class="w-2 h-2 rounded-full bg-tertiary"></span>
+<span class="font-label-caps text-label-caps uppercase tracking-wider text-outline">Cakupan Data:</span>
+<span class="font-label-numeric text-label-numeric text-on-surface font-semibold">2021 – 2025</span>
+<span class="font-body-sm text-outline font-normal">(138.120 Orders)</span>
+</div>
+<button class="flex items-center gap-1.5 px-space-md py-1.5 rounded-lg bg-surface-container-lowest text-on-surface hover:bg-surface-container font-label-numeric text-label-numeric shadow-sm transition-all" type="button">
+<span class="material-symbols-outlined text-[18px] text-primary">download</span>
+<span>Export Log Audit</span>
+</button>
+<button class="flex items-center gap-1.5 px-space-md py-1.5 rounded-lg bg-primary-container text-on-primary hover:bg-primary font-label-numeric text-label-numeric shadow-sm transition-all" type="button">
+<span class="material-symbols-outlined text-[18px]">rule_settings</span>
+<span>Sesuaikan Ambang Batas</span>
+</button>
+</div>
+</section>
+<!-- ==========================================
+       SECTION 2: 8 ANOMALY KPI METRIC TILES
+       ========================================== -->
+<section class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-space-md">
+<!-- 1. Pesanan Anomali -->
+<div class="bg-surface-container-lowest rounded-xl p-space-lg flex flex-col justify-between shadow-sm hover:shadow-md transition-shadow relative overflow-hidden group">
+<div class="flex items-start justify-between">
+<span class="font-label-caps text-label-caps text-outline uppercase tracking-wider">Pesanan Anomali</span>
+<div class="w-8 h-8 rounded-lg bg-surface-container text-primary flex items-center justify-center">
+<span class="material-symbols-outlined text-[18px]">emergency</span>
+</div>
+</div>
+<div class="mt-space-md">
+<div class="flex items-baseline gap-space-xs">
+<span class="font-headline-lg text-headline-lg font-bold text-on-surface tracking-tight">12,86</span>
+<span class="font-headline-sm text-headline-sm text-on-surface-variant font-medium">ribu</span>
+</div>
+<div class="mt-space-sm flex items-center justify-between pt-space-xs bg-surface-container-low/60 rounded px-2 py-1">
+<span class="font-body-sm text-body-sm text-outline">Porsi Order Total</span>
+<span class="font-label-numeric text-label-numeric font-bold text-secondary">9,31% <span class="font-normal text-outline">/ 138,1k</span></span>
+</div>
+</div>
+</div>
+<!-- 2. Omzet Anomali -->
+<div class="bg-surface-container-lowest rounded-xl p-space-lg flex flex-col justify-between shadow-sm hover:shadow-md transition-shadow relative overflow-hidden group">
+<div class="flex items-start justify-between">
+<span class="font-label-caps text-label-caps text-outline uppercase tracking-wider">Omzet Anomali</span>
+<div class="w-8 h-8 rounded-lg bg-surface-container text-primary flex items-center justify-center">
+<span class="material-symbols-outlined text-[18px]">monetization_on</span>
+</div>
+</div>
+<div class="mt-space-md">
+<div class="flex items-baseline gap-space-xs">
+<span class="font-headline-lg text-headline-lg font-bold text-on-surface tracking-tight">$34,67</span>
+<span class="font-headline-sm text-headline-sm text-on-surface-variant font-medium">juta</span>
+</div>
+<div class="mt-space-sm flex items-center justify-between pt-space-xs bg-surface-container-low/60 rounded px-2 py-1">
+<span class="font-body-sm text-body-sm text-outline">Porsi Omzet Total</span>
+<span class="font-label-numeric text-label-numeric font-bold text-secondary">24,80% <span class="font-normal text-outline">/ $139,8M</span></span>
+</div>
+</div>
+</div>
+<!-- 3. Laba Anomali -->
+<div class="bg-surface-container-lowest rounded-xl p-space-lg flex flex-col justify-between shadow-sm hover:shadow-md transition-shadow relative overflow-hidden group">
+<div class="flex items-start justify-between">
+<span class="font-label-caps text-label-caps text-outline uppercase tracking-wider">Laba Anomali</span>
+<div class="w-8 h-8 rounded-lg bg-tertiary-container/20 text-tertiary flex items-center justify-center">
+<span class="material-symbols-outlined text-[18px]">account_balance_wallet</span>
+</div>
+</div>
+<div class="mt-space-md">
+<div class="flex items-baseline gap-space-xs">
+<span class="font-headline-lg text-headline-lg font-bold text-on-surface tracking-tight">$7,53</span>
+<span class="font-headline-sm text-headline-sm text-on-surface-variant font-medium">juta</span>
+</div>
+<div class="mt-space-sm flex items-center justify-between pt-space-xs bg-surface-container-low/60 rounded px-2 py-1">
+<span class="font-body-sm text-body-sm text-outline">Laba Terealisasi</span>
+<span class="font-label-numeric text-label-numeric font-semibold text-tertiary">Margin Terkompresi</span>
+</div>
+</div>
+</div>
+<!-- 4. Margin Keseluruhan Anomali -->
+<div class="bg-surface-container-lowest rounded-xl p-space-lg flex flex-col justify-between shadow-sm hover:shadow-md transition-shadow relative overflow-hidden group">
+<div class="flex items-start justify-between">
+<span class="font-label-caps text-label-caps text-outline uppercase tracking-wider">Margin Keseluruhan</span>
+<div class="w-8 h-8 rounded-lg bg-secondary-container/20 text-secondary flex items-center justify-center">
+<span class="material-symbols-outlined text-[18px]">percent</span>
+</div>
+</div>
+<div class="mt-space-md">
+<div class="flex items-baseline gap-space-xs">
+<span class="font-headline-lg text-headline-lg font-bold text-secondary tracking-tight">21,72%</span>
+</div>
+<div class="mt-space-sm flex items-center justify-between pt-space-xs bg-surface-container-low/60 rounded px-2 py-1">
+<span class="font-body-sm text-body-sm text-outline">Target Sehat Portofolio</span>
+<span class="font-label-numeric text-label-numeric font-semibold text-on-surface">37,70% <span class="text-error">(-15,98%)</span></span>
+</div>
+</div>
+</div>
+<!-- 5. Opportunity Gap (Agregat) -->
+<div class="bg-primary-container text-on-primary rounded-xl p-space-lg flex flex-col justify-between shadow-md relative overflow-hidden group">
+<div class="flex items-start justify-between">
+<div>
+<span class="font-label-caps text-label-caps text-on-primary-container uppercase tracking-wider">Opportunity Gap</span>
+<p class="font-body-sm text-body-sm text-on-primary-container">Simulasi Potensi Normalisasi</p>
+</div>
+<span class="material-symbols-outlined text-[20px] text-tertiary-fixed">insights</span>
+</div>
+<div class="mt-space-md">
+<div class="flex items-baseline gap-space-xs">
+<span class="font-headline-lg text-headline-lg font-bold text-on-primary tracking-tight">$5,54</span>
+<span class="font-headline-sm text-headline-sm text-on-primary-container font-medium">juta</span>
+</div>
+<div class="mt-space-sm flex items-center justify-between pt-space-xs bg-primary/40 rounded px-2 py-1">
+<span class="font-body-sm text-body-sm text-on-primary-container">Basis Margin Portofolio</span>
+<span class="font-label-numeric text-label-numeric font-bold text-tertiary-fixed">+73,57% Uplift</span>
+</div>
+</div>
+</div>
+<!-- 6. Order Rugi -->
+<div class="bg-surface-container-lowest rounded-xl p-space-lg flex flex-col justify-between shadow-sm hover:shadow-md transition-shadow relative overflow-hidden group">
+<div class="flex items-start justify-between">
+<span class="font-label-caps text-label-caps text-outline uppercase tracking-wider">Order Rugi (Negatif)</span>
+<div class="w-8 h-8 rounded-lg bg-error-container/40 text-error flex items-center justify-center">
+<span class="material-symbols-outlined text-[18px]">warning</span>
+</div>
+</div>
+<div class="mt-space-md">
+<div class="flex items-baseline gap-space-xs">
+<span class="font-headline-lg text-headline-lg font-bold text-error tracking-tight">2,53</span>
+<span class="font-headline-sm text-headline-sm text-error font-medium">ribu</span>
+</div>
+<div class="mt-space-sm flex items-center justify-between pt-space-xs bg-error-container/20 rounded px-2 py-1">
+<span class="font-body-sm text-body-sm text-on-surface-variant">Defisit Absolut Laba</span>
+<span class="font-label-numeric text-label-numeric font-bold text-error">-$426,31 ribu</span>
+</div>
+</div>
+</div>
+<!-- 7. Tingkat Retur -->
+<div class="bg-surface-container-lowest rounded-xl p-space-lg flex flex-col justify-between shadow-sm hover:shadow-md transition-shadow relative overflow-hidden group">
+<div class="flex items-start justify-between">
+<span class="font-label-caps text-label-caps text-outline uppercase tracking-wider">Tingkat Retur</span>
+<div class="w-8 h-8 rounded-lg bg-surface-container text-primary flex items-center justify-center">
+<span class="material-symbols-outlined text-[18px]">assignment_return</span>
+</div>
+</div>
+<div class="mt-space-md">
+<div class="flex items-baseline gap-space-xs">
+<span class="font-headline-lg text-headline-lg font-bold text-on-surface tracking-tight">6,85%</span>
+</div>
+<div class="mt-space-sm flex items-center justify-between pt-space-xs bg-surface-container-low/60 rounded px-2 py-1">
+<span class="font-body-sm text-body-sm text-outline">Volume Pesanan Retur</span>
+<span class="font-label-numeric text-label-numeric font-semibold text-on-surface">9.460 Transaksi</span>
+</div>
+</div>
+</div>
+<!-- 8. Tidak Dikirim -->
+<div class="bg-surface-container-lowest rounded-xl p-space-lg flex flex-col justify-between shadow-sm hover:shadow-md transition-shadow relative overflow-hidden group">
+<div class="flex items-start justify-between">
+<span class="font-label-caps text-label-caps text-outline uppercase tracking-wider">Tidak Dikirim</span>
+<div class="w-8 h-8 rounded-lg bg-secondary-container/20 text-secondary flex items-center justify-center">
+<span class="material-symbols-outlined text-[18px]">local_shipping</span>
+</div>
+</div>
+<div class="mt-space-md">
+<div class="flex items-baseline gap-space-xs">
+<span class="font-headline-lg text-headline-lg font-bold text-secondary tracking-tight">17,78%</span>
+</div>
+<div class="mt-space-sm flex items-center justify-between pt-space-xs bg-surface-container-low/60 rounded px-2 py-1">
+<span class="font-body-sm text-body-sm text-outline">Fulfillment Macet</span>
+<span class="font-label-numeric text-label-numeric font-bold text-secondary">24.557 Pesanan</span>
+</div>
+</div>
+</div>
+</section>
+<!-- ==========================================
+       SECTION 3: ANOMALY RULES & PROFIT SIMULATION
+       ========================================== -->
+<section class="bg-surface-container-lowest rounded-xl shadow-sm p-space-xl flex flex-col gap-space-lg">
+<!-- Rule Header & Definition Banner -->
+<div class="flex flex-col md:flex-row md:items-center justify-between gap-space-md pb-space-md bg-surface-container-low rounded-xl p-space-md">
+<div class="flex items-center gap-space-md">
+<div class="w-10 h-10 rounded-lg bg-primary text-on-primary flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-[22px]">policy</span>
+</div>
+<div class="flex flex-col">
+<div class="flex items-center gap-2">
+<h2 class="font-headline-sm text-headline-sm font-semibold text-on-surface">Aturan Penetapan Anomali &amp; Rekomendasi Mitigasi</h2>
+<span class="px-2 py-0.5 rounded-full bg-primary-fixed text-on-primary-fixed font-label-caps text-label-caps uppercase font-bold">Kriteria Global Tetap</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-0.5">
+            Batas ambang dihitung melalui kuartil empiris: Q3 Net Sales sebagai ambang bawah omzet, dan Q1 Margin sebagai ambang batas margin atas.
+          </p>
+</div>
+</div>
+<div class="flex items-center gap-space-sm shrink-0">
+<span class="font-label-caps text-label-caps uppercase text-outline">Periode Analitik:</span>
+<span class="font-label-numeric text-label-numeric font-semibold text-on-surface px-2 py-1 bg-surface-container-lowest rounded shadow-xs">Seluruh periode 2021–2025</span>
+</div>
+</div>
+<!-- Active Formula Card -->
+<div class="bg-surface-container p-space-lg rounded-xl flex flex-col md:flex-row items-start md:items-center justify-between gap-space-md">
+<div class="flex items-start gap-space-md">
+<span class="material-symbols-outlined text-[24px] text-primary shrink-0 mt-0.5">verified</span>
+<div>
+<span class="font-label-caps text-label-caps text-outline uppercase tracking-wider block">Rumus Identifikasi Transaksi</span>
+<p class="font-body-lg text-body-lg text-on-surface font-semibold mt-1">
+            "Pesanan dianggap <span class="text-secondary font-bold">anomali</span> jika penjualan bersihnya minimal <span class="text-primary font-bold">$1.552,32</span> dan marginnya tidak lebih dari <span class="text-secondary font-bold">34,12%</span>."
+          </p>
+<p class="font-body-sm text-body-sm text-outline mt-1">
+            * Batas ini dikunci sekali dari seluruh dataset institusional untuk menghindari filter bias atau pergeseran musiman.
+          </p>
+</div>
+</div>
+<div class="flex items-center gap-space-xs shrink-0 self-end md:self-auto">
+<span class="px-3 py-1 rounded bg-surface-container-lowest text-on-surface font-label-numeric text-label-numeric font-semibold shadow-xs">
+          Threshold Net Sales ≥ $1.552,32
+        </span>
+<span class="px-3 py-1 rounded bg-surface-container-lowest text-on-surface font-label-numeric text-label-numeric font-semibold shadow-xs">
+          Threshold Margin ≤ 34,12%
+        </span>
+</div>
+</div>
+<!-- Dual Simulation Cards -->
+<div class="grid grid-cols-1 md:grid-cols-2 gap-space-lg">
+<!-- Skenario A: Margin Keseluruhan -->
+<div class="bg-surface-container-low rounded-xl p-space-lg flex flex-col justify-between shadow-xs hover:shadow-sm transition-shadow">
+<div>
+<div class="flex items-center justify-between">
+<span class="px-2.5 py-1 rounded-full bg-primary-fixed text-on-primary-fixed font-label-caps text-label-caps uppercase font-bold tracking-wider">
+              Skenario A · Simulasi Utama (Acuan)
+            </span>
+<span class="material-symbols-outlined text-[20px] text-primary">trending_up</span>
+</div>
+<h3 class="font-title-md text-title-md font-semibold text-on-surface mt-space-md">Potensi Laba: Basis Margin Portofolio (37,70%)</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-1">
+            Jika 12,86k pesanan anomali direnegosiasi/dinaikkan efisiensi marginnya hingga menyamai rata-rata margin agregat portofolio tanpa penurunan volume penjualan.
+          </p>
+</div>
+<div class="mt-space-lg pt-space-md bg-surface-container-lowest rounded-lg p-space-md shadow-xs">
+<div class="flex items-baseline justify-between">
+<span class="font-headline-lg text-headline-lg font-bold text-primary tracking-tight">+$5,54 juta</span>
+<span class="px-2 py-0.5 rounded bg-tertiary-container/30 text-tertiary font-label-numeric text-label-numeric font-bold">+73,57% Uplift</span>
+</div>
+<div class="mt-space-sm flex items-center justify-between font-body-sm text-body-sm text-outline">
+<span>Angka acuan audit strategis</span>
+<span class="font-label-numeric text-label-numeric text-on-surface font-medium">Bukan uang yang telah hilang</span>
+</div>
+</div>
+</div>
+<!-- Skenario B: Basis Rata-Rata Transaksi -->
+<div class="bg-surface-container-low rounded-xl p-space-lg flex flex-col justify-between shadow-xs hover:shadow-sm transition-shadow">
+<div>
+<div class="flex items-center justify-between">
+<span class="px-2.5 py-1 rounded-full bg-surface-container-highest text-on-surface-variant font-label-caps text-label-caps uppercase font-bold tracking-wider">
+              Skenario B · Pembanding Sensitivitas
+            </span>
+<span class="material-symbols-outlined text-[20px] text-outline">tune</span>
+</div>
+<h3 class="font-title-md text-title-md font-semibold text-on-surface mt-space-md">Potensi Laba: Basis Rata-rata Transaksi (41,18%)</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-1">
+            Mengasumsikan setiap transaksi anomali disesuaikan ke margin rata-rata order normal individual. Model ini menunjukkan batas atas potensi pendapatan.
+          </p>
+</div>
+<div class="mt-space-lg pt-space-md bg-surface-container-lowest rounded-lg p-space-md shadow-xs">
+<div class="flex items-baseline justify-between">
+<span class="font-headline-lg text-headline-lg font-bold text-on-surface tracking-tight">+$6,74 juta</span>
+<span class="px-2 py-0.5 rounded bg-surface-container text-on-surface font-label-numeric text-label-numeric font-bold">+89,51% Uplift</span>
+</div>
+<div class="mt-space-sm flex items-center justify-between font-body-sm text-body-sm text-outline">
+<span>Batas optimis (Upper Bound)</span>
+<span class="font-label-numeric text-label-numeric text-on-surface font-medium">Pembanding komparatif</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Editorial Callout: Asumsi Simulasi -->
+<div class="bg-[#faf7f2] rounded-xl p-space-lg relative overflow-hidden">
+<div class="absolute left-0 top-0 bottom-0 w-1.5 bg-secondary-container"></div>
+<div class="pl-space-sm">
+<div class="flex items-center gap-space-xs text-secondary mb-2">
+<span class="material-symbols-outlined text-[18px]">verified_user</span>
+<span class="font-label-caps text-label-caps uppercase font-bold tracking-wider">Metodologi &amp; Batasan Asumsi Finansial</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface font-medium mb-3">
+          Perhitungan potensi tambahan laba di atas valid di bawah kondisi operasional terstandardisasi berikut:
+        </p>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-x-space-lg gap-y-2 text-on-surface-variant font-body-sm text-body-sm">
+<div class="flex items-start gap-2">
+<span class="material-symbols-outlined text-[16px] text-tertiary shrink-0 mt-0.5">check_circle</span>
+<span>Pesanan anomali diasumsikan mampu mencapai margin portofolio tanpa erosi pada omzet total. Harga jual dan volume dianggap konstan.</span>
+</div>
+<div class="flex items-start gap-2">
+<span class="material-symbols-outlined text-[16px] text-tertiary shrink-0 mt-0.5">check_circle</span>
+<span>Elastisitas harga permintaan, biaya tetap gudang, potensi churn pelanggan korporat, dan kesiapan operasional tidak disertakan dalam rumus margin murni.</span>
+</div>
+<div class="flex items-start gap-2">
+<span class="material-symbols-outlined text-[16px] text-tertiary shrink-0 mt-0.5">check_circle</span>
+<span>Nilai adalah indikator besaran peluang arbitrase kontrak, bukan kerugian aktual (bukan uang yang sudah hilang dari arus kas).</span>
+</div>
+<div class="flex items-start gap-2">
+<span class="material-symbols-outlined text-[16px] text-tertiary shrink-0 mt-0.5">check_circle</span>
+<span>Angka basis margin portofolio ($5,54 juta) dipertahankan sebagai tolok ukur KPI dewan direksi, bukan angka rata-rata order.</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- ==========================================
+       SECTION 4: DIMENSIONAL ANOMALY SPREAD
+       ========================================== -->
+<section class="grid grid-cols-1 xl:grid-cols-12 gap-space-lg">
+<!-- Left Column: Visual Channel Comparison & Bar Chart (7 Cols) -->
+<div class="xl:col-span-7 bg-surface-container-lowest rounded-xl p-space-lg shadow-sm flex flex-col justify-between">
+<div>
+<div class="flex flex-col sm:flex-row sm:items-center justify-between gap-space-sm pb-space-md">
+<div class="flex flex-col">
+<span class="font-label-caps text-label-caps text-outline uppercase tracking-wider">Distribusi Saluran Penjualan</span>
+<h3 class="font-headline-sm text-headline-sm font-semibold text-on-surface">Sebaran Anomali Lintas Dimensi</h3>
+</div>
+<!-- Channel Toggle Pills -->
+<div class="flex items-center gap-1 bg-surface-container p-1 rounded-lg">
+<button class="px-2.5 py-1 rounded bg-surface-container-lowest text-on-surface font-label-caps text-label-caps uppercase font-bold shadow-xs" type="button">Sales Channel</button>
+<button class="px-2.5 py-1 rounded text-on-surface-variant hover:text-on-surface font-label-caps text-label-caps uppercase font-semibold" type="button">Wilayah</button>
+<button class="px-2.5 py-1 rounded text-on-surface-variant hover:text-on-surface font-label-caps text-label-caps uppercase font-semibold" type="button">Kategori Produk</button>
+</div>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant mb-space-lg">
+          Komparasi tingkat anomali per saluran terhadap ambang batas rata-rata platform <span class="font-semibold text-primary">(9,31%)</span>. Garis penanda menunjukkan deviasi risiko.
+        </p>
+<!-- Inline SVG Visualization Chart -->
+<div class="bg-surface-container-low rounded-xl p-space-lg shadow-xs flex flex-col gap-space-md">
+<div class="flex items-center justify-between text-body-sm font-label-numeric">
+<span class="text-outline">Tingkat Anomali Tertinggi: <strong class="text-secondary">Marketplace (9,67%)</strong></span>
+<span class="text-primary font-bold">Benchmark Platform: 9,31%</span>
+</div>
+<!-- Channel 1: Marketplace -->
+<div class="flex flex-col gap-1">
+<div class="flex items-center justify-between font-body-sm text-body-sm">
+<span class="font-semibold text-on-surface flex items-center gap-2">
+<span class="w-2.5 h-2.5 rounded-full bg-secondary"></span>
+                Marketplace (B2C &amp; Aggregator)
+              </span>
+<div class="flex items-center gap-2">
+<span class="font-label-numeric text-label-numeric font-bold text-secondary">9,67%</span>
+<span class="px-1.5 py-0.5 rounded bg-error-container/40 text-error font-label-caps text-label-caps font-bold">+0,36% Deviasi</span>
+</div>
+</div>
+<!-- Progress Bar -->
+<div class="w-full h-3 rounded-full bg-surface-container overflow-hidden relative">
+<div class="h-full bg-secondary-container rounded-full" style="width: 96.7%;"></div>
+<!-- Benchmark Pin -->
+<div class="absolute top-0 bottom-0 w-0.5 bg-primary z-10" style="left: 93.1%;" title="Platform Benchmark: 9,31%"></div>
+</div>
+</div>
+<!-- Channel 2: Mobile App -->
+<div class="flex flex-col gap-1">
+<div class="flex items-center justify-between font-body-sm text-body-sm">
+<span class="font-semibold text-on-surface flex items-center gap-2">
+<span class="w-2.5 h-2.5 rounded-full bg-primary-container"></span>
+                Mobile Application
+              </span>
+<div class="flex items-center gap-2">
+<span class="font-label-numeric text-label-numeric font-bold text-on-surface">9,34%</span>
+<span class="px-1.5 py-0.5 rounded bg-surface-container text-outline font-label-caps text-label-caps font-bold">+0,03% Deviasi</span>
+</div>
+</div>
+<div class="w-full h-3 rounded-full bg-surface-container overflow-hidden relative">
+<div class="h-full bg-primary-container rounded-full" style="width: 93.4%;"></div>
+<div class="absolute top-0 bottom-0 w-0.5 bg-primary z-10" style="left: 93.1%;"></div>
+</div>
+</div>
+<!-- Channel 3: Social Media Commerce -->
+<div class="flex flex-col gap-1">
+<div class="flex items-center justify-between font-body-sm text-body-sm">
+<span class="font-semibold text-on-surface flex items-center gap-2">
+<span class="w-2.5 h-2.5 rounded-full bg-tertiary"></span>
+                Social Media Commerce
+              </span>
+<div class="flex items-center gap-2">
+<span class="font-label-numeric text-label-numeric font-bold text-tertiary">9,20%</span>
+<span class="px-1.5 py-0.5 rounded bg-tertiary-container/20 text-tertiary font-label-caps text-label-caps font-bold">-0,11% Aman</span>
+</div>
+</div>
+<div class="w-full h-3 rounded-full bg-surface-container overflow-hidden relative">
+<div class="h-full bg-tertiary rounded-full" style="width: 92.0%;"></div>
+<div class="absolute top-0 bottom-0 w-0.5 bg-primary z-10" style="left: 93.1%;"></div>
+</div>
+</div>
+<!-- Channel 4: Enterprise Website -->
+<div class="flex flex-col gap-1">
+<div class="flex items-center justify-between font-body-sm text-body-sm">
+<span class="font-semibold text-on-surface flex items-center gap-2">
+<span class="w-2.5 h-2.5 rounded-full bg-outline"></span>
+                Website Portal Langsung
+              </span>
+<div class="flex items-center gap-2">
+<span class="font-label-numeric text-label-numeric font-bold text-tertiary">9,15%</span>
+<span class="px-1.5 py-0.5 rounded bg-tertiary-container/20 text-tertiary font-label-caps text-label-caps font-bold">-0,16% Aman</span>
+</div>
+</div>
+<div class="w-full h-3 rounded-full bg-surface-container overflow-hidden relative">
+<div class="h-full bg-outline-variant rounded-full" style="width: 91.5%;"></div>
+<div class="absolute top-0 bottom-0 w-0.5 bg-primary z-10" style="left: 93.1%;"></div>
+</div>
+</div>
+<!-- Visual Legend -->
+<div class="flex items-center justify-between pt-space-xs text-outline font-label-caps text-label-caps uppercase">
+<span class="flex items-center gap-1.5">
+<span class="w-2 h-2 rounded-full bg-primary"></span> Garis Acuan Batas Ambang Portofolio (9,31%)
+            </span>
+<span>Skala Relatif: 0% - 10% Normalisasi</span>
+</div>
+</div>
+</div>
+<!-- Quick Strategic Insight -->
+<div class="mt-space-md p-space-md rounded-lg bg-surface-container flex items-center justify-between gap-space-sm">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary text-[20px]">lightbulb</span>
+<span class="font-body-sm text-body-sm text-on-surface">
+            Marketplace menyumbang rasio anomali tertinggi akibat diskon promosi ganda algoritmik.
+          </span>
+</div>
+<button class="text-primary hover:underline font-label-caps text-label-caps uppercase font-bold shrink-0" type="button">
+          Analisis Sku →
+        </button>
+</div>
+</div>
+<!-- Right Column: Dimensional Breakdown Matrix (5 Cols) -->
+<div class="xl:col-span-5 bg-surface-container-lowest rounded-xl p-space-lg shadow-sm flex flex-col justify-between">
+<div>
+<div class="flex items-center justify-between pb-space-sm">
+<h3 class="font-headline-sm text-headline-sm font-semibold text-on-surface">Matriks Rincian Saluran</h3>
+<span class="px-2 py-0.5 rounded bg-surface-container text-on-surface-variant font-label-caps text-label-caps uppercase font-bold">4 Dimensi</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant mb-space-md">
+          Volume transaksi dan porsi kontribusi anomali terhadap kerugian portofolio.
+        </p>
+<!-- Structured Data Table (No borders, hairline color-shift) -->
+<div class="overflow-x-auto">
+<table class="w-full text-left">
+<thead>
+<tr class="bg-surface-container-low text-outline font-label-caps text-label-caps uppercase tracking-wider">
+<th class="py-2.5 px-3 rounded-l">Channel</th>
+<th class="py-2.5 px-3 text-right">Order Total</th>
+<th class="py-2.5 px-3 text-right">Anomali</th>
+<th class="py-2.5 px-3 text-right">Tingkat</th>
+<th class="py-2.5 px-3 rounded-r text-right">Porsi</th>
+</tr>
+</thead>
+<tbody class="divide-y divide-transparent font-body-sm text-body-sm">
+<tr class="hover:bg-surface-container/50 transition-colors">
+<td class="py-3 px-3 font-semibold text-on-surface">Marketplace</td>
+<td class="py-3 px-3 text-right font-label-numeric">48.210</td>
+<td class="py-3 px-3 text-right font-label-numeric font-bold text-secondary">4.662</td>
+<td class="py-3 px-3 text-right font-label-numeric text-secondary font-semibold">9,67%</td>
+<td class="py-3 px-3 text-right font-label-numeric text-outline">36,25%</td>
+</tr>
+<tr class="hover:bg-surface-container/50 transition-colors">
+<td class="py-3 px-3 font-semibold text-on-surface">Mobile App</td>
+<td class="py-3 px-3 text-right font-label-numeric">41.800</td>
+<td class="py-3 px-3 text-right font-label-numeric font-bold text-on-surface">3.904</td>
+<td class="py-3 px-3 text-right font-label-numeric text-on-surface font-semibold">9,34%</td>
+<td class="py-3 px-3 text-right font-label-numeric text-outline">30,36%</td>
+</tr>
+<tr class="hover:bg-surface-container/50 transition-colors">
+<td class="py-3 px-3 font-semibold text-on-surface">Social Media</td>
+<td class="py-3 px-3 text-right font-label-numeric">27.650</td>
+<td class="py-3 px-3 text-right font-label-numeric font-bold text-on-surface">2.544</td>
+<td class="py-3 px-3 text-right font-label-numeric text-tertiary font-semibold">9,20%</td>
+<td class="py-3 px-3 text-right font-label-numeric text-outline">19,78%</td>
+</tr>
+<tr class="hover:bg-surface-container/50 transition-colors">
+<td class="py-3 px-3 font-semibold text-on-surface">Web Portal</td>
+<td class="py-3 px-3 text-right font-label-numeric">20.460</td>
+<td class="py-3 px-3 text-right font-label-numeric font-bold text-on-surface">1.872</td>
+<td class="py-3 px-3 text-right font-label-numeric text-tertiary font-semibold">9,15%</td>
+<td class="py-3 px-3 text-right font-label-numeric text-outline">14,56%</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<!-- Table Summary Box -->
+<div class="mt-space-md pt-space-sm bg-surface-container-low rounded-lg p-space-md flex items-center justify-between">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-outline text-[18px]">verified</span>
+<span class="font-label-caps text-label-caps uppercase text-outline">Total Sample Audit:</span>
+</div>
+<div class="flex items-center gap-space-md">
+<span class="font-label-numeric text-label-numeric font-semibold text-on-surface">138.120 Transaksi</span>
+<span class="font-label-numeric text-label-numeric font-bold text-primary">12.862 Anomali</span>
+</div>
+</div>
+</div>
+</section>
+<!-- ==========================================
+       SECTION 5: OPERATIONAL RELIABILITY & FULFILLMENT ROW
+       ========================================== -->
+<section class="grid grid-cols-1 lg:grid-cols-2 gap-space-lg">
+<!-- Left: Status Pesanan & Realisasi Margin -->
+<div class="bg-surface-container-lowest rounded-xl p-space-lg shadow-sm flex flex-col justify-between">
+<div>
+<div class="flex items-center justify-between pb-space-sm">
+<div class="flex items-center gap-2">
+<span class="w-8 h-8 rounded-lg bg-surface-container text-primary flex items-center justify-center">
+<span class="material-symbols-outlined text-[18px]">fact_check</span>
+</span>
+<h3 class="font-headline-sm text-headline-sm font-semibold text-on-surface">Status Pesanan &amp; Margin Realisasi</h3>
+</div>
+<span class="font-label-caps text-label-caps text-outline uppercase tracking-wider">Settlement Sync</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant mb-space-md">
+          Evaluasi margin rata-rata terhadap status akhir siklus transaksi di gudang dan gateway pembayaran.
+        </p>
+<!-- Status Breakdown List -->
+<div class="space-y-space-sm">
+<div class="flex items-center justify-between p-space-md rounded-lg bg-surface-container-low hover:bg-surface-container transition-colors">
+<div class="flex items-center gap-space-md">
+<span class="w-2.5 h-2.5 rounded-full bg-tertiary"></span>
+<div>
+<span class="font-label-numeric text-label-numeric font-bold text-on-surface block">Pesanan Selesai (Completed)</span>
+<span class="font-body-sm text-body-sm text-outline">98.420 Transaksi · 71,25% Porsi</span>
+</div>
+</div>
+<div class="text-right">
+<span class="font-label-numeric text-label-numeric font-bold text-tertiary block">38,82%</span>
+<span class="font-body-sm text-body-sm text-outline">Margin Sehat</span>
+</div>
+</div>
+<div class="flex items-center justify-between p-space-md rounded-lg bg-surface-container-low hover:bg-surface-container transition-colors">
+<div class="flex items-center gap-space-md">
+<span class="w-2.5 h-2.5 rounded-full bg-primary-container"></span>
+<div>
+<span class="font-label-numeric text-label-numeric font-bold text-on-surface block">Tertunda (Pending Settlement)</span>
+<span class="font-body-sm text-body-sm text-outline">12.450 Transaksi · 9,01% Porsi</span>
+</div>
+</div>
+<div class="text-right">
+<span class="font-label-numeric text-label-numeric font-bold text-primary block">34,10%</span>
+<span class="font-body-sm text-body-sm text-outline">Ambang Terbatas</span>
+</div>
+</div>
+<div class="flex items-center justify-between p-space-md rounded-lg bg-surface-container-low hover:bg-surface-container transition-colors">
+<div class="flex items-center gap-space-md">
+<span class="w-2.5 h-2.5 rounded-full bg-secondary-container"></span>
+<div>
+<span class="font-label-numeric text-label-numeric font-bold text-on-surface block">Retur Produk (Returned)</span>
+<span class="font-body-sm text-body-sm text-outline">9.460 Transaksi · 6,85% Porsi</span>
+</div>
+</div>
+<div class="text-right">
+<span class="font-label-numeric text-label-numeric font-bold text-secondary block">18,42%</span>
+<span class="font-body-sm text-body-sm text-secondary font-medium">Beban Logistik Balik</span>
+</div>
+</div>
+<div class="flex items-center justify-between p-space-md rounded-lg bg-surface-container-low hover:bg-surface-container transition-colors">
+<div class="flex items-center gap-space-md">
+<span class="w-2.5 h-2.5 rounded-full bg-error"></span>
+<div>
+<span class="font-label-numeric text-label-numeric font-bold text-on-surface block">Pesanan Dibatalkan (Cancelled)</span>
+<span class="font-body-sm text-body-sm text-outline">8.390 Transaksi · 6,08% Porsi</span>
+</div>
+</div>
+<div class="text-right">
+<span class="font-label-numeric text-label-numeric font-bold text-error block">-4,15%</span>
+<span class="font-body-sm text-body-sm text-error font-medium">Biaya Gateway Terbuang</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Right: Rincian Status Pengiriman & SLA Keandalan -->
+<div class="bg-surface-container-lowest rounded-xl p-space-lg shadow-sm flex flex-col justify-between">
+<div>
+<div class="flex items-center justify-between pb-space-sm">
+<div class="flex items-center gap-2">
+<span class="w-8 h-8 rounded-lg bg-surface-container text-secondary flex items-center justify-center">
+<span class="material-symbols-outlined text-[18px]">local_shipping</span>
+</span>
+<h3 class="font-headline-sm text-headline-sm font-semibold text-on-surface">Rincian Status Pengiriman &amp; SLA</h3>
+</div>
+<span class="px-2.5 py-0.5 rounded-full bg-secondary-fixed text-on-secondary-fixed-variant font-label-caps text-label-caps uppercase font-bold">17,78% Risiko Macet</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant mb-space-md">
+          Pemantauan performa 3PL dan armada internal terhadap tingkat fulfillment order di seluruh gudang regional.
+        </p>
+<!-- Progress Bars & Status Ratios -->
+<div class="space-y-space-md">
+<div>
+<div class="flex justify-between font-body-sm text-body-sm mb-1">
+<span class="font-medium text-on-surface">Pengiriman Tepat Waktu (On Time SLA)</span>
+<span class="font-label-numeric text-label-numeric font-bold text-tertiary">62,93% (86.919 pesanan)</span>
+</div>
+<div class="w-full h-2.5 bg-surface-container rounded-full overflow-hidden">
+<div class="h-full bg-tertiary rounded-full" style="width: 62.93%;"></div>
+</div>
+</div>
+<div>
+<div class="flex justify-between font-body-sm text-body-sm mb-1">
+<span class="font-medium text-secondary">Tidak Dikirim / Gagal Pickup</span>
+<span class="font-label-numeric text-label-numeric font-bold text-secondary">17,78% (24.557 pesanan)</span>
+</div>
+<div class="w-full h-2.5 bg-surface-container rounded-full overflow-hidden">
+<div class="h-full bg-secondary-container rounded-full" style="width: 17.78%;"></div>
+</div>
+</div>
+<div>
+<div class="flex justify-between font-body-sm text-body-sm mb-1">
+<span class="font-medium text-on-surface">Terlambat dari Estimasi (Delayed SLA)</span>
+<span class="font-label-numeric text-label-numeric font-bold text-on-surface">12,23% (16.892 pesanan)</span>
+</div>
+<div class="w-full h-2.5 bg-surface-container rounded-full overflow-hidden">
+<div class="h-full bg-primary-container rounded-full" style="width: 12.23%;"></div>
+</div>
+</div>
+<div>
+<div class="flex justify-between font-body-sm text-body-sm mb-1">
+<span class="font-medium text-on-surface">Pengiriman Lebih Awal (Early Arrival)</span>
+<span class="font-label-numeric text-label-numeric font-bold text-on-surface">7,06% (9.752 pesanan)</span>
+</div>
+<div class="w-full h-2.5 bg-surface-container rounded-full overflow-hidden">
+<div class="h-full bg-surface-variant rounded-full" style="width: 7.06%;"></div>
+</div>
+</div>
+</div>
+</div>
+<!-- Delivery Alert Badge -->
+<div class="mt-space-md p-space-md rounded-lg bg-surface-container-low flex items-start gap-space-sm">
+<span class="material-symbols-outlined text-[20px] text-secondary shrink-0 mt-0.5">notification_important</span>
+<div class="text-body-sm">
+<strong class="font-semibold text-on-surface block">Peringatan Operasional 3PL:</strong>
+<span class="text-on-surface-variant">Sebanyak 24.557 order berada dalam status 'Tidak Dikirim' lebih dari 72 jam, menimbulkan potensi retur paksa senilai $4,12 juta omzet tertahan.</span>
+</div>
+</div>
+</div>
+</section>
+<!-- ==========================================
+       SECTION 6: BOTTOM RISK CARDS (KEANDALAN OPERASIONAL)
+       ========================================== -->
+<section class="bg-surface-container-lowest rounded-xl p-space-lg shadow-sm">
+<div class="flex flex-col sm:flex-row sm:items-center justify-between pb-space-md gap-2">
+<div>
+<span class="font-label-caps text-label-caps text-outline uppercase tracking-wider">Pemetaan Titik Rawan (Vulnerability Scan)</span>
+<h3 class="font-headline-sm text-headline-sm font-semibold text-on-surface">Kerugian &amp; Keandalan Operasional Portofolio</h3>
+</div>
+<div class="flex items-center gap-2">
+<span class="w-2 h-2 rounded-full bg-error"></span>
+<span class="font-label-caps text-label-caps uppercase text-error font-bold">4 Indikator Perlu Tindakan</span>
+</div>
+</div>
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-space-md mt-space-sm">
+<!-- Card 1: Kerugian Nilai Absolut -->
+<div class="bg-surface-container-low rounded-xl p-space-md flex flex-col justify-between">
+<div class="flex items-center justify-between">
+<span class="font-label-caps text-label-caps text-outline uppercase">Kerugian (Nilai Absolut)</span>
+<span class="material-symbols-outlined text-[18px] text-error">trending_down</span>
+</div>
+<div class="mt-space-sm">
+<span class="font-headline-md text-headline-md font-bold text-error tracking-tight">$426,31 ribu</span>
+<p class="font-body-sm text-body-sm text-outline mt-1">2.530 order mengalami margin negatif murni.</p>
+</div>
+</div>
+<!-- Card 2: Tingkat Pembatalan -->
+<div class="bg-surface-container-low rounded-xl p-space-md flex flex-col justify-between">
+<div class="flex items-center justify-between">
+<span class="font-label-caps text-label-caps text-outline uppercase">Tingkat Pembatalan</span>
+<span class="material-symbols-outlined text-[18px] text-secondary">cancel</span>
+</div>
+<div class="mt-space-sm">
+<span class="font-headline-md text-headline-md font-bold text-on-surface tracking-tight">6,08%</span>
+<p class="font-body-sm text-body-sm text-outline mt-1">8.390 pesanan gagal sebelum tahap packing.</p>
+</div>
+</div>
+<!-- Card 3: Tingkat Retur Total -->
+<div class="bg-surface-container-low rounded-xl p-space-md flex flex-col justify-between">
+<div class="flex items-center justify-between">
+<span class="font-label-caps text-label-caps text-outline uppercase">Tingkat Retur Portofolio</span>
+<span class="material-symbols-outlined text-[18px] text-secondary">replay</span>
+</div>
+<div class="mt-space-sm">
+<span class="font-headline-md text-headline-md font-bold text-on-surface tracking-tight">6,85%</span>
+<p class="font-body-sm text-body-sm text-outline mt-1">9.460 paket dikembalikan oleh pelanggan.</p>
+</div>
+</div>
+<!-- Card 4: Tidak Dikirim -->
+<div class="bg-surface-container-low rounded-xl p-space-md flex flex-col justify-between">
+<div class="flex items-center justify-between">
+<span class="font-label-caps text-label-caps text-outline uppercase">Rasio Tidak Dikirim</span>
+<span class="material-symbols-outlined text-[18px] text-secondary">warning_amber</span>
+</div>
+<div class="mt-space-sm">
+<span class="font-headline-md text-headline-md font-bold text-secondary tracking-tight">17,78%</span>
+<p class="font-body-sm text-body-sm text-outline mt-1">24.557 pesanan tertahan di hub logistik.</p>
+</div>
+</div>
+</div>
+</section>
+<!-- ==========================================
+       SECTION 7: BOTTOM STATUS & ENGINE SIGNATURE
+       ========================================== -->
+<footer class="flex flex-col sm:flex-row items-center justify-between px-space-md py-space-sm text-outline font-label-caps text-label-caps uppercase tracking-wider rounded-lg bg-surface-container-low">
+<div class="flex items-center gap-space-xs">
+<span class="w-1.5 h-1.5 rounded-full bg-tertiary"></span>
+<span>Algoritma Telemetri Core Aktif · Pipeline: Apache Spark SQL · Sinkronisasi Real-time</span>
+</div>
+<div class="flex items-center gap-space-md mt-1 sm:mt-0 font-label-numeric text-label-numeric">
+<span>Cluster: Node-AP-East-4</span>
+<span>·</span>
+<span>Latensi: 18ms</span>
+<span>·</span>
+<span class="text-on-surface font-semibold">v4.8.2-PROD</span>
+</div>
+</footer>
+</div></main></div></body></html>

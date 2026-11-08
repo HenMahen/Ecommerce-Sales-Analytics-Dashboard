@@ -1,0 +1,98 @@
+{
+  "definitions_version": "mvp-6",
+  "generated_at": "2026-10-17T07:27:00+00:00",
+  "source_rows": 138116,
+  "date_min": "2021-01-01",
+  "date_max": "2025-12-31",
+  "net_sales_basis": "merchandise_gross_minus_discount",
+  "totals": {
+    "gross_sales": 189962560.88,
+    "discount_amount": 32819346.82,
+    "net_sales": 157143214.06,
+    "product_cost": 97910908.71,
+    "profit": 59232305.35,
+    "orders": 138116,
+    "customers_active": 24911,
+    "customers_master": 25000,
+    "products_used": 1175
+  },
+  "margins": {
+    "aggregate_margin_pct": 37.69,
+    "avg_transaction_margin_pct": 41.16,
+    "primary_basis": "aggregate",
+    "net_sales_basis": "merchandise_gross_minus_discount"
+  },
+  "pass_through": {
+    "note": "Pajak dan ongkir tidak masuk revenue maupun profit; keduanya diteruskan (pass-through) dan dilaporkan terpisah. profit = net_sales - product_cost.",
+    "tax_collected": 16914090.41,
+    "shipping_billed": 3076959.27
+  },
+  "as_stored": {
+    "note": "Nilai apa adanya dari file sumber (net_sales = gross - discount + tax + shipping; profit = net_sales - product_cost - shipping_cost). Hanya untuk rekonsiliasi, bukan KPI.",
+    "net_sales": 177134263.74,
+    "profit": 76146395.76,
+    "aggregate_margin_pct": 42.99
+  },
+  "kpis": {
+    "avg_order_value": 1137.76,
+    "mean_rating": 3.677,
+    "repeat_customer_rate_customer_level_pct": 97.9,
+    "high_margin_transaction_share_pct": 92.01
+  },
+  "derived": {
+    "note": "Semua rumus bisnis dihitung di skrip ini, bukan di frontend.",
+    "profit_per_customer": 2377.76,
+    "orders_per_customer": 5.544,
+    "discount_rate_weighted_pct": 17.28,
+    "discount_rate_row_mean_pct": 15.12,
+    "discount_rate_row_median_pct": 12.75,
+    "discount_rate_row_max_pct": 60.02,
+    "loss_orders": 2530,
+    "total_loss": -426306.8,
+    "definitions": {
+      "profit_per_customer": "jumlah(profit) / pelanggan aktif (24.911 pelanggan yang muncul di transaksi, bukan 25.000 master)",
+      "orders_per_customer": "jumlah(order) / pelanggan aktif (24.911)",
+      "discount_rate_weighted_pct": "jumlah(discount_amount) / jumlah(gross_sales) x 100",
+      "discount_rate_row_mean_pct": "rerata tingkat diskon per baris",
+      "discount_rate_row_median_pct": "median tingkat diskon per baris",
+      "discount_rate_row_max_pct": "tingkat diskon baris tertinggi",
+      "loss_orders": "jumlah baris dengan profit < 0",
+      "total_loss": "jumlah(profit) pada baris profit < 0 (ditampilkan sebagai nilai absolut berlabel kerugian)"
+    }
+  },
+  "status_mix": {
+    "completed": 113559,
+    "pending": 6697,
+    "returned": 9462,
+    "cancelled": 8398
+  },
+  "status_margins": {
+    "Cancelled": {
+      "orders": 8398,
+      "net_sales": 10077627.96,
+      "profit": 4881905.22,
+      "aggregate_margin_pct": 48.44
+    },
+    "Completed": {
+      "orders": 113559,
+      "net_sales": 127907006.57,
+      "profit": 45998727.67,
+      "aggregate_margin_pct": 35.96
+    },
+    "Pending": {
+      "orders": 6697,
+      "net_sales": 7466377.45,
+      "profit": 2695747.53,
+      "aggregate_margin_pct": 36.11
+    },
+    "Returned": {
+      "orders": 9462,
+      "net_sales": 11692202.08,
+      "profit": 5655924.93,
+      "aggregate_margin_pct": 48.37
+    }
+  },
+  "return_rate_pct": 6.85,
+  "cancellation_rate_pct": 6.08,
+  "undelivered_rate_pct": 17.78
+}

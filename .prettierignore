@@ -1,0 +1,13 @@
+# Build output and dependencies
+dist
+node_modules
+.venv
+
+# Generated data and lockfiles
+package-lock.json
+data/processed
+public/data
+
+# Documentation and notebooks are not reformatted by Prettier
+*.md
+*.ipynb

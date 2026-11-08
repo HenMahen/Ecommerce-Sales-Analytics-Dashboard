@@ -1,0 +1,817 @@
+<!DOCTYPE html><html class="dark" lang="en"><head><meta charset="utf-8"><meta content="width=device-width, initial-scale=1.0" name="viewport"><meta content="web_dashboard" name="shell-type"><link href="https://fonts.googleapis.com" rel="preconnect"><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"><link href="https://fonts.googleapis.com/css2?family=Geist:wght@300;400;500;600;700&amp;family=JetBrains+Mono:wght@400;500;600;700&amp;family=Space+Grotesk:wght@500;600;700&amp;display=swap" rel="stylesheet"><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"><style>@layer base{html,body{margin:0;padding:0;}body{overscroll-behavior:none;background-color:#151120;}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script><script id="tailwind-config">tailwind.config={darkMode:"class",theme:{extend:{colors:{"on-background":"#e8dff5","surface-variant":"#373243","tertiary":"#bcc2ff","error":"#ffb4ab","on-secondary-fixed-variant":"#7000a7","surface-container-high":"#2c2738","on-surface-variant":"#e0bdcd","on-primary-fixed":"#3c002a","secondary":"#e5b4ff","secondary-container":"#9a00e4","tertiary-fixed-dim":"#bcc2ff","on-tertiary-fixed-variant":"#0024d8","secondary-fixed":"#f5d9ff","on-tertiary-container":"#001389","on-error":"#690005","primary-container":"#ff3ac2","on-primary-container":"#55003e","on-secondary-fixed":"#30004b","inverse-primary":"#b30085","on-secondary":"#4f0077","on-secondary-container":"#f3d6ff","inverse-surface":"#e8dff5","tertiary-container":"#7686ff","surface-dim":"#151120","error-container":"#93000a","primary-fixed":"#ffd8ea","on-primary":"#610047","outline":"#a78897","inverse-on-surface":"#332e3f","secondary-fixed-dim":"#e5b4ff","surface-container-highest":"#373243","surface-tint":"#ffaeda","primary-fixed-dim":"#ffaeda","surface-container-low":"#1d1929","on-tertiary":"#00179b","primary":"#ffaeda","on-tertiary-fixed":"#000b62","surface":"#151120","surface-bright":"#3c3748","on-error-container":"#ffdad6","on-surface":"#e8dff5","background":"#151120","tertiary-fixed":"#dfe0ff","outline-variant":"#593f4c","surface-container":"#221d2d","surface-container-lowest":"#100c1b","on-primary-fixed-variant":"#890065"},borderRadius:{"DEFAULT":"0.125rem","lg":"0.25rem","xl":"0.5rem","full":"0.75rem"},spacing:{"space-2xl":"3rem","space-md":"1rem","space-xs":"0.5rem","margin-tablet":"2rem","margin":"1rem","margin-desktop":"3rem","space-2xs":"0.25rem","space-3xl":"4.5rem","gutter":"1.25rem","space-lg":"1.5rem","space-sm":"0.75rem","gutter-desktop":"1.75rem","space-xl":"2rem"},fontFamily:{"headline-lg":["Space Grotesk"],"label-sm":["JetBrains Mono"],"display-hero":["Space Grotesk"],"headline-sm":["Space Grotesk"],"body-sm":["Geist"],"body-lg":["Geist"],"headline-lg-mobile":["Space Grotesk"],"label-lg":["JetBrains Mono"],"label-md":["JetBrains Mono"],"display-hero-mobile":["Space Grotesk"],"headline-md":["Space Grotesk"],"body-md":["Geist"]},fontSize:{"headline-lg":["36px",{"lineHeight":"44px","letterSpacing":"-0.02em","fontWeight":"600"}],"label-sm":["10px",{"lineHeight":"14px","letterSpacing":"0.06em","fontWeight":"600"}],"display-hero":["56px",{"lineHeight":"64px","letterSpacing":"-0.03em","fontWeight":"700"}],"headline-sm":["20px",{"lineHeight":"28px","letterSpacing":"0em","fontWeight":"500"}],"body-sm":["12px",{"lineHeight":"16px","letterSpacing":"0.01em","fontWeight":"400"}],"body-lg":["16px",{"lineHeight":"24px","letterSpacing":"-0.005em","fontWeight":"400"}],"headline-lg-mobile":["26px",{"lineHeight":"34px","letterSpacing":"-0.01em","fontWeight":"600"}],"label-lg":["14px",{"lineHeight":"20px","letterSpacing":"0.02em","fontWeight":"500"}],"label-md":["12px",{"lineHeight":"16px","letterSpacing":"0.04em","fontWeight":"500"}],"display-hero-mobile":["36px",{"lineHeight":"44px","letterSpacing":"-0.02em","fontWeight":"700"}],"headline-md":["24px",{"lineHeight":"32px","letterSpacing":"-0.01em","fontWeight":"600"}],"body-md":["14px",{"lineHeight":"20px","letterSpacing":"0em","fontWeight":"400"}]}}}};</script></head><body class="bg-surface font-body-md text-on-surface antialiased selection:bg-primary-container selection:text-on-primary-container"><aside class="fixed left-0 top-0 h-full w-72 bg-surface-container-lowest/90 backdrop-blur-xl z-50 flex flex-col justify-between shadow-[0_1px_8px_rgba(0,0,0,0.04)]" style="background: rgba(16, 12, 27, 0.88); backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px); border-right: 1px solid rgba(255, 28, 192, 0.12); box-shadow: 4px 0 30px rgba(0, 0, 0, 0.5);"><div class="flex flex-col"><div class="h-16 px-space-lg flex items-center justify-between"><div class="flex items-center gap-space-sm"><div class="w-8 h-8 rounded-lg bg-surface-container-high flex items-center justify-center shadow-[0_0_16px_rgba(255,28,192,0.45)]"><span class="material-symbols-outlined text-primary text-[20px]">insights</span></div><div class="flex flex-col"><span class="font-headline-sm text-headline-sm font-semibold tracking-tight text-on-surface leading-none">EXECUTIVE</span><span class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-widest mt-1">E-Commerce Core</span></div></div></div><div class="px-space-md py-space-xs"><div class="px-space-sm py-space-2xs"><span class="font-label-sm text-label-sm uppercase tracking-wider text-outline">Navigasi Utama</span></div></div><nav class="px-space-md flex flex-col gap-space-2xs"><a class="group relative flex items-center gap-space-sm px-space-md py-space-sm rounded-xl text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all" data-path="ringkasan-eksekutif" href="#"><span class="material-symbols-outlined text-[20px] transition-colors group-hover:text-primary">speed</span><span class="font-body-md text-body-md flex-1">Ringkasan Eksekutif</span></a><a class="group relative flex items-center gap-space-sm px-space-md py-space-sm rounded-xl text-on-surface bg-surface-container-high font-semibold shadow-[0_0_16px_rgba(255,28,192,0.35)] transition-all" data-path="sales-profitabilitas" href="#"><span class="material-symbols-outlined text-[20px] text-primary">monitoring</span><span class="font-body-md text-body-md flex-1">Sales &amp; Profitabilitas</span><div class="w-1.5 h-4 rounded-full bg-gradient-to-b from-[#FF1CC0] to-[#B131FA] shadow-[0_0_8px_rgba(255,28,192,0.7)] ml-auto"></div></a><a class="group relative flex items-center gap-space-sm px-space-md py-space-sm rounded-xl text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all" data-path="customer-intelligence" href="#"><span class="material-symbols-outlined text-[20px] transition-colors group-hover:text-primary">hub</span><span class="font-body-md text-body-md flex-1">Customer Intelligence</span></a><a class="group relative flex items-center gap-space-sm px-space-md py-space-sm rounded-xl text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all" data-path="transaction-explorer" href="#"><span class="material-symbols-outlined text-[20px] transition-colors group-hover:text-primary">receipt_long</span><span class="font-body-md text-body-md flex-1">Transaction Explorer</span></a></nav></div><div class="p-space-md flex flex-col gap-space-sm"><div class="p-space-sm rounded-xl bg-surface-container/50 backdrop-blur-md flex items-center justify-between border border-white/5"><div class="flex items-center gap-space-xs"><div class="w-2 h-2 rounded-full bg-[#00FFA3] shadow-[0_0_6px_rgba(0,255,163,0.8)]"></div><span class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider">Node Synced</span></div><span class="font-label-sm text-label-sm text-tertiary font-mono">v4.8.2</span></div><button class="w-full flex items-center justify-center gap-space-xs px-space-md py-space-sm rounded-xl bg-surface-container hover:bg-surface-container-high text-on-surface-variant hover:text-on-surface transition-all border border-white/5" type="button"><span class="material-symbols-outlined text-[18px]">keyboard_double_arrow_left</span><span class="font-label-md text-label-md font-medium tracking-wide uppercase">Kecilkan</span></button></div></aside><div class="pl-72"><header class="fixed top-0 left-72 right-0 h-16 bg-surface-container-lowest/80 backdrop-blur-xl z-40 flex items-center justify-between px-space-xl" style="background: rgba(21, 17, 32, 0.85); backdrop-filter: blur(16px); -webkit-backdrop-filter: blur(16px); border-bottom: 1px solid rgba(255, 28, 192, 0.15); box-shadow: 0 4px 24px rgba(0, 0, 0, 0.45);"><div class="flex items-center gap-space-md"><div class="flex items-center gap-space-xs font-body-sm text-body-sm text-on-surface-variant"><span class="text-on-surface-variant hover:text-on-surface transition-colors cursor-pointer">Dashboard Sales</span><span class="font-label-sm text-outline">/</span><span class="font-medium text-on-surface">Sales &amp; Profitabilitas</span></div><div class="h-4 w-px bg-surface-variant"></div><div class="flex items-center gap-space-2xs px-space-sm py-space-2xs rounded-full bg-surface-container-high border border-white/10"><span class="material-symbols-outlined text-primary text-[14px]">calendar_today</span><span class="font-label-sm text-label-sm text-on-surface font-medium tracking-wide">2021–2025</span><span class="material-symbols-outlined text-on-surface-variant text-[14px]">expand_more</span></div></div><div class="flex items-center gap-space-md"><div class="flex items-center gap-space-xs"><button class="flex items-center gap-space-2xs px-space-sm py-space-2xs rounded-xl bg-surface-container hover:bg-surface-container-high text-on-surface-variant hover:text-on-surface transition-all border border-white/5" type="button"><span class="material-symbols-outlined text-[16px]">tune</span><span class="font-label-sm text-label-sm uppercase tracking-wide">Filter Cepat</span></button><button class="w-9 h-9 rounded-xl bg-surface-container hover:bg-surface-container-high text-on-surface-variant hover:text-on-surface flex items-center justify-center transition-all border border-white/5" type="button"><span class="material-symbols-outlined text-[18px]">dark_mode</span></button><button class="relative w-9 h-9 rounded-xl bg-surface-container hover:bg-surface-container-high text-on-surface-variant hover:text-on-surface flex items-center justify-center transition-all border border-white/5" type="button"><span class="material-symbols-outlined text-[18px]">notifications</span><span class="absolute top-2 right-2 w-1.5 h-1.5 rounded-full bg-primary-container shadow-[0_0_6px_rgba(255,28,192,0.8)]"></span></button></div><div class="h-6 w-px bg-surface-variant"></div><div class="flex items-center gap-space-sm"><div class="flex flex-col text-right"><span class="font-label-md text-label-md text-on-surface font-medium leading-none">Chief Officer</span><span class="font-label-sm text-label-sm text-outline-variant mt-1 leading-none">Enterprise</span></div><div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center shadow-[0_0_12px_rgba(255,174,218,0.35)]"><span class="material-symbols-outlined text-on-primary text-[18px]">person</span></div></div></div></header><main class="w-full pt-16 bg-surface min-h-screen"><div class="flex flex-col w-full"><div class="px-space-md lg:px-space-xl py-space-lg flex flex-col gap-space-lg max-w-[1600px] mx-auto w-full">
+<!-- TOP FILTER BAR -->
+<div class="rounded-2xl p-space-md flex flex-col gap-space-sm border border-white/10" style="background: rgba(29, 25, 41, 0.7); backdrop-filter: blur(16px); box-shadow: 0 4px 24px rgba(0,0,0,0.35);">
+<div class="grid grid-cols-2 md:grid-cols-3 xl:grid-cols-6 gap-space-sm">
+<!-- Filter 1: Tahun -->
+<div class="flex flex-col gap-1">
+<label class="font-label-sm text-label-sm text-outline uppercase tracking-wider">Tahun</label>
+<div class="relative">
+<select class="w-full bg-surface-container-lowest/80 text-on-surface font-body-sm text-body-sm rounded-lg px-space-sm py-2 appearance-none focus:outline-none cursor-pointer border border-white/5">
+<option selected="">Semua tahun</option>
+<option>2025</option>
+<option>2024</option>
+<option>2023</option>
+<option>2022</option>
+<option>2021</option>
+</select>
+<span class="material-symbols-outlined absolute right-2 top-2.5 text-[16px] text-outline pointer-events-none">expand_more</span>
+</div>
+</div>
+<!-- Filter 2: Dari Bulan -->
+<div class="flex flex-col gap-1">
+<label class="font-label-sm text-label-sm text-outline uppercase tracking-wider">Dari bulan</label>
+<div class="relative">
+<select class="w-full bg-surface-container-lowest/80 text-on-surface font-body-sm text-body-sm rounded-lg px-space-sm py-2 appearance-none focus:outline-none cursor-pointer border border-white/5">
+<option selected="">Jan 2021</option>
+<option>Jul 2021</option>
+<option>Jan 2022</option>
+<option>Jan 2023</option>
+</select>
+<span class="material-symbols-outlined absolute right-2 top-2.5 text-[16px] text-outline pointer-events-none">expand_more</span>
+</div>
+</div>
+<!-- Filter 3: Sampai Bulan -->
+<div class="flex flex-col gap-1">
+<label class="font-label-sm text-label-sm text-outline uppercase tracking-wider">Sampai bulan</label>
+<div class="relative">
+<select class="w-full bg-surface-container-lowest/80 text-on-surface font-body-sm text-body-sm rounded-lg px-space-sm py-2 appearance-none focus:outline-none cursor-pointer border border-white/5">
+<option selected="">Des 2025</option>
+<option>Nov 2025</option>
+<option>Okt 2025</option>
+<option>Des 2024</option>
+</select>
+<span class="material-symbols-outlined absolute right-2 top-2.5 text-[16px] text-outline pointer-events-none">expand_more</span>
+</div>
+</div>
+<!-- Filter 4: Segmen Pelanggan -->
+<div class="flex flex-col gap-1">
+<label class="font-label-sm text-label-sm text-outline uppercase tracking-wider">Segmen pelanggan</label>
+<div class="relative">
+<select class="w-full bg-surface-container-lowest/80 text-on-surface font-body-sm text-body-sm rounded-lg px-space-sm py-2 appearance-none focus:outline-none cursor-pointer border border-white/5">
+<option selected="">Semua segmen</option>
+<option>Enterprise</option>
+<option>SMB / Retail</option>
+<option>Individual</option>
+</select>
+<span class="material-symbols-outlined absolute right-2 top-2.5 text-[16px] text-outline pointer-events-none">expand_more</span>
+</div>
+</div>
+<!-- Filter 5: Sales Channel -->
+<div class="flex flex-col gap-1">
+<label class="font-label-sm text-label-sm text-outline uppercase tracking-wider">Sales channel</label>
+<div class="relative">
+<select class="w-full bg-surface-container-lowest/80 text-on-surface font-body-sm text-body-sm rounded-lg px-space-sm py-2 appearance-none focus:outline-none cursor-pointer border border-white/5">
+<option selected="">Semua channel</option>
+<option>Mobile App</option>
+<option>Website</option>
+<option>Marketplace</option>
+<option>Social Media</option>
+</select>
+<span class="material-symbols-outlined absolute right-2 top-2.5 text-[16px] text-outline pointer-events-none">expand_more</span>
+</div>
+</div>
+<!-- Filter 6: Status Order -->
+<div class="flex flex-col gap-1">
+<label class="font-label-sm text-label-sm text-outline uppercase tracking-wider">Status order</label>
+<div class="relative">
+<select class="w-full bg-surface-container-lowest/80 text-on-surface font-body-sm text-body-sm rounded-lg px-space-sm py-2 appearance-none focus:outline-none cursor-pointer border border-white/5">
+<option selected="">Semua status</option>
+<option>Completed</option>
+<option>Shipped</option>
+<option>Returned</option>
+<option>Cancelled</option>
+</select>
+<span class="material-symbols-outlined absolute right-2 top-2.5 text-[16px] text-outline pointer-events-none">expand_more</span>
+</div>
+</div>
+</div>
+<div class="flex flex-wrap items-center justify-between pt-space-xs gap-space-sm">
+<div class="flex items-center gap-space-xs font-label-sm text-label-sm text-on-surface-variant">
+<span class="w-2 h-2 rounded-full bg-primary shadow-[0_0_8px_rgba(255,174,218,0.8)]"></span>
+<span class="font-medium text-on-surface">Tanpa filter</span>
+<span class="text-outline">·</span>
+<span class="">Seluruh periode 2021–2025</span>
+</div>
+<button class="flex items-center gap-space-2xs px-space-md py-1.5 rounded-lg bg-surface-container-high/90 hover:bg-surface-bright text-on-surface-variant hover:text-primary transition-all font-label-sm text-label-sm cursor-pointer border border-white/10 shadow-[0_0_12px_rgba(255,28,192,0.15)]" type="button">
+<span class="material-symbols-outlined text-[16px]">restart_alt</span>
+<span class="">Hapus semua filter</span>
+</button>
+</div>
+</div>
+<!-- PAGE HEADER TITLE & QUICK METADATA -->
+<div class="flex flex-col md:flex-row md:items-center justify-between gap-space-md">
+<div class="flex items-center gap-space-md">
+<div class="w-12 h-12 rounded-xl bg-gradient-to-tr from-[#1C3AFF] via-[#B131FA] to-[#FF1CC0] p-[2px] shadow-[0_0_24px_rgba(255,28,192,0.45)]">
+<div class="w-full h-full rounded-[10px] bg-surface-container-lowest flex items-center justify-center">
+<span class="material-symbols-outlined text-primary text-[26px]">show_chart</span>
+</div>
+</div>
+<div class="flex flex-col">
+<h1 class="font-headline-lg text-headline-lg text-on-surface tracking-tight leading-tight font-bold">Sales &amp; Profitabilitas</h1>
+<p class="font-body-md text-body-md text-on-surface-variant mt-0.5">Tren penjualan dan profit bulanan-tahunan, perbandingan saluran, serta analisis diskon dan margin.</p>
+</div>
+</div>
+<div class="flex items-center gap-space-2xs self-start md:self-auto px-space-md py-1.5 rounded-full bg-surface-container-high/80 backdrop-blur-md border border-white/10">
+<span class="w-2 h-2 rounded-full bg-primary shadow-[0_0_6px_rgba(255,28,192,0.8)]"></span>
+<span class="font-label-sm text-label-sm font-semibold text-on-surface">Tanpa filter</span>
+<span class="text-outline font-label-sm text-label-sm">·</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Seluruh periode 2021–2025</span>
+</div>
+</div>
+<!-- 8 KPI CARDS GRID -->
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-space-md"><!-- 1. Gross Sales -->
+<div class="group p-space-md rounded-2xl transition-all flex flex-col justify-between shadow-lg relative overflow-hidden border border-white/10 hover:border-primary/50" style="background: rgba(29, 25, 41, 0.7); backdrop-filter: blur(14px); box-shadow: 0 4px 20px rgba(0,0,0,0.35);">
+<div class="flex items-center justify-between mb-space-sm">
+<span class="font-label-sm text-label-sm uppercase tracking-wider text-outline">GROSS SALES</span>
+<div class="w-9 h-9 rounded-lg bg-gradient-to-tr from-[#FF1CC0] to-[#B131FA] flex items-center justify-center text-white shadow-[0_0_16px_rgba(255,28,192,0.6)] group-hover:scale-105 transition-transform">
+<span class="material-symbols-outlined text-[18px]">trending_up</span>
+</div>
+</div>
+<div class="flex items-baseline justify-between mt-1">
+<div class="font-headline-md text-headline-md font-semibold text-on-surface">$189,96 juta</div>
+<span class="px-2 py-0.5 rounded-full text-[11px] font-mono font-semibold bg-[#00FFA3]/15 text-[#00FFA3] border border-[#00FFA3]/30 shadow-[0_0_8px_rgba(0,255,163,0.3)]">+4,2%</span>
+</div>
+</div>
+<!-- 2. Total Diskon Diberikan -->
+<div class="group p-space-md rounded-2xl transition-all flex flex-col justify-between shadow-lg relative overflow-hidden border border-white/10 hover:border-secondary/50" style="background: rgba(29, 25, 41, 0.7); backdrop-filter: blur(14px); box-shadow: 0 4px 20px rgba(0,0,0,0.35);">
+<div class="flex items-center justify-between mb-space-sm">
+<span class="font-label-sm text-label-sm uppercase tracking-wider text-outline">TOTAL DISKON DIBERIKAN</span>
+<div class="w-9 h-9 rounded-lg bg-gradient-to-tr from-[#B131FA] to-[#e5b4ff] flex items-center justify-center text-[#151120] shadow-[0_0_16px_rgba(177,49,250,0.5)] group-hover:scale-105 transition-transform">
+<span class="material-symbols-outlined text-[18px]">sell</span>
+</div>
+</div>
+<div class="flex items-baseline justify-between mt-1">
+<div class="font-headline-md text-headline-md font-semibold text-on-surface">$32,82 juta</div>
+<span class="px-2 py-0.5 rounded-full text-[11px] font-mono font-semibold bg-secondary/15 text-secondary border border-secondary/30 shadow-[0_0_8px_rgba(229,180,255,0.3)]">17,3%</span>
+</div>
+</div>
+<!-- 3. Tingkat Diskon Terbobot -->
+<div class="group p-space-md rounded-2xl transition-all flex flex-col justify-between shadow-lg relative overflow-hidden border border-white/10 hover:border-tertiary/50" style="background: rgba(29, 25, 41, 0.7); backdrop-filter: blur(14px); box-shadow: 0 4px 20px rgba(0,0,0,0.35);">
+<div class="flex items-center justify-between mb-space-sm">
+<span class="font-label-sm text-label-sm uppercase tracking-wider text-outline">TINGKAT DISKON TERBOBOT</span>
+<div class="w-9 h-9 rounded-lg bg-gradient-to-tr from-[#1C3AFF] to-[#7686ff] flex items-center justify-center text-white shadow-[0_0_16px_rgba(28,58,255,0.55)] group-hover:scale-105 transition-transform">
+<span class="material-symbols-outlined text-[18px]">pie_chart</span>
+</div>
+</div>
+<div class="flex items-baseline justify-between mt-1">
+<div class="font-headline-md text-headline-md font-semibold text-on-surface">17,28%</div>
+<span class="px-2 py-0.5 rounded-full text-[11px] font-mono font-semibold bg-tertiary-container/20 text-[#bcc2ff] border border-tertiary-container/30">Target &lt;18%</span>
+</div>
+</div>
+<!-- 4. Net Sales -->
+<div class="group p-space-md rounded-2xl transition-all flex flex-col justify-between shadow-lg relative overflow-hidden border border-white/10 hover:border-primary-container/50" style="background: rgba(29, 25, 41, 0.7); backdrop-filter: blur(14px); box-shadow: 0 4px 20px rgba(0,0,0,0.35);">
+<div class="flex items-center justify-between mb-space-sm">
+<span class="font-label-sm text-label-sm uppercase tracking-wider text-outline">NET SALES</span>
+<div class="w-9 h-9 rounded-lg bg-gradient-to-tr from-[#FF1CC0] to-[#FF3AC2] flex items-center justify-center text-white shadow-[0_0_18px_rgba(255,28,192,0.65)] group-hover:scale-105 transition-transform">
+<span class="material-symbols-outlined text-[18px]">account_balance_wallet</span>
+</div>
+</div>
+<div class="flex items-baseline justify-between mt-1">
+<div class="font-headline-md text-headline-md font-semibold text-on-surface">$157,14 juta</div>
+<span class="px-2 py-0.5 rounded-full text-[11px] font-mono font-semibold bg-[#FF1CC0]/15 text-[#ffaeda] border border-[#FF1CC0]/30 shadow-[0_0_8px_rgba(255,28,192,0.3)]">82,7% Gross</span>
+</div>
+</div>
+<!-- 5. Profit -->
+<div class="group p-space-md rounded-2xl transition-all flex flex-col justify-between shadow-lg relative overflow-hidden border border-white/10 hover:border-tertiary-container/50" style="background: rgba(29, 25, 41, 0.7); backdrop-filter: blur(14px); box-shadow: 0 4px 20px rgba(0,0,0,0.35);">
+<div class="flex items-center justify-between mb-space-sm">
+<span class="font-label-sm text-label-sm uppercase tracking-wider text-outline">PROFIT</span>
+<div class="w-9 h-9 rounded-lg bg-gradient-to-tr from-[#1C3AFF] via-[#7686ff] to-[#B131FA] flex items-center justify-center text-white shadow-[0_0_18px_rgba(118,134,255,0.6)] group-hover:scale-105 transition-transform">
+<span class="material-symbols-outlined text-[18px]">savings</span>
+</div>
+</div>
+<div class="flex items-baseline justify-between mt-1">
+<div class="font-headline-md text-headline-md font-semibold text-on-surface">$59,23 juta</div>
+<span class="px-2 py-0.5 rounded-full text-[11px] font-mono font-semibold bg-[#00FFA3]/15 text-[#00FFA3] border border-[#00FFA3]/30 shadow-[0_0_8px_rgba(0,255,163,0.3)]">+3,8% YoY</span>
+</div>
+</div>
+<!-- 6. Margin Keseluruhan -->
+<div class="group p-space-md rounded-2xl transition-all flex flex-col justify-between shadow-lg relative overflow-hidden border border-white/10 hover:border-secondary/50" style="background: rgba(29, 25, 41, 0.7); backdrop-filter: blur(14px); box-shadow: 0 4px 20px rgba(0,0,0,0.35);">
+<div class="flex items-center justify-between mb-space-sm">
+<span class="font-label-sm text-label-sm uppercase tracking-wider text-outline">MARGIN KESELURUHAN</span>
+<div class="w-9 h-9 rounded-lg bg-gradient-to-tr from-[#B131FA] to-[#FF1CC0] flex items-center justify-center text-white shadow-[0_0_16px_rgba(177,49,250,0.6)] group-hover:scale-105 transition-transform">
+<span class="material-symbols-outlined text-[18px]">percent</span>
+</div>
+</div>
+<div class="flex items-baseline justify-between mt-1">
+<div class="font-headline-md text-headline-md font-semibold text-on-surface">37,69%</div>
+<span class="px-2 py-0.5 rounded-full text-[11px] font-mono font-semibold bg-[#B131FA]/20 text-[#e5b4ff] border border-[#B131FA]/40 shadow-[0_0_8px_rgba(177,49,250,0.35)]">Sehat &gt;35%</span>
+</div>
+</div>
+<!-- 7. Order -->
+<div class="group p-space-md rounded-2xl transition-all flex flex-col justify-between shadow-lg relative overflow-hidden border border-white/10 hover:border-[#00FFA3]/50" style="background: rgba(29, 25, 41, 0.7); backdrop-filter: blur(14px); box-shadow: 0 4px 20px rgba(0,0,0,0.35);">
+<div class="flex items-center justify-between mb-space-sm">
+<span class="font-label-sm text-label-sm uppercase tracking-wider text-outline">ORDER</span>
+<div class="w-9 h-9 rounded-lg bg-gradient-to-tr from-[#00FFA3] to-[#1C3AFF] flex items-center justify-center text-[#151120] shadow-[0_0_18px_rgba(0,255,163,0.5)] group-hover:scale-105 transition-transform">
+<span class="material-symbols-outlined text-[18px]">shopping_cart</span>
+</div>
+</div>
+<div class="flex items-baseline justify-between mt-1">
+<div class="font-headline-md text-headline-md font-semibold text-on-surface">138,12 ribu</div>
+<span class="px-2 py-0.5 rounded-full text-[11px] font-mono font-semibold bg-[#00FFA3]/15 text-[#00FFA3] border border-[#00FFA3]/30 shadow-[0_0_8px_rgba(0,255,163,0.3)]">+1,8%</span>
+</div>
+</div>
+<!-- 8. Nilai Kerugian -->
+<div class="group p-space-md rounded-2xl transition-all flex flex-col justify-between shadow-lg relative overflow-hidden border border-error/30 hover:border-error/60" style="background: rgba(29, 25, 41, 0.7); backdrop-filter: blur(14px); box-shadow: 0 4px 20px rgba(0,0,0,0.35), 0 0 16px rgba(255,180,171,0.12);">
+<div class="flex items-center justify-between mb-space-sm">
+<span class="font-label-sm text-label-sm uppercase tracking-wider text-outline">NILAI KERUGIAN</span>
+<div class="w-9 h-9 rounded-lg bg-gradient-to-tr from-[#690005] via-[#93000a] to-[#FF1CC0] flex items-center justify-center text-error shadow-[0_0_16px_rgba(255,180,171,0.45)] group-hover:scale-105 transition-transform">
+<span class="material-symbols-outlined text-[18px]">warning</span>
+</div>
+</div>
+<div class="flex items-baseline justify-between mt-1">
+<div class="font-headline-md text-headline-md font-semibold text-on-surface">$426,31 ribu</div>
+<span class="px-2 py-0.5 rounded-full text-[11px] font-mono font-semibold bg-error/15 text-error border border-error/30 shadow-[0_0_6px_rgba(255,180,171,0.3)]">0,27% Sales</span>
+</div>
+</div></div>
+<!-- MAIN DUAL-AXIS CHART: TREN PENJUALAN BERSIH & PROFIT -->
+<div class="rounded-2xl p-space-lg shadow-xl flex flex-col gap-space-md border border-white/10" style="background: rgba(29, 25, 41, 0.75); backdrop-filter: blur(16px); box-shadow: 0 8px 32px rgba(0, 0, 0, 0.45), 0 0 20px rgba(177, 49, 250, 0.1);"><!-- Chart Top Bar -->
+<div class="flex flex-col lg:flex-row lg:items-center justify-between gap-space-md">
+<div class="flex items-center gap-space-sm">
+<div class="w-9 h-9 rounded-lg bg-gradient-to-tr from-[#FF1CC0] to-[#B131FA] flex items-center justify-center text-white shadow-[0_0_16px_rgba(255,28,192,0.6)]">
+<span class="material-symbols-outlined text-[18px]">stacked_bar_chart</span>
+</div>
+<div class="flex flex-col">
+<span class="font-headline-sm text-headline-sm font-semibold text-on-surface">Tren penjualan bersih &amp; profit</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Dinamika omzet bulanan, profitabilitas, serta margin operasional lintas waktu</span>
+</div>
+</div>
+<div class="flex flex-wrap items-center gap-space-md">
+<span class="px-space-sm py-1 rounded-full bg-surface-container-high/90 border border-primary/20 text-primary font-label-sm text-label-sm shadow-[0_0_8px_rgba(255,174,218,0.2)]">
+      Seluruh periode 2021–2025
+    </span>
+<!-- Time Granularity Selector -->
+<div class="flex items-center bg-surface-container-lowest p-1 rounded-lg border border-white/10">
+<button class="px-space-sm py-1 rounded font-label-sm text-label-sm bg-gradient-to-r from-[#FF1CC0] to-[#B131FA] text-white font-semibold shadow-[0_0_12px_rgba(255,28,192,0.5)] transition-all" type="button">Bulanan</button>
+<button class="px-space-sm py-1 rounded font-label-sm text-label-sm text-on-surface-variant hover:text-on-surface transition-all" type="button">Kuartalan</button>
+<button class="px-space-sm py-1 rounded font-label-sm text-label-sm text-on-surface-variant hover:text-on-surface transition-all" type="button">Tahunan</button>
+</div>
+</div>
+</div>
+<!-- Chart Legend -->
+<div class="flex flex-wrap items-center gap-space-lg pt-space-xs font-label-sm text-label-sm">
+<div class="flex items-center gap-space-xs">
+<span class="w-3.5 h-2 rounded bg-gradient-to-t from-[#1C3AFF] via-[#B131FA] to-[#FF1CC0] shadow-[0_0_8px_rgba(255,28,192,0.5)]"></span>
+<span class="text-on-surface font-medium">Net sales</span>
+</div>
+<div class="flex items-center gap-space-xs">
+<span class="w-4 h-1 rounded bg-[#00FFA3] shadow-[0_0_8px_rgba(0,255,163,0.8)]"></span>
+<span class="text-[#00FFA3] font-medium">Profit</span>
+</div>
+<div class="flex items-center gap-space-xs">
+<span class="w-4 h-0.5 border-t-2 border-dashed border-[#FF1CC0] shadow-[0_0_6px_rgba(255,28,192,0.8)]"></span>
+<span class="text-[#ffaeda] font-medium">Margin keseluruhan</span>
+</div>
+</div>
+<!-- Visual Dual-Axis Chart Canvas (Inline Scalable SVG) -->
+<div class="relative w-full h-80 overflow-hidden pt-2">
+<svg class="w-full h-full" preserveAspectRatio="none" viewBox="0 0 1000 300">
+<defs>
+<!-- Vibrant Bar Gradient -->
+<linearGradient id="vibrantBarGrad" x1="0" x2="0" y1="0" y2="1">
+<stop offset="0%" stop-color="#FF1CC0" stop-opacity="0.95"></stop>
+<stop offset="40%" stop-color="#B131FA" stop-opacity="0.85"></stop>
+<stop offset="100%" stop-color="#1C3AFF" stop-opacity="0.6"></stop>
+</linearGradient>
+<!-- Peak Bar Highlight -->
+<linearGradient id="superPeakGrad" x1="0" x2="0" y1="0" y2="1">
+<stop offset="0%" stop-color="#FF3AC2" stop-opacity="1"></stop>
+<stop offset="30%" stop-color="#FF1CC0" stop-opacity="0.95"></stop>
+<stop offset="100%" stop-color="#B131FA" stop-opacity="0.75"></stop>
+</linearGradient>
+<filter height="140%" id="neonGlowCyan" width="140%" x="-20%" y="-20%">
+<feGaussianBlur result="blur" stdDeviation="2.5"></feGaussianBlur>
+<feMerge>
+<feMergeNode in="blur"></feMergeNode>
+<feMergeNode in="SourceGraphic"></feMergeNode>
+</feMerge>
+</filter>
+<filter height="140%" id="neonGlowPink" width="140%" x="-20%" y="-20%">
+<feGaussianBlur result="blur" stdDeviation="2"></feGaussianBlur>
+<feMerge>
+<feMergeNode in="blur"></feMergeNode>
+<feMergeNode in="SourceGraphic"></feMergeNode>
+</feMerge>
+</filter>
+</defs>
+<!-- Y-Axis Gridlines & Left Labels ($0 - $6 jt) & Right Labels (20% - 50%) -->
+<line stroke="rgba(255, 255, 255, 0.07)" stroke-dasharray="3 3" x1="50" x2="950" y1="20" y2="20"></line>
+<text fill="#a78897" font-family="JetBrains Mono" font-size="10" text-anchor="end" x="45" y="24">$6 jt</text>
+<text fill="#ffaeda" font-family="JetBrains Mono" font-size="10" text-anchor="start" x="955" y="24">50%</text>
+<line stroke="rgba(255, 255, 255, 0.07)" stroke-dasharray="3 3" x1="50" x2="950" y1="70" y2="70"></line>
+<text fill="#a78897" font-family="JetBrains Mono" font-size="10" text-anchor="end" x="45" y="74">$5 jt</text>
+<text fill="#ffaeda" font-family="JetBrains Mono" font-size="10" text-anchor="start" x="955" y="74">44%</text>
+<line stroke="rgba(255, 255, 255, 0.07)" stroke-dasharray="3 3" x1="50" x2="950" y1="140" y2="140"></line>
+<text fill="#a78897" font-family="JetBrains Mono" font-size="10" text-anchor="end" x="45" y="144">$3 jt</text>
+<text fill="#ffaeda" font-family="JetBrains Mono" font-size="10" text-anchor="start" x="955" y="144">36%</text>
+<line stroke="rgba(255, 255, 255, 0.07)" stroke-dasharray="3 3" x1="50" x2="950" y1="200" y2="200"></line>
+<text fill="#a78897" font-family="JetBrains Mono" font-size="10" text-anchor="end" x="45" y="204">$2 jt</text>
+<text fill="#ffaeda" font-family="JetBrains Mono" font-size="10" text-anchor="start" x="955" y="204">28%</text>
+<line stroke="rgba(255, 28, 192, 0.35)" x1="50" x2="950" y1="260" y2="260"></line>
+<text fill="#a78897" font-family="JetBrains Mono" font-size="10" text-anchor="end" x="45" y="264">$0</text>
+<text fill="#ffaeda" font-family="JetBrains Mono" font-size="10" text-anchor="start" x="955" y="264">20%</text>
+<!-- Net Sales Bars -->
+<!-- 2021 -->
+<rect fill="url(#vibrantBarGrad)" height="90" rx="3" width="11" x="65" y="170"></rect>
+<rect fill="url(#vibrantBarGrad)" height="80" rx="3" width="11" x="80" y="180"></rect>
+<rect fill="url(#vibrantBarGrad)" height="100" rx="3" width="11" x="95" y="160"></rect>
+<rect fill="url(#vibrantBarGrad)" height="105" rx="3" width="11" x="110" y="155"></rect>
+<rect fill="url(#vibrantBarGrad)" height="110" rx="3" width="11" x="125" y="150"></rect>
+<rect fill="url(#vibrantBarGrad)" height="115" rx="3" width="11" x="140" y="145"></rect>
+<rect fill="url(#vibrantBarGrad)" height="120" rx="3" width="11" x="155" y="140"></rect>
+<rect fill="url(#vibrantBarGrad)" height="110" rx="3" width="11" x="170" y="150"></rect>
+<rect fill="url(#vibrantBarGrad)" height="120" rx="3" width="11" x="185" y="140"></rect>
+<rect fill="url(#superPeakGrad)" height="170" rx="3" width="12" x="200" y="90"></rect>
+<rect fill="url(#superPeakGrad)" height="180" rx="3" width="12" x="216" y="80"></rect>
+<rect fill="url(#vibrantBarGrad)" height="95" rx="3" width="11" x="232" y="165"></rect>
+<!-- 2022 -->
+<rect fill="url(#vibrantBarGrad)" height="100" rx="3" width="11" x="250" y="160"></rect>
+<rect fill="url(#vibrantBarGrad)" height="90" rx="3" width="11" x="265" y="170"></rect>
+<rect fill="url(#vibrantBarGrad)" height="95" rx="3" width="11" x="280" y="165"></rect>
+<rect fill="url(#vibrantBarGrad)" height="105" rx="3" width="11" x="295" y="155"></rect>
+<rect fill="url(#vibrantBarGrad)" height="110" rx="3" width="11" x="310" y="150"></rect>
+<rect fill="url(#vibrantBarGrad)" height="100" rx="3" width="11" x="325" y="160"></rect>
+<rect fill="url(#vibrantBarGrad)" height="110" rx="3" width="11" x="340" y="150"></rect>
+<rect fill="url(#vibrantBarGrad)" height="105" rx="3" width="11" x="355" y="155"></rect>
+<rect fill="url(#superPeakGrad)" height="175" rx="3" width="12" x="370" y="85"></rect>
+<rect fill="url(#superPeakGrad)" height="182" rx="3" width="12" x="386" y="78"></rect>
+<rect fill="url(#vibrantBarGrad)" height="90" rx="3" width="11" x="402" y="170"></rect>
+<!-- 2023 -->
+<rect fill="url(#vibrantBarGrad)" height="98" rx="3" width="11" x="420" y="162"></rect>
+<rect fill="url(#vibrantBarGrad)" height="108" rx="3" width="11" x="435" y="152"></rect>
+<rect fill="url(#vibrantBarGrad)" height="100" rx="3" width="11" x="450" y="160"></rect>
+<rect fill="url(#vibrantBarGrad)" height="110" rx="3" width="11" x="465" y="150"></rect>
+<rect fill="url(#vibrantBarGrad)" height="105" rx="3" width="11" x="480" y="155"></rect>
+<rect fill="url(#vibrantBarGrad)" height="95" rx="3" width="11" x="495" y="165"></rect>
+<rect fill="url(#vibrantBarGrad)" height="110" rx="3" width="11" x="510" y="150"></rect>
+<rect fill="url(#vibrantBarGrad)" height="115" rx="3" width="11" x="525" y="145"></rect>
+<rect fill="url(#superPeakGrad)" height="172" rx="3" width="12" x="540" y="88"></rect>
+<rect fill="url(#superPeakGrad)" height="180" rx="3" width="12" x="556" y="80"></rect>
+<rect fill="url(#vibrantBarGrad)" height="90" rx="3" width="11" x="572" y="170"></rect>
+<!-- 2024 -->
+<rect fill="url(#vibrantBarGrad)" height="100" rx="3" width="11" x="590" y="160"></rect>
+<rect fill="url(#vibrantBarGrad)" height="108" rx="3" width="11" x="605" y="152"></rect>
+<rect fill="url(#vibrantBarGrad)" height="105" rx="3" width="11" x="620" y="155"></rect>
+<rect fill="url(#vibrantBarGrad)" height="100" rx="3" width="11" x="635" y="160"></rect>
+<rect fill="url(#vibrantBarGrad)" height="105" rx="3" width="11" x="650" y="155"></rect>
+<rect fill="url(#vibrantBarGrad)" height="110" rx="3" width="11" x="665" y="150"></rect>
+<rect fill="url(#vibrantBarGrad)" height="115" rx="3" width="11" x="680" y="145"></rect>
+<rect fill="url(#vibrantBarGrad)" height="110" rx="3" width="11" x="695" y="150"></rect>
+<rect fill="url(#superPeakGrad)" height="168" rx="3" width="12" x="710" y="92"></rect>
+<rect fill="url(#superPeakGrad)" height="178" rx="3" width="12" x="726" y="82"></rect>
+<rect fill="url(#vibrantBarGrad)" height="90" rx="3" width="11" x="742" y="170"></rect>
+<!-- 2025 -->
+<rect fill="url(#vibrantBarGrad)" height="100" rx="3" width="11" x="760" y="160"></rect>
+<rect fill="url(#vibrantBarGrad)" height="90" rx="3" width="11" x="775" y="170"></rect>
+<rect fill="url(#vibrantBarGrad)" height="100" rx="3" width="11" x="790" y="160"></rect>
+<rect fill="url(#vibrantBarGrad)" height="110" rx="3" width="11" x="805" y="150"></rect>
+<rect fill="url(#vibrantBarGrad)" height="105" rx="3" width="11" x="820" y="155"></rect>
+<rect fill="url(#vibrantBarGrad)" height="112" rx="3" width="11" x="835" y="148"></rect>
+<rect fill="url(#vibrantBarGrad)" height="110" rx="3" width="11" x="850" y="150"></rect>
+<rect fill="url(#vibrantBarGrad)" height="105" rx="3" width="11" x="865" y="155"></rect>
+<rect fill="url(#superPeakGrad)" height="170" rx="3" width="12" x="880" y="90"></rect>
+<rect fill="url(#superPeakGrad)" height="180" rx="3" width="12" x="896" y="80"></rect>
+<rect fill="url(#vibrantBarGrad)" height="100" rx="3" width="11" x="912" y="160"></rect>
+<!-- Profit Curve Line (Electric Emerald / Neon Cyan #00FFA3 with glow) -->
+<path d="M 65 220 Q 140 215 200 210 T 230 220 T 320 215 T 380 208 T 420 220 T 520 215 T 550 210 T 600 220 T 700 216 T 730 208 T 800 220 T 890 212 T 920 220" fill="none" filter="url(#neonGlowCyan)" stroke="#00FFA3" stroke-width="3"></path>
+<!-- Margin Keseluruhan Dashed Line (Hot Magenta #FF1CC0 with glow) -->
+<path d="M 65 65 Q 120 62 140 68 T 160 145 T 175 75 T 195 72 T 205 155 T 225 70 T 310 65 T 330 145 T 350 72 T 375 68 T 385 160 T 405 68 T 480 65 T 500 145 T 520 70 T 545 68 T 560 155 T 580 68 T 670 65 T 690 150 T 710 70 T 730 68 T 745 155 T 765 68 T 840 65 T 860 145 T 880 70 T 900 68 T 920 160" fill="none" filter="url(#neonGlowPink)" stroke="#FF1CC0" stroke-dasharray="5 4" stroke-width="2.5"></path>
+<!-- X-Axis Labels -->
+<text fill="#a78897" font-family="JetBrains Mono" font-size="11" text-anchor="middle" x="110" y="280">Apr 21</text>
+<text fill="#a78897" font-family="JetBrains Mono" font-size="11" text-anchor="middle" x="165" y="280">Agu 21</text>
+<text fill="#ffaeda" font-family="JetBrains Mono" font-size="11" font-weight="600" text-anchor="middle" x="220" y="280">Des 21</text>
+<text fill="#a78897" font-family="JetBrains Mono" font-size="11" text-anchor="middle" x="280" y="280">Apr 22</text>
+<text fill="#a78897" font-family="JetBrains Mono" font-size="11" text-anchor="middle" x="340" y="280">Agu 22</text>
+<text fill="#ffaeda" font-family="JetBrains Mono" font-size="11" font-weight="600" text-anchor="middle" x="390" y="280">Des 22</text>
+<text fill="#a78897" font-family="JetBrains Mono" font-size="11" text-anchor="middle" x="460" y="280">Apr 23</text>
+<text fill="#a78897" font-family="JetBrains Mono" font-size="11" text-anchor="middle" x="520" y="280">Agu 23</text>
+<text fill="#ffaeda" font-family="JetBrains Mono" font-size="11" font-weight="600" text-anchor="middle" x="560" y="280">Des 23</text>
+<text fill="#a78897" font-family="JetBrains Mono" font-size="11" text-anchor="middle" x="635" y="280">Apr 24</text>
+<text fill="#a78897" font-family="JetBrains Mono" font-size="11" text-anchor="middle" x="690" y="280">Agu 24</text>
+<text fill="#ffaeda" font-family="JetBrains Mono" font-size="11" font-weight="600" text-anchor="middle" x="730" y="280">Des 24</text>
+<text fill="#a78897" font-family="JetBrains Mono" font-size="11" text-anchor="middle" x="800" y="280">Apr 25</text>
+<text fill="#a78897" font-family="JetBrains Mono" font-size="11" text-anchor="middle" x="860" y="280">Agu 25</text>
+<text fill="#ffaeda" font-family="JetBrains Mono" font-size="11" font-weight="600" text-anchor="middle" x="910" y="280">Des 25</text>
+</svg>
+</div></div>
+<!-- MIDDLE SECTION: SALES CHANNEL & WORKDAY VS WEEKEND -->
+<div class="grid grid-cols-1 lg:grid-cols-3 gap-space-md"><!-- Left Card: Perbandingan saluran penjualan (span-2) -->
+<div class="lg:col-span-2 rounded-2xl p-space-lg shadow-xl flex flex-col justify-between gap-space-md border border-white/10 hover:border-primary/40 transition-all" style="background: rgba(29, 25, 41, 0.75); backdrop-filter: blur(16px); box-shadow: 0 4px 24px rgba(0, 0, 0, 0.35);">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-space-sm">
+<div class="w-9 h-9 rounded-lg bg-gradient-to-tr from-[#1C3AFF] via-[#B131FA] to-[#FF1CC0] flex items-center justify-center text-white shadow-[0_0_16px_rgba(255,28,192,0.5)]">
+<span class="material-symbols-outlined text-[18px]">bar_chart</span>
+</div>
+<span class="font-headline-sm text-headline-sm font-semibold text-on-surface">Perbandingan saluran penjualan</span>
+</div>
+<span class="px-space-sm py-1 rounded-full bg-surface-container-high border border-white/10 text-on-surface-variant font-label-sm text-label-sm">
+      Seluruh periode 2021–2025
+    </span>
+</div>
+<div class="flex items-center gap-space-lg font-label-sm text-label-sm">
+<div class="flex items-center gap-space-xs">
+<span class="w-3.5 h-2 rounded bg-gradient-to-t from-[#1C3AFF] via-[#B131FA] to-[#FF1CC0] shadow-[0_0_6px_rgba(255,28,192,0.6)]"></span>
+<span class="text-on-surface font-medium">Net sales</span>
+</div>
+<div class="flex items-center gap-space-xs">
+<span class="w-4 h-0.5 border-t-2 border-dashed border-[#FF1CC0] shadow-[0_0_6px_rgba(255,28,192,0.7)]"></span>
+<span class="text-[#ffaeda] font-medium">Margin keseluruhan</span>
+</div>
+</div>
+<!-- Channel Visual Graph (SVG Dual Axis) -->
+<div class="relative w-full h-64">
+<svg class="w-full h-full" preserveAspectRatio="none" viewBox="0 0 700 220">
+<defs>
+<linearGradient id="channelNeonGrad" x1="0" x2="0" y1="0" y2="1">
+<stop offset="0%" stop-color="#FF1CC0" stop-opacity="0.95"></stop>
+<stop offset="50%" stop-color="#B131FA" stop-opacity="0.85"></stop>
+<stop offset="100%" stop-color="#1C3AFF" stop-opacity="0.6"></stop>
+</linearGradient>
+</defs>
+<!-- Reference Lines -->
+<line stroke="rgba(255, 255, 255, 0.08)" stroke-dasharray="3 3" x1="50" x2="650" y1="20" y2="20"></line>
+<text fill="#a78897" font-family="JetBrains Mono" font-size="10" text-anchor="end" x="40" y="24">$80 jt</text>
+<text fill="#ffaeda" font-family="JetBrains Mono" font-size="10" text-anchor="start" x="655" y="24">45%</text>
+<line stroke="rgba(255, 255, 255, 0.08)" stroke-dasharray="3 3" x1="50" x2="650" y1="80" y2="80"></line>
+<text fill="#a78897" font-family="JetBrains Mono" font-size="10" text-anchor="end" x="40" y="84">$60 jt</text>
+<text fill="#ffaeda" font-family="JetBrains Mono" font-size="10" text-anchor="start" x="655" y="84">42%</text>
+<line stroke="rgba(255, 255, 255, 0.08)" stroke-dasharray="3 3" x1="50" x2="650" y1="130" y2="130"></line>
+<text fill="#a78897" font-family="JetBrains Mono" font-size="10" text-anchor="end" x="40" y="134">$40 jt</text>
+<text fill="#ffaeda" font-family="JetBrains Mono" font-size="10" text-anchor="start" x="655" y="134">38%</text>
+<line stroke="rgba(255, 255, 255, 0.08)" stroke-dasharray="3 3" x1="50" x2="650" y1="170" y2="170"></line>
+<text fill="#a78897" font-family="JetBrains Mono" font-size="10" text-anchor="end" x="40" y="174">$20 jt</text>
+<text fill="#ffaeda" font-family="JetBrains Mono" font-size="10" text-anchor="start" x="655" y="174">34%</text>
+<line stroke="rgba(255, 28, 192, 0.35)" x1="50" x2="650" y1="200" y2="200"></line>
+<text fill="#a78897" font-family="JetBrains Mono" font-size="10" text-anchor="end" x="40" y="204">$0</text>
+<text fill="#ffaeda" font-family="JetBrains Mono" font-size="10" text-anchor="start" x="655" y="204">30%</text>
+<!-- Bars -->
+<rect fill="url(#channelNeonGrad)" height="132" rx="5" width="48" x="135" y="68"></rect>
+<rect fill="url(#channelNeonGrad)" height="115" rx="5" width="48" x="275" y="85"></rect>
+<rect fill="url(#channelNeonGrad)" height="52" rx="5" width="48" x="415" y="148"></rect>
+<rect fill="url(#channelNeonGrad)" height="38" rx="5" width="48" x="555" y="162"></rect>
+<!-- Margin Dots & Line with glow -->
+<path d="M 159 125 L 299 126 L 439 129 L 579 127" fill="none" stroke="#FF1CC0" stroke-dasharray="3 3" stroke-width="2.5"></path>
+<circle cx="159" cy="125" fill="#ffaeda" r="5" stroke="#FF1CC0" stroke-width="2"></circle>
+<circle cx="299" cy="126" fill="#ffaeda" r="5" stroke="#FF1CC0" stroke-width="2"></circle>
+<circle cx="439" cy="129" fill="#ffaeda" r="5" stroke="#FF1CC0" stroke-width="2"></circle>
+<circle cx="579" cy="127" fill="#ffaeda" r="5" stroke="#FF1CC0" stroke-width="2"></circle>
+<!-- Category Labels -->
+<text fill="#e8dff5" font-family="JetBrains Mono" font-size="11" font-weight="500" text-anchor="middle" x="159" y="215">Mobile App</text>
+<text fill="#e8dff5" font-family="JetBrains Mono" font-size="11" font-weight="500" text-anchor="middle" x="299" y="215">Website</text>
+<text fill="#e8dff5" font-family="JetBrains Mono" font-size="11" font-weight="500" text-anchor="middle" x="439" y="215">Marketplace</text>
+<text fill="#e8dff5" font-family="JetBrains Mono" font-size="11" font-weight="500" text-anchor="middle" x="579" y="215">Social Media</text>
+</svg>
+</div>
+</div>
+<!-- Right Card: Hari kerja vs akhir pekan (span-1) -->
+<div class="rounded-2xl p-space-lg shadow-xl flex flex-col justify-between gap-space-md border border-white/10 hover:border-secondary/40 transition-all" style="background: rgba(29, 25, 41, 0.75); backdrop-filter: blur(16px); box-shadow: 0 4px 24px rgba(0, 0, 0, 0.35);">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-space-sm">
+<div class="w-9 h-9 rounded-lg bg-gradient-to-tr from-[#00FFA3] to-[#1C3AFF] flex items-center justify-center text-[#151120] shadow-[0_0_16px_rgba(0,255,163,0.5)]">
+<span class="material-symbols-outlined text-[18px]">calendar_view_week</span>
+</div>
+<span class="font-headline-sm text-headline-sm font-semibold text-on-surface">Hari kerja vs akhir pekan</span>
+</div>
+</div>
+<div>
+<span class="inline-block px-space-sm py-1 rounded-full bg-surface-container-high border border-white/10 text-on-surface-variant font-label-sm text-label-sm">
+      Seluruh periode 2021–2025
+    </span>
+</div>
+<!-- Progress Metrics -->
+<div class="flex flex-col gap-space-lg my-auto">
+<!-- Weekday -->
+<div class="flex flex-col gap-1.5">
+<div class="flex items-center justify-between font-label-md text-label-md">
+<span class="text-on-surface font-semibold">Weekday</span>
+<span class="text-on-surface-variant font-mono text-[11px]"><span class="text-secondary font-semibold">37,71%</span> margin · 98,69k order</span>
+</div>
+<div class="w-full h-3 rounded-full bg-surface-container-lowest p-[1px] border border-white/10 overflow-hidden shadow-inner">
+<div class="h-full rounded-full bg-gradient-to-r from-[#1C3AFF] via-[#B131FA] to-[#FF1CC0] shadow-[0_0_12px_rgba(255,28,192,0.6)]" style="width: 71.4%;"></div>
+</div>
+</div>
+<!-- Weekend -->
+<div class="flex flex-col gap-1.5">
+<div class="flex items-center justify-between font-label-md text-label-md">
+<span class="text-on-surface font-semibold">Weekend</span>
+<span class="text-on-surface-variant font-mono text-[11px]"><span class="text-[#00FFA3] font-semibold">37,65%</span> margin · 39,43k order</span>
+</div>
+<div class="w-full h-3 rounded-full bg-surface-container-lowest p-[1px] border border-white/10 overflow-hidden shadow-inner">
+<div class="h-full rounded-full bg-gradient-to-r from-[#1C3AFF] to-[#00FFA3] shadow-[0_0_12px_rgba(0,255,163,0.5)]" style="width: 28.6%;"></div>
+</div>
+</div>
+</div>
+<div class="p-space-sm rounded-lg bg-surface-container-lowest/80 border border-white/10 flex items-center justify-between text-on-surface-variant font-label-sm text-label-sm">
+<span class="">Rasio Volume Order</span>
+<span class="text-primary font-mono font-semibold px-2 py-0.5 rounded bg-primary/10 border border-primary/25 shadow-[0_0_8px_rgba(255,174,218,0.25)]">71.4% : 28.6%</span>
+</div>
+</div></div>
+<!-- SUB-CARD: MARGIN KESELURUHAN PER KUARTAL (LINTAS TAHUN) -->
+<div class="rounded-2xl p-space-lg shadow-xl flex flex-col gap-space-md border border-white/10" style="background: rgba(29, 25, 41, 0.75); backdrop-filter: blur(16px); box-shadow: 0 4px 24px rgba(0, 0, 0, 0.35);"><div class="flex items-center justify-between">
+<div class="flex items-center gap-space-sm">
+<div class="w-9 h-9 rounded-lg bg-gradient-to-tr from-[#B131FA] to-[#e5b4ff] flex items-center justify-center text-[#151120] shadow-[0_0_16px_rgba(229,180,255,0.45)]">
+<span class="material-symbols-outlined text-[18px]">date_range</span>
+</div>
+<span class="font-headline-sm text-headline-sm font-semibold text-on-surface">Margin keseluruhan per kuartal (lintas tahun)</span>
+</div>
+<span class="px-space-sm py-1 rounded-full bg-surface-container-high border border-white/10 text-on-surface-variant font-label-sm text-label-sm">
+    Seluruh periode 2021–2025
+  </span>
+</div>
+<div class="grid grid-cols-2 md:grid-cols-4 gap-space-md">
+<!-- Q1 -->
+<div class="p-space-md rounded-xl bg-surface-container-lowest/80 border border-white/10 flex flex-col justify-between gap-space-xs hover:bg-surface-container-high hover:border-secondary/40 transition-all shadow-sm">
+<div class="flex items-center justify-between text-outline font-label-md text-label-md">
+<span class="font-semibold text-on-surface">Q1</span>
+<span class="material-symbols-outlined text-[16px] text-secondary">calendar_today</span>
+</div>
+<div class="font-headline-md text-headline-md font-semibold text-secondary">42,71%</div>
+<div class="w-full h-1.5 rounded-full bg-surface-container-high overflow-hidden mt-1">
+<div class="h-full bg-gradient-to-r from-[#B131FA] to-[#e5b4ff]" style="width: 85%;"></div>
+</div>
+</div>
+<!-- Q2 -->
+<div class="p-space-md rounded-xl bg-surface-container-lowest/80 border border-white/10 flex flex-col justify-between gap-space-xs hover:bg-surface-container-high hover:border-[#00FFA3]/40 transition-all shadow-sm">
+<div class="flex items-center justify-between text-outline font-label-md text-label-md">
+<span class="font-semibold text-on-surface">Q2</span>
+<span class="material-symbols-outlined text-[16px] text-[#00FFA3]">calendar_today</span>
+</div>
+<div class="font-headline-md text-headline-md font-semibold text-[#00FFA3] shadow-sm">42,96%</div>
+<div class="w-full h-1.5 rounded-full bg-surface-container-high overflow-hidden mt-1">
+<div class="h-full bg-gradient-to-r from-[#1C3AFF] to-[#00FFA3]" style="width: 86%;"></div>
+</div>
+</div>
+<!-- Q3 -->
+<div class="p-space-md rounded-xl bg-surface-container-lowest/80 border border-white/10 flex flex-col justify-between gap-space-xs hover:bg-surface-container-high hover:border-tertiary/40 transition-all shadow-sm">
+<div class="flex items-center justify-between text-outline font-label-md text-label-md">
+<span class="font-semibold text-on-surface">Q3</span>
+<span class="material-symbols-outlined text-[16px] text-tertiary">calendar_today</span>
+</div>
+<div class="font-headline-md text-headline-md font-semibold text-tertiary">39,08%</div>
+<div class="w-full h-1.5 rounded-full bg-surface-container-high overflow-hidden mt-1">
+<div class="h-full bg-gradient-to-r from-[#1C3AFF] to-[#7686ff]" style="width: 78%;"></div>
+</div>
+</div>
+<!-- Q4 -->
+<div class="p-space-md rounded-xl bg-surface-container-lowest/80 border border-primary/30 flex flex-col justify-between gap-space-xs hover:bg-surface-container-high hover:border-primary/60 transition-all shadow-[0_0_16px_rgba(255,28,192,0.15)]">
+<div class="flex items-center justify-between text-outline font-label-md text-label-md">
+<span class="font-semibold text-primary">Q4</span>
+<span class="material-symbols-outlined text-[16px] text-primary">calendar_today</span>
+</div>
+<div class="font-headline-md text-headline-md font-semibold text-primary">30,22%</div>
+<div class="w-full h-1.5 rounded-full bg-surface-container-high overflow-hidden mt-1">
+<div class="h-full bg-gradient-to-r from-[#B131FA] to-[#FF1CC0] shadow-[0_0_8px_rgba(255,28,192,0.6)]" style="width: 60%;"></div>
+</div>
+</div>
+</div></div>
+<!-- DEEP DIVE SECTION: ANALISIS BRACKET DISKON -->
+<div class="rounded-2xl p-space-lg shadow-xl flex flex-col gap-space-lg border border-white/10" style="background: rgba(29, 25, 41, 0.75); backdrop-filter: blur(16px); box-shadow: 0 4px 24px rgba(0, 0, 0, 0.35);"><div class="flex items-center justify-between">
+<div class="flex items-center gap-space-sm">
+<div class="w-9 h-9 rounded-lg bg-gradient-to-tr from-[#1C3AFF] via-[#B131FA] to-[#FF1CC0] flex items-center justify-center text-white shadow-[0_0_16px_rgba(255,28,192,0.5)]">
+<span class="material-symbols-outlined text-[18px]">balance</span>
+</div>
+<span class="font-headline-sm text-headline-sm font-semibold text-on-surface">Analisis bracket diskon</span>
+</div>
+<span class="px-space-sm py-1 rounded-full bg-surface-container-high border border-white/10 text-on-surface-variant font-label-sm text-label-sm">
+    Seluruh periode 2021–2025
+  </span>
+</div>
+<!-- Discount Bracket Histogram SVG -->
+<div class="relative w-full h-64">
+<svg class="w-full h-full" preserveAspectRatio="none" viewBox="0 0 800 220">
+<defs>
+<linearGradient id="bracketNeonGrad" x1="0" x2="0" y1="0" y2="1">
+<stop offset="0%" stop-color="#B131FA" stop-opacity="0.95"></stop>
+<stop offset="100%" stop-color="#1C3AFF" stop-opacity="0.6"></stop>
+</linearGradient>
+<linearGradient id="warningHotMagenta" x1="0" x2="0" y1="0" y2="1">
+<stop offset="0%" stop-color="#FF1CC0" stop-opacity="1"></stop>
+<stop offset="100%" stop-color="#93000a" stop-opacity="0.8"></stop>
+</linearGradient>
+</defs>
+<!-- Y Guides -->
+<line stroke="rgba(255, 255, 255, 0.08)" stroke-dasharray="3 3" x1="50" x2="760" y1="20" y2="20"></line>
+<text fill="#a78897" font-family="JetBrains Mono" font-size="10" text-anchor="end" x="40" y="24">$60 jt</text>
+<line stroke="rgba(255, 255, 255, 0.08)" stroke-dasharray="3 3" x1="50" x2="760" y1="65" y2="65"></line>
+<text fill="#a78897" font-family="JetBrains Mono" font-size="10" text-anchor="end" x="40" y="69">$45 jt</text>
+<line stroke="rgba(255, 255, 255, 0.08)" stroke-dasharray="3 3" x1="50" x2="760" y1="110" y2="110"></line>
+<text fill="#a78897" font-family="JetBrains Mono" font-size="10" text-anchor="end" x="40" y="114">$30 jt</text>
+<line stroke="rgba(255, 255, 255, 0.08)" stroke-dasharray="3 3" x1="50" x2="760" y1="155" y2="155"></line>
+<text fill="#a78897" font-family="JetBrains Mono" font-size="10" text-anchor="end" x="40" y="159">$15 jt</text>
+<line stroke="rgba(255, 28, 192, 0.35)" x1="50" x2="760" y1="200" y2="200"></line>
+<text fill="#a78897" font-family="JetBrains Mono" font-size="10" text-anchor="end" x="40" y="204">$0</text>
+<!-- Bars -->
+<rect fill="url(#bracketNeonGrad)" height="65" rx="5" width="55" x="110" y="135"></rect>
+<text fill="#e8dff5" font-family="JetBrains Mono" font-size="11" text-anchor="middle" x="137" y="215">0%</text>
+<rect fill="url(#bracketNeonGrad)" height="118" rx="5" width="55" x="250" y="82"></rect>
+<text fill="#e8dff5" font-family="JetBrains Mono" font-size="11" text-anchor="middle" x="277" y="215">1-10%</text>
+<rect fill="url(#bracketNeonGrad)" height="158" rx="5" width="55" x="390" y="42"></rect>
+<text fill="#e8dff5" font-family="JetBrains Mono" font-size="11" text-anchor="middle" x="417" y="215">11-20%</text>
+<rect fill="url(#bracketNeonGrad)" height="63" rx="5" width="55" x="530" y="137"></rect>
+<text fill="#e8dff5" font-family="JetBrains Mono" font-size="11" text-anchor="middle" x="557" y="215">21-30%</text>
+<!-- 30%+ Hot Neon Magenta Bar with Glow -->
+<rect fill="url(#warningHotMagenta)" filter="drop-shadow(0 0 10px rgba(255, 28, 192, 0.7))" height="66" rx="5" width="55" x="670" y="134"></rect>
+<text fill="#FF1CC0" font-family="JetBrains Mono" font-size="12" font-weight="700" text-anchor="middle" x="697" y="215">30%+</text>
+</svg>
+</div>
+<!-- Structured Data Table: Discount Brackets -->
+<div class="overflow-x-auto rounded-xl border border-white/5">
+<table class="w-full text-left font-body-sm text-body-sm">
+<thead>
+<tr class="bg-surface-container-high/40 border-b border-surface-variant font-label-sm text-label-sm text-outline uppercase tracking-wider">
+<th class="py-space-sm px-space-md">BRACKET DISKON</th>
+<th class="py-space-sm px-space-md text-right">ORDER</th>
+<th class="py-space-sm px-space-md text-right">NET SALES</th>
+<th class="py-space-sm px-space-md text-right">PROFIT</th>
+<th class="py-space-sm px-space-md text-right">PROFIT/ORDER</th>
+<th class="py-space-sm px-space-md text-right">MARGIN KESELURUHAN</th>
+</tr>
+</thead>
+<tbody class="divide-y divide-surface-container-high/40">
+<tr class="hover:bg-surface-container-high/50 transition-colors">
+<td class="py-space-sm px-space-md font-medium text-on-surface">0% (No Discount)</td>
+<td class="py-space-sm px-space-md text-right font-mono text-on-surface">17,86 ribu</td>
+<td class="py-space-sm px-space-md text-right font-mono text-on-surface">$21,77 juta</td>
+<td class="py-space-sm px-space-md text-right font-mono text-on-surface">$10,54 juta</td>
+<td class="py-space-sm px-space-md text-right font-mono text-on-surface">$589,90</td>
+<td class="py-space-sm px-space-md text-right font-mono font-semibold text-[#00FFA3]">48,41%</td>
+</tr>
+<tr class="hover:bg-surface-container-high/50 transition-colors">
+<td class="py-space-sm px-space-md font-medium text-on-surface">1-10%</td>
+<td class="py-space-sm px-space-md text-right font-mono text-on-surface">35,03 ribu</td>
+<td class="py-space-sm px-space-md text-right font-mono text-on-surface">$39,34 juta</td>
+<td class="py-space-sm px-space-md text-right font-mono text-on-surface">$17,60 juta</td>
+<td class="py-space-sm px-space-md text-right font-mono text-on-surface">$502,45</td>
+<td class="py-space-sm px-space-md text-right font-mono font-semibold text-secondary">44,74%</td>
+</tr>
+<tr class="hover:bg-surface-container-high/50 transition-colors">
+<td class="py-space-sm px-space-md font-medium text-on-surface">11-20%</td>
+<td class="py-space-sm px-space-md text-right font-mono text-on-surface">49,20 ribu</td>
+<td class="py-space-sm px-space-md text-right font-mono text-on-surface">$52,82 juta</td>
+<td class="py-space-sm px-space-md text-right font-mono text-on-surface">$21,06 juta</td>
+<td class="py-space-sm px-space-md text-right font-mono text-on-surface">$428,11</td>
+<td class="py-space-sm px-space-md text-right font-mono font-semibold text-secondary">39,88%</td>
+</tr>
+<tr class="hover:bg-surface-container-high/50 transition-colors">
+<td class="py-space-sm px-space-md font-medium text-on-surface">21-30%</td>
+<td class="py-space-sm px-space-md text-right font-mono text-on-surface">17,73 ribu</td>
+<td class="py-space-sm px-space-md text-right font-mono text-on-surface">$21,19 juta</td>
+<td class="py-space-sm px-space-md text-right font-mono text-on-surface">$6,69 juta</td>
+<td class="py-space-sm px-space-md text-right font-mono text-on-surface">$377,34</td>
+<td class="py-space-sm px-space-md text-right font-mono font-semibold text-tertiary">31,57%</td>
+</tr>
+<tr class="hover:bg-surface-container-high/50 transition-colors bg-[#FF1CC0]/5">
+<td class="py-space-sm px-space-md font-medium text-primary font-semibold flex items-center gap-1.5">
+<span class="">30%+</span>
+<span class="px-1.5 py-0.5 rounded text-[10px] bg-[#FF1CC0]/20 text-[#ffaeda] border border-[#FF1CC0]/40 font-mono">High Erosion</span>
+</td>
+<td class="py-space-sm px-space-md text-right font-mono text-on-surface">18,29 ribu</td>
+<td class="py-space-sm px-space-md text-right font-mono text-on-surface">$22,02 juta</td>
+<td class="py-space-sm px-space-md text-right font-mono text-on-surface">$3,34 juta</td>
+<td class="py-space-sm px-space-md text-right font-mono text-on-surface">$182,62</td>
+<td class="py-space-sm px-space-md text-right font-mono font-bold text-[#FF1CC0] drop-shadow-[0_0_8px_rgba(255,28,192,0.6)]">15,17%</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="px-space-md py-space-xs rounded-lg bg-surface-container-lowest/80 border border-white/5 text-outline font-label-sm text-label-sm flex items-center justify-between">
+<span class="">EMPAT UKURAN TINGKAT DISKON — SELURUH PERIODE 2021–2025</span>
+<span class="text-primary font-mono">Dampak Margin Terbesar: Bracket 30%+</span>
+</div></div>
+<!-- DEEP DIVE SECTION 2: KINERJA TAHUNAN & YOY -->
+<div class="rounded-2xl p-space-lg shadow-xl flex flex-col gap-space-lg border border-white/10" style="background: rgba(29, 25, 41, 0.75); backdrop-filter: blur(16px); box-shadow: 0 4px 24px rgba(0, 0, 0, 0.35);"><div class="flex items-center justify-between">
+<div class="flex items-center gap-space-sm">
+<div class="w-9 h-9 rounded-lg bg-gradient-to-tr from-[#1C3AFF] via-[#B131FA] to-[#FF1CC0] flex items-center justify-center text-white shadow-[0_0_16px_rgba(255,28,192,0.5)]">
+<span class="material-symbols-outlined text-[18px]">query_stats</span>
+</div>
+<span class="font-headline-sm text-headline-sm font-semibold text-on-surface">Kinerja tahunan &amp; YoY</span>
+</div>
+<span class="px-space-sm py-1 rounded-full bg-surface-container-high border border-white/10 text-on-surface-variant font-label-sm text-label-sm">
+    Seluruh periode 2021–2025
+  </span>
+</div>
+<!-- Chart Legend -->
+<div class="flex items-center gap-space-lg font-label-sm text-label-sm">
+<div class="flex items-center gap-space-xs">
+<span class="w-3.5 h-2 rounded bg-gradient-to-t from-[#1C3AFF] via-[#B131FA] to-[#FF1CC0] shadow-[0_0_6px_rgba(255,28,192,0.6)]"></span>
+<span class="text-on-surface font-medium">Net sales</span>
+</div>
+<div class="flex items-center gap-space-xs">
+<span class="w-4 h-1 rounded bg-[#00FFA3] shadow-[0_0_8px_rgba(0,255,163,0.8)]"></span>
+<span class="text-[#00FFA3] font-medium">Profit</span>
+</div>
+<div class="flex items-center gap-space-xs">
+<span class="w-4 h-0.5 border-t-2 border-dashed border-[#FF1CC0] shadow-[0_0_6px_rgba(255,28,192,0.7)]"></span>
+<span class="text-[#ffaeda] font-medium">Margin keseluruhan</span>
+</div>
+</div>
+<!-- Yearly Chart SVG -->
+<div class="relative w-full h-64">
+<svg class="w-full h-full" preserveAspectRatio="none" viewBox="0 0 800 220">
+<defs>
+<linearGradient id="yearPillarNeon" x1="0" x2="0" y1="0" y2="1">
+<stop offset="0%" stop-color="#FF1CC0" stop-opacity="0.95"></stop>
+<stop offset="50%" stop-color="#B131FA" stop-opacity="0.8"></stop>
+<stop offset="100%" stop-color="#1C3AFF" stop-opacity="0.6"></stop>
+</linearGradient>
+</defs>
+<!-- Y-Axis Guides -->
+<line stroke="rgba(255, 255, 255, 0.08)" stroke-dasharray="3 3" x1="50" x2="760" y1="20" y2="20"></line>
+<text fill="#a78897" font-family="JetBrains Mono" font-size="10" text-anchor="end" x="40" y="24">$32 jt</text>
+<text fill="#ffaeda" font-family="JetBrains Mono" font-size="10" text-anchor="start" x="765" y="24">45%</text>
+<line stroke="rgba(255, 255, 255, 0.08)" stroke-dasharray="3 3" x1="50" x2="760" y1="65" y2="65"></line>
+<text fill="#a78897" font-family="JetBrains Mono" font-size="10" text-anchor="end" x="40" y="69">$24 jt</text>
+<text fill="#ffaeda" font-family="JetBrains Mono" font-size="10" text-anchor="start" x="765" y="69">42%</text>
+<line stroke="rgba(255, 255, 255, 0.08)" stroke-dasharray="3 3" x1="50" x2="760" y1="110" y2="110"></line>
+<text fill="#a78897" font-family="JetBrains Mono" font-size="10" text-anchor="end" x="40" y="114">$16 jt</text>
+<text fill="#ffaeda" font-family="JetBrains Mono" font-size="10" text-anchor="start" x="765" y="114">38%</text>
+<line stroke="rgba(255, 255, 255, 0.08)" stroke-dasharray="3 3" x1="50" x2="760" y1="155" y2="155"></line>
+<text fill="#a78897" font-family="JetBrains Mono" font-size="10" text-anchor="end" x="40" y="159">$8 jt</text>
+<text fill="#ffaeda" font-family="JetBrains Mono" font-size="10" text-anchor="start" x="765" y="159">34%</text>
+<line stroke="rgba(255, 28, 192, 0.35)" x1="50" x2="760" y1="200" y2="200"></line>
+<text fill="#a78897" font-family="JetBrains Mono" font-size="10" text-anchor="end" x="40" y="204">$0</text>
+<text fill="#ffaeda" font-family="JetBrains Mono" font-size="10" text-anchor="start" x="765" y="204">30%</text>
+<!-- Yearly Pillars -->
+<rect fill="url(#yearPillarNeon)" height="178" rx="6" width="28" x="123" y="22"></rect>
+<text fill="#e8dff5" font-family="JetBrains Mono" font-size="11" font-weight="600" text-anchor="middle" x="137" y="215">2021</text>
+<rect fill="url(#yearPillarNeon)" height="176" rx="6" width="28" x="263" y="24"></rect>
+<text fill="#e8dff5" font-family="JetBrains Mono" font-size="11" font-weight="600" text-anchor="middle" x="277" y="215">2022</text>
+<rect fill="url(#yearPillarNeon)" height="177" rx="6" width="28" x="403" y="23"></rect>
+<text fill="#e8dff5" font-family="JetBrains Mono" font-size="11" font-weight="600" text-anchor="middle" x="417" y="215">2023</text>
+<rect fill="url(#yearPillarNeon)" height="177" rx="6" width="28" x="543" y="23"></rect>
+<text fill="#e8dff5" font-family="JetBrains Mono" font-size="11" font-weight="600" text-anchor="middle" x="557" y="215">2024</text>
+<rect fill="url(#yearPillarNeon)" height="175" rx="6" width="28" x="683" y="25"></rect>
+<text fill="#e8dff5" font-family="JetBrains Mono" font-size="11" font-weight="600" text-anchor="middle" x="697" y="215">2025</text>
+<!-- Continuous Profit Line (#00FFA3 glowing) -->
+<line filter="drop-shadow(0 0 6px rgba(0, 255, 163, 0.7))" stroke="#00FFA3" stroke-width="3" x1="120" x2="710" y1="130" y2="130"></line>
+<!-- Margin Keseluruhan Dashed Line Across Years (#FF1CC0) -->
+<line filter="drop-shadow(0 0 6px rgba(255, 28, 192, 0.6))" stroke="#FF1CC0" stroke-dasharray="5 4" stroke-width="2.5" x1="120" x2="710" y1="112" y2="112"></line>
+</svg>
+</div>
+<!-- Structured Data Table: Yearly & YoY Breakdown -->
+<div class="overflow-x-auto rounded-xl border border-white/5">
+<table class="w-full text-left font-body-sm text-body-sm">
+<thead>
+<tr class="bg-surface-container-high/40 border-b border-surface-variant font-label-sm text-label-sm text-outline uppercase tracking-wider">
+<th class="py-space-sm px-space-md">TAHUN</th>
+<th class="py-space-sm px-space-md text-right">ORDER</th>
+<th class="py-space-sm px-space-md text-right">NET SALES</th>
+<th class="py-space-sm px-space-md text-right">PROFIT</th>
+<th class="py-space-sm px-space-md text-right">MARGIN KESELURUHAN</th>
+<th class="py-space-sm px-space-md text-right">YOY NET SALES</th>
+<th class="py-space-sm px-space-md text-right">YOY PROFIT</th>
+</tr>
+</thead>
+<tbody class="divide-y divide-surface-container-high/40">
+<tr class="hover:bg-surface-container-high/50 transition-colors">
+<td class="py-space-sm px-space-md font-medium text-on-surface">2021</td>
+<td class="py-space-sm px-space-md text-right font-mono text-on-surface">27,55 ribu</td>
+<td class="py-space-sm px-space-md text-right font-mono text-on-surface">$31,69 juta</td>
+<td class="py-space-sm px-space-md text-right font-mono text-on-surface">$11,91 juta</td>
+<td class="py-space-sm px-space-md text-right font-mono font-semibold text-secondary">37,58%</td>
+<td class="py-space-sm px-space-md text-right font-mono text-outline">—</td>
+<td class="py-space-sm px-space-md text-right font-mono text-outline">—</td>
+</tr>
+<tr class="hover:bg-surface-container-high/50 transition-colors">
+<td class="py-space-sm px-space-md font-medium text-on-surface">2022</td>
+<td class="py-space-sm px-space-md text-right font-mono text-on-surface">27,56 ribu</td>
+<td class="py-space-sm px-space-md text-right font-mono text-on-surface">$31,33 juta</td>
+<td class="py-space-sm px-space-md text-right font-mono text-on-surface">$11,78 juta</td>
+<td class="py-space-sm px-space-md text-right font-mono font-semibold text-secondary">37,61%</td>
+<td class="py-space-sm px-space-md text-right font-mono text-error font-medium">-1,14%</td>
+<td class="py-space-sm px-space-md text-right font-mono text-error font-medium">-1,05%</td>
+</tr>
+<tr class="hover:bg-surface-container-high/50 transition-colors">
+<td class="py-space-sm px-space-md font-medium text-on-surface">2023</td>
+<td class="py-space-sm px-space-md text-right font-mono text-on-surface">27,63 ribu</td>
+<td class="py-space-sm px-space-md text-right font-mono text-on-surface">$31,53 juta</td>
+<td class="py-space-sm px-space-md text-right font-mono text-on-surface">$11,87 juta</td>
+<td class="py-space-sm px-space-md text-right font-mono font-semibold text-secondary">37,64%</td>
+<td class="py-space-sm px-space-md text-right font-mono font-semibold text-[#00FFA3] drop-shadow-[0_0_6px_rgba(0,255,163,0.6)]">+0,64%</td>
+<td class="py-space-sm px-space-md text-right font-mono font-semibold text-[#00FFA3] drop-shadow-[0_0_6px_rgba(0,255,163,0.6)]">+0,72%</td>
+</tr>
+<tr class="hover:bg-surface-container-high/50 transition-colors">
+<td class="py-space-sm px-space-md font-medium text-on-surface">2024</td>
+<td class="py-space-sm px-space-md text-right font-mono text-on-surface">27,77 ribu</td>
+<td class="py-space-sm px-space-md text-right font-mono text-on-surface">$31,46 juta</td>
+<td class="py-space-sm px-space-md text-right font-mono text-on-surface">$11,90 juta</td>
+<td class="py-space-sm px-space-md text-right font-mono font-semibold text-secondary">37,83%</td>
+<td class="py-space-sm px-space-md text-right font-mono text-error font-medium">-0,22%</td>
+<td class="py-space-sm px-space-md text-right font-mono font-semibold text-[#00FFA3] drop-shadow-[0_0_6px_rgba(0,255,163,0.6)]">+0,28%</td>
+</tr>
+<tr class="hover:bg-surface-container-high/50 transition-colors">
+<td class="py-space-sm px-space-md font-medium text-on-surface">2025</td>
+<td class="py-space-sm px-space-md text-right font-mono text-on-surface">27,61 ribu</td>
+<td class="py-space-sm px-space-md text-right font-mono text-on-surface">$31,13 juta</td>
+<td class="py-space-sm px-space-md text-right font-mono text-on-surface">$11,77 juta</td>
+<td class="py-space-sm px-space-md text-right font-mono font-semibold text-secondary">37,80%</td>
+<td class="py-space-sm px-space-md text-right font-mono text-error font-medium">-1,05%</td>
+<td class="py-space-sm px-space-md text-right font-mono text-error font-medium">-1,09%</td>
+</tr>
+</tbody>
+</table>
+</div></div>
+<div class="p-space-md rounded-2xl bg-surface-container-lowest/80 backdrop-blur-md border border-white/10 flex flex-col sm:flex-row items-center justify-between gap-space-sm font-label-sm text-label-sm text-outline" style="box-shadow: rgba(0, 0, 0, 0.35) 0px 4px 20px;"><div class="flex items-center gap-space-xs"><span class="w-2 h-2 rounded-full bg-primary shadow-[0_0_8px_rgba(255,174,218,0.8)]"></span><span class="font-semibold uppercase tracking-wider text-on-surface">TELEMETRY CORE ACTIVE</span><span class="text-outline">·</span><span class="text-on-surface-variant font-mono text-[11px]">SYNCED WITH DATA LAKEHOUSE</span></div><div class="flex items-center gap-space-md"><span class="text-[11px] font-mono text-tertiary">REFRESHED IN REAL-TIME</span><div class="px-2 py-0.5 rounded bg-[#00FFA3]/15 text-[#00FFA3] font-mono text-[10px] font-semibold border border-[#00FFA3]/30 shadow-[0_0_8px_rgba(0,255,163,0.3)]">STATUS OK</div></div></div></div>
+</div></main></div>
+
+
+</body></html>

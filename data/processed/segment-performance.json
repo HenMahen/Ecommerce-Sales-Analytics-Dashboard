@@ -1,0 +1,61 @@
+{
+  "definitions_version": "mvp-6",
+  "segments": [
+    {
+      "segment": "Consumer",
+      "orders": 75636,
+      "customers": 13585,
+      "net_sales": 86043495.08,
+      "profit": 33556898.53,
+      "avg_transaction_margin_pct": 42.56,
+      "aggregate_margin_pct": 39.0,
+      "profit_share_pct": 56.65,
+      "profit_per_customer": 2470.14,
+      "orders_per_customer": 5.57,
+      "avg_discount_rate_row_mean_pct": 13.7,
+      "avg_discount_rate_weighted_pct": 15.55
+    },
+    {
+      "segment": "Premium",
+      "orders": 34746,
+      "customers": 6275,
+      "net_sales": 39446064.06,
+      "profit": 13951730.99,
+      "avg_transaction_margin_pct": 38.66,
+      "aggregate_margin_pct": 35.37,
+      "profit_share_pct": 23.55,
+      "profit_per_customer": 2223.38,
+      "orders_per_customer": 5.54,
+      "avg_discount_rate_row_mean_pct": 17.67,
+      "avg_discount_rate_weighted_pct": 20.23
+    },
+    {
+      "segment": "Business",
+      "orders": 13777,
+      "customers": 2515,
+      "net_sales": 15722434.82,
+      "profit": 6088716.77,
+      "avg_transaction_margin_pct": 42.38,
+      "aggregate_margin_pct": 38.73,
+      "profit_share_pct": 10.28,
+      "profit_per_customer": 2420.96,
+      "orders_per_customer": 5.48,
+      "avg_discount_rate_row_mean_pct": 13.78,
+      "avg_discount_rate_weighted_pct": 15.78
+    },
+    {
+      "segment": "VIP",
+      "orders": 13957,
+      "customers": 2536,
+      "net_sales": 15931220.1,
+      "profit": 5634959.06,
+      "avg_transaction_margin_pct": 38.56,
+      "aggregate_margin_pct": 35.37,
+      "profit_share_pct": 9.51,
+      "profit_per_customer": 2221.99,
+      "orders_per_customer": 5.5,
+      "avg_discount_rate_row_mean_pct": 17.78,
+      "avg_discount_rate_weighted_pct": 20.2
+    }
+  ]
+}

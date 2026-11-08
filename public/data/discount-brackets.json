@@ -1,0 +1,55 @@
+{
+  "definitions_version": "mvp-6",
+  "brackets": [
+    {
+      "bracket": "0% (No Discount)",
+      "orders": 17864,
+      "net_sales": 21770139.34,
+      "profit": 10538011.45,
+      "avg_transaction_margin_pct": 51.3,
+      "aggregate_margin_pct": 48.41,
+      "profit_per_order": 589.9,
+      "loss_orders": 0
+    },
+    {
+      "bracket": "1-10%",
+      "orders": 35031,
+      "net_sales": 39340499.03,
+      "profit": 17601245.35,
+      "avg_transaction_margin_pct": 48.06,
+      "aggregate_margin_pct": 44.74,
+      "profit_per_order": 502.45,
+      "loss_orders": 0
+    },
+    {
+      "bracket": "11-20%",
+      "orders": 49198,
+      "net_sales": 52820114.92,
+      "profit": 21062207.54,
+      "avg_transaction_margin_pct": 43.11,
+      "aggregate_margin_pct": 39.88,
+      "profit_per_order": 428.11,
+      "loss_orders": 0
+    },
+    {
+      "bracket": "21-30%",
+      "orders": 17729,
+      "net_sales": 21188389.22,
+      "profit": 6689904.26,
+      "avg_transaction_margin_pct": 35.61,
+      "aggregate_margin_pct": 31.57,
+      "profit_per_order": 377.34,
+      "loss_orders": 0
+    },
+    {
+      "bracket": "30%+",
+      "orders": 18294,
+      "net_sales": 22024071.55,
+      "profit": 3340936.75,
+      "avg_transaction_margin_pct": 18.13,
+      "aggregate_margin_pct": 15.17,
+      "profit_per_order": 182.62,
+      "loss_orders": 2530
+    }
+  ]
+}

@@ -1,0 +1,385 @@
+@import 'tailwindcss' source(none);
+@source './**/*.{ts,tsx}';
+@import 'tw-animate-css';
+@import 'shadcn/tailwind.css';
+@import '@fontsource-variable/space-grotesk';
+@import '@fontsource-variable/geist';
+@import '@fontsource-variable/jetbrains-mono';
+
+/*
+ * Dark mode follows the `.dark` class on <html>. ThemeProvider (src/app/ThemeProvider.tsx)
+ * keeps that class in sync with localStorage["dashboard.theme"] ("light" | "dark" | "system");
+ * the inline script in index.html sets it before first paint so the wrong theme never flashes.
+ */
+@custom-variant dark (&:is(.dark *));
+
+/*
+ * Design tokens — single source: docs/DESIGN_BRIEF.MD §6 (light) and §7 (dark).
+ * Both blocks define exactly the same variable names; switching theme only swaps values, so
+ * component dimensions, spacing, and radii are identical in light and dark mode.
+ * Deviations from the brief are noted per token and listed in §15 of the brief.
+ */
+:root {
+  color-scheme: light;
+
+  /* Surfaces and text — Warm Alabaster canvas from design/Light */
+  --background: #fbf9f5;
+  --foreground: #0f172a;
+  --card: #ffffff;
+  --card-foreground: #0f172a;
+  --popover: #ffffff;
+  --popover-foreground: #0f172a;
+
+  /* Layered surfaces */
+  --surface-dim: #d1daf0;
+  --surface-bright: #fbf9f5;
+  --surface-container-lowest: #ffffff;
+  --surface-container-low: #f0f3ff;
+  --surface-container: #e8eeff;
+  --surface-container-high: #dfe8fe;
+  --surface-container-highest: #dae2f8;
+
+  /* Borders and focus */
+  --border: #e8e2d8;
+  --border-variant: #ded7ca;
+  --input: #c4c5d7;
+  --ring: #2563eb;
+
+  /* Interaction accents */
+  --primary: #0037b0;
+  --primary-foreground: #ffffff;
+  --primary-hover: #1e3a8a;
+  --primary-container: #1d4ed8;
+  --on-primary-container: #cad3ff;
+  --secondary: #ac3400;
+  --secondary-foreground: #ffffff;
+  --secondary-container: #fd6b36;
+  --tertiary: #004f38;
+  --tertiary-foreground: #ffffff;
+  --tertiary-container: #00694c;
+
+  --muted: #f4efe6;
+  --muted-foreground: #434655;
+  --accent: #faf7f2;
+  --accent-foreground: #0f172a;
+  --destructive: #dc2626;
+  --destructive-foreground: #ffffff;
+
+  /* Navigation rail */
+  --sidebar: #fbf9f5;
+  --sidebar-foreground: #0f172a;
+  --sidebar-primary: #0037b0;
+  --sidebar-primary-foreground: #ffffff;
+  --sidebar-accent: #e8eeff;
+  --sidebar-accent-foreground: #0037b0;
+  --sidebar-border: #e8e2d8;
+  --sidebar-ring: #2563eb;
+
+  /* Data series — design/Light chart palette */
+  --chart-1: #1d4ed8;
+  --chart-2: #004f38;
+  --chart-3: #ac3400;
+  --chart-4: #ea580c;
+  --chart-5: #747686;
+
+  /* Brand accents (also drive bg-brand-gradient / text-brand-gradient) */
+  --brand-violet: #0037b0;
+  --brand-blue: #1d4ed8;
+  --brand-pink: #ac3400;
+
+  /* Semantic status (icons and pills add their own /10 tint) */
+  --positive: #047857;
+  --positive-bg: #d1fae5;
+  --negative: #dc2626;
+  --negative-bg: #fee2e2;
+  --warning: #ac3400;
+  --warning-bg: #ffdbd0;
+
+  /* Shape and elevation (never overridden per theme) */
+  --radius: 0.75rem;
+  --shadow-card: 0 1px 2px rgba(27, 36, 52, 0.03), 0 4px 12px rgba(27, 36, 52, 0.02);
+  --shadow-card-hover:
+    0 4px 6px -1px rgba(27, 36, 52, 0.04), 0 12px 24px -4px rgba(27, 36, 52, 0.05);
+  --shadow-rail: 0 8px 20px -10px rgb(29 78 216 / 0.4);
+}
+
+.dark {
+  color-scheme: dark;
+
+  /* Surfaces and text — Nocturne Synthwave Luxury from design/Dark */
+  --background: #151120;
+  --foreground: #f8f6fc;
+  --card: #1c1033;
+  --card-foreground: #f8f6fc;
+  --popover: #1c1033;
+  --popover-foreground: #f8f6fc;
+
+  /* Layered surfaces */
+  --surface-dim: #151120;
+  --surface-bright: #3c3748;
+  --surface-container-lowest: #100c1b;
+  --surface-container-low: #170e2b;
+  --surface-container: #1c1033;
+  --surface-container-high: #24133f;
+  --surface-container-highest: #2e1b4e;
+
+  /* Borders and focus */
+  --border: rgba(255, 28, 192, 0.18);
+  --border-variant: #593f4c;
+  --input: #8d6f7e; /* brief §7 lists #593f4c (1.75:1); this keeps control edges above 3:1 */
+  --ring: #ff1cc0;
+
+  /* Interaction accents */
+  --primary: #ff1cc0;
+  --primary-foreground: #0c0817;
+  --primary-hover: #ff5ecb;
+  --primary-container: #ff3ac2;
+  --on-primary-container: #55003e;
+  --secondary: #ac2df2; /* #b131fa nudged darker so white button text stays AA */
+  --secondary-foreground: #ffffff;
+  --secondary-container: #9a00e4;
+  --tertiary: #bcc2ff;
+  --tertiary-foreground: #00179b;
+  --tertiary-container: #7686ff;
+
+  --muted: #24133f;
+  --muted-foreground: #b4a8d1;
+  --accent: #2e1b4e;
+  --accent-foreground: #f8f6fc;
+  --destructive: #ffb4ab;
+  --destructive-foreground: #690005;
+
+  /* Navigation rail */
+  --sidebar: #100c1b;
+  --sidebar-foreground: #e8dff5;
+  --sidebar-primary: #ff1cc0;
+  --sidebar-primary-foreground: #0c0817;
+  --sidebar-accent: #2e1b4e;
+  --sidebar-accent-foreground: #f8f6fc;
+  --sidebar-border: rgba(255, 28, 192, 0.12);
+  --sidebar-ring: #ff1cc0;
+
+  /* Data series — neon pink, electric blue, violet, mint */
+  --chart-1: #ff1cc0;
+  --chart-2: #4d63ff;
+  --chart-3: #b131fa;
+  --chart-4: #00ffa3;
+  --chart-5: #b4a8d1;
+
+  /* Brand accents */
+  --brand-violet: #b131fa;
+  --brand-blue: #bcc2ff;
+  --brand-pink: #ff1cc0;
+
+  /* Semantic status */
+  --positive: #00ffa3;
+  --positive-bg: rgba(0, 255, 163, 0.15);
+  --negative: #ffb4ab;
+  --negative-bg: rgba(255, 180, 171, 0.15);
+  --warning: #ffb59d;
+  --warning-bg: rgba(255, 181, 157, 0.15);
+
+  --shadow-card: 0 12px 32px rgba(0, 0, 0, 0.55), inset 0 1px 0 rgba(255, 28, 192, 0.18);
+  --shadow-card-hover: 0 16px 36px rgba(0, 0, 0, 0.65), 0 0 20px rgba(255, 28, 192, 0.28);
+  --shadow-rail: 0 0 24px rgba(255, 28, 192, 0.38);
+}
+
+@theme inline {
+  --font-sans: 'Geist Variable', ui-sans-serif, system-ui, sans-serif;
+  --font-heading: 'Space Grotesk Variable', ui-sans-serif, system-ui, sans-serif;
+  --font-mono: 'JetBrains Mono Variable', ui-monospace, SFMono-Regular, monospace;
+
+  /* Typography scale — docs/DESIGN_BRIEF.MD §4 (size / line height / tracking / weight) */
+  --text-display: 1.875rem;
+  --text-display--line-height: 1.1;
+  --text-display--letter-spacing: -0.025em;
+  --text-display--font-weight: 600;
+  --text-h1: 1.5rem;
+  --text-h1--line-height: 1.35;
+  --text-h1--letter-spacing: -0.02em;
+  --text-h1--font-weight: 600;
+  --text-h2: 1.125rem;
+  --text-h2--line-height: 1.45;
+  --text-h2--letter-spacing: -0.015em;
+  --text-h2--font-weight: 600;
+  --text-h3: 0.9375rem;
+  --text-h3--line-height: 1.45;
+  --text-h3--letter-spacing: -0.01em;
+  --text-h3--font-weight: 600;
+  --text-body: 0.875rem;
+  --text-body--line-height: 1.5;
+  --text-body-medium: 0.875rem;
+  --text-body-medium--line-height: 1.5;
+  --text-body-medium--font-weight: 500;
+  --text-caption: 0.75rem;
+  --text-caption--line-height: 1.5;
+  --text-caption--letter-spacing: 0.02em;
+  --text-caption--font-weight: 500;
+  --text-micro: 0.6875rem;
+  --text-micro--line-height: 1.45;
+
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-primary-hover: var(--primary-hover);
+  --color-primary-container: var(--primary-container);
+  --color-on-primary-container: var(--on-primary-container);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-secondary-container: var(--secondary-container);
+  --color-tertiary: var(--tertiary);
+  --color-tertiary-foreground: var(--tertiary-foreground);
+  --color-tertiary-container: var(--tertiary-container);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-input: var(--input);
+  --color-border: var(--border);
+  --color-border-variant: var(--border-variant);
+  --color-ring: var(--ring);
+
+  --color-surface-dim: var(--surface-dim);
+  --color-surface-bright: var(--surface-bright);
+  --color-surface-container-lowest: var(--surface-container-lowest);
+  --color-surface-container-low: var(--surface-container-low);
+  --color-surface-container: var(--surface-container);
+  --color-surface-container-high: var(--surface-container-high);
+  --color-surface-container-highest: var(--surface-container-highest);
+
+  --color-chart-1: var(--chart-1);
+  --color-chart-2: var(--chart-2);
+  --color-chart-3: var(--chart-3);
+  --color-chart-4: var(--chart-4);
+  --color-chart-5: var(--chart-5);
+
+  --color-brand-violet: var(--brand-violet);
+  --color-brand-blue: var(--brand-blue);
+  --color-brand-pink: var(--brand-pink);
+  --color-positive: var(--positive);
+  --color-negative: var(--negative);
+  --color-warning: var(--warning);
+
+  --color-sidebar: var(--sidebar);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-ring: var(--sidebar-ring);
+
+  /* Radius scale — docs/DESIGN_BRIEF.MD §5.2: cards 12px, controls 10px, dialogs 16px */
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  --radius-2xl: calc(var(--radius) + 8px);
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+
+  html {
+    @apply font-sans;
+  }
+
+  /* Native buttons do not show a pointer cursor by default; interactive elements should. */
+  button:not(:disabled),
+  [role='button']:not([aria-disabled='true']) {
+    cursor: pointer;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    margin: 0;
+    font-synthesis: none;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  /* Nocturne Synthwave Luxury: violet bloom with faint pink and blue neon pools. */
+  .dark body {
+    background-image:
+      radial-gradient(ellipse at 16% 0%, rgba(74, 0, 116, 0.38), transparent 48%),
+      radial-gradient(circle at 86% 8%, rgba(255, 28, 192, 0.08), transparent 40%),
+      radial-gradient(circle at 58% 62%, rgba(28, 58, 255, 0.05), transparent 45%);
+    background-attachment: fixed;
+  }
+
+  ::selection {
+    background: color-mix(in oklab, var(--primary) 24%, transparent);
+    color: var(--foreground);
+  }
+
+  /* Respect the operating-system motion preference: transitions become instant. */
+  @media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+      scroll-behavior: auto !important;
+    }
+  }
+}
+
+@utility card-dark-surface {
+  background-image: linear-gradient(
+    145deg,
+    rgba(74, 0, 116, 0.2),
+    rgba(28, 16, 51, 0.16) 52%,
+    rgba(21, 17, 32, 0.04)
+  );
+}
+
+@utility bg-brand-gradient {
+  background-image: linear-gradient(
+    120deg,
+    var(--primary),
+    var(--primary-container) 55%,
+    var(--secondary)
+  );
+}
+
+@utility text-brand-gradient {
+  background-image: linear-gradient(
+    100deg,
+    var(--primary),
+    var(--primary-container) 60%,
+    var(--secondary)
+  );
+  background-clip: text;
+  color: transparent;
+}
+
+/*
+ * Entrance for dashboard cards: one short fade + slide on first paint (page open or refresh).
+ * `backwards` fill keeps the card hidden during its stagger delay and releases every style once
+ * done, so hover transforms keep working afterwards. Reduced-motion is handled in @layer base.
+ */
+@utility card-enter {
+  animation: card-enter-in 500ms cubic-bezier(0.22, 1, 0.36, 1) backwards;
+}
+
+@keyframes card-enter-in {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

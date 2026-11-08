@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta
+      name="description"
+      content="Dashboard analitik penjualan e-commerce: KPI, tren bulanan, performa segmen, dan status order."
+    />
+    <title>Dashboard Sales E-Commerce</title>
+    <script>
+      /*
+       * Applies the saved/system theme before the first paint so the wrong theme never flashes.
+       * Keep in sync with src/lib/theme.ts (storage key "dashboard.theme", values
+       * light|dark|system, dark mode = the `.dark` class on <html>).
+       */
+      ;(function () {
+        try {
+          var stored = window.localStorage.getItem('dashboard.theme')
+          var mode = stored === 'light' || stored === 'dark' ? stored : 'system'
+          var dark =
+            mode === 'dark' ||
+            (mode === 'system' && window.matchMedia('(prefers-color-scheme: dark)').matches)
+          document.documentElement.classList.toggle('dark', dark)
+          document.documentElement.style.colorScheme = dark ? 'dark' : 'light'
+        } catch (error) {
+          /* localStorage may be unavailable (private mode); the default light theme still works. */
+        }
+      })()
+    </script>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>

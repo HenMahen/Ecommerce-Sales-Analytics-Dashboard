@@ -1,0 +1,595 @@
+{
+  "definitions_version": "mvp-6",
+  "months": [
+    {
+      "period": "01",
+      "month_name": "Jan",
+      "orders": 9693,
+      "net_sales": 10866360.24,
+      "profit": 4657040.59,
+      "avg_transaction_margin_pct": 45.97,
+      "aggregate_margin_pct": 42.86
+    },
+    {
+      "period": "02",
+      "month_name": "Feb",
+      "orders": 8027,
+      "net_sales": 8961197.64,
+      "profit": 3823851.13,
+      "avg_transaction_margin_pct": 45.73,
+      "aggregate_margin_pct": 42.67
+    },
+    {
+      "period": "03",
+      "month_name": "Mar",
+      "orders": 10822,
+      "net_sales": 12125745.35,
+      "profit": 5166136.73,
+      "avg_transaction_margin_pct": 45.63,
+      "aggregate_margin_pct": 42.6
+    },
+    {
+      "period": "04",
+      "month_name": "Apr",
+      "orders": 10120,
+      "net_sales": 11216745.07,
+      "profit": 4824511.96,
+      "avg_transaction_margin_pct": 45.98,
+      "aggregate_margin_pct": 43.01
+    },
+    {
+      "period": "05",
+      "month_name": "May",
+      "orders": 10238,
+      "net_sales": 11193399.59,
+      "profit": 4807575.7,
+      "avg_transaction_margin_pct": 46.04,
+      "aggregate_margin_pct": 42.95
+    },
+    {
+      "period": "06",
+      "month_name": "Jun",
+      "orders": 10880,
+      "net_sales": 11949870.45,
+      "profit": 5130130.1,
+      "avg_transaction_margin_pct": 45.95,
+      "aggregate_margin_pct": 42.93
+    },
+    {
+      "period": "07",
+      "month_name": "Jul",
+      "orders": 10207,
+      "net_sales": 12482977.37,
+      "profit": 4271367.88,
+      "avg_transaction_margin_pct": 38.12,
+      "aggregate_margin_pct": 34.22
+    },
+    {
+      "period": "08",
+      "month_name": "Aug",
+      "orders": 12064,
+      "net_sales": 13356216.71,
+      "profit": 5722366.14,
+      "avg_transaction_margin_pct": 45.9,
+      "aggregate_margin_pct": 42.84
+    },
+    {
+      "period": "09",
+      "month_name": "Sep",
+      "orders": 10855,
+      "net_sales": 12248299.05,
+      "profit": 4889730.87,
+      "avg_transaction_margin_pct": 43.12,
+      "aggregate_margin_pct": 39.92
+    },
+    {
+      "period": "10",
+      "month_name": "Oct",
+      "orders": 11582,
+      "net_sales": 12940914.16,
+      "profit": 5528485.35,
+      "avg_transaction_margin_pct": 45.85,
+      "aggregate_margin_pct": 42.72
+    },
+    {
+      "period": "11",
+      "month_name": "Nov",
+      "orders": 16061,
+      "net_sales": 19107451.3,
+      "profit": 4947766.61,
+      "avg_transaction_margin_pct": 29.64,
+      "aggregate_margin_pct": 25.89
+    },
+    {
+      "period": "12",
+      "month_name": "Dec",
+      "orders": 17567,
+      "net_sales": 20694037.13,
+      "profit": 5463342.29,
+      "avg_transaction_margin_pct": 29.79,
+      "aggregate_margin_pct": 26.4
+    }
+  ],
+  "months_by_year": [
+    {
+      "period": "2021-01",
+      "orders": 1906,
+      "net_sales": 2107541.09,
+      "profit": 904382.16,
+      "avg_transaction_margin_pct": 45.82,
+      "aggregate_margin_pct": 42.91
+    },
+    {
+      "period": "2021-02",
+      "orders": 1565,
+      "net_sales": 1690497.99,
+      "profit": 719692.54,
+      "avg_transaction_margin_pct": 45.75,
+      "aggregate_margin_pct": 42.57
+    },
+    {
+      "period": "2021-03",
+      "orders": 2166,
+      "net_sales": 2443491.43,
+      "profit": 1037794.59,
+      "avg_transaction_margin_pct": 45.34,
+      "aggregate_margin_pct": 42.47
+    },
+    {
+      "period": "2021-04",
+      "orders": 1943,
+      "net_sales": 2188940.42,
+      "profit": 941394.14,
+      "avg_transaction_margin_pct": 46.0,
+      "aggregate_margin_pct": 43.01
+    },
+    {
+      "period": "2021-05",
+      "orders": 2096,
+      "net_sales": 2257143.74,
+      "profit": 976269.11,
+      "avg_transaction_margin_pct": 45.93,
+      "aggregate_margin_pct": 43.25
+    },
+    {
+      "period": "2021-06",
+      "orders": 2203,
+      "net_sales": 2403751.38,
+      "profit": 1035399.2,
+      "avg_transaction_margin_pct": 45.9,
+      "aggregate_margin_pct": 43.07
+    },
+    {
+      "period": "2021-07",
+      "orders": 2036,
+      "net_sales": 2573256.13,
+      "profit": 869288.95,
+      "avg_transaction_margin_pct": 38.05,
+      "aggregate_margin_pct": 33.78
+    },
+    {
+      "period": "2021-08",
+      "orders": 2474,
+      "net_sales": 2857515.43,
+      "profit": 1217222.75,
+      "avg_transaction_margin_pct": 45.59,
+      "aggregate_margin_pct": 42.6
+    },
+    {
+      "period": "2021-09",
+      "orders": 2134,
+      "net_sales": 2411141.19,
+      "profit": 963011.18,
+      "avg_transaction_margin_pct": 43.06,
+      "aggregate_margin_pct": 39.94
+    },
+    {
+      "period": "2021-10",
+      "orders": 2324,
+      "net_sales": 2653162.54,
+      "profit": 1126148.3,
+      "avg_transaction_margin_pct": 45.61,
+      "aggregate_margin_pct": 42.45
+    },
+    {
+      "period": "2021-11",
+      "orders": 3139,
+      "net_sales": 3759467.43,
+      "profit": 967626.05,
+      "avg_transaction_margin_pct": 29.12,
+      "aggregate_margin_pct": 25.74
+    },
+    {
+      "period": "2021-12",
+      "orders": 3568,
+      "net_sales": 4345064.19,
+      "profit": 1151207.82,
+      "avg_transaction_margin_pct": 29.79,
+      "aggregate_margin_pct": 26.49
+    },
+    {
+      "period": "2022-01",
+      "orders": 1934,
+      "net_sales": 2167097.49,
+      "profit": 935253.04,
+      "avg_transaction_margin_pct": 46.23,
+      "aggregate_margin_pct": 43.16
+    },
+    {
+      "period": "2022-02",
+      "orders": 1615,
+      "net_sales": 1794279.71,
+      "profit": 769636.45,
+      "avg_transaction_margin_pct": 45.75,
+      "aggregate_margin_pct": 42.89
+    },
+    {
+      "period": "2022-03",
+      "orders": 2126,
+      "net_sales": 2381005.9,
+      "profit": 1016118.22,
+      "avg_transaction_margin_pct": 45.79,
+      "aggregate_margin_pct": 42.68
+    },
+    {
+      "period": "2022-04",
+      "orders": 2008,
+      "net_sales": 2230371.62,
+      "profit": 955054.11,
+      "avg_transaction_margin_pct": 45.97,
+      "aggregate_margin_pct": 42.82
+    },
+    {
+      "period": "2022-05",
+      "orders": 2041,
+      "net_sales": 2237989.78,
+      "profit": 964537.25,
+      "avg_transaction_margin_pct": 46.2,
+      "aggregate_margin_pct": 43.1
+    },
+    {
+      "period": "2022-06",
+      "orders": 2174,
+      "net_sales": 2394542.02,
+      "profit": 1020516.5,
+      "avg_transaction_margin_pct": 45.87,
+      "aggregate_margin_pct": 42.62
+    },
+    {
+      "period": "2022-07",
+      "orders": 2011,
+      "net_sales": 2453820.25,
+      "profit": 839595.06,
+      "avg_transaction_margin_pct": 38.1,
+      "aggregate_margin_pct": 34.22
+    },
+    {
+      "period": "2022-08",
+      "orders": 2349,
+      "net_sales": 2609098.43,
+      "profit": 1121408.55,
+      "avg_transaction_margin_pct": 46.04,
+      "aggregate_margin_pct": 42.98
+    },
+    {
+      "period": "2022-09",
+      "orders": 2124,
+      "net_sales": 2434320.7,
+      "profit": 969526.18,
+      "avg_transaction_margin_pct": 43.2,
+      "aggregate_margin_pct": 39.83
+    },
+    {
+      "period": "2022-10",
+      "orders": 2333,
+      "net_sales": 2593039.63,
+      "profit": 1113436.21,
+      "avg_transaction_margin_pct": 46.03,
+      "aggregate_margin_pct": 42.94
+    },
+    {
+      "period": "2022-11",
+      "orders": 3257,
+      "net_sales": 3913271.91,
+      "profit": 1006374.89,
+      "avg_transaction_margin_pct": 29.3,
+      "aggregate_margin_pct": 25.72
+    },
+    {
+      "period": "2022-12",
+      "orders": 3592,
+      "net_sales": 4122200.77,
+      "profit": 1072940.07,
+      "avg_transaction_margin_pct": 29.52,
+      "aggregate_margin_pct": 26.03
+    },
+    {
+      "period": "2023-01",
+      "orders": 1926,
+      "net_sales": 2192880.1,
+      "profit": 937050.54,
+      "avg_transaction_margin_pct": 45.82,
+      "aggregate_margin_pct": 42.73
+    },
+    {
+      "period": "2023-02",
+      "orders": 1585,
+      "net_sales": 1807057.25,
+      "profit": 767563.71,
+      "avg_transaction_margin_pct": 45.4,
+      "aggregate_margin_pct": 42.48
+    },
+    {
+      "period": "2023-03",
+      "orders": 2134,
+      "net_sales": 2388806.0,
+      "profit": 1018867.71,
+      "avg_transaction_margin_pct": 45.79,
+      "aggregate_margin_pct": 42.65
+    },
+    {
+      "period": "2023-04",
+      "orders": 2040,
+      "net_sales": 2215447.5,
+      "profit": 960934.98,
+      "avg_transaction_margin_pct": 46.14,
+      "aggregate_margin_pct": 43.37
+    },
+    {
+      "period": "2023-05",
+      "orders": 2054,
+      "net_sales": 2271118.59,
+      "profit": 969274.72,
+      "avg_transaction_margin_pct": 45.87,
+      "aggregate_margin_pct": 42.68
+    },
+    {
+      "period": "2023-06",
+      "orders": 2189,
+      "net_sales": 2488706.6,
+      "profit": 1061083.41,
+      "avg_transaction_margin_pct": 45.87,
+      "aggregate_margin_pct": 42.64
+    },
+    {
+      "period": "2023-07",
+      "orders": 2010,
+      "net_sales": 2407205.79,
+      "profit": 826366.7,
+      "avg_transaction_margin_pct": 38.24,
+      "aggregate_margin_pct": 34.33
+    },
+    {
+      "period": "2023-08",
+      "orders": 2484,
+      "net_sales": 2724332.72,
+      "profit": 1165940.77,
+      "avg_transaction_margin_pct": 45.88,
+      "aggregate_margin_pct": 42.8
+    },
+    {
+      "period": "2023-09",
+      "orders": 2190,
+      "net_sales": 2436720.1,
+      "profit": 966518.89,
+      "avg_transaction_margin_pct": 42.85,
+      "aggregate_margin_pct": 39.66
+    },
+    {
+      "period": "2023-10",
+      "orders": 2347,
+      "net_sales": 2658961.76,
+      "profit": 1132983.34,
+      "avg_transaction_margin_pct": 45.65,
+      "aggregate_margin_pct": 42.61
+    },
+    {
+      "period": "2023-11",
+      "orders": 3177,
+      "net_sales": 3782554.49,
+      "profit": 975780.19,
+      "avg_transaction_margin_pct": 29.46,
+      "aggregate_margin_pct": 25.8
+    },
+    {
+      "period": "2023-12",
+      "orders": 3496,
+      "net_sales": 4158457.81,
+      "profit": 1086917.48,
+      "avg_transaction_margin_pct": 29.55,
+      "aggregate_margin_pct": 26.14
+    },
+    {
+      "period": "2024-01",
+      "orders": 1965,
+      "net_sales": 2229915.68,
+      "profit": 951089.18,
+      "avg_transaction_margin_pct": 45.84,
+      "aggregate_margin_pct": 42.65
+    },
+    {
+      "period": "2024-02",
+      "orders": 1617,
+      "net_sales": 1879486.5,
+      "profit": 795708.52,
+      "avg_transaction_margin_pct": 45.74,
+      "aggregate_margin_pct": 42.34
+    },
+    {
+      "period": "2024-03",
+      "orders": 2202,
+      "net_sales": 2435425.41,
+      "profit": 1040208.24,
+      "avg_transaction_margin_pct": 45.61,
+      "aggregate_margin_pct": 42.71
+    },
+    {
+      "period": "2024-04",
+      "orders": 2123,
+      "net_sales": 2339727.37,
+      "profit": 1006386.12,
+      "avg_transaction_margin_pct": 45.92,
+      "aggregate_margin_pct": 43.01
+    },
+    {
+      "period": "2024-05",
+      "orders": 2048,
+      "net_sales": 2282082.38,
+      "profit": 978376.16,
+      "avg_transaction_margin_pct": 46.16,
+      "aggregate_margin_pct": 42.87
+    },
+    {
+      "period": "2024-06",
+      "orders": 2176,
+      "net_sales": 2337882.88,
+      "profit": 1010340.98,
+      "avg_transaction_margin_pct": 45.9,
+      "aggregate_margin_pct": 43.22
+    },
+    {
+      "period": "2024-07",
+      "orders": 2029,
+      "net_sales": 2519200.64,
+      "profit": 856175.94,
+      "avg_transaction_margin_pct": 38.01,
+      "aggregate_margin_pct": 33.99
+    },
+    {
+      "period": "2024-08",
+      "orders": 2394,
+      "net_sales": 2537583.26,
+      "profit": 1095579.05,
+      "avg_transaction_margin_pct": 46.09,
+      "aggregate_margin_pct": 43.17
+    },
+    {
+      "period": "2024-09",
+      "orders": 2181,
+      "net_sales": 2447382.3,
+      "profit": 982341.49,
+      "avg_transaction_margin_pct": 43.33,
+      "aggregate_margin_pct": 40.14
+    },
+    {
+      "period": "2024-10",
+      "orders": 2293,
+      "net_sales": 2560278.37,
+      "profit": 1097056.52,
+      "avg_transaction_margin_pct": 45.98,
+      "aggregate_margin_pct": 42.85
+    },
+    {
+      "period": "2024-11",
+      "orders": 3297,
+      "net_sales": 3865000.26,
+      "profit": 1028643.9,
+      "avg_transaction_margin_pct": 30.44,
+      "aggregate_margin_pct": 26.61
+    },
+    {
+      "period": "2024-12",
+      "orders": 3443,
+      "net_sales": 4028247.77,
+      "profit": 1061183.71,
+      "avg_transaction_margin_pct": 29.85,
+      "aggregate_margin_pct": 26.34
+    },
+    {
+      "period": "2025-01",
+      "orders": 1962,
+      "net_sales": 2168925.88,
+      "profit": 929265.67,
+      "avg_transaction_margin_pct": 46.11,
+      "aggregate_margin_pct": 42.84
+    },
+    {
+      "period": "2025-02",
+      "orders": 1645,
+      "net_sales": 1789876.19,
+      "profit": 771249.91,
+      "avg_transaction_margin_pct": 46.02,
+      "aggregate_margin_pct": 43.09
+    },
+    {
+      "period": "2025-03",
+      "orders": 2194,
+      "net_sales": 2477016.61,
+      "profit": 1053147.97,
+      "avg_transaction_margin_pct": 45.64,
+      "aggregate_margin_pct": 42.52
+    },
+    {
+      "period": "2025-04",
+      "orders": 2006,
+      "net_sales": 2242258.16,
+      "profit": 960742.61,
+      "avg_transaction_margin_pct": 45.88,
+      "aggregate_margin_pct": 42.85
+    },
+    {
+      "period": "2025-05",
+      "orders": 1999,
+      "net_sales": 2145065.1,
+      "profit": 919118.46,
+      "avg_transaction_margin_pct": 46.03,
+      "aggregate_margin_pct": 42.85
+    },
+    {
+      "period": "2025-06",
+      "orders": 2138,
+      "net_sales": 2324987.57,
+      "profit": 1002790.01,
+      "avg_transaction_margin_pct": 46.2,
+      "aggregate_margin_pct": 43.13
+    },
+    {
+      "period": "2025-07",
+      "orders": 2121,
+      "net_sales": 2529494.56,
+      "profit": 879941.23,
+      "avg_transaction_margin_pct": 38.21,
+      "aggregate_margin_pct": 34.79
+    },
+    {
+      "period": "2025-08",
+      "orders": 2363,
+      "net_sales": 2627686.87,
+      "profit": 1122215.02,
+      "avg_transaction_margin_pct": 45.93,
+      "aggregate_margin_pct": 42.71
+    },
+    {
+      "period": "2025-09",
+      "orders": 2226,
+      "net_sales": 2518734.76,
+      "profit": 1008333.13,
+      "avg_transaction_margin_pct": 43.15,
+      "aggregate_margin_pct": 40.03
+    },
+    {
+      "period": "2025-10",
+      "orders": 2285,
+      "net_sales": 2475471.86,
+      "profit": 1058860.98,
+      "avg_transaction_margin_pct": 45.98,
+      "aggregate_margin_pct": 42.77
+    },
+    {
+      "period": "2025-11",
+      "orders": 3191,
+      "net_sales": 3787157.21,
+      "profit": 969341.58,
+      "avg_transaction_margin_pct": 29.84,
+      "aggregate_margin_pct": 25.6
+    },
+    {
+      "period": "2025-12",
+      "orders": 3468,
+      "net_sales": 4040066.59,
+      "profit": 1091093.21,
+      "avg_transaction_margin_pct": 30.24,
+      "aggregate_margin_pct": 27.01
+    }
+  ]
+}

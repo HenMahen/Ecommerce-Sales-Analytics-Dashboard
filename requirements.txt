@@ -1,0 +1,8 @@
+# Python dependencies for EDA and dashboard data preparation.
+# Versions match the local virtual environment (.venv) as of the last notebook run.
+
+pandas==3.0.6
+numpy==2.5.3
+matplotlib==3.11.2
+seaborn==0.13.2
+ipykernel==7.4.0

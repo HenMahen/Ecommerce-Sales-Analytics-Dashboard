@@ -1,0 +1,81 @@
+{
+  "dataset_version": "ecommerce-sales-2021-2025",
+  "source_files": [
+    "ecommerce_sales_customer_analytics_150k.csv",
+    "customer_master.csv",
+    "product_catalog.csv"
+  ],
+  "excluded_source_files": [
+    "order_items.csv",
+    "dataset_statistics.csv"
+  ],
+  "row_count": 138116,
+  "date_range": {
+    "min": "2021-01-01",
+    "max": "2025-12-31"
+  },
+  "definitions_version": "mvp-6",
+  "decisions": {
+    "margin_basis": "aggregate_primary",
+    "avg_transaction_margin": "secondary",
+    "net_sales_basis": "merchandise_gross_minus_discount",
+    "tax_treatment": "pass_through",
+    "shipping_treatment": "pass_through",
+    "anomaly_operator": "inclusive",
+    "repeat_customer_definition": "customer_with_more_than_one_order",
+    "product_level_metrics": "excluded",
+    "returns_treatment": "status_only_no_refund_amount",
+    "excluded_metrics": [
+      "clv",
+      "romi"
+    ],
+    "global_filters": [
+      "period",
+      "customer_segment",
+      "sales_channel",
+      "order_status"
+    ],
+    "cross_filter_source": "filter-cubes.json (combined: period x segment x sales_channel x order_status)",
+    "filter_dimensions": [
+      "segment",
+      "sales_channel",
+      "order_status"
+    ],
+    "panel_dimensions": [
+      "day_type",
+      "delivery_status",
+      "discount_bracket",
+      "region"
+    ],
+    "combined_cube_measures": [
+      "orders",
+      "net_sales",
+      "profit",
+      "gross_sales",
+      "discount_amount"
+    ],
+    "non_additive_measures": [
+      "customers",
+      "avg_transaction_margin_pct"
+    ],
+    "business_formulas_location": "python_prep_only",
+    "export_format": "csv_current_view",
+    "user_profile_in_header": "removed"
+  },
+  "derived_columns": {
+    "net_sales": "gross_sales - discount_amount",
+    "profit": "net_sales - product_cost",
+    "profit_margin_pct": "profit / net_sales * 100",
+    "discount_rate": "discount_amount / gross_sales * 100 (0 when gross_sales = 0)",
+    "order_quarter": "order_date quarter (1-4)",
+    "is_weekend": "order_date weekday index >= 5",
+    "day_type": "is_weekend ? 'Weekend' : 'Weekday'",
+    "period": "order_date as YYYY-MM"
+  },
+  "generated_at": "2026-10-17T07:27:00+00:00",
+  "tolerances": {
+    "money_abs": 0.01,
+    "pct_abs": 0.01,
+    "count_abs": 0
+  }
+}

@@ -1,0 +1,151 @@
+{
+  "definitions_version": "mvp-6",
+  "rule": {
+    "percentile_revenue": 0.75,
+    "percentile_margin": 0.25,
+    "operator": "inclusive",
+    "revenue_threshold": 1552.32,
+    "margin_threshold_pct": 34.12,
+    "thresholds_scope": "global",
+    "revenue_column": "net_sales (basis C)",
+    "margin_column": "profit / net_sales (basis C)"
+  },
+  "summary": {
+    "orders": 12855,
+    "order_share_pct": 9.31,
+    "net_sales": 34665272.99,
+    "profit": 7528760.49,
+    "avg_transaction_margin_pct": 21.47,
+    "aggregate_margin_pct": 21.72,
+    "counterfactual_gap_avg_txn_margin": 6738175.54,
+    "counterfactual_gap_aggregate_margin": 5537690.05,
+    "assumptions": [
+      "Pesanan anomali dianggap bisa mencapai margin keseluruhan portofolio tanpa mengurangi omzet. Harga jual dan jumlah pesanan dianggap tetap.",
+      "Perubahan permintaan, biaya tetap, perpindahan pelanggan ke produk lain, dan kesiapan operasional tidak dihitung. Simulasi hanya membandingkan margin.",
+      "Hasilnya adalah gambaran besarnya peluang, bukan uang yang sudah hilang. Angka ini ilustratif: bukan prakiraan dan bukan target.",
+      "Angka basis margin keseluruhan dipakai sebagai acuan. Angka basis rata-rata transaksi hanya pembanding, bukan angka utama."
+    ]
+  },
+  "dimensions": {
+    "sales_channel": [
+      {
+        "value": "Marketplace",
+        "orders": 20698,
+        "anomalies": 2002,
+        "anomaly_rate_pct": 9.67
+      },
+      {
+        "value": "Mobile App",
+        "orders": 55318,
+        "anomalies": 5164,
+        "anomaly_rate_pct": 9.34
+      },
+      {
+        "value": "Social Media",
+        "orders": 13863,
+        "anomalies": 1275,
+        "anomaly_rate_pct": 9.2
+      },
+      {
+        "value": "Website",
+        "orders": 48237,
+        "anomalies": 4414,
+        "anomaly_rate_pct": 9.15
+      }
+    ],
+    "region": [
+      {
+        "value": "South",
+        "orders": 43990,
+        "anomalies": 4172,
+        "anomaly_rate_pct": 9.48
+      },
+      {
+        "value": "Central",
+        "orders": 29627,
+        "anomalies": 2749,
+        "anomaly_rate_pct": 9.28
+      },
+      {
+        "value": "West",
+        "orders": 26273,
+        "anomalies": 2439,
+        "anomaly_rate_pct": 9.28
+      },
+      {
+        "value": "East",
+        "orders": 21602,
+        "anomalies": 2001,
+        "anomaly_rate_pct": 9.26
+      },
+      {
+        "value": "North",
+        "orders": 16624,
+        "anomalies": 1494,
+        "anomaly_rate_pct": 8.99
+      }
+    ],
+    "marketing_channel": [
+      {
+        "value": "Email Marketing",
+        "orders": 11218,
+        "anomalies": 1108,
+        "anomaly_rate_pct": 9.88
+      },
+      {
+        "value": "Google Ads",
+        "orders": 20633,
+        "anomalies": 1974,
+        "anomaly_rate_pct": 9.57
+      },
+      {
+        "value": "Organic Search",
+        "orders": 27742,
+        "anomalies": 2624,
+        "anomaly_rate_pct": 9.46
+      },
+      {
+        "value": "YouTube",
+        "orders": 4080,
+        "anomalies": 385,
+        "anomaly_rate_pct": 9.44
+      },
+      {
+        "value": "Instagram",
+        "orders": 13801,
+        "anomalies": 1279,
+        "anomaly_rate_pct": 9.27
+      },
+      {
+        "value": "Affiliate",
+        "orders": 6848,
+        "anomalies": 625,
+        "anomaly_rate_pct": 9.13
+      },
+      {
+        "value": "Facebook Ads",
+        "orders": 16651,
+        "anomalies": 1515,
+        "anomaly_rate_pct": 9.1
+      },
+      {
+        "value": "Referral",
+        "orders": 11191,
+        "anomalies": 1016,
+        "anomaly_rate_pct": 9.08
+      },
+      {
+        "value": "Direct",
+        "orders": 20515,
+        "anomalies": 1844,
+        "anomaly_rate_pct": 8.99
+      },
+      {
+        "value": "TikTok",
+        "orders": 5437,
+        "anomalies": 485,
+        "anomaly_rate_pct": 8.92
+      }
+    ]
+  }
+}

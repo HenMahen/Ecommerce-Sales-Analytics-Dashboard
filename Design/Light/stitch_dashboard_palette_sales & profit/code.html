@@ -1,0 +1,999 @@
+<!DOCTYPE html>
+
+<html lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><meta content="web_dashboard" name="shell-type"/><link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><style>@layer base{html,body{margin:0;padding:0;}body{overscroll-behavior:none;}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config={darkMode:"class",theme:{extend:{colors:{"background":"#f9f9ff","inverse-surface":"#283141","error-container":"#ffdad6","on-error-container":"#93000a","on-secondary-container":"#5d1900","surface-variant":"#dae2f8","on-primary-fixed-variant":"#0039b5","inverse-primary":"#b7c4ff","on-surface":"#131c2b","surface-container-highest":"#dae2f8","primary":"#0037b0","surface-container-lowest":"#ffffff","error":"#ba1a1a","tertiary-fixed-dim":"#7bd8b1","surface":"#f9f9ff","on-primary-fixed":"#001551","outline":"#747686","on-tertiary-fixed-variant":"#00513a","tertiary-fixed":"#97f5cc","on-secondary":"#ffffff","surface-tint":"#2151da","secondary":"#ac3400","primary-fixed":"#dce1ff","surface-container-low":"#f0f3ff","secondary-fixed-dim":"#ffb59d","on-tertiary-fixed":"#002115","surface-container-high":"#dfe8fe","outline-variant":"#c4c5d7","tertiary":"#004f38","secondary-container":"#fd6b36","on-tertiary-container":"#89e7be","secondary-fixed":"#ffdbd0","on-secondary-fixed-variant":"#832600","primary-fixed-dim":"#b7c4ff","on-background":"#131c2b","on-error":"#ffffff","on-primary-container":"#cad3ff","on-secondary-fixed":"#390c00","primary-container":"#1d4ed8","on-surface-variant":"#434655","inverse-on-surface":"#ecf0ff","on-primary":"#ffffff","on-tertiary":"#ffffff","surface-dim":"#d1daf0","surface-bright":"#f9f9ff","tertiary-container":"#00694c","surface-container":"#e8eeff"},borderRadius:{"DEFAULT":"0.125rem","lg":"0.25rem","xl":"0.5rem","full":"0.75rem"},spacing:{"space-lg":"1.5rem","margin":"3rem","space-md":"1rem","space-sm":"0.5rem","space-xl":"2.5rem","margin-mobile":"1.25rem","gutter":"1.5rem","space-xs":"0.25rem","gutter-mobile":"1rem","margin-tablet":"2rem"},fontFamily:{"body-sm":["Plus Jakarta Sans"],"headline-lg-mobile":["Plus Jakarta Sans"],"label-caps":["Plus Jakarta Sans"],"title-md":["Plus Jakarta Sans"],"display-hero-mobile":["Plus Jakarta Sans"],"headline-lg":["Plus Jakarta Sans"],"display-hero":["Plus Jakarta Sans"],"headline-sm":["Plus Jakarta Sans"],"body-md":["Plus Jakarta Sans"],"label-numeric":["Plus Jakarta Sans"],"body-lg":["Plus Jakarta Sans"],"headline-md":["Plus Jakarta Sans"]},fontSize:{"body-sm":["0.8125rem",{"lineHeight":"1.25rem","letterSpacing":"0.005em","fontWeight":"400"}],"headline-lg-mobile":["1.75rem",{"lineHeight":"2.25rem","letterSpacing":"-0.02em","fontWeight":"600"}],"label-caps":["0.6875rem",{"lineHeight":"0.875rem","letterSpacing":"0.08em","fontWeight":"700"}],"title-md":["1.125rem",{"lineHeight":"1.5rem","letterSpacing":"-0.01em","fontWeight":"500"}],"display-hero-mobile":["2.25rem",{"lineHeight":"2.75rem","letterSpacing":"-0.025em","fontWeight":"700"}],"headline-lg":["2.25rem",{"lineHeight":"2.75rem","letterSpacing":"-0.025em","fontWeight":"600"}],"display-hero":["3.25rem",{"lineHeight":"3.75rem","letterSpacing":"-0.035em","fontWeight":"700"}],"headline-sm":["1.25rem",{"lineHeight":"1.625rem","letterSpacing":"-0.015em","fontWeight":"600"}],"body-md":["0.9375rem",{"lineHeight":"1.5rem","letterSpacing":"0em","fontWeight":"400"}],"label-numeric":["0.875rem",{"lineHeight":"1.125rem","letterSpacing":"0.01em","fontWeight":"600"}],"body-lg":["1.0625rem",{"lineHeight":"1.65rem","letterSpacing":"-0.005em","fontWeight":"400"}],"headline-md":["1.5rem",{"lineHeight":"2rem","letterSpacing":"-0.02em","fontWeight":"600"}]}}}}</script></head><body class="bg-[#fbf9f5] font-body-md text-on-surface antialiased"><aside class="fixed left-0 top-0 h-full w-72 bg-[#fbf9f5] z-50 flex flex-col justify-between border-r border-[#e8e2d8]"><div class="flex flex-col"><div class="h-20 px-space-lg flex items-center border-b border-[#e8e2d8]"><div class="flex items-center gap-space-sm"><div class="w-9 h-9 rounded-lg bg-primary-container flex items-center justify-center text-on-primary font-headline-sm text-headline-sm">E</div><div class="flex flex-col"><span class="font-label-caps text-label-caps uppercase tracking-wider text-primary">Executive Suite</span><span class="font-label-numeric text-label-numeric font-semibold text-[#0f172a]">Core Analytics</span></div></div></div><div class="px-space-md pt-space-lg"><span class="px-space-sm font-label-caps text-label-caps uppercase tracking-widest text-outline">Analytical Modules</span><nav class="mt-space-sm flex flex-col gap-space-xs" data-active-classes="bg-primary-container text-on-primary font-semibold shadow-sm"><a class="flex items-center gap-space-md px-space-md py-space-sm rounded-lg text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-all" data-path="ringkasan-eksekutif" href="#"><span class="material-symbols-outlined text-[20px]">dashboard</span><span class="font-body-md text-body-md">Ringkasan Eksekutif</span></a><a class="flex items-center gap-space-md px-space-md py-space-sm rounded-lg text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-all" data-path="sales-dan-profitabilitas" href="#"><span class="material-symbols-outlined text-[20px]">trending_up</span><span class="font-body-md text-body-md">Sales &amp; Profitabilitas</span></a><a class="flex items-center gap-space-md px-space-md py-space-sm rounded-lg text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-all" data-path="customer-intelligence" href="#"><span class="material-symbols-outlined text-[20px]">group</span><span class="font-body-md text-body-md">Customer Intelligence</span></a><a class="flex items-center gap-space-md px-space-md py-space-sm rounded-lg text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-all" data-path="transaction-explorer" href="#"><span class="material-symbols-outlined text-[20px]">receipt_long</span><span class="font-body-md text-body-md">Transaction Explorer</span></a></nav></div></div><div class="p-space-md border-t border-[#e8e2d8] flex flex-col gap-space-sm bg-surface-container-lowest/60"><div class="flex items-center justify-between px-space-sm"><div class="flex items-center gap-space-xs"><span class="w-2 h-2 rounded-full bg-tertiary-container animate-pulse"></span><span class="font-label-caps text-label-caps text-outline uppercase">Data Core Live · Node Synced</span></div><button class="text-outline hover:text-on-surface transition-colors" type="button"><span class="material-symbols-outlined text-[18px]">first_page</span></button></div></div></aside><div class="pl-72"><header class="fixed top-0 left-72 right-0 z-40 bg-[#fbf9f5]/90 backdrop-blur-md border-b border-[#e8e2d8]"><div class="h-16 px-space-xl flex items-center justify-between border-b border-[#e8e2d8]/60"><div class="flex items-center gap-space-sm font-body-sm text-body-sm text-on-surface-variant"><span class="hover:text-on-surface cursor-pointer">Platform</span><span class="text-outline-variant">/</span><span class="hover:text-on-surface cursor-pointer">Analytics</span><span class="text-outline-variant">/</span><span class="font-label-numeric text-label-numeric text-[#0f172a] font-semibold">Executive Suite</span></div><div class="flex items-center gap-space-md"><div class="flex items-center gap-space-xs bg-surface-container-lowest px-space-md py-1.5 rounded-lg border border-[#e8e2d8]"><span class="material-symbols-outlined text-[18px] text-primary">calendar_today</span><span class="font-label-numeric text-label-numeric text-on-surface font-semibold">2021–2025</span></div><button class="flex items-center gap-1.5 px-space-md py-1.5 rounded-lg bg-surface-container-lowest border border-[#e8e2d8] text-on-surface font-body-sm text-body-sm hover:bg-surface-container transition-colors" type="button"><span class="material-symbols-outlined text-[18px]">tune</span><span>Filter Cepat</span></button><div class="h-5 w-px bg-[#e8e2d8]"></div><button class="w-9 h-9 rounded-lg flex items-center justify-center text-on-surface-variant hover:text-on-surface hover:bg-surface-container transition-colors" type="button"><span class="material-symbols-outlined text-[20px]">light_mode</span></button><div class="relative"><button class="w-9 h-9 rounded-lg flex items-center justify-center text-on-surface-variant hover:text-on-surface hover:bg-surface-container transition-colors" type="button"><span class="material-symbols-outlined text-[20px]">notifications</span></button><span class="absolute top-1.5 right-1.5 w-2 h-2 rounded-full bg-secondary-container"></span></div><div class="h-5 w-px bg-[#e8e2d8]"></div><div class="flex items-center gap-space-sm pl-space-xs"><div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center"><span class="material-symbols-outlined text-on-primary text-[18px]">person</span></div><div class="flex flex-col text-left hidden xl:block"><span class="font-label-numeric text-label-numeric text-[#0f172a] font-semibold leading-none">Chief Officer</span><span class="font-label-caps text-label-caps text-outline uppercase tracking-wider leading-none mt-1">Enterprise</span></div></div></div></div><div class="h-12 px-space-xl flex items-center justify-between bg-surface-container-lowest/50 gap-space-md overflow-x-auto"><div class="flex items-center gap-space-sm flex-nowrap"><div class="flex items-center gap-1 px-space-sm py-1 bg-surface-container-lowest rounded border border-[#e8e2d8] text-on-surface font-body-sm text-body-sm"><span class="font-label-caps text-label-caps uppercase text-outline">Tahun:</span><span class="font-semibold text-[#0f172a]">2024</span><span class="material-symbols-outlined text-[16px] text-outline">expand_more</span></div><div class="flex items-center gap-1 px-space-sm py-1 bg-surface-container-lowest rounded border border-[#e8e2d8] text-on-surface font-body-sm text-body-sm"><span class="font-label-caps text-label-caps uppercase text-outline">Bulan:</span><span class="font-semibold text-[#0f172a]">Jan - Des</span><span class="material-symbols-outlined text-[16px] text-outline">expand_more</span></div><div class="flex items-center gap-1 px-space-sm py-1 bg-surface-container-lowest rounded border border-[#e8e2d8] text-on-surface font-body-sm text-body-sm"><span class="font-label-caps text-label-caps uppercase text-outline">Segmen:</span><span class="font-semibold text-[#0f172a]">Semua</span><span class="material-symbols-outlined text-[16px] text-outline">expand_more</span></div><div class="flex items-center gap-1 px-space-sm py-1 bg-surface-container-lowest rounded border border-[#e8e2d8] text-on-surface font-body-sm text-body-sm"><span class="font-label-caps text-label-caps uppercase text-outline">Channel:</span><span class="font-semibold text-[#0f172a]">Direct Enterprise</span><span class="material-symbols-outlined text-[16px] text-outline">expand_more</span></div><div class="flex items-center gap-1 px-space-sm py-1 bg-surface-container-lowest rounded border border-[#e8e2d8] text-on-surface font-body-sm text-body-sm"><span class="font-label-caps text-label-caps uppercase text-outline">Status:</span><span class="font-semibold text-[#0f172a]">Settled &amp; Complete</span><span class="material-symbols-outlined text-[16px] text-outline">expand_more</span></div></div><button class="flex items-center gap-1 text-secondary hover:text-on-secondary-container transition-colors font-body-sm text-body-sm font-semibold shrink-0" type="button"><span class="material-symbols-outlined text-[16px]">restart_alt</span><span>Hapus semua filter</span></button></div></header><main class="relative pt-28 w-full px-space-xl pb-space-xl bg-[#fbf9f5] min-h-screen"><div class="flex flex-col w-full gap-space-xl">
+<!-- Page Header & Global Period Context -->
+<section class="flex flex-col lg:flex-row lg:items-end justify-between gap-space-lg pb-space-md">
+<div class="flex flex-col max-w-3xl">
+<div class="flex items-center gap-space-sm mb-space-xs">
+<span class="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full bg-tertiary-fixed text-on-tertiary-fixed font-label-caps text-label-caps uppercase tracking-wider">
+<span class="w-1.5 h-1.5 rounded-full bg-tertiary-container animate-pulse"></span>
+          Data Enterprise Aktif
+        </span>
+<span class="text-outline text-label-caps font-label-caps uppercase tracking-wider">· Audit Lintas Tahun 2021–2025</span>
+</div>
+<h1 class="font-headline-lg text-headline-lg tracking-tight text-on-surface font-semibold">
+        Sales &amp; Profitabilitas
+      </h1>
+<p class="mt-1 font-body-lg text-body-lg text-on-surface-variant leading-relaxed">
+        Tren penjualan dan profit bulanan-tahunan, komparasi saluran omnichannel, serta analisis matematis elastisitas diskon dan retensi margin.
+      </p>
+</div>
+<!-- Actions Bar -->
+<div class="flex items-center gap-space-sm self-start lg:self-end">
+<div class="flex items-center gap-2 px-space-md py-2 rounded-xl bg-surface-container-lowest shadow-sm text-on-surface-variant font-label-numeric text-label-numeric">
+<span class="material-symbols-outlined text-[18px] text-primary">date_range</span>
+<span class="font-semibold text-on-surface">Seluruh Periode 2021–2025</span>
+</div>
+<button class="flex items-center gap-2 px-space-md py-2 rounded-xl bg-primary-container text-on-primary font-body-sm text-body-sm font-semibold shadow-sm hover:opacity-95 transition-all" type="button">
+<span class="material-symbols-outlined text-[18px]">download</span>
+<span>Ekspor KPI (.CSV / .PDF)</span>
+</button>
+</div>
+</section>
+<!-- Editorial Lead Callout -->
+<div class="relative overflow-hidden rounded-xl bg-surface-container-lowest p-space-lg shadow-sm">
+<div class="absolute left-0 top-0 bottom-0 w-1.5 bg-secondary-container"></div>
+<div class="flex flex-col md:flex-row md:items-center justify-between gap-space-md">
+<div class="flex items-start gap-space-md">
+<span class="material-symbols-outlined text-secondary text-[28px] mt-0.5">insights</span>
+<div>
+<span class="font-label-caps text-label-caps uppercase tracking-widest text-secondary font-bold">Ringkasan Analis Keuangan</span>
+<p class="font-body-md text-body-md text-on-surface italic mt-0.5">
+            "Kesehatan laba kotor melampaui ambang batas aman 35% dengan capaian <strong class="font-semibold text-primary">37,69%</strong>. Meskipun diskon kuartal akhir (Q4) meningkat hingga rasio 17,28%, volume order skala mobile berhasil menahan erosi margin bersih di atas $59,23 juta."
+          </p>
+</div>
+</div>
+<div class="flex items-center gap-4 shrink-0 font-label-numeric text-label-numeric text-on-surface-variant">
+<div class="text-right">
+<div class="text-outline text-label-caps font-label-caps uppercase">Indeks Stabilitas</div>
+<div class="font-bold text-tertiary text-title-md">A+ / Stabil</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Primary 8 KPI Metric Grid -->
+<section class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-space-md">
+<!-- 1. Gross Sales -->
+<div class="flex flex-col justify-between p-space-lg rounded-xl bg-surface-container-lowest shadow-sm hover:shadow-md transition-shadow relative overflow-hidden group">
+<div class="flex items-center justify-between mb-space-sm">
+<span class="font-label-caps text-label-caps uppercase tracking-wider text-outline font-bold">Gross Sales</span>
+<span class="p-2 rounded-lg bg-surface-container text-primary material-symbols-outlined text-[18px]">payments</span>
+</div>
+<div class="flex flex-col">
+<div class="font-headline-md text-headline-md text-on-surface font-bold tracking-tight font-label-numeric">
+          $189,96 jt
+        </div>
+<div class="flex items-center gap-1.5 mt-space-xs font-label-numeric text-label-numeric">
+<span class="inline-flex items-center px-1.5 py-0.5 rounded bg-tertiary-fixed text-on-tertiary-fixed font-bold text-label-caps">
+<span class="material-symbols-outlined text-[13px]">arrow_upward</span>+4,2%
+          </span>
+<span class="text-on-surface-variant text-body-sm font-body-sm">vs periode lalu</span>
+</div>
+</div>
+<div class="mt-space-md pt-space-xs flex justify-between items-center text-label-caps font-label-caps text-outline">
+<span>Bruto Terkonsolidasi</span>
+<span class="font-semibold text-on-surface">100% Basis</span>
+</div>
+</div>
+<!-- 2. Total Diskon Diberikan -->
+<div class="flex flex-col justify-between p-space-lg rounded-xl bg-surface-container-lowest shadow-sm hover:shadow-md transition-shadow relative overflow-hidden group">
+<div class="flex items-center justify-between mb-space-sm">
+<span class="font-label-caps text-label-caps uppercase tracking-wider text-outline font-bold">Total Diskon Diberikan</span>
+<span class="p-2 rounded-lg bg-secondary-fixed text-secondary material-symbols-outlined text-[18px]">sell</span>
+</div>
+<div class="flex flex-col">
+<div class="font-headline-md text-headline-md text-on-surface font-bold tracking-tight font-label-numeric">
+          $32,82 jt
+        </div>
+<div class="flex items-center gap-1.5 mt-space-xs font-label-numeric text-label-numeric">
+<span class="inline-flex items-center px-1.5 py-0.5 rounded bg-secondary-fixed text-on-secondary-fixed-variant font-bold text-label-caps">
+            17,3%
+          </span>
+<span class="text-on-surface-variant text-body-sm font-body-sm">rasio potongan harga</span>
+</div>
+</div>
+<div class="mt-space-md pt-space-xs flex justify-between items-center text-label-caps font-label-caps text-outline">
+<span>Anggaran Kampanye</span>
+<span class="font-semibold text-secondary">Terserap 91,4%</span>
+</div>
+</div>
+<!-- 3. Tingkat Diskon Terbobot -->
+<div class="flex flex-col justify-between p-space-lg rounded-xl bg-surface-container-lowest shadow-sm hover:shadow-md transition-shadow relative overflow-hidden group">
+<div class="flex items-center justify-between mb-space-sm">
+<span class="font-label-caps text-label-caps uppercase tracking-wider text-outline font-bold">Diskon Terbobot</span>
+<span class="p-2 rounded-lg bg-surface-container text-primary-container material-symbols-outlined text-[18px]">percent</span>
+</div>
+<div class="flex flex-col">
+<div class="font-headline-md text-headline-md text-on-surface font-bold tracking-tight font-label-numeric">
+          17,28%
+        </div>
+<div class="flex items-center gap-1.5 mt-space-xs font-label-numeric text-label-numeric">
+<span class="inline-flex items-center px-1.5 py-0.5 rounded bg-tertiary-fixed text-on-tertiary-fixed font-bold text-label-caps">
+            Terkontrol
+          </span>
+<span class="text-on-surface-variant text-body-sm font-body-sm">Target batas &lt;18,0%</span>
+</div>
+</div>
+<div class="mt-space-md pt-space-xs flex justify-between items-center text-label-caps font-label-caps text-outline">
+<span>Deviasi Varians</span>
+<span class="font-semibold text-tertiary">-0,72% dari CAP</span>
+</div>
+</div>
+<!-- 4. Net Sales -->
+<div class="flex flex-col justify-between p-space-lg rounded-xl bg-surface-container-lowest shadow-sm hover:shadow-md transition-shadow relative overflow-hidden group">
+<div class="flex items-center justify-between mb-space-sm">
+<span class="font-label-caps text-label-caps uppercase tracking-wider text-outline font-bold">Net Sales</span>
+<span class="p-2 rounded-lg bg-primary-fixed text-primary material-symbols-outlined text-[18px]">account_balance</span>
+</div>
+<div class="flex flex-col">
+<div class="font-headline-md text-headline-md text-on-surface font-bold tracking-tight font-label-numeric">
+          $157,14 jt
+        </div>
+<div class="flex items-center gap-1.5 mt-space-xs font-label-numeric text-label-numeric">
+<span class="inline-flex items-center px-1.5 py-0.5 rounded bg-primary-fixed text-on-primary-fixed font-bold text-label-caps">
+            82,7%
+          </span>
+<span class="text-on-surface-variant text-body-sm font-body-sm">realisasi kas bruto</span>
+</div>
+</div>
+<div class="mt-space-md pt-space-xs flex justify-between items-center text-label-caps font-label-caps text-outline">
+<span>Arus Kas Masuk</span>
+<span class="font-semibold text-primary">Sesuai Proyeksi</span>
+</div>
+</div>
+<!-- 5. Profit Bersih -->
+<div class="flex flex-col justify-between p-space-lg rounded-xl bg-surface-container-lowest shadow-sm hover:shadow-md transition-shadow relative overflow-hidden group">
+<div class="flex items-center justify-between mb-space-sm">
+<span class="font-label-caps text-label-caps uppercase tracking-wider text-outline font-bold">Profit Bersih</span>
+<span class="p-2 rounded-lg bg-tertiary-fixed text-tertiary material-symbols-outlined text-[18px]">savings</span>
+</div>
+<div class="flex flex-col">
+<div class="font-headline-md text-headline-md text-on-surface font-bold tracking-tight font-label-numeric">
+          $59,23 jt
+        </div>
+<div class="flex items-center gap-1.5 mt-space-xs font-label-numeric text-label-numeric">
+<span class="inline-flex items-center px-1.5 py-0.5 rounded bg-tertiary-fixed text-on-tertiary-fixed font-bold text-label-caps">
+<span class="material-symbols-outlined text-[13px]">trending_up</span>+3,8%
+          </span>
+<span class="text-on-surface-variant text-body-sm font-body-sm">net surplus YoY</span>
+</div>
+</div>
+<div class="mt-space-md pt-space-xs flex justify-between items-center text-label-caps font-label-caps text-outline">
+<span>Kontribusi Laba</span>
+<span class="font-semibold text-on-surface">31,18% Bruto</span>
+</div>
+</div>
+<!-- 6. Margin Keseluruhan -->
+<div class="flex flex-col justify-between p-space-lg rounded-xl bg-surface-container-lowest shadow-sm hover:shadow-md transition-shadow relative overflow-hidden group">
+<div class="flex items-center justify-between mb-space-sm">
+<span class="font-label-caps text-label-caps uppercase tracking-wider text-outline font-bold">Margin Keseluruhan</span>
+<span class="p-2 rounded-lg bg-surface-container-high text-primary material-symbols-outlined text-[18px]">monitoring</span>
+</div>
+<div class="flex flex-col">
+<div class="font-headline-md text-headline-md text-on-surface font-bold tracking-tight font-label-numeric">
+          37,69%
+        </div>
+<div class="flex items-center gap-1.5 mt-space-xs font-label-numeric text-label-numeric">
+<span class="inline-flex items-center px-1.5 py-0.5 rounded bg-tertiary-fixed text-on-tertiary-fixed font-bold text-label-caps">
+            Sehat
+          </span>
+<span class="text-on-surface-variant text-body-sm font-body-sm">&gt;35% kondisi optimal</span>
+</div>
+</div>
+<div class="mt-space-md pt-space-xs flex justify-between items-center text-label-caps font-label-caps text-outline">
+<span>Benchmark Industri</span>
+<span class="font-semibold text-tertiary">+4,1% di atas rata2</span>
+</div>
+</div>
+<!-- 7. Order Selesai -->
+<div class="flex flex-col justify-between p-space-lg rounded-xl bg-surface-container-lowest shadow-sm hover:shadow-md transition-shadow relative overflow-hidden group">
+<div class="flex items-center justify-between mb-space-sm">
+<span class="font-label-caps text-label-caps uppercase tracking-wider text-outline font-bold">Order Selesai</span>
+<span class="p-2 rounded-lg bg-surface-container text-on-surface-variant material-symbols-outlined text-[18px]">shopping_cart_checkout</span>
+</div>
+<div class="flex flex-col">
+<div class="font-headline-md text-headline-md text-on-surface font-bold tracking-tight font-label-numeric">
+          138,12 rb
+        </div>
+<div class="flex items-center gap-1.5 mt-space-xs font-label-numeric text-label-numeric">
+<span class="inline-flex items-center px-1.5 py-0.5 rounded bg-primary-fixed text-on-primary-fixed font-bold text-label-caps">
+<span class="material-symbols-outlined text-[13px]">add</span>1,8%
+          </span>
+<span class="text-on-surface-variant text-body-sm font-body-sm">volume pesanan</span>
+</div>
+</div>
+<div class="mt-space-md pt-space-xs flex justify-between items-center text-label-caps font-label-caps text-outline">
+<span>AOV (Rata-rata Order)</span>
+<span class="font-semibold text-on-surface">$1.137,70 / tks</span>
+</div>
+</div>
+<!-- 8. Nilai Kerugian -->
+<div class="flex flex-col justify-between p-space-lg rounded-xl bg-surface-container-lowest shadow-sm hover:shadow-md transition-shadow relative overflow-hidden group">
+<div class="flex items-center justify-between mb-space-sm">
+<span class="font-label-caps text-label-caps uppercase tracking-wider text-outline font-bold">Nilai Kerugian / Retur</span>
+<span class="p-2 rounded-lg bg-error-container text-on-error-container material-symbols-outlined text-[18px]">warning</span>
+</div>
+<div class="flex flex-col">
+<div class="font-headline-md text-headline-md text-on-surface font-bold tracking-tight font-label-numeric">
+          $426,31 rb
+        </div>
+<div class="flex items-center gap-1.5 mt-space-xs font-label-numeric text-label-numeric">
+<span class="inline-flex items-center px-1.5 py-0.5 rounded bg-tertiary-fixed text-on-tertiary-fixed font-bold text-label-caps">
+            0,27%
+          </span>
+<span class="text-on-surface-variant text-body-sm font-body-sm">toleransi risiko aman</span>
+</div>
+</div>
+<div class="mt-space-md pt-space-xs flex justify-between items-center text-label-caps font-label-caps text-outline">
+<span>Batas Plafon Klaim</span>
+<span class="font-semibold text-tertiary">&lt;0,50% Target</span>
+</div>
+</div>
+</section>
+<!-- Main Multi-Tier Chart Section: Tren Penjualan & Profit -->
+<section class="flex flex-col rounded-xl bg-surface-container-lowest shadow-sm p-space-lg">
+<!-- Chart Header -->
+<div class="flex flex-col md:flex-row md:items-center justify-between gap-space-md pb-space-lg">
+<div>
+<div class="flex items-center gap-space-xs">
+<span class="w-2.5 h-2.5 rounded-full bg-primary-container"></span>
+<span class="font-label-caps text-label-caps uppercase tracking-widest text-outline font-bold">Visualisasi Matriks Penjualan</span>
+</div>
+<h2 class="font-headline-sm text-headline-sm font-bold text-on-surface mt-1">
+          Tren Penjualan Bersih &amp; Profit (2021 – 2025)
+        </h2>
+<p class="font-body-sm text-body-sm text-on-surface-variant">
+          Penyandingan volume penjualan neto (kolom biru indigo), profitabilitas operasional (kolom toska), dan trayek fluktuasi margin (garis terakota).
+        </p>
+</div>
+<!-- Controls & Toggle -->
+<div class="flex flex-wrap items-center gap-space-sm">
+<!-- Legend Indicator -->
+<div class="hidden xl:flex items-center gap-space-md px-space-md py-1.5 rounded-lg bg-surface-container font-label-numeric text-label-numeric text-on-surface">
+<div class="flex items-center gap-1.5">
+<span class="w-3 h-3 rounded-sm bg-primary-container"></span>
+<span class="font-body-sm text-body-sm">Net Sales ($)</span>
+</div>
+<div class="flex items-center gap-1.5">
+<span class="w-3 h-3 rounded-sm bg-tertiary-container"></span>
+<span class="font-body-sm text-body-sm">Profit Bersih ($)</span>
+</div>
+<div class="flex items-center gap-1.5">
+<span class="w-3 h-0.5 bg-secondary-container"></span>
+<span class="font-body-sm text-body-sm">Margin (%)</span>
+</div>
+</div>
+<!-- Period Granularity Switcher -->
+<div class="inline-flex p-1 rounded-lg bg-surface-container text-on-surface-variant font-label-numeric text-label-numeric">
+<button class="px-3 py-1 rounded bg-surface-container-lowest font-semibold text-primary shadow-sm" type="button">Bulanan</button>
+<button class="px-3 py-1 rounded hover:text-on-surface transition-colors" type="button">Kuartalan</button>
+<button class="px-3 py-1 rounded hover:text-on-surface transition-colors" type="button">Tahunan</button>
+</div>
+</div>
+</div>
+<!-- Scalable Inline SVG Master Chart -->
+<div class="relative w-full overflow-hidden pt-space-xs">
+<svg class="w-full h-auto overflow-visible select-none" viewbox="0 0 960 300" xmlns="http://www.w3.org/2000/svg">
+<defs>
+<lineargradient id="gradNetSales" x1="0" x2="0" y1="0" y2="1">
+<stop offset="0%" stop-color="#1d4ed8" stop-opacity="0.95"></stop>
+<stop offset="100%" stop-color="#1d4ed8" stop-opacity="0.65"></stop>
+</lineargradient>
+<lineargradient id="gradProfit" x1="0" x2="0" y1="0" y2="1">
+<stop offset="0%" stop-color="#00694c" stop-opacity="0.9"></stop>
+<stop offset="100%" stop-color="#00694c" stop-opacity="0.55"></stop>
+</lineargradient>
+</defs>
+<!-- Horizontal Grid Lines (Hairline Soft) -->
+<g stroke="#f0ede6" stroke-width="1">
+<line x1="45" x2="940" y1="20" y2="20"></line>
+<line x1="45" x2="940" y1="75" y2="75"></line>
+<line x1="45" x2="940" y1="130" y2="130"></line>
+<line x1="45" x2="940" y1="185" y2="185"></line>
+<line x1="45" x2="940" y1="240" y2="240"></line>
+</g>
+<!-- Left Y-Axis Labels ($ Mil) -->
+<g fill="#747686" font-family="Plus Jakarta Sans" font-size="11" text-anchor="end">
+<text x="38" y="24">$60 jt</text>
+<text x="38" y="79">$45 jt</text>
+<text x="38" y="134">$30 jt</text>
+<text x="38" y="189">$15 jt</text>
+<text x="38" y="244">$0</text>
+</g>
+<!-- Bars for 12 Months: Group of Net Sales (left) + Profit (right) -->
+<!-- Jan: Sales $11.2jt (h=41), Profit $4.8jt (h=17) -->
+<g transform="translate(65, 0)">
+<rect fill="url(#gradNetSales)" height="41" rx="3" width="22" x="0" y="199"></rect>
+<rect fill="url(#gradProfit)" height="17" rx="3" width="18" x="25" y="223"></rect>
+<text fill="#434655" font-family="Plus Jakarta Sans" font-size="11" text-anchor="middle" x="21" y="260">Jan</text>
+</g>
+<!-- Feb: Sales $10.8jt (h=39), Profit $4.5jt (h=16) -->
+<g transform="translate(138, 0)">
+<rect fill="url(#gradNetSales)" height="39" rx="3" width="22" x="0" y="201"></rect>
+<rect fill="url(#gradProfit)" height="16" rx="3" width="18" x="25" y="224"></rect>
+<text fill="#434655" font-family="Plus Jakarta Sans" font-size="11" text-anchor="middle" x="21" y="260">Feb</text>
+</g>
+<!-- Mar: Sales $13.5jt (h=49), Profit $5.6jt (h=20) -->
+<g transform="translate(211, 0)">
+<rect fill="url(#gradNetSales)" height="49" rx="3" width="22" x="0" y="191"></rect>
+<rect fill="url(#gradProfit)" height="20" rx="3" width="18" x="25" y="220"></rect>
+<text fill="#434655" font-family="Plus Jakarta Sans" font-size="11" text-anchor="middle" x="21" y="260">Mar</text>
+</g>
+<!-- Apr: Sales $12.1jt (h=44), Profit $5.1jt (h=19) -->
+<g transform="translate(284, 0)">
+<rect fill="url(#gradNetSales)" height="44" rx="3" width="22" x="0" y="196"></rect>
+<rect fill="url(#gradProfit)" height="19" rx="3" width="18" x="25" y="221"></rect>
+<text fill="#434655" font-family="Plus Jakarta Sans" font-size="11" text-anchor="middle" x="21" y="260">Apr</text>
+</g>
+<!-- Mei: Sales $14.2jt (h=52), Profit $6.0jt (h=22) -->
+<g transform="translate(357, 0)">
+<rect fill="url(#gradNetSales)" height="52" rx="3" width="22" x="0" y="188"></rect>
+<rect fill="url(#gradProfit)" height="22" rx="3" width="18" x="25" y="218"></rect>
+<text fill="#434655" font-family="Plus Jakarta Sans" font-size="11" text-anchor="middle" x="21" y="260">Mei</text>
+</g>
+<!-- Jun: Sales $13.8jt (h=50), Profit $5.7jt (h=21) -->
+<g transform="translate(430, 0)">
+<rect fill="url(#gradNetSales)" height="50" rx="3" width="22" x="0" y="190"></rect>
+<rect fill="url(#gradProfit)" height="21" rx="3" width="18" x="25" y="219"></rect>
+<text fill="#434655" font-family="Plus Jakarta Sans" font-size="11" text-anchor="middle" x="21" y="260">Jun</text>
+</g>
+<!-- Jul: Sales $12.9jt (h=47), Profit $5.0jt (h=18) -->
+<g transform="translate(503, 0)">
+<rect fill="url(#gradNetSales)" height="47" rx="3" width="22" x="0" y="193"></rect>
+<rect fill="url(#gradProfit)" height="18" rx="3" width="18" x="25" y="222"></rect>
+<text fill="#434655" font-family="Plus Jakarta Sans" font-size="11" text-anchor="middle" x="21" y="260">Jul</text>
+</g>
+<!-- Agu: Sales $13.4jt (h=49), Profit $5.2jt (h=19) -->
+<g transform="translate(576, 0)">
+<rect fill="url(#gradNetSales)" height="49" rx="3" width="22" x="0" y="191"></rect>
+<rect fill="url(#gradProfit)" height="19" rx="3" width="18" x="25" y="221"></rect>
+<text fill="#434655" font-family="Plus Jakarta Sans" font-size="11" text-anchor="middle" x="21" y="260">Agu</text>
+</g>
+<!-- Sep: Sales $14.9jt (h=55), Profit $5.8jt (h=21) -->
+<g transform="translate(649, 0)">
+<rect fill="url(#gradNetSales)" height="55" rx="3" width="22" x="0" y="185"></rect>
+<rect fill="url(#gradProfit)" height="21" rx="3" width="18" x="25" y="219"></rect>
+<text fill="#434655" font-family="Plus Jakarta Sans" font-size="11" text-anchor="middle" x="21" y="260">Sep</text>
+</g>
+<!-- Okt: Sales $16.8jt (h=62), Profit $5.5jt (h=20) -->
+<g transform="translate(722, 0)">
+<rect fill="url(#gradNetSales)" height="62" rx="3" width="22" x="0" y="178"></rect>
+<rect fill="url(#gradProfit)" height="20" rx="3" width="18" x="25" y="220"></rect>
+<text fill="#434655" font-family="Plus Jakarta Sans" font-size="11" text-anchor="middle" x="21" y="260">Okt</text>
+</g>
+<!-- Nov: Sales $20.4jt (h=75), Profit $6.2jt (h=23) -->
+<g transform="translate(795, 0)">
+<rect fill="url(#gradNetSales)" height="75" rx="3" width="22" x="0" y="165"></rect>
+<rect fill="url(#gradProfit)" height="23" rx="3" width="18" x="25" y="217"></rect>
+<text fill="#434655" font-family="Plus Jakarta Sans" font-size="11" text-anchor="middle" x="21" y="260">Nov</text>
+</g>
+<!-- Des: Sales $23.4jt (h=86), Profit $7.1jt (h=26) - Holiday Peak -->
+<g transform="translate(868, 0)">
+<rect fill="url(#gradNetSales)" height="86" rx="3" width="22" x="0" y="154"></rect>
+<rect fill="url(#gradProfit)" height="26" rx="3" width="18" x="25" y="214"></rect>
+<text fill="#434655" font-family="Plus Jakarta Sans" font-size="11" text-anchor="middle" x="21" y="260">Des</text>
+</g>
+<!-- Margin Curve (Terracotta Line Trend Overlay) -->
+<path d="M 86 100 Q 159 102 232 98 T 378 95 T 524 105 T 670 108 T 816 130 T 889 135" fill="none" stroke="#fd6b36" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5"></path>
+<!-- Key Margin Nodes -->
+<circle cx="86" cy="100" fill="#fd6b36" r="3.5" stroke="#ffffff" stroke-width="1.5"></circle>
+<circle cx="232" cy="98" fill="#fd6b36" r="3.5" stroke="#ffffff" stroke-width="1.5"></circle>
+<circle cx="378" cy="95" fill="#fd6b36" r="3.5" stroke="#ffffff" stroke-width="1.5"></circle>
+<circle cx="524" cy="105" fill="#fd6b36" r="3.5" stroke="#ffffff" stroke-width="1.5"></circle>
+<circle cx="670" cy="108" fill="#fd6b36" r="3.5" stroke="#ffffff" stroke-width="1.5"></circle>
+<circle cx="816" cy="130" fill="#fd6b36" r="3.5" stroke="#ffffff" stroke-width="1.5"></circle>
+<circle cx="889" cy="135" fill="#fd6b36" r="4.5" stroke="#ffffff" stroke-width="2"></circle>
+<!-- Peak Callout Annotation Badge on Chart -->
+<g transform="translate(840, 115)">
+<rect fill="#fd6b36" height="18" rx="4" width="70" x="-35" y="-22"></rect>
+<text fill="#ffffff" font-family="Plus Jakarta Sans" font-size="9" font-weight="700" text-anchor="middle" x="0" y="-9">30,22% Margin</text>
+</g>
+</svg>
+</div>
+<!-- Chart Highlight Metadata Strips -->
+<div class="grid grid-cols-1 md:grid-cols-3 gap-space-md pt-space-lg">
+<div class="p-space-md rounded-xl bg-surface-container-low flex items-center justify-between">
+<div>
+<span class="font-label-caps text-label-caps uppercase text-outline font-bold">Puncak Penjualan (Seasional)</span>
+<div class="font-label-numeric text-label-numeric font-bold text-on-surface mt-0.5">Q4 (Okt–Des) $54,21 Juta</div>
+</div>
+<span class="px-2 py-1 rounded bg-surface-container font-label-caps text-label-caps font-bold text-primary">+34,5% vol</span>
+</div>
+<div class="p-space-md rounded-xl bg-surface-container-low flex items-center justify-between">
+<div>
+<span class="font-label-caps text-label-caps uppercase text-outline font-bold">Margin Rata-Rata Berjalan</span>
+<div class="font-label-numeric text-label-numeric font-bold text-on-surface mt-0.5">37,69% Rerata Tertimbang</div>
+</div>
+<span class="px-2 py-1 rounded bg-tertiary-fixed text-on-tertiary-fixed font-label-caps text-label-caps font-bold">Optimal</span>
+</div>
+<div class="p-space-md rounded-xl bg-surface-container-low flex items-center justify-between">
+<div>
+<span class="font-label-caps text-label-caps uppercase text-outline font-bold">Volatilitas Margin Antar Bulan</span>
+<div class="font-label-numeric text-label-numeric font-bold text-on-surface mt-0.5">±2,4% Deviasi Varians</div>
+</div>
+<span class="px-2 py-1 rounded bg-secondary-fixed text-secondary font-label-caps text-label-caps font-bold">Toleransi Rendah</span>
+</div>
+</div>
+</section>
+<!-- Middle Row: Sales Channel Comparison & Weekday vs Weekend -->
+<section class="grid grid-cols-1 lg:grid-cols-12 gap-space-md">
+<!-- Channel Breakdown (7 Cols) -->
+<div class="lg:col-span-7 flex flex-col justify-between rounded-xl bg-surface-container-lowest shadow-sm p-space-lg">
+<div class="flex items-center justify-between mb-space-md">
+<div class="flex flex-col">
+<div class="flex items-center gap-space-xs">
+<span class="w-2.5 h-2.5 rounded-full bg-primary"></span>
+<span class="font-label-caps text-label-caps uppercase tracking-widest text-outline font-bold">Omnichannel Mix</span>
+</div>
+<h3 class="font-headline-sm text-headline-sm font-bold text-on-surface mt-1">Perbandingan Saluran Penjualan</h3>
+</div>
+<span class="font-label-caps text-label-caps px-2 py-1 rounded bg-surface-container text-on-surface-variant font-semibold">4 Kanal Utama</span>
+</div>
+<div class="flex flex-col gap-space-md">
+<!-- 1. Mobile App -->
+<div class="p-space-md rounded-xl bg-surface-container-low hover:bg-surface-container transition-colors">
+<div class="flex items-center justify-between mb-1.5">
+<div class="flex items-center gap-space-sm">
+<span class="material-symbols-outlined text-primary text-[20px]">smartphone</span>
+<span class="font-label-numeric text-label-numeric font-bold text-on-surface">Mobile Application Direct</span>
+</div>
+<div class="text-right">
+<span class="font-label-numeric text-label-numeric font-bold text-on-surface">$64,80 jt</span>
+<span class="font-label-caps text-label-caps text-outline ml-2">(41,2% Total)</span>
+</div>
+</div>
+<div class="w-full bg-surface-container-highest h-2 rounded-full overflow-hidden">
+<div class="bg-primary-container h-full rounded-full" style="width: 41.2%;"></div>
+</div>
+<div class="flex justify-between items-center mt-2 text-body-sm font-body-sm text-on-surface-variant">
+<span>Rerata Margin Laba: <strong class="font-semibold text-tertiary">42,15%</strong></span>
+<span>Konversi: <strong class="font-semibold text-on-surface">4,82%</strong></span>
+</div>
+</div>
+<!-- 2. Web Desktop -->
+<div class="p-space-md rounded-xl bg-surface-container-low hover:bg-surface-container transition-colors">
+<div class="flex items-center justify-between mb-1.5">
+<div class="flex items-center gap-space-sm">
+<span class="material-symbols-outlined text-primary text-[20px]">laptop_mac</span>
+<span class="font-label-numeric text-label-numeric font-bold text-on-surface">Website / Desktop Storefront</span>
+</div>
+<div class="text-right">
+<span class="font-label-numeric text-label-numeric font-bold text-on-surface">$52,15 jt</span>
+<span class="font-label-caps text-label-caps text-outline ml-2">(33,2% Total)</span>
+</div>
+</div>
+<div class="w-full bg-surface-container-highest h-2 rounded-full overflow-hidden">
+<div class="bg-primary h-full rounded-full" style="width: 33.2%;"></div>
+</div>
+<div class="flex justify-between items-center mt-2 text-body-sm font-body-sm text-on-surface-variant">
+<span>Rerata Margin Laba: <strong class="font-semibold text-tertiary">39,40%</strong></span>
+<span>Konversi: <strong class="font-semibold text-on-surface">3,21%</strong></span>
+</div>
+</div>
+<!-- 3. Marketplace B2B -->
+<div class="p-space-md rounded-xl bg-surface-container-low hover:bg-surface-container transition-colors">
+<div class="flex items-center justify-between mb-1.5">
+<div class="flex items-center gap-space-sm">
+<span class="material-symbols-outlined text-secondary text-[20px]">hub</span>
+<span class="font-label-numeric text-label-numeric font-bold text-on-surface">Marketplace &amp; B2B Distributors</span>
+</div>
+<div class="text-right">
+<span class="font-label-numeric text-label-numeric font-bold text-on-surface">$24,92 jt</span>
+<span class="font-label-caps text-label-caps text-outline ml-2">(15,9% Total)</span>
+</div>
+</div>
+<div class="w-full bg-surface-container-highest h-2 rounded-full overflow-hidden">
+<div class="bg-secondary h-full rounded-full" style="width: 15.9%;"></div>
+</div>
+<div class="flex justify-between items-center mt-2 text-body-sm font-body-sm text-on-surface-variant">
+<span>Rerata Margin Laba: <strong class="font-semibold text-on-surface-variant">28,10%</strong></span>
+<span>Fee Kanal: <strong class="font-semibold text-secondary">8,5%</strong></span>
+</div>
+</div>
+<!-- 4. Social Commerce -->
+<div class="p-space-md rounded-xl bg-surface-container-low hover:bg-surface-container transition-colors">
+<div class="flex items-center justify-between mb-1.5">
+<div class="flex items-center gap-space-sm">
+<span class="material-symbols-outlined text-tertiary text-[20px]">share</span>
+<span class="font-label-numeric text-label-numeric font-bold text-on-surface">Social Commerce &amp; Livestream</span>
+</div>
+<div class="text-right">
+<span class="font-label-numeric text-label-numeric font-bold text-on-surface">$15,27 jt</span>
+<span class="font-label-caps text-label-caps text-outline ml-2">(9,7% Total)</span>
+</div>
+</div>
+<div class="w-full bg-surface-container-highest h-2 rounded-full overflow-hidden">
+<div class="bg-tertiary-container h-full rounded-full" style="width: 9.7%;"></div>
+</div>
+<div class="flex justify-between items-center mt-2 text-body-sm font-body-sm text-on-surface-variant">
+<span>Rerata Margin Laba: <strong class="font-semibold text-tertiary">34,80%</strong></span>
+<span>CAC Rerata: <strong class="font-semibold text-on-surface">$12,40</strong></span>
+</div>
+</div>
+</div>
+</div>
+<!-- Weekday vs Weekend Comparison (5 Cols) -->
+<div class="lg:col-span-5 flex flex-col justify-between rounded-xl bg-surface-container-lowest shadow-sm p-space-lg">
+<div class="flex items-center justify-between mb-space-md">
+<div class="flex flex-col">
+<div class="flex items-center gap-space-xs">
+<span class="w-2.5 h-2.5 rounded-full bg-tertiary"></span>
+<span class="font-label-caps text-label-caps uppercase tracking-widest text-outline font-bold">Analisis Temporal</span>
+</div>
+<h3 class="font-headline-sm text-headline-sm font-bold text-on-surface mt-1">Hari Kerja vs Akhir Pekan</h3>
+</div>
+<span class="material-symbols-outlined text-outline text-[20px]">schedule</span>
+</div>
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-1 gap-space-md">
+<!-- Hari Kerja Card -->
+<div class="p-space-md rounded-xl bg-surface-container-low flex flex-col justify-between">
+<div class="flex items-center justify-between mb-2">
+<div class="flex items-center gap-2">
+<span class="w-3 h-3 rounded-full bg-primary"></span>
+<span class="font-label-numeric text-label-numeric font-bold text-on-surface">Hari Kerja (Senin–Jumat)</span>
+</div>
+<span class="font-label-numeric text-label-numeric font-bold text-primary">71,4% Volume</span>
+</div>
+<div class="grid grid-cols-2 gap-space-sm pt-2">
+<div>
+<span class="font-label-caps text-label-caps uppercase text-outline">Total Pesanan</span>
+<div class="font-label-numeric text-label-numeric font-bold text-on-surface text-title-md">98,69 rb</div>
+</div>
+<div>
+<span class="font-label-caps text-label-caps uppercase text-outline">Margin Bersih</span>
+<div class="font-label-numeric text-label-numeric font-bold text-tertiary text-title-md">37,71%</div>
+</div>
+</div>
+<div class="mt-2 text-body-sm font-body-sm text-on-surface-variant">
+            Dominasi pembelian korporat dan reorder terjadwal dengan AOV stabil.
+          </div>
+</div>
+<!-- Akhir Pekan Card -->
+<div class="p-space-md rounded-xl bg-surface-container-low flex flex-col justify-between">
+<div class="flex items-center justify-between mb-2">
+<div class="flex items-center gap-2">
+<span class="w-3 h-3 rounded-full bg-secondary-container"></span>
+<span class="font-label-numeric text-label-numeric font-bold text-on-surface">Akhir Pekan (Sabtu–Minggu)</span>
+</div>
+<span class="font-label-numeric text-label-numeric font-bold text-secondary">28,6% Volume</span>
+</div>
+<div class="grid grid-cols-2 gap-space-sm pt-2">
+<div>
+<span class="font-label-caps text-label-caps uppercase text-outline">Total Pesanan</span>
+<div class="font-label-numeric text-label-numeric font-bold text-on-surface text-title-md">39,43 rb</div>
+</div>
+<div>
+<span class="font-label-caps text-label-caps uppercase text-outline">Margin Bersih</span>
+<div class="font-label-numeric text-label-numeric font-bold text-tertiary text-title-md">37,65%</div>
+</div>
+</div>
+<div class="mt-2 text-body-sm font-body-sm text-on-surface-variant">
+            Aktivitas segmen direct-to-consumer didorong oleh flash deal dan program bebas ongkir.
+          </div>
+</div>
+</div>
+<div class="p-space-sm rounded-lg bg-surface-container flex items-center justify-between mt-space-sm font-body-sm text-body-sm text-on-surface-variant">
+<span>Selisih Margin Operasional:</span>
+<span class="font-bold text-on-surface font-label-numeric">+0,06% Hari Kerja</span>
+</div>
+</div>
+</section>
+<!-- Quarterly Margin Breakdown Across Multi-Year -->
+<section class="flex flex-col rounded-xl bg-surface-container-lowest shadow-sm p-space-lg">
+<div class="flex flex-col md:flex-row md:items-center justify-between gap-space-sm pb-space-md">
+<div>
+<div class="flex items-center gap-space-xs">
+<span class="w-2.5 h-2.5 rounded-full bg-secondary"></span>
+<span class="font-label-caps text-label-caps uppercase tracking-widest text-outline font-bold">Pola Siklis Laba</span>
+</div>
+<h3 class="font-headline-sm text-headline-sm font-bold text-on-surface mt-1">
+          Margin Keseluruhan per Kuartal (Lintas Tahun)
+        </h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant">
+          Pola musiman menunjukkan efisiensi laba kotor tertinggi pada semester pertama sebelum pelebaran promosi di akhir tahun.
+        </p>
+</div>
+<div class="flex items-center gap-space-xs font-label-numeric text-label-numeric text-outline">
+<span class="material-symbols-outlined text-[16px]">info</span>
+<span>Ambang Batas Minimum: 30,0%</span>
+</div>
+</div>
+<!-- 4 Quarter Structural Cards -->
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-space-md">
+<!-- Q1 -->
+<div class="p-space-md rounded-xl bg-surface-container-low flex flex-col justify-between">
+<div class="flex items-center justify-between">
+<span class="font-label-caps text-label-caps uppercase tracking-wider text-outline font-bold">Kuartal 1 (Jan - Mar)</span>
+<span class="px-2 py-0.5 rounded bg-tertiary-fixed text-on-tertiary-fixed font-label-caps text-label-caps font-bold">Paling Efisien</span>
+</div>
+<div class="my-space-md">
+<div class="font-headline-md text-headline-md font-bold text-tertiary font-label-numeric">42,71%</div>
+<div class="w-full bg-surface-container-highest h-2 rounded-full overflow-hidden mt-2">
+<div class="bg-tertiary h-full rounded-full" style="width: 85%;"></div>
+</div>
+</div>
+<div class="text-body-sm font-body-sm text-on-surface-variant">
+          Diskon minimal pasca tahun baru; rasio konversi organik tinggi tanpa subsidi harga.
+        </div>
+</div>
+<!-- Q2 -->
+<div class="p-space-md rounded-xl bg-surface-container-low flex flex-col justify-between">
+<div class="flex items-center justify-between">
+<span class="font-label-caps text-label-caps uppercase tracking-wider text-outline font-bold">Kuartal 2 (Apr - Jun)</span>
+<span class="px-2 py-0.5 rounded bg-tertiary-fixed text-on-tertiary-fixed font-label-caps text-label-caps font-bold">Puncak Margin</span>
+</div>
+<div class="my-space-md">
+<div class="font-headline-md text-headline-md font-bold text-tertiary font-label-numeric">42,96%</div>
+<div class="w-full bg-surface-container-highest h-2 rounded-full overflow-hidden mt-2">
+<div class="bg-tertiary h-full rounded-full" style="width: 86%;"></div>
+</div>
+</div>
+<div class="text-body-sm font-body-sm text-on-surface-variant">
+          Momentum pesanan korporat semester 1 dengan skala margin maksimal pada produk premium.
+        </div>
+</div>
+<!-- Q3 -->
+<div class="p-space-md rounded-xl bg-surface-container-low flex flex-col justify-between">
+<div class="flex items-center justify-between">
+<span class="font-label-caps text-label-caps uppercase tracking-wider text-outline font-bold">Kuartal 3 (Jul - Sep)</span>
+<span class="px-2 py-0.5 rounded bg-surface-container text-primary font-label-caps text-label-caps font-bold">Kompak</span>
+</div>
+<div class="my-space-md">
+<div class="font-headline-md text-headline-md font-bold text-primary font-label-numeric">39,08%</div>
+<div class="w-full bg-surface-container-highest h-2 rounded-full overflow-hidden mt-2">
+<div class="bg-primary h-full rounded-full" style="width: 78%;"></div>
+</div>
+</div>
+<div class="text-body-sm font-body-sm text-on-surface-variant">
+          Transisi kampanye pertengahan tahun dengan pengujian kupon diskon terarah.
+        </div>
+</div>
+<!-- Q4 -->
+<div class="p-space-md rounded-xl bg-surface-container-low flex flex-col justify-between">
+<div class="flex items-center justify-between">
+<span class="font-label-caps text-label-caps uppercase tracking-wider text-outline font-bold">Kuartal 4 (Okt - Des)</span>
+<span class="px-2 py-0.5 rounded bg-secondary-fixed text-secondary font-label-caps text-label-caps font-bold">Volume Tinggi</span>
+</div>
+<div class="my-space-md">
+<div class="font-headline-md text-headline-md font-bold text-secondary font-label-numeric">30,22%</div>
+<div class="w-full bg-surface-container-highest h-2 rounded-full overflow-hidden mt-2">
+<div class="bg-secondary-container h-full rounded-full" style="width: 60%;"></div>
+</div>
+</div>
+<div class="text-body-sm font-body-sm text-on-surface-variant">
+          Puncak omset tahunan diiringi perang diskon Black Friday dan Harbolnas akhir tahun.
+        </div>
+</div>
+</div>
+</section>
+<!-- Discount Bracket Deep-Dive Section: Distribution Chart & Full Matrix Table -->
+<section class="flex flex-col rounded-xl bg-surface-container-lowest shadow-sm p-space-lg">
+<div class="flex flex-col md:flex-row md:items-center justify-between gap-space-sm pb-space-md">
+<div>
+<div class="flex items-center gap-space-xs">
+<span class="w-2.5 h-2.5 rounded-full bg-secondary-container"></span>
+<span class="font-label-caps text-label-caps uppercase tracking-widest text-outline font-bold">Analisis Elastisitas Diskon</span>
+</div>
+<h3 class="font-headline-sm text-headline-sm font-bold text-on-surface mt-1">
+          Analisis Bracket Diskon — Seluruh Periode 2021–2025
+        </h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant">
+          Dampak matematis tiering diskon terhadap volume transaksi, omset bersih, profitabilitas absolut, dan margin laba per pesanan.
+        </p>
+</div>
+<div class="flex items-center gap-2">
+<span class="font-label-caps text-label-caps px-2.5 py-1 rounded bg-secondary-fixed text-on-secondary-fixed-variant font-bold uppercase">
+          Empat Ukuran Tingkat Diskon
+        </span>
+</div>
+</div>
+<!-- Visual Distribution Bar Display (Inspired by Image 2) -->
+<div class="relative w-full rounded-xl bg-surface-container-low p-space-md mb-space-lg">
+<div class="flex items-center justify-between text-label-caps font-label-caps text-outline mb-2">
+<span>Distribusi Nilai Penjualan Neto per Rentang Diskon</span>
+<span>Skala $ Juta</span>
+</div>
+<div class="grid grid-cols-5 gap-2 items-end h-40 pt-4">
+<!-- 0% -->
+<div class="flex flex-col items-center h-full justify-end group">
+<span class="font-label-numeric text-label-numeric font-bold text-on-surface mb-1">$21,77jt</span>
+<div class="w-full bg-primary-container/80 hover:bg-primary-container rounded-t-lg transition-all" style="height: 41%;"></div>
+<span class="font-label-caps text-label-caps text-outline mt-2">0% Reguler</span>
+</div>
+<!-- 1-10% -->
+<div class="flex flex-col items-center h-full justify-end group">
+<span class="font-label-numeric text-label-numeric font-bold text-on-surface mb-1">$39,34jt</span>
+<div class="w-full bg-primary-container/85 hover:bg-primary-container rounded-t-lg transition-all" style="height: 74%;"></div>
+<span class="font-label-caps text-label-caps text-outline mt-2">1–10%</span>
+</div>
+<!-- 11-20% -->
+<div class="flex flex-col items-center h-full justify-end group">
+<span class="font-label-numeric text-label-numeric font-bold text-primary mb-1">$52,82jt</span>
+<div class="w-full bg-primary rounded-t-lg transition-all" style="height: 100%;"></div>
+<span class="font-label-caps text-label-caps font-bold text-primary mt-2">11–20% (Puncak)</span>
+</div>
+<!-- 21-30% -->
+<div class="flex flex-col items-center h-full justify-end group">
+<span class="font-label-numeric text-label-numeric font-bold text-on-surface mb-1">$21,19jt</span>
+<div class="w-full bg-secondary-container/80 hover:bg-secondary-container rounded-t-lg transition-all" style="height: 40%;"></div>
+<span class="font-label-caps text-label-caps text-outline mt-2">21–30%</span>
+</div>
+<!-- 30%+ -->
+<div class="flex flex-col items-center h-full justify-end group">
+<span class="font-label-numeric text-label-numeric font-bold text-secondary mb-1">$22,02jt</span>
+<div class="w-full bg-secondary rounded-t-lg transition-all" style="height: 42%;"></div>
+<span class="font-label-caps text-label-caps text-secondary font-bold mt-2">&gt;30% (Erosi)</span>
+</div>
+</div>
+</div>
+<!-- Editorial Balance Table (Strict Verbatim Data from Image 2) -->
+<div class="overflow-x-auto">
+<table class="w-full text-left">
+<thead>
+<tr class="bg-surface-container font-label-caps text-label-caps uppercase text-on-surface-variant">
+<th class="py-3 px-space-md rounded-l-lg">Bracket Diskon</th>
+<th class="py-3 px-space-md text-right">Order Selesai</th>
+<th class="py-3 px-space-md text-right">Net Sales</th>
+<th class="py-3 px-space-md text-right">Profit Bersih</th>
+<th class="py-3 px-space-md text-right">Profit / Order</th>
+<th class="py-3 px-space-md text-right rounded-r-lg">Margin Keseluruhan</th>
+</tr>
+</thead>
+<tbody class="divide-y divide-surface-container font-body-sm text-body-sm text-on-surface">
+<!-- Row 1 -->
+<tr class="hover:bg-surface-container-low transition-colors">
+<td class="py-3.5 px-space-md font-semibold text-on-surface flex items-center gap-2">
+<span class="w-2 h-2 rounded-full bg-tertiary"></span>
+<span>0% (No Discount)</span>
+</td>
+<td class="py-3.5 px-space-md text-right font-label-numeric text-label-numeric">17,86 ribu</td>
+<td class="py-3.5 px-space-md text-right font-label-numeric text-label-numeric font-semibold">$21,77 juta</td>
+<td class="py-3.5 px-space-md text-right font-label-numeric text-label-numeric text-tertiary font-bold">$10,54 juta</td>
+<td class="py-3.5 px-space-md text-right font-label-numeric text-label-numeric text-on-surface font-semibold">$589,90</td>
+<td class="py-3.5 px-space-md text-right">
+<span class="inline-flex items-center px-2 py-0.5 rounded bg-tertiary-fixed text-on-tertiary-fixed font-label-numeric text-label-numeric font-bold">
+                48,41%
+              </span>
+</td>
+</tr>
+<!-- Row 2 -->
+<tr class="hover:bg-surface-container-low transition-colors">
+<td class="py-3.5 px-space-md font-semibold text-on-surface flex items-center gap-2">
+<span class="w-2 h-2 rounded-full bg-tertiary-container"></span>
+<span>1–10%</span>
+</td>
+<td class="py-3.5 px-space-md text-right font-label-numeric text-label-numeric">35,03 ribu</td>
+<td class="py-3.5 px-space-md text-right font-label-numeric text-label-numeric font-semibold">$39,34 juta</td>
+<td class="py-3.5 px-space-md text-right font-label-numeric text-label-numeric text-tertiary font-bold">$17,60 juta</td>
+<td class="py-3.5 px-space-md text-right font-label-numeric text-label-numeric text-on-surface font-semibold">$502,45</td>
+<td class="py-3.5 px-space-md text-right">
+<span class="inline-flex items-center px-2 py-0.5 rounded bg-tertiary-fixed text-on-tertiary-fixed font-label-numeric text-label-numeric font-bold">
+                44,74%
+              </span>
+</td>
+</tr>
+<!-- Row 3 (Sweetspot) -->
+<tr class="hover:bg-surface-container-low bg-primary-fixed/20 transition-colors">
+<td class="py-3.5 px-space-md font-bold text-primary flex items-center gap-2">
+<span class="w-2 h-2 rounded-full bg-primary-container"></span>
+<span>11–20% (Volume Sweetspot)</span>
+</td>
+<td class="py-3.5 px-space-md text-right font-label-numeric text-label-numeric font-bold text-primary">49,20 ribu</td>
+<td class="py-3.5 px-space-md text-right font-label-numeric text-label-numeric font-bold text-primary">$52,82 juta</td>
+<td class="py-3.5 px-space-md text-right font-label-numeric text-label-numeric text-primary font-bold">$21,06 juta</td>
+<td class="py-3.5 px-space-md text-right font-label-numeric text-label-numeric text-on-surface font-semibold">$428,11</td>
+<td class="py-3.5 px-space-md text-right">
+<span class="inline-flex items-center px-2 py-0.5 rounded bg-primary text-on-primary font-label-numeric text-label-numeric font-bold">
+                39,88%
+              </span>
+</td>
+</tr>
+<!-- Row 4 -->
+<tr class="hover:bg-surface-container-low transition-colors">
+<td class="py-3.5 px-space-md font-semibold text-on-surface flex items-center gap-2">
+<span class="w-2 h-2 rounded-full bg-secondary-container"></span>
+<span>21–30%</span>
+</td>
+<td class="py-3.5 px-space-md text-right font-label-numeric text-label-numeric">17,73 ribu</td>
+<td class="py-3.5 px-space-md text-right font-label-numeric text-label-numeric font-semibold">$21,19 juta</td>
+<td class="py-3.5 px-space-md text-right font-label-numeric text-label-numeric text-secondary font-bold">$6,69 juta</td>
+<td class="py-3.5 px-space-md text-right font-label-numeric text-label-numeric text-on-surface font-semibold">$377,34</td>
+<td class="py-3.5 px-space-md text-right">
+<span class="inline-flex items-center px-2 py-0.5 rounded bg-secondary-fixed text-on-secondary-fixed-variant font-label-numeric text-label-numeric font-bold">
+                31,57%
+              </span>
+</td>
+</tr>
+<!-- Row 5 (Erosion Risk) -->
+<tr class="hover:bg-surface-container-low transition-colors">
+<td class="py-3.5 px-space-md font-bold text-secondary flex items-center gap-2">
+<span class="w-2 h-2 rounded-full bg-secondary"></span>
+<span>30%+ (High Margin Erosion)</span>
+</td>
+<td class="py-3.5 px-space-md text-right font-label-numeric text-label-numeric">18,29 ribu</td>
+<td class="py-3.5 px-space-md text-right font-label-numeric text-label-numeric font-semibold">$22,02 juta</td>
+<td class="py-3.5 px-space-md text-right font-label-numeric text-label-numeric text-secondary font-bold">$3,34 juta</td>
+<td class="py-3.5 px-space-md text-right font-label-numeric text-label-numeric text-secondary font-bold">$182,62</td>
+<td class="py-3.5 px-space-md text-right">
+<span class="inline-flex items-center px-2 py-0.5 rounded bg-secondary-container text-on-primary font-label-numeric text-label-numeric font-bold">
+                15,17%
+              </span>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<!-- Annual & YoY Growth Table (2021-2025) -->
+<section class="flex flex-col rounded-xl bg-surface-container-lowest shadow-sm p-space-lg">
+<div class="flex flex-col md:flex-row md:items-center justify-between gap-space-sm pb-space-md">
+<div>
+<div class="flex items-center gap-space-xs">
+<span class="w-2.5 h-2.5 rounded-full bg-primary"></span>
+<span class="font-label-caps text-label-caps uppercase tracking-widest text-outline font-bold">Kinerja Historis &amp; Proyeksi</span>
+</div>
+<h3 class="font-headline-sm text-headline-sm font-bold text-on-surface mt-1">
+          Kinerja Tahunan &amp; YoY (2021 – 2025)
+        </h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant">
+          Pencapaian buku kas tahun ke tahun, pertumbuhan omset tahunan (YoY Net Sales), serta akumulasi surplus bersih.
+        </p>
+</div>
+<div class="flex items-center gap-space-sm">
+<span class="font-label-numeric text-label-numeric text-outline">Satuan: USD ($) Juta</span>
+</div>
+</div>
+<div class="overflow-x-auto">
+<table class="w-full text-left">
+<thead>
+<tr class="bg-surface-container font-label-caps text-label-caps uppercase text-on-surface-variant">
+<th class="py-3 px-space-md rounded-l-lg">Tahun Fiskal</th>
+<th class="py-3 px-space-md text-right">Net Sales</th>
+<th class="py-3 px-space-md text-right">Pertumbuhan YoY</th>
+<th class="py-3 px-space-md text-right">Profit Bersih</th>
+<th class="py-3 px-space-md text-right">YoY Profit</th>
+<th class="py-3 px-space-md text-right rounded-r-lg">Status Audit</th>
+</tr>
+</thead>
+<tbody class="divide-y divide-surface-container font-body-sm text-body-sm text-on-surface">
+<!-- 2021 -->
+<tr class="hover:bg-surface-container-low transition-colors">
+<td class="py-3.5 px-space-md font-bold text-on-surface">2021</td>
+<td class="py-3.5 px-space-md text-right font-label-numeric text-label-numeric">$25,40 jt</td>
+<td class="py-3.5 px-space-md text-right font-label-numeric text-label-numeric text-outline">Basis Acuan</td>
+<td class="py-3.5 px-space-md text-right font-label-numeric text-label-numeric font-semibold text-tertiary">$9,85 jt</td>
+<td class="py-3.5 px-space-md text-right font-label-numeric text-label-numeric text-outline">—</td>
+<td class="py-3.5 px-space-md text-right">
+<span class="inline-flex items-center px-2 py-0.5 rounded bg-surface-container text-on-surface-variant font-label-caps text-label-caps font-bold">Lengkap</span>
+</td>
+</tr>
+<!-- 2022 -->
+<tr class="hover:bg-surface-container-low transition-colors">
+<td class="py-3.5 px-space-md font-bold text-on-surface">2022</td>
+<td class="py-3.5 px-space-md text-right font-label-numeric text-label-numeric">$31,18 jt</td>
+<td class="py-3.5 px-space-md text-right font-label-numeric text-label-numeric font-bold text-tertiary">+22,76%</td>
+<td class="py-3.5 px-space-md text-right font-label-numeric text-label-numeric font-semibold text-tertiary">$11,92 jt</td>
+<td class="py-3.5 px-space-md text-right font-label-numeric text-label-numeric font-bold text-tertiary">+21,02%</td>
+<td class="py-3.5 px-space-md text-right">
+<span class="inline-flex items-center px-2 py-0.5 rounded bg-surface-container text-on-surface-variant font-label-caps text-label-caps font-bold">Lengkap</span>
+</td>
+</tr>
+<!-- 2023 -->
+<tr class="hover:bg-surface-container-low transition-colors">
+<td class="py-3.5 px-space-md font-bold text-on-surface">2023</td>
+<td class="py-3.5 px-space-md text-right font-label-numeric text-label-numeric">$38,45 jt</td>
+<td class="py-3.5 px-space-md text-right font-label-numeric text-label-numeric font-bold text-tertiary">+23,32%</td>
+<td class="py-3.5 px-space-md text-right font-label-numeric text-label-numeric font-semibold text-tertiary">$14,58 jt</td>
+<td class="py-3.5 px-space-md text-right font-label-numeric text-label-numeric font-bold text-tertiary">+22,31%</td>
+<td class="py-3.5 px-space-md text-right">
+<span class="inline-flex items-center px-2 py-0.5 rounded bg-surface-container text-on-surface-variant font-label-caps text-label-caps font-bold">Lengkap</span>
+</td>
+</tr>
+<!-- 2024 -->
+<tr class="hover:bg-surface-container-low transition-colors bg-tertiary-fixed/15">
+<td class="py-3.5 px-space-md font-bold text-primary">2024 (Aktual)</td>
+<td class="py-3.5 px-space-md text-right font-label-numeric text-label-numeric font-bold text-primary">$44,12 jt</td>
+<td class="py-3.5 px-space-md text-right font-label-numeric text-label-numeric font-bold text-tertiary">+14,75%</td>
+<td class="py-3.5 px-space-md text-right font-label-numeric text-label-numeric font-bold text-tertiary">$16,42 jt</td>
+<td class="py-3.5 px-space-md text-right font-label-numeric text-label-numeric font-bold text-tertiary">+12,62%</td>
+<td class="py-3.5 px-space-md text-right">
+<span class="inline-flex items-center px-2 py-0.5 rounded bg-tertiary-fixed text-on-tertiary-fixed font-label-caps text-label-caps font-bold">Final Audit</span>
+</td>
+</tr>
+<!-- 2025 -->
+<tr class="hover:bg-surface-container-low transition-colors">
+<td class="py-3.5 px-space-md font-bold text-on-surface">2025 (Estimasi)</td>
+<td class="py-3.5 px-space-md text-right font-label-numeric text-label-numeric">$17,99 jt</td>
+<td class="py-3.5 px-space-md text-right font-label-numeric text-label-numeric text-outline">Berjalan Q1-Q2</td>
+<td class="py-3.5 px-space-md text-right font-label-numeric text-label-numeric font-semibold text-on-surface">$6,46 jt</td>
+<td class="py-3.5 px-space-md text-right font-label-numeric text-label-numeric text-outline">Proyeksi</td>
+<td class="py-3.5 px-space-md text-right">
+<span class="inline-flex items-center px-2 py-0.5 rounded bg-secondary-fixed text-secondary font-label-caps text-label-caps font-bold">Proyeksi Q2</span>
+</td>
+</tr>
+</tbody>
+<tfoot>
+<tr class="bg-surface-container font-label-numeric text-label-numeric font-bold text-on-surface">
+<td class="py-3.5 px-space-md">TOTAL TERKONSOLIDASI</td>
+<td class="py-3.5 px-space-md text-right text-primary text-title-md">$157,14 jt</td>
+<td class="py-3.5 px-space-md text-right text-tertiary">+18,8% CAGR</td>
+<td class="py-3.5 px-space-md text-right text-tertiary text-title-md">$59,23 jt</td>
+<td class="py-3.5 px-space-md text-right text-tertiary">+17,5% CAGR</td>
+<td class="py-3.5 px-space-md text-right">
+<span class="font-label-caps text-label-caps uppercase text-tertiary">37,69% Rerata</span>
+</td>
+</tr>
+</tfoot>
+</table>
+</div>
+</section>
+<!-- Editorial Executive Notes & Action Framework -->
+<section class="grid grid-cols-1 md:grid-cols-2 gap-space-md">
+<!-- Rekomendasi Alokasi Diskon -->
+<div class="rounded-xl bg-surface-container-lowest p-space-lg shadow-sm flex flex-col justify-between">
+<div>
+<div class="flex items-center gap-space-xs mb-2">
+<span class="material-symbols-outlined text-primary text-[20px]">verified</span>
+<span class="font-label-caps text-label-caps uppercase tracking-wider text-primary font-bold">Rekomendasi Algoritma Pricing</span>
+</div>
+<h4 class="font-headline-sm text-headline-sm font-bold text-on-surface">Optimalisasi Bracket 11%–20%</h4>
+<p class="font-body-md text-body-md text-on-surface-variant mt-2 leading-relaxed">
+          Kategori diskon 11–20% menyumbang laba bersih absolut tertinggi ($21,06 juta) dengan retensi margin solid di angka 39,88%. Pertahankan kupon otomatis pada tingkat ini untuk memaksimalkan volume pesanan tanpa risiko depresiasi merek.
+        </p>
+</div>
+<div class="mt-space-md pt-space-sm flex items-center justify-between text-body-sm font-body-sm text-on-surface">
+<span class="text-outline">Rekomendasi Tindakan:</span>
+<span class="font-semibold text-primary">Pertahankan Anggaran Kupon Q3</span>
+</div>
+</div>
+<!-- Peringatan Erosi Bracket >30% -->
+<div class="rounded-xl bg-surface-container-lowest p-space-lg shadow-sm flex flex-col justify-between">
+<div>
+<div class="flex items-center gap-space-xs mb-2">
+<span class="material-symbols-outlined text-secondary text-[20px]">warning_amber</span>
+<span class="font-label-caps text-label-caps uppercase tracking-wider text-secondary font-bold">Peringatan Risiko Erosi</span>
+</div>
+<h4 class="font-headline-sm text-headline-sm font-bold text-on-surface">Koreksi Bracket Di Atas 30%</h4>
+<p class="font-body-md text-body-md text-on-surface-variant mt-2 leading-relaxed">
+          Pemberian potongan harga &gt;30% menggerus margin bersih hingga ke tingkat kritis 15,17% dengan profit/order anjlok ke $182,62 (merosot 69% dibanding tanpa diskon). Disarankan memperketat kuota clearance flash deal.
+        </p>
+</div>
+<div class="mt-space-md pt-space-sm flex items-center justify-between text-body-sm font-body-sm text-on-surface">
+<span class="text-outline">Rekomendasi Tindakan:</span>
+<span class="font-semibold text-secondary">Terapkan Kuota Batas Pembelian (CAP)</span>
+</div>
+</div>
+</section>
+<!-- Live Telemetry & Audit Footer Bar -->
+<footer class="flex flex-col sm:flex-row items-center justify-between gap-space-sm p-space-md rounded-xl bg-surface-container-lowest shadow-sm text-on-surface-variant font-body-sm text-body-sm">
+<div class="flex items-center gap-space-sm">
+<span class="inline-flex items-center gap-1.5 font-label-caps text-label-caps font-bold uppercase text-tertiary">
+<span class="w-2 h-2 rounded-full bg-tertiary-container animate-ping"></span>
+        Synced with Data Lakehouse
+      </span>
+<span class="text-outline-variant">·</span>
+<span>Refreshed in real-time</span>
+<span class="text-outline-variant">·</span>
+<span class="font-label-numeric text-label-numeric font-semibold text-on-surface">Status OK</span>
+</div>
+<div class="flex items-center gap-space-md text-outline font-label-numeric text-label-numeric">
+<span>Latency: <strong class="text-on-surface font-semibold">42ms</strong></span>
+<span>Engine: <strong class="text-on-surface font-semibold">v4.19-Core</strong></span>
+</div>
+</footer>
+</div>
+<script>
+  // Simple micro-interaction for granularity toggles
+  document.querySelectorAll('button').forEach(btn => {
+    btn.addEventListener('click', function(e) {
+      if (this.innerText === 'Bulanan' || this.innerText === 'Kuartalan' || this.innerText === 'Tahunan') {
+        const parent = this.parentElement;
+        parent.querySelectorAll('button').forEach(b => {
+          b.className = 'px-3 py-1 rounded hover:text-on-surface transition-colors';
+        });
+        this.className = 'px-3 py-1 rounded bg-surface-container-lowest font-semibold text-primary shadow-sm';
+      }
+    });
+  });
+</script></main></div></body></html>

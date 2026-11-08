@@ -1,0 +1,60 @@
+{
+  "definitions_version": "mvp-6",
+  "years": [
+    {
+      "year": 2021,
+      "orders": 27554,
+      "customers": 16635,
+      "net_sales": 31690972.96,
+      "profit": 11909436.79,
+      "avg_transaction_margin_pct": 41.0,
+      "aggregate_margin_pct": 37.58,
+      "revenue_yoy_pct": null,
+      "profit_yoy_pct": null
+    },
+    {
+      "year": 2022,
+      "orders": 27564,
+      "customers": 16793,
+      "net_sales": 31331038.21,
+      "profit": 11784396.53,
+      "avg_transaction_margin_pct": 41.08,
+      "aggregate_margin_pct": 37.61,
+      "revenue_yoy_pct": -1.14,
+      "profit_yoy_pct": -1.05
+    },
+    {
+      "year": 2023,
+      "orders": 27632,
+      "customers": 16767,
+      "net_sales": 31532248.71,
+      "profit": 11869282.44,
+      "avg_transaction_margin_pct": 41.09,
+      "aggregate_margin_pct": 37.64,
+      "revenue_yoy_pct": 0.64,
+      "profit_yoy_pct": 0.72
+    },
+    {
+      "year": 2024,
+      "orders": 27768,
+      "customers": 16818,
+      "net_sales": 31462212.82,
+      "profit": 11903089.81,
+      "avg_transaction_margin_pct": 41.3,
+      "aggregate_margin_pct": 37.83,
+      "revenue_yoy_pct": -0.22,
+      "profit_yoy_pct": 0.28
+    },
+    {
+      "year": 2025,
+      "orders": 27598,
+      "customers": 16717,
+      "net_sales": 31126741.36,
+      "profit": 11766099.78,
+      "avg_transaction_margin_pct": 41.3,
+      "aggregate_margin_pct": 37.8,
+      "revenue_yoy_pct": -1.07,
+      "profit_yoy_pct": -1.15
+    }
+  ]
+}

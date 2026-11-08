@@ -1,0 +1,647 @@
+<!DOCTYPE html>
+
+<html lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><meta content="web_dashboard" name="shell-type"/><link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><style>@layer base{html,body{margin:0;padding:0;}body{overscroll-behavior:none;}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config={darkMode:"class",theme:{extend:{colors:{"background":"#f9f9ff","inverse-surface":"#283141","error-container":"#ffdad6","on-error-container":"#93000a","on-secondary-container":"#5d1900","surface-variant":"#dae2f8","on-primary-fixed-variant":"#0039b5","inverse-primary":"#b7c4ff","on-surface":"#131c2b","surface-container-highest":"#dae2f8","primary":"#0037b0","surface-container-lowest":"#ffffff","error":"#ba1a1a","tertiary-fixed-dim":"#7bd8b1","surface":"#f9f9ff","on-primary-fixed":"#001551","outline":"#747686","on-tertiary-fixed-variant":"#00513a","tertiary-fixed":"#97f5cc","on-secondary":"#ffffff","surface-tint":"#2151da","secondary":"#ac3400","primary-fixed":"#dce1ff","surface-container-low":"#f0f3ff","secondary-fixed-dim":"#ffb59d","on-tertiary-fixed":"#002115","surface-container-high":"#dfe8fe","outline-variant":"#c4c5d7","tertiary":"#004f38","secondary-container":"#fd6b36","on-tertiary-container":"#89e7be","secondary-fixed":"#ffdbd0","on-secondary-fixed-variant":"#832600","primary-fixed-dim":"#b7c4ff","on-background":"#131c2b","on-error":"#ffffff","on-primary-container":"#cad3ff","on-secondary-fixed":"#390c00","primary-container":"#1d4ed8","on-surface-variant":"#434655","inverse-on-surface":"#ecf0ff","on-primary":"#ffffff","on-tertiary":"#ffffff","surface-dim":"#d1daf0","surface-bright":"#f9f9ff","tertiary-container":"#00694c","surface-container":"#e8eeff"},borderRadius:{"DEFAULT":"0.125rem","lg":"0.25rem","xl":"0.5rem","full":"0.75rem"},spacing:{"space-lg":"1.5rem","margin":"3rem","space-md":"1rem","space-sm":"0.5rem","space-xl":"2.5rem","margin-mobile":"1.25rem","gutter":"1.5rem","space-xs":"0.25rem","gutter-mobile":"1rem","margin-tablet":"2rem"},fontFamily:{"body-sm":["Plus Jakarta Sans"],"headline-lg-mobile":["Plus Jakarta Sans"],"label-caps":["Plus Jakarta Sans"],"title-md":["Plus Jakarta Sans"],"display-hero-mobile":["Plus Jakarta Sans"],"headline-lg":["Plus Jakarta Sans"],"display-hero":["Plus Jakarta Sans"],"headline-sm":["Plus Jakarta Sans"],"body-md":["Plus Jakarta Sans"],"label-numeric":["Plus Jakarta Sans"],"body-lg":["Plus Jakarta Sans"],"headline-md":["Plus Jakarta Sans"]},fontSize:{"body-sm":["0.8125rem",{"lineHeight":"1.25rem","letterSpacing":"0.005em","fontWeight":"400"}],"headline-lg-mobile":["1.75rem",{"lineHeight":"2.25rem","letterSpacing":"-0.02em","fontWeight":"600"}],"label-caps":["0.6875rem",{"lineHeight":"0.875rem","letterSpacing":"0.08em","fontWeight":"700"}],"title-md":["1.125rem",{"lineHeight":"1.5rem","letterSpacing":"-0.01em","fontWeight":"500"}],"display-hero-mobile":["2.25rem",{"lineHeight":"2.75rem","letterSpacing":"-0.025em","fontWeight":"700"}],"headline-lg":["2.25rem",{"lineHeight":"2.75rem","letterSpacing":"-0.025em","fontWeight":"600"}],"display-hero":["3.25rem",{"lineHeight":"3.75rem","letterSpacing":"-0.035em","fontWeight":"700"}],"headline-sm":["1.25rem",{"lineHeight":"1.625rem","letterSpacing":"-0.015em","fontWeight":"600"}],"body-md":["0.9375rem",{"lineHeight":"1.5rem","letterSpacing":"0em","fontWeight":"400"}],"label-numeric":["0.875rem",{"lineHeight":"1.125rem","letterSpacing":"0.01em","fontWeight":"600"}],"body-lg":["1.0625rem",{"lineHeight":"1.65rem","letterSpacing":"-0.005em","fontWeight":"400"}],"headline-md":["1.5rem",{"lineHeight":"2rem","letterSpacing":"-0.02em","fontWeight":"600"}]}}}}</script></head><body class="bg-[#fbf9f5] font-body-md text-on-surface antialiased"><aside class="fixed left-0 top-0 h-full w-72 bg-[#fbf9f5] z-50 flex flex-col justify-between border-r border-[#e8e2d8]"><div class="flex flex-col"><div class="h-20 px-space-lg flex items-center border-b border-[#e8e2d8]"><div class="flex items-center gap-space-sm"><div class="w-9 h-9 rounded-lg bg-primary-container flex items-center justify-center text-on-primary font-headline-sm text-headline-sm">E</div><div class="flex flex-col"><span class="font-label-caps text-label-caps uppercase tracking-wider text-primary">Executive Suite</span><span class="font-label-numeric text-label-numeric font-semibold text-[#0f172a]">Core Analytics</span></div></div></div><div class="px-space-md pt-space-lg"><span class="px-space-sm font-label-caps text-label-caps uppercase tracking-widest text-outline">Analytical Modules</span><nav class="mt-space-sm flex flex-col gap-space-xs" data-active-classes="bg-primary-container text-on-primary font-semibold shadow-sm"><a class="flex items-center gap-space-md px-space-md py-space-sm rounded-lg text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-all" data-path="ringkasan-eksekutif" href="#"><span class="material-symbols-outlined text-[20px]">dashboard</span><span class="font-body-md text-body-md">Ringkasan Eksekutif</span></a><a class="flex items-center gap-space-md px-space-md py-space-sm rounded-lg text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-all" data-path="sales-dan-profitabilitas" href="#"><span class="material-symbols-outlined text-[20px]">trending_up</span><span class="font-body-md text-body-md">Sales &amp; Profitabilitas</span></a><a aria-current="page" class="flex items-center gap-space-md px-space-md py-space-sm rounded-lg transition-all bg-primary-container text-on-primary font-semibold shadow-sm" data-path="customer-intelligence" href="#"><span class="material-symbols-outlined text-[20px]">group</span><span class="font-body-md text-body-md">Customer Intelligence</span></a><a class="flex items-center gap-space-md px-space-md py-space-sm rounded-lg text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-all" data-path="transaction-explorer" href="#"><span class="material-symbols-outlined text-[20px]">receipt_long</span><span class="font-body-md text-body-md">Transaction Explorer</span></a></nav></div></div><div class="p-space-md border-t border-[#e8e2d8] flex flex-col gap-space-sm bg-surface-container-lowest/60"><div class="flex items-center justify-between px-space-sm"><div class="flex items-center gap-space-xs"><span class="w-2 h-2 rounded-full bg-tertiary-container animate-pulse"></span><span class="font-label-caps text-label-caps text-outline uppercase">Data Core Live · Node Synced</span></div><button class="text-outline hover:text-on-surface transition-colors" type="button"><span class="material-symbols-outlined text-[18px]">first_page</span></button></div></div></aside><div class="pl-72"><header class="fixed top-0 left-72 right-0 z-40 bg-[#fbf9f5]/90 backdrop-blur-md border-b border-[#e8e2d8]"><div class="h-16 px-space-xl flex items-center justify-between border-b border-[#e8e2d8]/60"><div class="flex items-center gap-space-sm font-body-sm text-body-sm text-on-surface-variant"><span class="hover:text-on-surface cursor-pointer">Platform</span><span class="text-outline-variant">/</span><span class="hover:text-on-surface cursor-pointer">Analytics</span><span class="text-outline-variant">/</span><span class="font-label-numeric text-label-numeric text-[#0f172a] font-semibold">Executive Suite</span></div><div class="flex items-center gap-space-md"><div class="flex items-center gap-space-xs bg-surface-container-lowest px-space-md py-1.5 rounded-lg border border-[#e8e2d8]"><span class="material-symbols-outlined text-[18px] text-primary">calendar_today</span><span class="font-label-numeric text-label-numeric text-on-surface font-semibold">2021–2025</span></div><button class="flex items-center gap-1.5 px-space-md py-1.5 rounded-lg bg-surface-container-lowest border border-[#e8e2d8] text-on-surface font-body-sm text-body-sm hover:bg-surface-container transition-colors" type="button"><span class="material-symbols-outlined text-[18px]">tune</span><span>Filter Cepat</span></button><div class="h-5 w-px bg-[#e8e2d8]"></div><button class="w-9 h-9 rounded-lg flex items-center justify-center text-on-surface-variant hover:text-on-surface hover:bg-surface-container transition-colors" type="button"><span class="material-symbols-outlined text-[20px]">light_mode</span></button><div class="relative"><button class="w-9 h-9 rounded-lg flex items-center justify-center text-on-surface-variant hover:text-on-surface hover:bg-surface-container transition-colors" type="button"><span class="material-symbols-outlined text-[20px]">notifications</span></button><span class="absolute top-1.5 right-1.5 w-2 h-2 rounded-full bg-secondary-container"></span></div><div class="h-5 w-px bg-[#e8e2d8]"></div><div class="flex items-center gap-space-sm pl-space-xs"><div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center"><span class="material-symbols-outlined text-on-primary text-[18px]">person</span></div><div class="flex flex-col text-left hidden xl:block"><span class="font-label-numeric text-label-numeric text-[#0f172a] font-semibold leading-none">Chief Officer</span><span class="font-label-caps text-label-caps text-outline uppercase tracking-wider leading-none mt-1">Enterprise</span></div></div></div></div><div class="h-12 px-space-xl flex items-center justify-between bg-surface-container-lowest/50 gap-space-md overflow-x-auto"><div class="flex items-center gap-space-sm flex-nowrap"><div class="flex items-center gap-1 px-space-sm py-1 bg-surface-container-lowest rounded border border-[#e8e2d8] text-on-surface font-body-sm text-body-sm"><span class="font-label-caps text-label-caps uppercase text-outline">Tahun:</span><span class="font-semibold text-[#0f172a]">2024</span><span class="material-symbols-outlined text-[16px] text-outline">expand_more</span></div><div class="flex items-center gap-1 px-space-sm py-1 bg-surface-container-lowest rounded border border-[#e8e2d8] text-on-surface font-body-sm text-body-sm"><span class="font-label-caps text-label-caps uppercase text-outline">Bulan:</span><span class="font-semibold text-[#0f172a]">Jan - Des</span><span class="material-symbols-outlined text-[16px] text-outline">expand_more</span></div><div class="flex items-center gap-1 px-space-sm py-1 bg-surface-container-lowest rounded border border-[#e8e2d8] text-on-surface font-body-sm text-body-sm"><span class="font-label-caps text-label-caps uppercase text-outline">Segmen:</span><span class="font-semibold text-[#0f172a]">Semua</span><span class="material-symbols-outlined text-[16px] text-outline">expand_more</span></div><div class="flex items-center gap-1 px-space-sm py-1 bg-surface-container-lowest rounded border border-[#e8e2d8] text-on-surface font-body-sm text-body-sm"><span class="font-label-caps text-label-caps uppercase text-outline">Channel:</span><span class="font-semibold text-[#0f172a]">Direct Enterprise</span><span class="material-symbols-outlined text-[16px] text-outline">expand_more</span></div><div class="flex items-center gap-1 px-space-sm py-1 bg-surface-container-lowest rounded border border-[#e8e2d8] text-on-surface font-body-sm text-body-sm"><span class="font-label-caps text-label-caps uppercase text-outline">Status:</span><span class="font-semibold text-[#0f172a]">Settled &amp; Complete</span><span class="material-symbols-outlined text-[16px] text-outline">expand_more</span></div></div><button class="flex items-center gap-1 text-secondary hover:text-on-secondary-container transition-colors font-body-sm text-body-sm font-semibold shrink-0" type="button"><span class="material-symbols-outlined text-[16px]">restart_alt</span><span>Hapus semua filter</span></button></div></header><main class="relative pt-28 w-full px-space-xl pb-space-xl bg-[#fbf9f5] min-h-screen"><div class="flex flex-col w-full">
+<!-- Header Title & Executive Controls -->
+<div class="flex flex-col md:flex-row md:items-end justify-between gap-space-md pb-space-lg">
+<div class="flex flex-col">
+<div class="flex items-center gap-space-sm mb-space-xs">
+<span class="px-2.5 py-0.5 rounded-full bg-surface-container font-label-caps text-label-caps text-primary tracking-widest uppercase">
+          Analytical Intelligence
+        </span>
+<span class="w-1.5 h-1.5 rounded-full bg-tertiary-container"></span>
+<span class="font-label-caps text-label-caps text-outline uppercase tracking-wider">
+          Seluruh Periode 2021–2025
+        </span>
+</div>
+<h1 class="font-headline-lg text-headline-lg text-[#0f172a] tracking-tight">
+        Customer Intelligence
+      </h1>
+<p class="font-body-md text-body-md text-on-surface-variant mt-1 max-w-2xl">
+        Performa segmen, profit per pelanggan aktif, dan definisi pelanggan berulang berbasis telemetri real-time.
+      </p>
+</div>
+<div class="flex items-center gap-space-sm shrink-0">
+<div class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-surface-container-lowest shadow-sm">
+<span class="w-2 h-2 rounded-full bg-tertiary-container animate-pulse"></span>
+<span class="font-label-caps text-label-caps text-tertiary uppercase tracking-wider font-semibold">Live Analytics</span>
+</div>
+<button class="inline-flex items-center gap-2 px-space-md py-2 rounded-lg bg-primary-container text-on-primary font-body-sm text-body-sm font-semibold shadow-sm hover:bg-primary transition-all" type="button">
+<span class="material-symbols-outlined text-[18px]">download</span>
+<span>Ekspor Dossier</span>
+</button>
+</div>
+</div>
+<!-- Editorial Insight Callout -->
+<div class="p-space-md rounded-xl bg-surface-container-lowest shadow-sm mb-space-lg relative overflow-hidden">
+<div class="absolute left-0 top-0 bottom-0 w-1 bg-secondary-container"></div>
+<div class="flex flex-col sm:flex-row sm:items-center justify-between gap-space-sm pl-2">
+<div class="flex items-start sm:items-center gap-space-sm">
+<div class="w-8 h-8 rounded-lg bg-secondary-fixed flex items-center justify-center text-on-secondary-fixed shrink-0">
+<span class="material-symbols-outlined text-[18px]">insights</span>
+</div>
+<div>
+<span class="font-label-caps text-label-caps uppercase tracking-wider text-secondary font-bold mr-2">Highlight Strategis:</span>
+<span class="font-body-sm text-body-sm text-on-surface">
+            Segmen Consumer memimpin volume sekaligus profitabilitas per pelanggan (<span class="font-semibold text-[#0f172a]">$2.470,14</span>), didukung tingkat diskon yang lebih disiplin (<span class="font-semibold text-[#0f172a]">13,70%</span>).
+          </span>
+</div>
+</div>
+<div class="flex items-center gap-2 text-outline shrink-0">
+<span class="font-label-caps text-label-caps uppercase tracking-widest">Confidence Index 99.4%</span>
+</div>
+</div>
+</div>
+<!-- 6 Core Customer KPI Cards Grid -->
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-6 gap-space-md mb-space-xl">
+<!-- Card 1 -->
+<div class="p-space-md rounded-xl bg-surface-container-lowest shadow-sm flex flex-col justify-between hover:shadow-md transition-shadow">
+<div class="flex items-start justify-between">
+<span class="font-label-caps text-label-caps uppercase text-outline tracking-wider">Pelanggan Aktif</span>
+<div class="w-7 h-7 rounded-lg bg-surface-container flex items-center justify-center text-primary">
+<span class="material-symbols-outlined text-[16px]">groups</span>
+</div>
+</div>
+<div class="my-space-sm">
+<div class="font-display-hero text-[1.85rem] leading-none font-bold text-[#0f172a] tracking-tight">24,91 rb</div>
+</div>
+<div class="flex items-center gap-1.5 pt-space-xs">
+<span class="inline-flex items-center px-1.5 py-0.5 rounded text-[11px] font-semibold bg-tertiary-fixed text-on-tertiary-fixed-variant">
+<span class="material-symbols-outlined text-[12px] mr-0.5">arrow_upward</span>+12,4%
+        </span>
+<span class="font-label-caps text-[10px] text-outline uppercase tracking-wider">YoY Growth</span>
+</div>
+</div>
+<!-- Card 2 -->
+<div class="p-space-md rounded-xl bg-surface-container-lowest shadow-sm flex flex-col justify-between hover:shadow-md transition-shadow">
+<div class="flex items-start justify-between">
+<span class="font-label-caps text-label-caps uppercase text-outline tracking-wider">Pesanan / Pelanggan</span>
+<div class="w-7 h-7 rounded-lg bg-surface-container flex items-center justify-center text-primary">
+<span class="material-symbols-outlined text-[16px]">shopping_cart</span>
+</div>
+</div>
+<div class="my-space-sm">
+<div class="font-display-hero text-[1.85rem] leading-none font-bold text-[#0f172a] tracking-tight">5,544</div>
+</div>
+<div class="flex items-center gap-1.5 pt-space-xs">
+<span class="inline-flex items-center px-1.5 py-0.5 rounded text-[11px] font-semibold bg-tertiary-fixed text-on-tertiary-fixed-variant">
+          Tinggi
+        </span>
+<span class="font-label-caps text-[10px] text-outline uppercase tracking-wider">5,2x Benchmark</span>
+</div>
+</div>
+<!-- Card 3 -->
+<div class="p-space-md rounded-xl bg-surface-container-lowest shadow-sm flex flex-col justify-between hover:shadow-md transition-shadow">
+<div class="flex items-start justify-between">
+<span class="font-label-caps text-label-caps uppercase text-outline tracking-wider">Profit / Pelanggan</span>
+<div class="w-7 h-7 rounded-lg bg-surface-container flex items-center justify-center text-secondary">
+<span class="material-symbols-outlined text-[16px]">payments</span>
+</div>
+</div>
+<div class="my-space-sm">
+<div class="font-display-hero text-[1.85rem] leading-none font-bold text-[#0f172a] tracking-tight">$2.377,76</div>
+</div>
+<div class="flex items-center gap-1.5 pt-space-xs">
+<span class="inline-flex items-center px-1.5 py-0.5 rounded text-[11px] font-semibold bg-tertiary-fixed text-on-tertiary-fixed-variant">
+<span class="material-symbols-outlined text-[12px] mr-0.5">trending_up</span>+18,2%
+        </span>
+<span class="font-label-caps text-[10px] text-outline uppercase tracking-wider">Konsisten</span>
+</div>
+</div>
+<!-- Card 4 -->
+<div class="p-space-md rounded-xl bg-surface-container-lowest shadow-sm flex flex-col justify-between hover:shadow-md transition-shadow">
+<div class="flex items-start justify-between">
+<span class="font-label-caps text-label-caps uppercase text-outline tracking-wider">Pelanggan Berulang</span>
+<div class="w-7 h-7 rounded-lg bg-surface-container flex items-center justify-center text-tertiary">
+<span class="material-symbols-outlined text-[16px]">sync</span>
+</div>
+</div>
+<div class="my-space-sm">
+<div class="font-display-hero text-[1.85rem] leading-none font-bold text-[#0f172a] tracking-tight">97,90%</div>
+</div>
+<div class="flex items-center gap-1.5 pt-space-xs">
+<span class="inline-flex items-center px-1.5 py-0.5 rounded text-[11px] font-semibold bg-surface-container-high text-primary">
+          Optimal
+        </span>
+<span class="font-label-caps text-[10px] text-outline uppercase tracking-wider">&gt;2 Transaksi</span>
+</div>
+</div>
+<!-- Card 5 -->
+<div class="p-space-md rounded-xl bg-surface-container-lowest shadow-sm flex flex-col justify-between hover:shadow-md transition-shadow">
+<div class="flex items-start justify-between">
+<span class="font-label-caps text-label-caps uppercase text-outline tracking-wider">Pangsa Margin &gt;20%</span>
+<div class="w-7 h-7 rounded-lg bg-surface-container flex items-center justify-center text-primary">
+<span class="material-symbols-outlined text-[16px]">pie_chart</span>
+</div>
+</div>
+<div class="my-space-sm">
+<div class="font-display-hero text-[1.85rem] leading-none font-bold text-[#0f172a] tracking-tight">92,01%</div>
+</div>
+<div class="flex items-center gap-1.5 pt-space-xs">
+<span class="inline-flex items-center px-1.5 py-0.5 rounded text-[11px] font-semibold bg-tertiary-fixed text-on-tertiary-fixed-variant">
+          Sehat
+        </span>
+<span class="font-label-caps text-[10px] text-outline uppercase tracking-wider">Target &gt;85%</span>
+</div>
+</div>
+<!-- Card 6 -->
+<div class="p-space-md rounded-xl bg-surface-container-lowest shadow-sm flex flex-col justify-between hover:shadow-md transition-shadow">
+<div class="flex items-start justify-between">
+<span class="font-label-caps text-label-caps uppercase text-outline tracking-wider">Rating Pelanggan</span>
+<div class="w-7 h-7 rounded-lg bg-surface-container flex items-center justify-center text-secondary">
+<span class="material-symbols-outlined text-[16px]">grade</span>
+</div>
+</div>
+<div class="my-space-sm">
+<div class="font-display-hero text-[1.85rem] leading-none font-bold text-[#0f172a] tracking-tight">3,677</div>
+</div>
+<div class="flex items-center gap-1.5 pt-space-xs">
+<span class="inline-flex items-center px-1.5 py-0.5 rounded text-[11px] font-semibold bg-surface-container text-on-surface-variant">
+          Skala 1–5
+        </span>
+<span class="font-label-caps text-[10px] text-outline uppercase tracking-wider">Stabil</span>
+</div>
+</div>
+</div>
+<!-- Middle Analytics Row: Distribution vs Comparative Margin -->
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-space-lg mb-space-xl">
+<!-- Left: Segment Sales Distribution -->
+<div class="lg:col-span-5 p-space-lg rounded-xl bg-surface-container-lowest shadow-sm flex flex-col justify-between">
+<div>
+<div class="flex items-center justify-between pb-space-sm">
+<div class="flex items-center gap-space-xs">
+<span class="material-symbols-outlined text-primary text-[20px]">donut_large</span>
+<h2 class="font-title-md text-title-md text-[#0f172a] font-semibold">Distribusi Segmen Pelanggan</h2>
+</div>
+<span class="font-label-caps text-label-caps text-outline uppercase tracking-wider">Net Sales Basis</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant mb-space-md">
+          Proporsi omzet kumulatif yang dibukukan oleh setiap segmen portofolio selama kurun 2021–2025.
+        </p>
+<!-- Segment Breakdown Bars -->
+<div class="flex flex-col gap-space-md">
+<!-- Consumer -->
+<div class="flex flex-col gap-1">
+<div class="flex justify-between items-center text-body-sm font-body-sm">
+<span class="font-semibold text-[#0f172a] flex items-center gap-1.5">
+<span class="w-2.5 h-2.5 rounded-sm bg-primary-container"></span> Consumer
+              </span>
+<span class="font-label-numeric text-label-numeric font-bold text-[#0f172a]">54,75% <span class="font-normal text-outline">($86,04M)</span></span>
+</div>
+<div class="w-full h-2.5 rounded-full bg-surface-container overflow-hidden">
+<div class="h-full bg-primary-container rounded-full" style="width: 54.75%;"></div>
+</div>
+</div>
+<!-- Premium -->
+<div class="flex flex-col gap-1">
+<div class="flex justify-between items-center text-body-sm font-body-sm">
+<span class="font-semibold text-[#0f172a] flex items-center gap-1.5">
+<span class="w-2.5 h-2.5 rounded-sm bg-primary-fixed-dim"></span> Premium
+              </span>
+<span class="font-label-numeric text-label-numeric font-bold text-[#0f172a]">25,10% <span class="font-normal text-outline">($39,45M)</span></span>
+</div>
+<div class="w-full h-2.5 rounded-full bg-surface-container overflow-hidden">
+<div class="h-full bg-primary-fixed-dim rounded-full" style="width: 25.10%;"></div>
+</div>
+</div>
+<!-- VIP -->
+<div class="flex flex-col gap-1">
+<div class="flex justify-between items-center text-body-sm font-body-sm">
+<span class="font-semibold text-[#0f172a] flex items-center gap-1.5">
+<span class="w-2.5 h-2.5 rounded-sm bg-secondary-container"></span> VIP
+              </span>
+<span class="font-label-numeric text-label-numeric font-bold text-[#0f172a]">10,14% <span class="font-normal text-outline">($15,93M)</span></span>
+</div>
+<div class="w-full h-2.5 rounded-full bg-surface-container overflow-hidden">
+<div class="h-full bg-secondary-container rounded-full" style="width: 10.14%;"></div>
+</div>
+</div>
+<!-- Business -->
+<div class="flex flex-col gap-1">
+<div class="flex justify-between items-center text-body-sm font-body-sm">
+<span class="font-semibold text-[#0f172a] flex items-center gap-1.5">
+<span class="w-2.5 h-2.5 rounded-sm bg-tertiary-container"></span> Business
+              </span>
+<span class="font-label-numeric text-label-numeric font-bold text-[#0f172a]">10,01% <span class="font-normal text-outline">($15,72M)</span></span>
+</div>
+<div class="w-full h-2.5 rounded-full bg-surface-container overflow-hidden">
+<div class="h-full bg-tertiary-container rounded-full" style="width: 10.01%;"></div>
+</div>
+</div>
+</div>
+</div>
+<!-- Quick Summary Box -->
+<div class="mt-space-lg p-space-md rounded-lg bg-surface-container-low flex items-center justify-between">
+<div class="flex items-center gap-space-sm">
+<span class="material-symbols-outlined text-primary text-[20px]">verified</span>
+<div>
+<div class="font-label-caps text-label-caps uppercase text-outline tracking-wider">Dominasi Pasar</div>
+<div class="font-body-sm text-body-sm font-semibold text-[#0f172a]">Consumer + Premium 79,85% ($125,49M)</div>
+</div>
+</div>
+<span class="font-label-numeric text-label-numeric text-primary font-bold">Tertinggi</span>
+</div>
+</div>
+<!-- Right: Margin vs Rata-rata Transaksi Chart Panel -->
+<div class="lg:col-span-7 p-space-lg rounded-xl bg-surface-container-lowest shadow-sm flex flex-col justify-between">
+<div>
+<div class="flex items-center justify-between pb-space-sm">
+<div class="flex items-center gap-space-xs">
+<span class="material-symbols-outlined text-primary text-[20px]">bar_chart</span>
+<h2 class="font-title-md text-title-md text-[#0f172a] font-semibold">Margin Keseluruhan vs Rata-rata Transaksi</h2>
+</div>
+<div class="flex items-center gap-space-sm text-body-sm font-body-sm">
+<div class="flex items-center gap-1.5">
+<span class="w-3 h-3 rounded-sm bg-primary-fixed-dim"></span>
+<span class="text-on-surface-variant font-label-caps text-label-caps uppercase">Margin %</span>
+</div>
+<div class="flex items-center gap-1.5">
+<span class="w-3 h-3 rounded-sm bg-primary-container"></span>
+<span class="text-on-surface-variant font-label-caps text-label-caps uppercase">Rata-rata Transaksi</span>
+</div>
+</div>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant mb-space-lg">
+          Korelasi imbal margin kotor terhadap tiket order tipikal per segmen konsumen terpilih.
+        </p>
+<!-- Inline SVG Visualization: Dual Bar Chart by Segment -->
+<div class="w-full">
+<svg class="w-full h-48 overflow-visible" preserveaspectratio="none" viewbox="0 0 540 200">
+<!-- Grid Lines -->
+<line stroke="#f0f3ff" stroke-dasharray="4 4" stroke-width="1.5" x1="40" x2="520" y1="20" y2="20"></line>
+<line stroke="#f0f3ff" stroke-dasharray="4 4" stroke-width="1.5" x1="40" x2="520" y1="70" y2="70"></line>
+<line stroke="#f0f3ff" stroke-dasharray="4 4" stroke-width="1.5" x1="40" x2="520" y1="120" y2="120"></line>
+<line stroke="#dae2f8" stroke-width="1.5" x1="40" x2="520" y1="170" y2="170"></line>
+<!-- Y Axis Labels -->
+<text class="text-[10px] fill-outline font-label-numeric font-semibold" text-anchor="end" x="32" y="24">45%</text>
+<text class="text-[10px] fill-outline font-label-numeric font-semibold" text-anchor="end" x="32" y="74">30%</text>
+<text class="text-[10px] fill-outline font-label-numeric font-semibold" text-anchor="end" x="32" y="124">15%</text>
+<text class="text-[10px] fill-outline font-label-numeric font-semibold" text-anchor="end" x="32" y="174">0%</text>
+<!-- Group 1: Consumer -->
+<g transform="translate(65, 0)">
+<!-- Margin Bar: 37.84% -> height 126px -->
+<rect class="hover:opacity-90 transition-opacity" fill="#b7c4ff" height="126" rx="3" width="30" x="0" y="44"></rect>
+<!-- Avg Ticket Bar: $1,180.40 -> scaled to ~140px -->
+<rect class="hover:opacity-90 transition-opacity" fill="#1d4ed8" height="140" rx="3" width="30" x="36" y="30"></rect>
+<text class="text-[11px] fill-[#0f172a] font-body-sm font-semibold" text-anchor="middle" x="33" y="190">Consumer</text>
+</g>
+<!-- Group 2: Premium -->
+<g transform="translate(185, 0)">
+<rect class="hover:opacity-90 transition-opacity" fill="#b7c4ff" height="123" rx="3" width="30" x="0" y="47"></rect>
+<rect class="hover:opacity-90 transition-opacity" fill="#1d4ed8" height="138" rx="3" width="30" x="36" y="32"></rect>
+<text class="text-[11px] fill-[#0f172a] font-body-sm font-semibold" text-anchor="middle" x="33" y="190">Premium</text>
+</g>
+<!-- Group 3: VIP -->
+<g transform="translate(305, 0)">
+<rect class="hover:opacity-90 transition-opacity" fill="#b7c4ff" height="124" rx="3" width="30" x="0" y="46"></rect>
+<rect class="hover:opacity-90 transition-opacity" fill="#1d4ed8" height="139" rx="3" width="30" x="36" y="31"></rect>
+<text class="text-[11px] fill-[#0f172a] font-body-sm font-semibold" text-anchor="middle" x="33" y="190">VIP</text>
+</g>
+<!-- Group 4: Business -->
+<g transform="translate(425, 0)">
+<rect class="hover:opacity-90 transition-opacity" fill="#b7c4ff" height="122" rx="3" width="30" x="0" y="48"></rect>
+<rect class="hover:opacity-90 transition-opacity" fill="#1d4ed8" height="136" rx="3" width="30" x="36" y="34"></rect>
+<text class="text-[11px] fill-[#0f172a] font-body-sm font-semibold" text-anchor="middle" x="33" y="190">Business</text>
+</g>
+</svg>
+</div>
+</div>
+<!-- Footnote Statistics -->
+<div class="grid grid-cols-4 gap-2 pt-space-md mt-space-sm text-center">
+<div class="p-2 rounded bg-surface-container-low">
+<div class="font-label-caps text-[10px] text-outline uppercase">Consumer Avg</div>
+<div class="font-label-numeric text-body-sm font-bold text-[#0f172a]">$1.180,40</div>
+</div>
+<div class="p-2 rounded bg-surface-container-low">
+<div class="font-label-caps text-[10px] text-outline uppercase">Premium Avg</div>
+<div class="font-label-numeric text-body-sm font-bold text-[#0f172a]">$1.171,85</div>
+</div>
+<div class="p-2 rounded bg-surface-container-low">
+<div class="font-label-caps text-[10px] text-outline uppercase">VIP Avg</div>
+<div class="font-label-numeric text-body-sm font-bold text-[#0f172a]">$1.175,20</div>
+</div>
+<div class="p-2 rounded bg-surface-container-low">
+<div class="font-label-caps text-[10px] text-outline uppercase">Business Avg</div>
+<div class="font-label-numeric text-body-sm font-bold text-[#0f172a]">$1.162,10</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Secondary Row: Tingkat Diskon & Ringkasan Perilaku Pelanggan -->
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-space-lg mb-space-xl">
+<!-- Left: Tingkat diskon per segmen -->
+<div class="lg:col-span-6 p-space-lg rounded-xl bg-surface-container-lowest shadow-sm flex flex-col justify-between">
+<div>
+<div class="flex items-center justify-between pb-space-sm">
+<div class="flex items-center gap-space-xs">
+<span class="material-symbols-outlined text-secondary text-[20px]">percent</span>
+<h2 class="font-title-md text-title-md text-[#0f172a] font-semibold">Tingkat Diskon per Segmen</h2>
+</div>
+<span class="font-label-caps text-label-caps text-outline uppercase tracking-wider">Baris vs Terbobot</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant mb-space-md">
+          Perbandingan eksposur diskon nominal faktur dan diskon rata-rata tertimbang berdasarkan kuantum pembelian.
+        </p>
+<!-- Comparative Progress List -->
+<div class="flex flex-col gap-space-md mt-space-sm">
+<!-- Consumer Diskon -->
+<div class="p-3 rounded-lg bg-surface-container-low flex flex-col gap-2">
+<div class="flex justify-between items-center">
+<span class="font-body-sm text-body-sm font-semibold text-[#0f172a]">Consumer</span>
+<span class="font-label-numeric text-body-sm font-bold text-[#0f172a]">13,70% <span class="font-normal text-outline">/ 13,85%</span></span>
+</div>
+<div class="w-full bg-surface-container-highest h-2 rounded-full overflow-hidden flex">
+<div class="bg-secondary-container h-full rounded-full" style="width: 45%;"></div>
+</div>
+<div class="flex justify-between text-[11px] text-outline font-label-caps">
+<span>Diskon Rerata: 13,70%</span>
+<span class="text-tertiary font-bold">Varians Terkendali (-0.15%)</span>
+</div>
+</div>
+<!-- Premium Diskon -->
+<div class="p-3 rounded-lg bg-surface-container-low flex flex-col gap-2">
+<div class="flex justify-between items-center">
+<span class="font-body-sm text-body-sm font-semibold text-[#0f172a]">Premium</span>
+<span class="font-label-numeric text-body-sm font-bold text-[#0f172a]">13,92% <span class="font-normal text-outline">/ 14,02%</span></span>
+</div>
+<div class="w-full bg-surface-container-highest h-2 rounded-full overflow-hidden flex">
+<div class="bg-secondary-container h-full rounded-full" style="width: 48%;"></div>
+</div>
+<div class="flex justify-between text-[11px] text-outline font-label-caps">
+<span>Diskon Rerata: 13,92%</span>
+<span class="text-secondary font-bold">Ambang Waspada (+0.10%)</span>
+</div>
+</div>
+<!-- VIP Diskon -->
+<div class="p-3 rounded-lg bg-surface-container-low flex flex-col gap-2">
+<div class="flex justify-between items-center">
+<span class="font-body-sm text-body-sm font-semibold text-[#0f172a]">VIP</span>
+<span class="font-label-numeric text-body-sm font-bold text-[#0f172a]">13,68% <span class="font-normal text-outline">/ 13,74%</span></span>
+</div>
+<div class="w-full bg-surface-container-highest h-2 rounded-full overflow-hidden flex">
+<div class="bg-secondary-container h-full rounded-full" style="width: 44%;"></div>
+</div>
+<div class="flex justify-between text-[11px] text-outline font-label-caps">
+<span>Diskon Rerata: 13,68%</span>
+<span class="text-tertiary font-bold">Paling Efisien (-0.06%)</span>
+</div>
+</div>
+<!-- Business Diskon -->
+<div class="p-3 rounded-lg bg-surface-container-low flex flex-col gap-2">
+<div class="flex justify-between items-center">
+<span class="font-body-sm text-body-sm font-semibold text-[#0f172a]">Business</span>
+<span class="font-label-numeric text-body-sm font-bold text-[#0f172a]">13,78% <span class="font-normal text-outline">/ 13,81%</span></span>
+</div>
+<div class="w-full bg-surface-container-highest h-2 rounded-full overflow-hidden flex">
+<div class="bg-secondary-container h-full rounded-full" style="width: 46%;"></div>
+</div>
+<div class="flex justify-between text-[11px] text-outline font-label-caps">
+<span>Diskon Rerata: 13,78%</span>
+<span class="text-tertiary font-bold">Stabil (-0.03%)</span>
+</div>
+</div>
+</div>
+</div>
+<div class="mt-space-md flex items-center justify-between text-outline text-body-sm font-body-sm">
+<span class="font-label-caps text-label-caps uppercase">Rerata Diskon Tertimbang Platform:</span>
+<span class="font-label-numeric text-label-numeric font-bold text-[#0f172a]">13,77% Net</span>
+</div>
+</div>
+<!-- Right: Ringkasan Perilaku Pelanggan (Operational Table) -->
+<div class="lg:col-span-6 p-space-lg rounded-xl bg-surface-container-lowest shadow-sm flex flex-col justify-between">
+<div>
+<div class="flex items-center justify-between pb-space-sm">
+<div class="flex items-center gap-space-xs">
+<span class="material-symbols-outlined text-primary text-[20px]">psychology</span>
+<h2 class="font-title-md text-title-md text-[#0f172a] font-semibold">Ringkasan Perilaku Pelanggan</h2>
+</div>
+<span class="font-label-caps text-label-caps text-outline uppercase tracking-wider">8 Indikator Kunci</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant mb-space-md">
+          Matriks operasional inti dari profil retensi, frekuensi transaksi, dan persepsi mutu pengguna.
+        </p>
+<!-- 8 Behavioral Indicators Grid -->
+<div class="grid grid-cols-1 sm:grid-cols-2 gap-space-sm">
+<!-- Metric 1 -->
+<div class="p-3 rounded-lg bg-surface-container-low flex items-center justify-between">
+<div class="flex flex-col">
+<span class="font-label-caps text-[10px] text-outline uppercase">Pelanggan Aktif</span>
+<span class="font-body-sm text-body-sm font-semibold text-[#0f172a]">24.910 Akun</span>
+</div>
+<span class="material-symbols-outlined text-primary text-[18px]">verified_user</span>
+</div>
+<!-- Metric 2 -->
+<div class="p-3 rounded-lg bg-surface-container-low flex items-center justify-between">
+<div class="flex flex-col">
+<span class="font-label-caps text-[10px] text-outline uppercase">Pelanggan Berulang</span>
+<span class="font-body-sm text-body-sm font-semibold text-[#0f172a]">97,90% Retensi</span>
+</div>
+<span class="material-symbols-outlined text-tertiary text-[18px]">autorenew</span>
+</div>
+<!-- Metric 3 -->
+<div class="p-3 rounded-lg bg-surface-container-low flex items-center justify-between">
+<div class="flex flex-col">
+<span class="font-label-caps text-[10px] text-outline uppercase">Order per Pelanggan</span>
+<span class="font-body-sm text-body-sm font-semibold text-[#0f172a]">5,544 Siklus</span>
+</div>
+<span class="material-symbols-outlined text-primary text-[18px]">repeat</span>
+</div>
+<!-- Metric 4 -->
+<div class="p-3 rounded-lg bg-surface-container-low flex items-center justify-between">
+<div class="flex flex-col">
+<span class="font-label-caps text-[10px] text-outline uppercase">Profit per Pelanggan</span>
+<span class="font-body-sm text-body-sm font-semibold text-[#0f172a]">$2.377,76 USD</span>
+</div>
+<span class="material-symbols-outlined text-secondary text-[18px]">monetization_on</span>
+</div>
+<!-- Metric 5 -->
+<div class="p-3 rounded-lg bg-surface-container-low flex items-center justify-between">
+<div class="flex flex-col">
+<span class="font-label-caps text-[10px] text-outline uppercase">Total Transaksi</span>
+<span class="font-body-sm text-body-sm font-semibold text-[#0f172a]">138.100 Invoice</span>
+</div>
+<span class="material-symbols-outlined text-primary text-[18px]">receipt</span>
+</div>
+<!-- Metric 6 -->
+<div class="p-3 rounded-lg bg-surface-container-low flex items-center justify-between">
+<div class="flex flex-col">
+<span class="font-label-caps text-[10px] text-outline uppercase">Rerata Nilai Order</span>
+<span class="font-body-sm text-body-sm font-semibold text-[#0f172a]">$1.137,84 AOV</span>
+</div>
+<span class="material-symbols-outlined text-primary text-[18px]">point_of_sale</span>
+</div>
+<!-- Metric 7 -->
+<div class="p-3 rounded-lg bg-surface-container-low flex items-center justify-between">
+<div class="flex flex-col">
+<span class="font-label-caps text-[10px] text-outline uppercase">Pangsa Margin &gt;20%</span>
+<span class="font-body-sm text-body-sm font-semibold text-[#0f172a]">92,01% Portofolio</span>
+</div>
+<span class="material-symbols-outlined text-tertiary text-[18px]">pie_chart_outline</span>
+</div>
+<!-- Metric 8 -->
+<div class="p-3 rounded-lg bg-surface-container-low flex items-center justify-between">
+<div class="flex flex-col">
+<span class="font-label-caps text-[10px] text-outline uppercase">Rating Kepuasan</span>
+<span class="font-body-sm text-body-sm font-semibold text-[#0f172a]">3,677 / 5,00 CSAT</span>
+</div>
+<span class="material-symbols-outlined text-secondary text-[18px]">star_half</span>
+</div>
+</div>
+</div>
+<div class="mt-space-md p-space-sm rounded bg-surface-container text-on-surface-variant flex items-center gap-2 font-body-sm text-body-sm">
+<span class="material-symbols-outlined text-[16px] text-primary">info</span>
+<span>Nilai konversi repeat customer dihitung setelah minimal 2 faktur lunas pada kurun 180 hari kalender.</span>
+</div>
+</div>
+</div>
+<!-- Profil Komparatif Segmen Pelanggan (Segment Table) -->
+<div class="p-space-lg rounded-xl bg-surface-container-lowest shadow-sm mb-space-lg">
+<div class="flex flex-col md:flex-row md:items-center justify-between gap-space-md pb-space-md">
+<div class="flex flex-col">
+<div class="flex items-center gap-space-xs">
+<span class="material-symbols-outlined text-primary text-[22px]">table_chart</span>
+<h2 class="font-title-md text-title-md text-[#0f172a] font-semibold">Profil Komparatif Segmen Pelanggan</h2>
+</div>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Tabel audit performa komparatif seluruh cluster transaksi terverifikasi 2021–2025</span>
+</div>
+<div class="flex items-center gap-space-sm flex-wrap">
+<div class="relative">
+<input class="pl-9 pr-3 py-1.5 rounded-lg bg-surface-container-low text-on-surface font-body-sm text-body-sm focus:outline-none focus:bg-surface-container transition-all" id="segmentSearchInput" placeholder="Cari segmen atau metrik..." type="text"/>
+<span class="material-symbols-outlined absolute left-2.5 top-2 text-outline text-[18px]">search</span>
+</div>
+<button class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-surface-container text-on-surface font-body-sm text-body-sm font-semibold hover:bg-surface-container-high transition-colors" type="button">
+<span class="material-symbols-outlined text-[18px]">file_download</span>
+<span>Export CSV</span>
+</button>
+</div>
+</div>
+<div class="overflow-x-auto">
+<table class="w-full text-left">
+<thead>
+<tr class="bg-surface-container-low text-outline font-label-caps text-label-caps uppercase tracking-wider">
+<th class="py-3 px-4 font-semibold">Segmen</th>
+<th class="py-3 px-4 font-semibold text-right">Pelanggan</th>
+<th class="py-3 px-4 font-semibold text-right">Porsi</th>
+<th class="py-3 px-4 font-semibold text-right">Order</th>
+<th class="py-3 px-4 font-semibold text-right">Net Sales</th>
+<th class="py-3 px-4 font-semibold text-right">Profit</th>
+<th class="py-3 px-4 font-semibold text-right">Margin Rerata</th>
+<th class="py-3 px-4 font-semibold text-right text-primary">Profit / Pelanggan</th>
+<th class="py-3 px-4 font-semibold text-right">Order / Pelanggan</th>
+<th class="py-3 px-4 font-semibold text-right">Diskon Rerata</th>
+</tr>
+</thead>
+<tbody class="font-body-sm text-body-sm divide-y-0 text-on-surface">
+<!-- Row 1: Consumer -->
+<tr class="hover:bg-surface-container-low/60 transition-colors">
+<td class="py-3.5 px-4 font-semibold text-[#0f172a] flex items-center gap-2">
+<span class="w-2.5 h-2.5 rounded-full bg-primary-container"></span>
+<span>Consumer</span>
+<span class="px-1.5 py-0.2 rounded text-[10px] font-label-caps uppercase bg-primary-fixed text-on-primary-fixed">Core</span>
+</td>
+<td class="py-3.5 px-4 text-right font-label-numeric font-semibold text-[#0f172a]">13,59 rb</td>
+<td class="py-3.5 px-4 text-right font-label-numeric text-outline font-semibold">54,53%</td>
+<td class="py-3.5 px-4 text-right font-label-numeric text-[#0f172a]">75,64 rb</td>
+<td class="py-3.5 px-4 text-right font-label-numeric font-bold text-[#0f172a]">$86,04 juta</td>
+<td class="py-3.5 px-4 text-right font-label-numeric font-semibold text-tertiary">$33,56 juta</td>
+<td class="py-3.5 px-4 text-right font-label-numeric font-semibold text-[#0f172a]">39,00%</td>
+<td class="py-3.5 px-4 text-right font-label-numeric font-bold text-primary">$2.470,14</td>
+<td class="py-3.5 px-4 text-right font-label-numeric text-[#0f172a]">5,57</td>
+<td class="py-3.5 px-4 text-right font-label-numeric text-outline">13,70%</td>
+</tr>
+<!-- Row 2: Premium -->
+<tr class="hover:bg-surface-container-low/60 transition-colors">
+<td class="py-3.5 px-4 font-semibold text-[#0f172a] flex items-center gap-2">
+<span class="w-2.5 h-2.5 rounded-full bg-primary-fixed-dim"></span>
+<span>Premium</span>
+</td>
+<td class="py-3.5 px-4 text-right font-label-numeric font-semibold text-[#0f172a]">6,27 rb</td>
+<td class="py-3.5 px-4 text-right font-label-numeric text-outline font-semibold">25,17%</td>
+<td class="py-3.5 px-4 text-right font-label-numeric text-[#0f172a]">34,67 rb</td>
+<td class="py-3.5 px-4 text-right font-label-numeric font-bold text-[#0f172a]">$39,45 juta</td>
+<td class="py-3.5 px-4 text-right font-label-numeric font-semibold text-tertiary">$15,38 juta</td>
+<td class="py-3.5 px-4 text-right font-label-numeric font-semibold text-[#0f172a]">38,98%</td>
+<td class="py-3.5 px-4 text-right font-label-numeric font-bold text-primary">$2.453,10</td>
+<td class="py-3.5 px-4 text-right font-label-numeric text-[#0f172a]">5,53</td>
+<td class="py-3.5 px-4 text-right font-label-numeric text-outline">13,92%</td>
+</tr>
+<!-- Row 3: VIP -->
+<tr class="hover:bg-surface-container-low/60 transition-colors">
+<td class="py-3.5 px-4 font-semibold text-[#0f172a] flex items-center gap-2">
+<span class="w-2.5 h-2.5 rounded-full bg-secondary-container"></span>
+<span>VIP</span>
+<span class="px-1.5 py-0.2 rounded text-[10px] font-label-caps uppercase bg-secondary-fixed text-on-secondary-fixed">High-AOV</span>
+</td>
+<td class="py-3.5 px-4 text-right font-label-numeric font-semibold text-[#0f172a]">2,53 rb</td>
+<td class="py-3.5 px-4 text-right font-label-numeric text-outline font-semibold">10,16%</td>
+<td class="py-3.5 px-4 text-right font-label-numeric text-[#0f172a]">14,01 rb</td>
+<td class="py-3.5 px-4 text-right font-label-numeric font-bold text-[#0f172a]">$15,93 juta</td>
+<td class="py-3.5 px-4 text-right font-label-numeric font-semibold text-tertiary">$6,18 juta</td>
+<td class="py-3.5 px-4 text-right font-label-numeric font-semibold text-[#0f172a]">38,79%</td>
+<td class="py-3.5 px-4 text-right font-label-numeric font-bold text-primary">$2.442,68</td>
+<td class="py-3.5 px-4 text-right font-label-numeric text-[#0f172a]">5,54</td>
+<td class="py-3.5 px-4 text-right font-label-numeric text-outline">13,68%</td>
+</tr>
+<!-- Row 4: Business -->
+<tr class="hover:bg-surface-container-low/60 transition-colors">
+<td class="py-3.5 px-4 font-semibold text-[#0f172a] flex items-center gap-2">
+<span class="w-2.5 h-2.5 rounded-full bg-tertiary-container"></span>
+<span>Business</span>
+</td>
+<td class="py-3.5 px-4 text-right font-label-numeric font-semibold text-[#0f172a]">2,52 rb</td>
+<td class="py-3.5 px-4 text-right font-label-numeric text-outline font-semibold">10,10%</td>
+<td class="py-3.5 px-4 text-right font-label-numeric text-[#0f172a]">13,78 rb</td>
+<td class="py-3.5 px-4 text-right font-label-numeric font-bold text-[#0f172a]">$15,72 juta</td>
+<td class="py-3.5 px-4 text-right font-label-numeric font-semibold text-tertiary">$6,09 juta</td>
+<td class="py-3.5 px-4 text-right font-label-numeric font-semibold text-[#0f172a]">38,73%</td>
+<td class="py-3.5 px-4 text-right font-label-numeric font-bold text-primary">$2.420,96</td>
+<td class="py-3.5 px-4 text-right font-label-numeric text-[#0f172a]">5,48</td>
+<td class="py-3.5 px-4 text-right font-label-numeric text-outline">13,78%</td>
+</tr>
+</tbody>
+<tfoot>
+<tr class="bg-surface-container text-[#0f172a] font-label-numeric font-bold">
+<td class="py-3 px-4 font-body-sm font-bold uppercase tracking-wider">Total Konsolidasi</td>
+<td class="py-3 px-4 text-right">24,91 rb</td>
+<td class="py-3 px-4 text-right">100,00%</td>
+<td class="py-3 px-4 text-right">138,10 rb</td>
+<td class="py-3 px-4 text-right text-primary">$157,14 juta</td>
+<td class="py-3 px-4 text-right text-tertiary">$61,21 juta</td>
+<td class="py-3 px-4 text-right">38,95%</td>
+<td class="py-3 px-4 text-right text-primary">$2.377,76</td>
+<td class="py-3 px-4 text-right">5,544</td>
+<td class="py-3 px-4 text-right">13,77%</td>
+</tr>
+</tfoot>
+</table>
+</div>
+</div>
+<!-- Bottom Telemetry Bar -->
+<div class="p-space-md rounded-xl bg-surface-container-lowest shadow-sm flex flex-col sm:flex-row items-center justify-between gap-space-sm">
+<div class="flex items-center gap-space-sm">
+<span class="w-2.5 h-2.5 rounded-full bg-tertiary-container animate-pulse"></span>
+<span class="font-label-caps text-label-caps text-on-surface uppercase tracking-wider font-semibold">
+        Telemetry Core Active · Sinkronisasi Kluster: Sempurna · Latency 24ms
+      </span>
+</div>
+<div class="flex items-center gap-space-md text-outline font-label-caps text-label-caps uppercase">
+<span>Versi Model: CI-v4.9</span>
+<span>Prosesor: Analytical Engine v8.2</span>
+<span class="text-tertiary font-bold">Integritas Data 100%</span>
+</div>
+</div>
+<script>
+    // Lightweight Table Search Filter Micro-interaction
+    const searchInput = document.getElementById('segmentSearchInput');
+    if (searchInput) {
+      searchInput.addEventListener('input', function(e) {
+        const query = e.target.value.toLowerCase();
+        const rows = document.querySelectorAll('tbody tr');
+        rows.forEach(row => {
+          const text = row.innerText.toLowerCase();
+          row.style.display = text.includes(query) ? '' : 'none';
+        });
+      });
+    }
+  </script>
+</div></main></div></body></html>

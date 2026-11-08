@@ -1,0 +1,287 @@
+{
+  "definitions_version": "mvp-6",
+  "quarters": [
+    {
+      "quarter": "Q1",
+      "orders": 28542,
+      "net_sales": 31953303.23,
+      "profit": 13647028.45,
+      "avg_transaction_margin_pct": 45.77,
+      "aggregate_margin_pct": 42.71
+    },
+    {
+      "quarter": "Q2",
+      "orders": 31238,
+      "net_sales": 34360015.11,
+      "profit": 14762217.76,
+      "avg_transaction_margin_pct": 45.99,
+      "aggregate_margin_pct": 42.96
+    },
+    {
+      "quarter": "Q3",
+      "orders": 33126,
+      "net_sales": 38087493.13,
+      "profit": 14883464.89,
+      "avg_transaction_margin_pct": 42.59,
+      "aggregate_margin_pct": 39.08
+    },
+    {
+      "quarter": "Q4",
+      "orders": 45210,
+      "net_sales": 52742402.59,
+      "profit": 15939594.25,
+      "avg_transaction_margin_pct": 33.85,
+      "aggregate_margin_pct": 30.22
+    }
+  ],
+  "year_quarters": [
+    {
+      "period": "2021-Q1",
+      "year": 2021,
+      "quarter": "Q1",
+      "orders": 5637,
+      "net_sales": 6241530.51,
+      "profit": 2661869.29,
+      "avg_transaction_margin_pct": 45.62,
+      "aggregate_margin_pct": 42.65
+    },
+    {
+      "period": "2021-Q2",
+      "year": 2021,
+      "quarter": "Q2",
+      "orders": 6242,
+      "net_sales": 6849835.54,
+      "profit": 2953062.45,
+      "avg_transaction_margin_pct": 45.94,
+      "aggregate_margin_pct": 43.11
+    },
+    {
+      "period": "2021-Q3",
+      "year": 2021,
+      "quarter": "Q3",
+      "orders": 6644,
+      "net_sales": 7841912.75,
+      "profit": 3049522.88,
+      "avg_transaction_margin_pct": 42.47,
+      "aggregate_margin_pct": 38.89
+    },
+    {
+      "period": "2021-Q4",
+      "year": 2021,
+      "quarter": "Q4",
+      "orders": 9031,
+      "net_sales": 10757694.16,
+      "profit": 3244982.17,
+      "avg_transaction_margin_pct": 33.63,
+      "aggregate_margin_pct": 30.16
+    },
+    {
+      "period": "2022-Q1",
+      "year": 2022,
+      "quarter": "Q1",
+      "orders": 5675,
+      "net_sales": 6342383.1,
+      "profit": 2721007.71,
+      "avg_transaction_margin_pct": 45.93,
+      "aggregate_margin_pct": 42.9
+    },
+    {
+      "period": "2022-Q2",
+      "year": 2022,
+      "quarter": "Q2",
+      "orders": 6223,
+      "net_sales": 6862903.42,
+      "profit": 2940107.86,
+      "avg_transaction_margin_pct": 46.01,
+      "aggregate_margin_pct": 42.84
+    },
+    {
+      "period": "2022-Q3",
+      "year": 2022,
+      "quarter": "Q3",
+      "orders": 6484,
+      "net_sales": 7497239.38,
+      "profit": 2930529.79,
+      "avg_transaction_margin_pct": 42.65,
+      "aggregate_margin_pct": 39.09
+    },
+    {
+      "period": "2022-Q4",
+      "year": 2022,
+      "quarter": "Q4",
+      "orders": 9182,
+      "net_sales": 10628512.31,
+      "profit": 3192751.17,
+      "avg_transaction_margin_pct": 33.64,
+      "aggregate_margin_pct": 30.04
+    },
+    {
+      "period": "2023-Q1",
+      "year": 2023,
+      "quarter": "Q1",
+      "orders": 5645,
+      "net_sales": 6388743.35,
+      "profit": 2723481.96,
+      "avg_transaction_margin_pct": 45.69,
+      "aggregate_margin_pct": 42.63
+    },
+    {
+      "period": "2023-Q2",
+      "year": 2023,
+      "quarter": "Q2",
+      "orders": 6283,
+      "net_sales": 6975272.69,
+      "profit": 2991293.11,
+      "avg_transaction_margin_pct": 45.96,
+      "aggregate_margin_pct": 42.88
+    },
+    {
+      "period": "2023-Q3",
+      "year": 2023,
+      "quarter": "Q3",
+      "orders": 6684,
+      "net_sales": 7568258.61,
+      "profit": 2958826.36,
+      "avg_transaction_margin_pct": 42.59,
+      "aggregate_margin_pct": 39.1
+    },
+    {
+      "period": "2023-Q4",
+      "year": 2023,
+      "quarter": "Q4",
+      "orders": 9020,
+      "net_sales": 10599974.06,
+      "profit": 3195681.01,
+      "avg_transaction_margin_pct": 33.71,
+      "aggregate_margin_pct": 30.15
+    },
+    {
+      "period": "2024-Q1",
+      "year": 2024,
+      "quarter": "Q1",
+      "orders": 5784,
+      "net_sales": 6544827.59,
+      "profit": 2787005.94,
+      "avg_transaction_margin_pct": 45.73,
+      "aggregate_margin_pct": 42.58
+    },
+    {
+      "period": "2024-Q2",
+      "year": 2024,
+      "quarter": "Q2",
+      "orders": 6347,
+      "net_sales": 6959692.63,
+      "profit": 2995103.26,
+      "avg_transaction_margin_pct": 45.99,
+      "aggregate_margin_pct": 43.03
+    },
+    {
+      "period": "2024-Q3",
+      "year": 2024,
+      "quarter": "Q3",
+      "orders": 6604,
+      "net_sales": 7504166.2,
+      "profit": 2934096.48,
+      "avg_transaction_margin_pct": 42.7,
+      "aggregate_margin_pct": 39.1
+    },
+    {
+      "period": "2024-Q4",
+      "year": 2024,
+      "quarter": "Q4",
+      "orders": 9033,
+      "net_sales": 10453526.4,
+      "profit": 3186884.13,
+      "avg_transaction_margin_pct": 34.16,
+      "aggregate_margin_pct": 30.49
+    },
+    {
+      "period": "2025-Q1",
+      "year": 2025,
+      "quarter": "Q1",
+      "orders": 5801,
+      "net_sales": 6435818.68,
+      "profit": 2753663.55,
+      "avg_transaction_margin_pct": 45.9,
+      "aggregate_margin_pct": 42.79
+    },
+    {
+      "period": "2025-Q2",
+      "year": 2025,
+      "quarter": "Q2",
+      "orders": 6143,
+      "net_sales": 6712310.83,
+      "profit": 2882651.08,
+      "avg_transaction_margin_pct": 46.04,
+      "aggregate_margin_pct": 42.95
+    },
+    {
+      "period": "2025-Q3",
+      "year": 2025,
+      "quarter": "Q3",
+      "orders": 6710,
+      "net_sales": 7675916.19,
+      "profit": 3010489.38,
+      "avg_transaction_margin_pct": 42.57,
+      "aggregate_margin_pct": 39.22
+    },
+    {
+      "period": "2025-Q4",
+      "year": 2025,
+      "quarter": "Q4",
+      "orders": 8944,
+      "net_sales": 10302695.66,
+      "profit": 3119295.77,
+      "avg_transaction_margin_pct": 34.12,
+      "aggregate_margin_pct": 30.28
+    }
+  ],
+  "day_types": [
+    {
+      "day_type": "Weekday",
+      "orders": 98686,
+      "order_share_pct": 71.45,
+      "net_sales": 112001051.82,
+      "profit": 42235680.43,
+      "avg_transaction_margin_pct": 41.15,
+      "aggregate_margin_pct": 37.71
+    },
+    {
+      "day_type": "Weekend",
+      "orders": 39430,
+      "order_share_pct": 28.55,
+      "net_sales": 45142162.24,
+      "profit": 16996624.92,
+      "avg_transaction_margin_pct": 41.16,
+      "aggregate_margin_pct": 37.65
+    }
+  ],
+  "delivery_status": [
+    {
+      "value": "On Time",
+      "orders": 86916,
+      "share_pct": 62.93
+    },
+    {
+      "value": "Cancelled",
+      "orders": 24557,
+      "share_pct": 17.78
+    },
+    {
+      "value": "Delayed",
+      "orders": 16886,
+      "share_pct": 12.23
+    },
+    {
+      "value": "Early",
+      "orders": 9757,
+      "share_pct": 7.06
+    }
+  ],
+  "notes": [
+    "quarters dan day_types digabung lintas tahun (Q1 = Jan-Mar pada 2021-2025).",
+    "year_quarters memecah per tahun bila filter tahun dipakai.",
+    "Margin agregat adalah metrik utama; rata-rata margin transaksi adalah sekunder berlabel.",
+    "delivery_status 'Cancelled' berarti tidak dikirim, bukan order dibatalkan."
+  ]
+}

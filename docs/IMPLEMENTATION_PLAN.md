@@ -110,7 +110,7 @@
   - `src/components/layout/PageHeader.tsx` (judul halaman dan slot lencana cakupan).
   - `src/app/routes.ts` & `src/app/router.tsx` (router internal berbasis History API).
 - **Langkah-Langkah Implementasi**:
-  1. Perbarui `src/index.css` dengan token variabel CSS tema terang *Warm Alabaster & Japanese Indigo*: `--background: #f9f9ff`, `--foreground: #131c2b`, `--card: #ffffff`, `--border: #e8e2d8`, `--primary: #0037b0`, `--sidebar: #fbf9f5`, radius $12\text{px}$, dan bayangan halus.
+  1. Perbarui `src/index.css` dengan token variabel CSS tema terang *Warm Alabaster & Japanese Indigo*: `--background: #fbf9f5`, `--foreground: #0f172a`, `--card: #ffffff`, `--border: #e8e2d8`, `--primary: #0037b0`, `--sidebar: #fbf9f5`, radius $12\text{px}$, dan bayangan halus.
   2. Implementasikan sidebar navigasi desktop yang persisten dan dapat dilipat ($264\text{px} \leftrightarrow 76\text{px}$) dengan penyimpanan preferensi di `localStorage`.
   3. Pasang laci seluler (*mobile drawer*) dengan overlay latar belakang gelap untuk layar $< 1024\text{px}$.
   4. Bangun `TopHeader` dengan breadcrumb penanda halaman aktif, chip tanggal, chip versi metrik, dan tombol menu hamburger seluler.
@@ -141,7 +141,7 @@
   - `src/App.tsx` (membungkus cangkang aplikasi dengan `ThemeProvider`).
 - **Langkah-Langkah Implementasi**:
   1. Buat `ThemeProvider` berbasis React Context untuk mengelola status tema, menyimpan pilihan pengguna ke `localStorage`, dan menambahkan/menghapus kelas `.dark` pada elemen root `<html>`.
-  2. Definisikan token warna lengkap untuk kelas `.dark` di `src/index.css` sesuai Bagian 7 `docs/DESIGN_BRIEF.MD` (`--background: #151120`, `--card: #221d2d`, `--border: rgba(255, 28, 192, 0.18)`, `--primary: #ffaeda`, `--primary-container: #ff3ac2`, dll.).
+  2. Definisikan token warna lengkap untuk kelas `.dark` di `src/index.css` sesuai Bagian 7 `docs/DESIGN_BRIEF.MD` (`--background: #151120`, `--card: #1c1033`, `--border: rgba(255, 28, 192, 0.18)`, `--primary: #ff1cc0`, `--primary-container: #ff3ac2`, dll.).
   3. Buat komponen `ThemeToggle` di header atas dengan tombol interaktif yang ramah papan tik.
   4. Pastikan token warna grafik (`--chart-1` s/d `--chart-5`) berpindah ke varian warna terang/neon yang kontras di latar gelap (`#FFAEDA`, `#FF3AC2`, `#E5B4FF`, `#BCC2FF`, `#00FFA3`).
 - **Pengujian**:

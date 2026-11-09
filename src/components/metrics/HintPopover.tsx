@@ -1,12 +1,61 @@
 import { Popover, PopoverContent, PopoverTrigger } from '@/components/ui/popover'
 
 /**
- * The card's own icon, clickable to open a short explanation. Behaviour note: the description
- * opens on CLICK (not hover), so touch users get the same access, and it closes on outside click
- * or Escape. Each card keeps its representational icon instead of a generic info glyph.
+ * Standardized 2-part educational metric explanation for laypeople.
+ */
+export interface MetricHintContent {
+  concept: React.ReactNode
+  current: React.ReactNode
+}
+export function HintContent({ hint }: { hint: MetricHintContent | string }) {
+  return typeof hint === 'string' ? (
+    <>{hint}</>
+  ) : (
+    <MetricHint concept={hint.concept} current={hint.current} />
+  )
+}
+
+export function MetricHint({
+  concept,
+  current,
+}: {
+  concept: React.ReactNode
+  current: React.ReactNode
+}) {
+  return (
+    <div className="flex flex-col gap-2.5 text-left text-xs leading-relaxed">
+      <div>
+        <div className="flex items-center gap-1.5 font-semibold text-foreground">
+          <span>Apa maksudnya?</span>
+        </div>
+        <div className="mt-1 text-muted-foreground">{concept}</div>
+      </div>
+      <div className="border-t border-border/60 pt-2">
+        <div className="flex items-center gap-1.5 font-semibold text-foreground">
+          <span>Arti angka ini</span>
+        </div>
+        <div className="mt-1 text-muted-foreground">{current}</div>
+      </div>
+    </div>
+  )
+}
+
+/** Renders the standard 2-part hint while keeping older plain-string copy compatible. */
+export function renderHint(hint: MetricHintContent | string): React.ReactNode {
+  return typeof hint === 'string' ? (
+    hint
+  ) : (
+    <MetricHint concept={hint.concept} current={hint.current} />
+  )
+}
+
+/**
+ * The card's own icon, hoverable and clickable to open an explanation.
  *
- * Copy rule for `description`: 2-3 short sentences covering apa / kenapa / bagaimana in plain
- * business language, without printing those three labels.
+ * Behavior:
+ * - Desktop: Opens smoothly on hover with a ~150ms delay to avoid flickering.
+ * - Mobile / Touch: Opens immediately on tap.
+ * - Closes on outside click, mouse leave, or Escape.
  */
 export function HintPopover({
   label,
@@ -18,8 +67,8 @@ export function HintPopover({
 }: {
   /** Accessible name of the trigger, e.g. "Penjelasan Net sales". */
   label: string
-  /** Short description shown inside the popup. */
-  description: string
+  /** Description shown inside the popup (string or structured MetricHint). */
+  description: React.ReactNode
   children: React.ReactNode
   className?: string
   side?: 'top' | 'bottom' | 'left' | 'right'
@@ -27,10 +76,16 @@ export function HintPopover({
 }) {
   return (
     <Popover>
-      <PopoverTrigger aria-label={label} className={className}>
+      <PopoverTrigger
+        aria-label={label}
+        className={className}
+        openOnHover
+        delay={150}
+        closeDelay={150}
+      >
         {children}
       </PopoverTrigger>
-      <PopoverContent side={side} align={align}>
+      <PopoverContent side={side} align={align} className="w-80 max-w-xs sm:max-w-sm p-3.5">
         {description}
       </PopoverContent>
     </Popover>

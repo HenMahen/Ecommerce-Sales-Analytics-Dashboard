@@ -329,7 +329,11 @@ export function CustomerIntelligencePage() {
           {...reveal(0)}
           label="Pelanggan aktif"
           value={customers === null ? '—' : formatCountScaled(customers)}
-          hint={`Pelanggan yang pernah berbelanja pada cakupan aktif. Menjadi penyebut nilai per pelanggan di halaman ini. ${denominator.note}`}
+          hint={{
+            concept:
+              'Jumlah orang unik yang pernah berbelanja pada cakupan aktif. Satu orang dihitung sekali walau belanja berkali-kali.',
+            current: `Menjadi penyebut nilai per pelanggan di halaman ini. ${denominator.note}`,
+          }}
           hintMode="popover"
           icon={Users}
           iconTone="violet"
@@ -338,11 +342,14 @@ export function CustomerIntelligencePage() {
           {...reveal(60)}
           label="Pesanan per pelanggan aktif"
           value={rates.ordersPerCustomer === null ? '—' : formatDecimal(rates.ordersPerCustomer, 3)}
-          hint={
-            rates.ordersPerCustomer === null
-              ? `Rata-rata jumlah pesanan tiap pelanggan aktif, dihitung dari total pesanan dibagi jumlah pelanggan aktif. ${denominator.note}`
-              : `Rata-rata jumlah pesanan tiap pelanggan aktif. Menggambarkan seberapa sering pelanggan kembali membeli. ${formatCount(metrics.orders)} pesanan dibagi ${formatCount(customers ?? 0)} pelanggan aktif.`
-          }
+          hint={{
+            concept:
+              'Rata-rata jumlah pesanan tiap pelanggan aktif, untuk melihat seberapa sering pelanggan kembali membeli.',
+            current:
+              rates.ordersPerCustomer === null
+                ? `Belum tersedia untuk cakupan filter ini. Dihitung dari total pesanan dibagi jumlah pelanggan aktif. ${denominator.note}`
+                : `Dari ${formatCount(metrics.orders)} pesanan dibagi ${formatCount(customers ?? 0)} pelanggan aktif.`,
+          }}
           hintMode="popover"
           icon={ShoppingCart}
           iconTone="blue"
@@ -351,11 +358,14 @@ export function CustomerIntelligencePage() {
           {...reveal(120)}
           label="Profit per pelanggan aktif"
           value={rates.profitPerCustomer === null ? '—' : formatUsdScaled(rates.profitPerCustomer)}
-          hint={
-            rates.profitPerCustomer === null
-              ? `Laba yang dihasilkan tiap pelanggan aktif, dihitung dari total laba dibagi jumlah pelanggan aktif. ${denominator.note}`
-              : `Laba yang dihasilkan tiap pelanggan aktif. Membandingkan nilai pelanggan antar cakupan. Profit ${formatUsdScaled(metrics.profit)} dibagi ${formatCount(customers ?? 0)} pelanggan aktif.`
-          }
+          hint={{
+            concept:
+              'Laba yang dihasilkan tiap pelanggan aktif, untuk membandingkan nilai pelanggan antar cakupan.',
+            current:
+              rates.profitPerCustomer === null
+                ? `Belum tersedia untuk cakupan filter ini. Dihitung dari total laba dibagi jumlah pelanggan aktif. ${denominator.note}`
+                : `Profit ${formatUsdScaled(metrics.profit)} dibagi ${formatCount(customers ?? 0)} pelanggan aktif.`,
+          }}
           hintMode="popover"
           icon={Wallet}
           iconTone="pink"
@@ -364,7 +374,11 @@ export function CustomerIntelligencePage() {
           {...reveal(180)}
           label="Tingkat pelanggan berulang"
           value={formatPercent(summary.kpis.repeat_customer_rate_customer_level_pct)}
-          hint={`Pelanggan dengan dua pesanan atau lebih. Menunjukkan loyalitas pembelian ulang. Dihitung per pelanggan dari ${formatCount(summary.totals.customers_active)} pelanggan aktif, seluruh periode.`}
+          hint={{
+            concept:
+              'Porsi pelanggan yang datang dan belanja dua kali atau lebih. Menunjukkan loyalitas pembelian ulang.',
+            current: `Dihitung per pelanggan dari ${formatCount(summary.totals.customers_active)} pelanggan aktif, seluruh periode.`,
+          }}
           hintMode="popover"
           icon={Repeat}
           iconTone="positive"
@@ -374,7 +388,11 @@ export function CustomerIntelligencePage() {
           {...reveal(240)}
           label="Pangsa transaksi margin >20%"
           value={formatPercent(summary.kpis.high_margin_transaction_share_pct)}
-          hint={`Pesanan dengan laba di atas 20%. Menunjukkan porsi transaksi paling sehat. Dihitung dari ${formatCount(summary.totals.orders)} transaksi, seluruh periode.`}
+          hint={{
+            concept:
+              'Porsi nota belanja yang menyisakan laba di atas 20% dari nilai penjualannya. Menunjukkan transaksi paling sehat.',
+            current: `Dihitung dari ${formatCount(summary.totals.orders)} transaksi, seluruh periode.`,
+          }}
           hintMode="popover"
           icon={Percent}
           iconTone="violet"
@@ -384,7 +402,11 @@ export function CustomerIntelligencePage() {
           {...reveal(300)}
           label="Rating pelanggan"
           value={formatDecimal(summary.kpis.mean_rating, 3)}
-          hint={`Rata-rata penilaian pelanggan pada skala 1-5. Hanya dari pesanan yang benar-benar terkirim. Rata-rata ${formatCount(deliveredOrders)} order terkirim; ${formatCount(undeliveredOrders)} order tidak dikirim bernilai kosong.`}
+          hint={{
+            concept:
+              'Rata-rata penilaian pelanggan pada skala 1-5, seperti ulasan bintang di toko online.',
+            current: `Hanya dari pesanan yang benar-benar terkirim: rata-rata ${formatCount(deliveredOrders)} order terkirim; ${formatCount(undeliveredOrders)} order tidak dikirim bernilai kosong.`,
+          }}
           hintMode="popover"
           icon={Star}
           iconTone="blue"

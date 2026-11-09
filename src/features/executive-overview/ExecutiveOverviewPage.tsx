@@ -44,7 +44,13 @@ import {
   selectScopedRows,
   sharePct,
 } from '@/lib/filter'
-import { formatCount, formatCountScaled, formatPercent, formatUsdScaled } from '@/lib/format'
+import {
+  formatCount,
+  formatCountScaled,
+  formatPercent,
+  formatUsd,
+  formatUsdScaled,
+} from '@/lib/format'
 import { reveal } from '@/lib/reveal'
 import { BusinessInsights } from './BusinessInsights'
 import { buildInsights } from './insights'
@@ -203,7 +209,12 @@ export function ExecutiveOverviewPage() {
           {...reveal(0)}
           label="Net sales"
           value={formatUsdScaled(metrics.netSales)}
-          hint="Total uang masuk dari penjualan setelah dikurangi diskon. Menjadi dasar angka lain di halaman ini. Dihitung dari jumlah semua pesanan pada cakupan filter."
+          hint={{
+            concept:
+              'Total uang bersih yang diterima toko dari penjualan barang setelah dipotong semua diskon promosi',
+            current:
+              'Menunjukkan total transaksi barang belanjaan yang berhasil terjual pada periode aktif.',
+          }}
           hintMode="popover"
           icon={TrendingUp}
           iconTone="violet"
@@ -212,7 +223,12 @@ export function ExecutiveOverviewPage() {
           {...reveal(60)}
           label="Profit"
           value={formatUsdScaled(metrics.profit)}
-          hint="Sisa uang setelah penjualan dikurangi biaya produk. Menunjukkan untung kotor sebelum biaya operasional. Dihitung dari total net sales dikurangi total biaya produk."
+          hint={{
+            concept:
+              'Sisa keuntungan kotor barang setelah uang penjualan dikurangi dengan harga modal beli barang',
+            current:
+              'Total uang keuntungan riil yang didapatkan bisnis sebelum dikurangi biaya operasional kantor.',
+          }}
           hintMode="popover"
           icon={Coins}
           iconTone="blue"
@@ -221,7 +237,14 @@ export function ExecutiveOverviewPage() {
           {...reveal(120)}
           label="Margin keseluruhan"
           value={metrics.marginPct === null ? '—' : formatPercent(metrics.marginPct)}
-          hint="Persentase laba dari total penjualan. Berbobot nilai, jadi beda dengan rata-rata margin per pesanan. Dihitung dari total profit dibagi total net sales."
+          hint={{
+            concept:
+              'Persentase laba dari total penjualan. Berbobot nilai, jadi beda dengan rata-rata margin per pesanan: pesanan bernilai besar lebih berpengaruh.',
+            current:
+              metrics.marginPct === null
+                ? 'Margin belum tersedia pada cakupan filter ini.'
+                : `Setiap $100 barang yang terjual menghasilkan sekitar ${formatUsd(metrics.marginPct, 2)} keuntungan kotor bagi toko.`,
+          }}
           hintMode="popover"
           icon={Percent}
           iconTone="pink"
@@ -230,7 +253,12 @@ export function ExecutiveOverviewPage() {
           {...reveal(180)}
           label="Order"
           value={formatCountScaled(metrics.orders)}
-          hint="Jumlah pesanan yang tercatat. Menggambarkan volume penjualan, bukan nilainya. Satu pesanan dihitung dari satu Order ID pada cakupan filter."
+          hint={{
+            concept:
+              'Total banyaknya transaksi atau nota belanja yang tercatat di kasir pada sistem. Satu Order ID dihitung satu pesanan.',
+            current:
+              'Mengukur keramaian atau volume transaksi pelanggan, bukan besar-kecilnya nominal uang belanja.',
+          }}
           hintMode="popover"
           icon={ShoppingCart}
           iconTone="positive"
@@ -251,30 +279,48 @@ export function ExecutiveOverviewPage() {
           <StatTile
             label="AOV"
             value={formatUsdScaled(summary.kpis.avg_order_value)}
-            hint="Rata-rata nilai belanja satu pesanan: total net sales dibagi jumlah pesanan. Jadi gambaran besar transaksi yang biasa terjadi, bukan laba dan bukan belanja per pelanggan. Angka seluruh periode 2021-2025, tidak ikut filter."
+            hint={{
+              concept:
+                'Rata-rata nominal uang yang dihabiskan pelanggan dalam satu kali transaksi belanja / keranjang pesanan.',
+              current: `Rata-rata setiap satu nota pesanan menghasilkan transaksi sekitar ${formatUsdScaled(summary.kpis.avg_order_value)}. Angka seluruh periode 2021-2025, tidak ikut filter.`,
+            }}
             hintMode="popover"
             icon={ReceiptText}
           />
           <StatTile
             label="Pelanggan aktif"
             value={formatCountScaled(summary.totals.customers_active)}
-            hint={`Pelanggan yang pernah berbelanja sepanjang periode. Dihitung per pelanggan, jadi tidak ikut filter dimensi. Total pelanggan terdaftar: ${formatCount(
-              summary.totals.customers_master,
-            )}.`}
+            hint={{
+              concept:
+                'Jumlah orang unik yang pernah berbelanja sepanjang periode. Satu orang dihitung sekali, walau belanja berkali-kali.',
+              current: `Dihitung per pelanggan, jadi tidak ikut filter dimensi. Total pelanggan terdaftar: ${formatCount(
+                summary.totals.customers_master,
+              )}.`,
+            }}
             hintMode="popover"
             icon={Users}
           />
           <StatTile
             label="Pelanggan berulang"
             value={formatPercent(summary.kpis.repeat_customer_rate_customer_level_pct)}
-            hint="Pelanggan yang berbelanja lebih dari sekali. Menunjukkan loyalitas, dihitung per pelanggan. Cakupannya seluruh periode 2021-2025."
+            hint={{
+              concept:
+                'Porsi pelanggan yang datang dan belanja lebih dari sekali. Menunjukkan loyalitas pembelian ulang, bukan jumlah kunjungan.',
+              current:
+                'Dihitung per pelanggan pada seluruh periode 2021-2025, tidak ikut filter dimensi.',
+            }}
             hintMode="popover"
             icon={Repeat2}
           />
           <StatTile
             label="Transaksi margin > 20%"
             value={formatPercent(summary.kpis.high_margin_transaction_share_pct)}
-            hint="Pesanan dengan laba di atas 20%. Menunjukkan porsi transaksi paling sehat. Dihitung per baris pesanan, seluruh periode."
+            hint={{
+              concept:
+                'Porsi nota belanja yang menyisakan keuntungan di atas 20% dari nilai penjualannya.',
+              current:
+                'Menunjukkan seberapa besar transaksi yang dianggap sehat secara margin, dihitung per baris pesanan pada seluruh periode.',
+            }}
             hintMode="popover"
             icon={BadgePercent}
           />

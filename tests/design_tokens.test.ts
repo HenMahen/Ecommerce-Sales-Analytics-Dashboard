@@ -136,14 +136,14 @@ describe('token tema', () => {
 
   it('memakai palet tanda tangan Warm Alabaster & Japanese Indigo pada tema terang', () => {
     const expected = {
-      '--background': '#f9f9ff',
+      '--background': '#fbf9f5',
       '--sidebar': '#fbf9f5',
       '--primary': '#0037b0',
       '--primary-container': '#1d4ed8',
       '--secondary': '#ac3400',
       '--tertiary': '#004f38',
       '--border': '#e8e2d8',
-      '--border-variant': '#c4c5d7',
+      '--border-variant': '#ded7ca',
     }
     for (const [name, value] of Object.entries(expected)) {
       expect(LIGHT.get(name)).toBe(value)
@@ -154,15 +154,15 @@ describe('token tema', () => {
     const expected = {
       '--background': '#151120',
       '--sidebar': '#100c1b',
-      '--card': '#221d2d',
+      '--card': '#1c1033',
       '--surface-container-lowest': '#100c1b',
-      '--surface-container-low': '#1d1929',
-      '--surface-container': '#221d2d',
-      '--surface-container-high': '#2c2738',
-      '--surface-container-highest': '#373243',
-      '--primary': '#ffaeda',
+      '--surface-container-low': '#170e2b',
+      '--surface-container': '#1c1033',
+      '--surface-container-high': '#24133f',
+      '--surface-container-highest': '#2e1b4e',
+      '--primary': '#ff1cc0',
       '--primary-container': '#ff3ac2',
-      '--secondary': '#e5b4ff',
+      '--secondary': '#ac2df2',
       '--tertiary': '#bcc2ff',
     }
     for (const [name, value] of Object.entries(expected)) {

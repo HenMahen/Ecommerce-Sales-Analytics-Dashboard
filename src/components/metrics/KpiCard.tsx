@@ -1,6 +1,6 @@
 import { type LucideIcon } from 'lucide-react'
 import { cn } from 'cn'
-import { HintPopover } from '@/components/metrics/HintPopover'
+import { HintContent, HintPopover, type MetricHintContent } from '@/components/metrics/HintPopover'
 import { CHIP, CHIP_TRIGGER, ICON_TONES, type IconTone } from '@/components/metrics/iconTones'
 import { Card } from '@/components/ui/card'
 
@@ -18,10 +18,10 @@ export function KpiCard({
 }: {
   label: string
   value: string
-  hint?: string
+  hint?: string | MetricHintContent
   /**
    * 'note' keeps the hint visible under the value (default). 'popover' hides it behind the card
-   * icon: clicking the icon opens the short description.
+   * icon: hovering (desktop) or tapping (touch) opens the short description.
    */
   hintMode?: 'note' | 'popover'
   icon?: LucideIcon
@@ -54,7 +54,7 @@ export function KpiCard({
           hint && hintMode === 'popover' ? (
             <HintPopover
               label={`Penjelasan ${label}`}
-              description={hint}
+              description={<HintContent hint={hint} />}
               align="end"
               className={cn(CHIP, CHIP_TRIGGER, ICON_TONES[iconTone])}
             >
@@ -70,7 +70,9 @@ export function KpiCard({
       {hintMode === 'note' || footer ? (
         <div className="mt-3 flex flex-col gap-2">
           {hintMode === 'note' && hint ? (
-            <p className="text-xs text-muted-foreground">{hint}</p>
+            <div className="text-xs text-muted-foreground">
+              <HintContent hint={hint} />
+            </div>
           ) : null}
           {footer}
         </div>

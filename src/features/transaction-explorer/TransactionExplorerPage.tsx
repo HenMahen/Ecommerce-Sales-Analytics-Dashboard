@@ -292,7 +292,11 @@ export function TransactionExplorerPage() {
           {...reveal(0)}
           label="Pesanan anomali"
           value={formatCountScaled(anomaly.summary.orders)}
-          hint={`Pesanan bernilai besar tetapi bermargin rendah. Ditandai untuk ditinjau lebih lanjut. ${formatPercent(anomaly.summary.order_share_pct)} dari ${formatCount(summary.totals.orders)} pesanan: net sales ≥ ${formatUsd(anomaly.rule.revenue_threshold, 2)} dan margin ≤ ${formatPercent(anomaly.rule.margin_threshold_pct)}.`}
+          hint={{
+            concept:
+              'Pesanan bernilai besar tetapi labanya tipis. Ditandai untuk ditinjau lebih lanjut karena berpotensi menggerus keuntungan.',
+            current: `${formatPercent(anomaly.summary.order_share_pct)} dari ${formatCount(summary.totals.orders)} pesanan masuk kriteria: net sales ≥ ${formatUsd(anomaly.rule.revenue_threshold, 2)} dan margin ≤ ${formatPercent(anomaly.rule.margin_threshold_pct)}. Seluruh periode.`,
+          }}
           hintMode="popover"
           icon={ShieldAlert}
           iconTone="violet"
@@ -302,7 +306,11 @@ export function TransactionExplorerPage() {
           {...reveal(60)}
           label="Omzet anomali"
           value={formatUsdScaled(anomaly.summary.net_sales)}
-          hint="Total penjualan bersih pesanan anomali. Menunjukkan besarnya nilai yang perlu ditinjau. Dijumlahkan dari semua pesanan anomali, seluruh periode."
+          hint={{
+            concept:
+              'Total penjualan bersih dari pesanan yang ditandai anomali. Menunjukkan besarnya nilai yang perlu ditinjau.',
+            current: 'Dijumlahkan dari semua pesanan anomali, seluruh periode.',
+          }}
           hintMode="popover"
           icon={Coins}
           iconTone="blue"
@@ -312,7 +320,11 @@ export function TransactionExplorerPage() {
           {...reveal(120)}
           label="Laba anomali"
           value={formatUsdScaled(anomaly.summary.profit)}
-          hint={`Laba dari pesanan anomali. Jauh di bawah margin portofolio, jadi berpotensi menggerus hasil. Marginnya ${formatPercent(anomaly.summary.aggregate_margin_pct)} vs ${formatPercent(summary.margins.aggregate_margin_pct)} portofolio, seluruh periode.`}
+          hint={{
+            concept:
+              'Laba dari pesanan anomali. Jauh di bawah margin portofolio, jadi berpotensi menggerus hasil.',
+            current: `Marginnya ${formatPercent(anomaly.summary.aggregate_margin_pct)} vs ${formatPercent(summary.margins.aggregate_margin_pct)} margin portofolio, seluruh periode.`,
+          }}
           hintMode="popover"
           icon={Wallet}
           iconTone="positive"
@@ -322,7 +334,11 @@ export function TransactionExplorerPage() {
           {...reveal(180)}
           label="Margin keseluruhan anomali"
           value={formatPercent(anomaly.summary.aggregate_margin_pct)}
-          hint="Persentase laba dari total nilai pesanan anomali. Berbobot nilai, bukan rata-rata transaksi. Dihitung dari laba anomali dibagi omzet anomali, seluruh periode."
+          hint={{
+            concept:
+              'Persentase laba dari total nilai pesanan anomali. Berbobot nilai, bukan rata-rata transaksi.',
+            current: 'Dihitung dari laba anomali dibagi omzet anomali, seluruh periode.',
+          }}
           hintMode="popover"
           icon={Percent}
           iconTone="pink"
@@ -332,7 +348,12 @@ export function TransactionExplorerPage() {
           {...reveal(240)}
           label="Opportunity gap (agregat)"
           value={formatUsdScaled(anomaly.summary.counterfactual_gap_aggregate_margin)}
-          hint="Perkiraan tambahan laba bila margin pesanan anomali disetarakan dengan margin portofolio. Simulasi ilustratif, bukan target maupun prakiraan. Dihitung dengan basis margin keseluruhan dan ambang global."
+          hint={{
+            concept:
+              'Perkiraan keuntungan yang terbuang karena toko memberi diskon terlalu dalam pada pesanan borongan bernilai besar.',
+            current:
+              'Potensi uang keuntungan tambahan bila margin pesanan anomali disetarakan dengan margin portofolio. Simulasi ilustratif, bukan target maupun prakiraan. Dihitung dengan basis margin keseluruhan dan ambang global.',
+          }}
           hintMode="popover"
           icon={TrendingUp}
           iconTone="violet"
@@ -342,7 +363,11 @@ export function TransactionExplorerPage() {
           {...reveal(300)}
           label="Order rugi"
           value={formatCountScaled(lossOrders)}
-          hint={`Pesanan yang labanya minus. Menandai kebocoran margin yang nyata. ${formatPercent(lossShare)} dari seluruh pesanan; kerugian ${formatUsdScaled(lossTotal)} (nilai absolut), seluruh periode.`}
+          hint={{
+            concept:
+              'Pesanan yang labanya minus, artinya harga jual tidak menutup modal dan diskon.',
+            current: `Menandai kebocoran margin yang nyata: ${formatPercent(lossShare)} dari seluruh pesanan; kerugian ${formatUsdScaled(lossTotal)} (nilai absolut), seluruh periode.`,
+          }}
           hintMode="popover"
           icon={TriangleAlert}
           iconTone="pink"
@@ -352,7 +377,11 @@ export function TransactionExplorerPage() {
           {...reveal(360)}
           label="Tingkat retur"
           value={formatPercent(summary.return_rate_pct)}
-          hint={`Porsi pesanan yang dikembalikan pelanggan. Menandai masalah kualitas atau ketidaksesuaian. Dihitung dari ${formatCount(summary.status_mix.returned)} pesanan Returned, seluruh periode.`}
+          hint={{
+            concept:
+              'Porsi pesanan yang dikembalikan pelanggan, penanda masalah kualitas atau ketidaksesuaian barang.',
+            current: `Dihitung dari ${formatCount(summary.status_mix.returned)} pesanan Returned, seluruh periode.`,
+          }}
           hintMode="popover"
           icon={RotateCcw}
           iconTone="blue"
@@ -362,7 +391,11 @@ export function TransactionExplorerPage() {
           {...reveal(420)}
           label="Tidak dikirim"
           value={formatPercent(summary.undelivered_rate_pct)}
-          hint={`Porsi pesanan yang tidak pernah dikirim. Menandai masalah operasional pengiriman. Dihitung dari ${formatCount(undeliveredOrders)} pesanan berstatus pengiriman Cancelled, seluruh periode.`}
+          hint={{
+            concept:
+              'Porsi pesanan yang tidak pernah dikirim, penanda masalah operasional pengiriman.',
+            current: `Dihitung dari ${formatCount(undeliveredOrders)} pesanan berstatus pengiriman Cancelled, seluruh periode.`,
+          }}
           hintMode="popover"
           icon={Truck}
           iconTone="violet"
@@ -632,28 +665,43 @@ export function TransactionExplorerPage() {
           <StatTile
             label="Kerugian (nilai absolut)"
             value={formatUsdScaled(lossTotal)}
-            hint={`Kerugian berjalan dari pesanan yang labanya minus, dihitung sebagai nilai absolut. Angka seluruh periode dan tidak mengikuti filter. Berasal dari ${formatCount(lossOrders)} order profit < 0 (${formatPercent(lossShare)} dari seluruh order).`}
+            hint={{
+              concept:
+                'Kerugian berjalan dari pesanan yang labanya minus, dihitung sebagai nilai absolut, bukan pendapatan negatif.',
+              current: `Angka seluruh periode dan tidak mengikuti filter. Berasal dari ${formatCount(lossOrders)} order profit < 0 (${formatPercent(lossShare)} dari seluruh order).`,
+            }}
             hintMode="popover"
             icon={TriangleAlert}
           />
           <StatTile
             label="Tingkat pembatalan"
             value={formatPercent(summary.cancellation_rate_pct)}
-            hint={`Porsi pesanan yang dibatalkan. Menandai pembatalan oleh pelanggan atau sistem. Dihitung dari ${formatCount(summary.status_mix.cancelled)} order Cancelled, seluruh periode.`}
+            hint={{
+              concept: 'Porsi pesanan yang dibatalkan, baik oleh pelanggan maupun sistem.',
+              current: `Dihitung dari ${formatCount(summary.status_mix.cancelled)} order Cancelled, seluruh periode.`,
+            }}
             hintMode="popover"
             icon={Ban}
           />
           <StatTile
             label="Tingkat retur"
             value={formatPercent(summary.return_rate_pct)}
-            hint={`Porsi pesanan yang dikembalikan. Menandai masalah kualitas atau ketidaksesuaian produk. Dihitung dari ${formatCount(summary.status_mix.returned)} order Returned, seluruh periode.`}
+            hint={{
+              concept:
+                'Porsi pesanan yang dikembalikan pelanggan, penanda masalah kualitas atau ketidaksesuaian produk.',
+              current: `Dihitung dari ${formatCount(summary.status_mix.returned)} order Returned, seluruh periode.`,
+            }}
             hintMode="popover"
             icon={RotateCcw}
           />
           <StatTile
             label="Tidak dikirim"
             value={formatPercent(summary.undelivered_rate_pct)}
-            hint={`Porsi pesanan berstatus pengiriman Cancelled. Menandai pengiriman yang gagal berjalan. Dihitung dari ${formatCount(undeliveredOrders)} order, seluruh periode.`}
+            hint={{
+              concept:
+                'Porsi pesanan berstatus pengiriman Cancelled, penanda pengiriman yang gagal berjalan.',
+              current: `Dihitung dari ${formatCount(undeliveredOrders)} order, seluruh periode.`,
+            }}
             hintMode="popover"
             icon={Truck}
           />

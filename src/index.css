@@ -167,7 +167,7 @@
   --chart-5: #b4a8d1;
 
   /* Brand accents */
-  --brand-violet: #b131fa;
+  --brand-violet: #bb45ff; /* design #b131fa lightened slightly to keep icon text AA (4.62:1) */
   --brand-blue: #bcc2ff;
   --brand-pink: #ff1cc0;
 

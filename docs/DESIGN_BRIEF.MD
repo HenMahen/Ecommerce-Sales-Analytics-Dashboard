@@ -22,8 +22,8 @@
    - Struktur komponen DOM, hierarki tata letak, ukuran padding, margin, dan radius sudut wajib **100% identik** antara tema terang dan tema gelap.
    - Transisi tema hanya memodifikasi token variabel warna CSS (`var(--...)`) tanpa mengubah posisi elemen atau dimensi kartu.
 4. **Karakter Visual Kuat dari Referensi Folder `design/`**:
-   - **Mode Terang (*Warm Alabaster & Japanese Indigo*)**: Membawa nuansa editorial prestisius dengan latar kertas alabaster hangat (`#F9F9FF` / `#FBF9F5`), aksen biru indigo Jepang yang berwibawa (`#0037B0`), aksen terra cotta hangat (`#AC3400`), dan garis pembatas halus (`#E8E2D8`).
-   - **Mode Gelap (*Nocturne Synthwave Luxury*)**: Membawa atmosfer malam bernuansa synthwave mewah dengan latar obsidian ungu pekat (`#151120`), aksen neon pink bercahaya (`#FFAEDA` / `#FF3AC2`), lilac ungu (`#E5B4FF`), serta efek pencahayaan pendaran (*ambient glow*) halus.
+   - **Mode Terang (*Warm Alabaster & Japanese Indigo*)**: Membawa nuansa editorial prestisius dengan latar kertas alabaster hangat (`#FBF9F5`), aksen biru indigo Jepang yang berwibawa (`#0037B0`), aksen terra cotta hangat (`#AC3400`), dan garis pembatas halus (`#E8E2D8`).
+   - **Mode Gelap (*Nocturne Synthwave Luxury*)**: Membawa atmosfer malam bernuansa synthwave mewah dengan latar obsidian ungu pekat (`#151120`), permukaan plum (`#1C1033`), aksen neon pink bercahaya (`#FF1CC0` / `#FF3AC2`), violet listrik (`#B131FA`), serta efek pencahayaan pendaran (*ambient glow*) halus.
 5. **Hirarki Tipografi Disiplin & Perataan Numerik**:
    - Penggunaan tipe huruf modern berdaya baca tinggi: **Space Grotesk** / **Plus Jakarta Sans** (Display/Heading), **Geist** / **Plus Jakarta Sans** (Body), serta **JetBrains Mono** dengan pemanfaatan wajib fitur `tabular-nums` untuk perataan angka finansial dan persentase.
 6. **Minim Gangguan Visual (*Low Visual Noise*)**:
@@ -135,32 +135,32 @@ Tema terang mengadopsi palet **Warm Alabaster & Japanese Indigo** dari referensi
 :root {
   /* Skema Dasar */
   color-scheme: light;
-  --background: #f9f9ff;           /* Warm Alabaster: Latar area kerja utama */
-  --foreground: #131c2b;           /* Deep Indigo Navy: Teks heading dan angka utama */
+  --background: #fbf9f5;           /* Warm Alabaster: Latar area kerja utama */
+  --foreground: #0f172a;           /* Deep Indigo Navy: Teks heading dan angka utama */
   --card: #ffffff;                 /* Permukaan kartu modul */
-  --card-foreground: #131c2b;
+  --card-foreground: #0f172a;
   --popover: #ffffff;              /* Permukaan dropdown & popover */
-  --popover-foreground: #131c2b;
-  
+  --popover-foreground: #0f172a;
+
   /* Permukaan Berlapis (Surface Containers) */
   --surface-dim: #d1daf0;
-  --surface-bright: #f9f9ff;
+  --surface-bright: #fbf9f5;
   --surface-container-lowest: #ffffff;
   --surface-container-low: #f0f3ff;
   --surface-container: #e8eeff;
   --surface-container-high: #dfe8fe;
   --surface-container-highest: #dae2f8;
-  
+
   /* Garis Batas & Kontrol */
   --border: #e8e2d8;               /* Garis tepi halus netral */
-  --border-variant: #c4c5d7;
+  --border-variant: #ded7ca;
   --input: #c4c5d7;                /* Batas input dan select */
-  --ring: #2151da;                 /* Cincin fokus aksesibilitas */
+  --ring: #2563eb;                 /* Cincin fokus aksesibilitas */
 
   /* Aksen Utama & Interaktif */
   --primary: #0037b0;              /* Japanese Indigo: Aksen utama */
   --primary-foreground: #ffffff;
-  --primary-hover: #1d4ed8;
+  --primary-hover: #1e3a8a;
   --primary-container: #1d4ed8;    /* Indigo terang kontainer */
   --on-primary-container: #cad3ff;
   --secondary: #ac3400;            /* Warm Terra Cotta: Aksen sekunder */
@@ -169,29 +169,29 @@ Tema terang mengadopsi palet **Warm Alabaster & Japanese Indigo** dari referensi
   --tertiary: #004f38;             /* Forest Jade: Aksen tersier */
   --tertiary-foreground: #ffffff;
   --tertiary-container: #00694c;
-  
-  --muted: #f0f3ff;                /* Latar skeleton & baris tabel hover */
+
+  --muted: #f4efe6;                /* Latar skeleton & baris tabel hover */
   --muted-foreground: #434655;     /* Label kategori & teks sekunder */
-  --accent: #dfe8fe;               /* Latar sorotan */
-  --accent-foreground: #001551;
-  --destructive: #ba1a1a;          /* Error / Kerugian */
+  --accent: #faf7f2;               /* Latar sorotan */
+  --accent-foreground: #0f172a;
+  --destructive: #dc2626;          /* Error / Kerugian */
   --destructive-foreground: #ffffff;
 
   /* Bilah Sisi (Warm Alabaster Sidebar) */
   --sidebar: #fbf9f5;              /* Latar sidebar hangat */
-  --sidebar-foreground: #131c2b;   /* Teks menu navigasi */
+  --sidebar-foreground: #0f172a;   /* Teks menu navigasi */
   --sidebar-primary: #0037b0;
   --sidebar-primary-foreground: #ffffff;
   --sidebar-border: #e8e2d8;       /* Batas sidebar */
   --sidebar-accent: #e8eeff;       /* Latar menu saat di-hover / aktif */
   --sidebar-accent-foreground: #0037b0;
-  --sidebar-ring: #2151da;
+  --sidebar-ring: #2563eb;
 
   /* Seri Warna Grafik Data */
-  --chart-1: #0037b0;              /* Japanese Indigo: Seri pendapatan/net sales */
-  --chart-2: #1d4ed8;              /* Royal Indigo: Seri laba/profit */
+  --chart-1: #1d4ed8;              /* Royal Indigo: Seri pendapatan/net sales */
+  --chart-2: #004f38;              /* Forest Jade: Seri laba/profit */
   --chart-3: #ac3400;              /* Terra Cotta: Margin % / Diskon */
-  --chart-4: #004f38;              /* Forest Jade: Pelanggan / Volume */
+  --chart-4: #ea580c;              /* Burnt Orange: Pelanggan / Volume */
   --chart-5: #747686;              /* Neutral Slate: Anomali / Referensi */
 
   /* Alias Aksen Merek (dipakai komponen lama) */
@@ -200,16 +200,17 @@ Tema terang mengadopsi palet **Warm Alabaster & Japanese Indigo** dari referensi
   --brand-pink: #ac3400;
 
   /* Indikator Status Semantik */
-  --positive: #00694c;             /* Completed / Positif */
-  --positive-bg: #89e7be;
-  --negative: #ba1a1a;             /* Returned / Kerugian */
-  --negative-bg: #ffdad6;
+  --positive: #047857;             /* Completed / Positif */
+  --positive-bg: #d1fae5;
+  --negative: #dc2626;             /* Returned / Kerugian */
+  --negative-bg: #fee2e2;
   --warning: #ac3400;              /* Pending / Anomali */
   --warning-bg: #ffdbd0;
 
   /* Bayangan Halus */
-  --shadow-card: 0 1px 3px 0 rgb(19 28 43 / 0.04), 0 1px 2px -1px rgb(19 28 43 / 0.04);
-  --shadow-card-hover: 0 4px 12px -2px rgb(19 28 43 / 0.08), 0 2px 4px -2px rgb(19 28 43 / 0.06);
+  --shadow-card: 0 1px 2px rgba(27, 36, 52, 0.03), 0 4px 12px rgba(27, 36, 52, 0.02);
+  --shadow-card-hover:
+    0 4px 6px -1px rgba(27, 36, 52, 0.04), 0 12px 24px -4px rgba(27, 36, 52, 0.05);
 }
 ```
 
@@ -224,68 +225,68 @@ Tema gelap mengadopsi palet **Nocturne Synthwave Luxury** dari referensi `design
   /* Skema Dasar */
   color-scheme: dark;
   --background: #151120;           /* Deep Nocturne Obsidian: Latar utama */
-  --foreground: #e8dff5;           /* Soft Lavender: Teks heading dan angka */
-  --card: #221d2d;                 /* Permukaan kartu modul */
-  --card-foreground: #e8dff5;
-  --popover: #1d1929;
-  --popover-foreground: #e8dff5;
+  --foreground: #f8f6fc;           /* Soft Lavender: Teks heading dan angka */
+  --card: #1c1033;                 /* Permukaan kartu plum */
+  --card-foreground: #f8f6fc;
+  --popover: #1c1033;
+  --popover-foreground: #f8f6fc;
 
   /* Permukaan Berlapis (Surface Containers) */
   --surface-dim: #151120;
   --surface-bright: #3c3748;
   --surface-container-lowest: #100c1b;
-  --surface-container-low: #1d1929;
-  --surface-container: #221d2d;
-  --surface-container-high: #2c2738;
-  --surface-container-highest: #373243;
+  --surface-container-low: #170e2b;
+  --surface-container: #1c1033;
+  --surface-container-high: #24133f;
+  --surface-container-highest: #2e1b4e;
 
   /* Garis Batas & Kontrol */
   --border: rgba(255, 28, 192, 0.18); /* Batas kartu beraksen neon halus */
   --border-variant: #593f4c;
-  --input: #8d6f7e;                /* Naik dari #593f4c agar batas kontrol mencapai 3,67:1 */
-  --ring: #ffaeda;                 /* Neon Synthwave Pink cincin fokus */
+  --input: #8d6f7e;                /* Naik dari #593f4c agar batas kontrol mencapai 4,02:1 */
+  --ring: #ff1cc0;                 /* Neon Synthwave Pink cincin fokus */
 
   /* Aksen Utama & Interaktif */
-  --primary: #ffaeda;              /* Soft Neon Pink: Aksen utama */
-  --primary-foreground: #610047;
-  --primary-hover: #ffd8ea;
+  --primary: #ff1cc0;              /* Neon Pink: Aksen utama */
+  --primary-foreground: #0c0817;
+  --primary-hover: #ff5ecb;
   --primary-container: #ff3ac2;    /* Vibrant Neon Pink */
   --on-primary-container: #55003e;
-  --secondary: #e5b4ff;            /* Lilac Purple: Aksen sekunder */
-  --secondary-foreground: #4f0077;
+  --secondary: #ac2df2;            /* Violet listrik, digelapkan sedikit agar teks putih AA */
+  --secondary-foreground: #ffffff;
   --secondary-container: #9a00e4;
   --tertiary: #bcc2ff;             /* Periwinkle Blue: Aksen tersier */
   --tertiary-foreground: #00179b;
   --tertiary-container: #7686ff;
 
-  --muted: #2c2738;
-  --muted-foreground: #e0bdcd;     /* Teks label sekunder lembut */
-  --accent: #373243;
-  --accent-foreground: #ffaeda;
+  --muted: #24133f;
+  --muted-foreground: #b4a8d1;     /* Teks label sekunder lembut */
+  --accent: #2e1b4e;
+  --accent-foreground: #f8f6fc;
   --destructive: #ffb4ab;          /* Soft Neon Red */
   --destructive-foreground: #690005;
 
   /* Bilah Sisi (Deep Synthwave Obsidian) */
   --sidebar: #100c1b;              /* Obsidian pekat */
   --sidebar-foreground: #e8dff5;
-  --sidebar-primary: #ffaeda;
-  --sidebar-primary-foreground: #610047;
+  --sidebar-primary: #ff1cc0;
+  --sidebar-primary-foreground: #0c0817;
   --sidebar-border: rgba(255, 28, 192, 0.12);
-  --sidebar-accent: #2c2738;
-  --sidebar-accent-foreground: #ffaeda;
-  --sidebar-ring: #ffaeda;
+  --sidebar-accent: #2e1b4e;
+  --sidebar-accent-foreground: #f8f6fc;
+  --sidebar-ring: #ff1cc0;
 
   /* Seri Warna Grafik Data (Pendaran Neon Kontras) */
-  --chart-1: #ffaeda;              /* Neon Soft Pink: Seri pendapatan */
-  --chart-2: #ff3ac2;              /* Electric Pink: Seri laba */
-  --chart-3: #e5b4ff;              /* Lilac Purple: Seri margin / diskon */
-  --chart-4: #bcc2ff;              /* Periwinkle Blue: Seri volume */
-  --chart-5: #00ffa3;              /* Neon Mint: Seri anomali / sorotan */
+  --chart-1: #ff1cc0;              /* Neon Pink: Seri pendapatan */
+  --chart-2: #4d63ff;              /* Electric Blue: Seri laba */
+  --chart-3: #b131fa;              /* Electric Violet: Seri margin / diskon */
+  --chart-4: #00ffa3;              /* Neon Mint: Seri volume */
+  --chart-5: #b4a8d1;              /* Lavender Grey: Anomali / referensi */
 
   /* Alias Aksen Merek (dipakai komponen lama) */
-  --brand-violet: #ffaeda;
+  --brand-violet: #bb45ff;         /* Digeser dari #b131fa agar teks ikon mencapai 4,62:1 */
   --brand-blue: #bcc2ff;
-  --brand-pink: #ff3ac2;
+  --brand-pink: #ff1cc0;
 
   /* Indikator Status Semantik */
   --positive: #00ffa3;             /* Mint cerah: Completed / Positif */
@@ -296,8 +297,8 @@ Tema gelap mengadopsi palet **Nocturne Synthwave Luxury** dari referensi `design
   --warning-bg: rgba(255, 181, 157, 0.15);
 
   /* Bayangan Halus Mode Gelap (Atmospheric Glow) */
-  --shadow-card: 0 12px 32px rgba(0, 0, 0, 0.6), inset 0 1px 0 rgba(255, 255, 255, 0.05);
-  --shadow-card-hover: 0 16px 36px rgba(0, 0, 0, 0.7), 0 0 16px rgba(255, 28, 192, 0.25);
+  --shadow-card: 0 12px 32px rgba(0, 0, 0, 0.55), inset 0 1px 0 rgba(255, 28, 192, 0.18);
+  --shadow-card-hover: 0 16px 36px rgba(0, 0, 0, 0.65), 0 0 20px rgba(255, 28, 192, 0.28);
 }
 ```
 
@@ -489,13 +490,14 @@ Diukur dengan rumus luminansi relatif; angka ini juga dijaga otomatis oleh
 
 | Pasangan | Terang | Gelap |
 |---|---|---|
-| `foreground` di atas `card` | 17,09:1 | 12,72:1 |
-| `muted-foreground` di atas `card` / `background` / `muted` | 9,35 / 8,92 / 8,45 | 9,62 / 10,88 / 8,48 |
-| Teks tombol utama (`primary-foreground` di atas `primary` dan `primary-hover`) | 9,66 / 6,70 | 7,70 / 10,17 |
-| `sidebar-foreground` di atas `sidebar` | 16,25:1 | 14,95:1 |
-| `ring` di atas `card` (non-teks, ambang 3:1) | 6,45 | 9,61 |
-| `chart-1..5` di atas `card` (non-teks) | 4,49–9,66 | 5,18–12,35 |
-| `input` di atas `card` (non-teks) | **1,71:1** (lihat 15.4) | 3,67:1 |
+| `foreground` di atas `card` | 17,85:1 | 16,72:1 |
+| `muted-foreground` di atas `card` / `background` / `muted` | 9,35 / 8,89 / 8,16 | 8,08 / 8,35 / 7,63 |
+| Teks tombol utama (`primary-foreground` di atas `primary` dan `primary-hover`) | 9,66 / 10,36 | 5,81 / 7,26 |
+| `secondary-foreground` di atas `secondary` | 6,47:1 | 4,76:1 |
+| `sidebar-foreground` di atas `sidebar` | 16,98:1 | 14,95:1 |
+| `ring` di atas `card` (non-teks, ambang 3:1) | 5,17 | 5,28 |
+| `chart-1..5` di atas `card` (non-teks) | 3,56–9,65 | 3,88–13,52 |
+| `input` di atas `card` (non-teks) | **1,71:1** (lihat 15.4) | 4,02:1 |
 
 ### 15.4 Deviasi dan batasan yang belum tertutup
 
@@ -503,13 +505,18 @@ Diukur dengan rumus luminansi relatif; angka ini juga dijaga otomatis oleh
    meminta 3:1). Dipertahankan agar tampilan terang tetap tenang; identifikasi kontrol dibantu
    label yang selalu terlihat dan cincin fokus 6,45:1. Nilai ini dijaga tes agar tidak makin buruk.
 2. **Batas kontrol tema gelap dinaikkan dari `#593f4c` ke `--input: #8d6f7e`** agar mencapai
-   3,67:1 terhadap kartu `#221d2d`, memenuhi ambang non-teks WCAG 1.4.11.
-3. **Zoom 200%, urutan Tab nyata, dan pembaca layar belum diuji.**
-4. **Kilasan tema diverifikasi secara struktural** (skrip inline di `<head>` sebelum bundel +
+   4,02:1 terhadap kartu `#1c1033`, memenuhi ambang non-teks WCAG 1.4.11.
+3. **`--chart-4` tema terang memakai `#ea580c`, bukan `#fd6b36` dari referensi**, agar tetap
+   mencapai 3,56:1 terhadap kartu putih (ambang non-teks 3:1). `--chart-2` tema gelap memakai
+   `#4d63ff` (3,88:1), bukan `#1c3aff` yang gagal ambang 3:1.
+4. **`--secondary` tema gelap digeser dari `#b131fa` ke `#ac2df2`** agar teks putih tombol
+   mencapai 4,76:1 (AA).
+5. **Zoom 200%, urutan Tab nyata, dan pembaca layar belum diuji.**
+6. **Kilasan tema diverifikasi secara struktural** (skrip inline di `<head>` sebelum bundel +
    tes tetap), bukan dengan perekaman first paint.
-5. **Tangkapan layar headless** kadang membekukan animasi masuk (Recharts dan fade dropdown);
+7. **Tangkapan layar headless** kadang membekukan animasi masuk (Recharts dan fade dropdown);
    keadaan akhir diverifikasi lewat *computed style* (opacity dropdown = 1, jalur grafik lengkap),
    bukan lewat tangkapan.
-6. Kontras diukur untuk pasangan token pada tabel 15.3, bukan untuk setiap kombinasi piksel.
+8. Kontras diukur untuk pasangan token pada tabel 15.3, bukan untuk setiap kombinasi piksel.
    Batas gelap `--border` dan `--sidebar-border` memakai rgba rose transparan sehingga tidak
    diukur langsung oleh pengurai hex pada tes.

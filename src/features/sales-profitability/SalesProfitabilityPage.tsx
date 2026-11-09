@@ -54,7 +54,13 @@ import {
   type BracketPoint,
   type TrendGranularity,
 } from '@/lib/filter'
-import { formatCount, formatCountScaled, formatPercent, formatUsdScaled } from '@/lib/format'
+import {
+  formatCount,
+  formatCountScaled,
+  formatPercent,
+  formatUsd,
+  formatUsdScaled,
+} from '@/lib/format'
 import { reveal } from '@/lib/reveal'
 
 const GRANULARITY_OPTIONS: Array<{ value: TrendGranularity; label: string }> = [
@@ -156,25 +162,40 @@ export function SalesProfitabilityPage() {
     {
       label: 'Diskon keseluruhan',
       value: formatPercent(summary.derived.discount_rate_weighted_pct),
-      hint: 'Berapa bagian penjualan bruto yang menjadi diskon di seluruh pesanan. Cocok jadi angka acuan karena dihitung dari total, bukan rata-rata tiap pesanan. Dihitung dari total diskon dibagi total penjualan bruto, seluruh periode.',
+      hint: {
+        concept:
+          'Berapa bagian penjualan bruto yang menjadi diskon di seluruh pesanan. Cocok jadi angka acuan karena dihitung dari total, bukan rata-rata tiap pesanan.',
+        current: 'Dihitung dari total diskon dibagi total penjualan bruto, seluruh periode.',
+      },
       icon: Percent,
     },
     {
       label: 'Rerata diskon',
       value: formatPercent(summary.derived.discount_rate_row_mean_pct),
-      hint: 'Rata-rata diskon tiap pesanan, setiap pesanan dihitung sama rata. Menggambarkan diskon yang biasa terjadi pada pesanan tipikal. Dihitung dari rata-rata tingkat diskon seluruh pesanan, seluruh periode.',
+      hint: {
+        concept: 'Rata-rata diskon tiap pesanan, setiap pesanan dihitung sama rata.',
+        current:
+          'Menggambarkan diskon yang biasa terjadi pada pesanan tipikal, dihitung dari rata-rata tingkat diskon seluruh pesanan, seluruh periode.',
+      },
       icon: Sigma,
     },
     {
       label: 'Median diskon',
       value: formatPercent(summary.derived.discount_rate_row_median_pct),
-      hint: 'Nilai tengah diskon seluruh pesanan. Tidak terpengaruh pesanan berdiskon ekstrem. Separuh pesanan berdiskon di bawah angka ini, seluruh periode.',
+      hint: {
+        concept:
+          'Nilai tengah diskon seluruh pesanan. Tidak terpengaruh pesanan berdiskon ekstrem.',
+        current: 'Separuh pesanan berdiskon di bawah angka ini, seluruh periode.',
+      },
       icon: Equal,
     },
     {
       label: 'Maksimum diskon',
       value: formatPercent(summary.derived.discount_rate_row_max_pct),
-      hint: 'Diskon terbesar pada satu pesanan. Menandai batas atas diskon pada dataset. Diambil dari tingkat diskon pesanan tertinggi, seluruh periode.',
+      hint: {
+        concept: 'Diskon terbesar pada satu pesanan, penanda batas atas diskon pada dataset.',
+        current: 'Diambil dari tingkat diskon pesanan tertinggi, seluruh periode.',
+      },
       icon: ArrowUpNarrowWide,
     },
   ]
@@ -338,7 +359,12 @@ export function SalesProfitabilityPage() {
           {...reveal(0)}
           label="Gross sales"
           value={formatUsdScaled(metrics.grossSales)}
-          hint="Penjualan sebelum diskon. Menjadi titik awal hitungan diskon dan penjualan bersih. Dijumlahkan dari semua baris pesanan pada cakupan filter."
+          hint={{
+            concept:
+              'Total harga jual barang sebelum dipotong diskon, seperti harga yang tertulis di label rak.',
+            current:
+              'Menjadi titik awal hitungan diskon dan penjualan bersih, dijumlahkan dari semua baris pesanan pada cakupan filter.',
+          }}
           hintMode="popover"
           icon={TrendingUp}
           iconTone="violet"
@@ -347,7 +373,12 @@ export function SalesProfitabilityPage() {
           {...reveal(60)}
           label="Total diskon diberikan"
           value={formatUsdScaled(metrics.discountAmount)}
-          hint="Pemotongan harga yang diberikan ke pelanggan. Mengurangi penjualan bruto menjadi penjualan bersih. Dijumlahkan dari kolom diskon tiap baris pesanan."
+          hint={{
+            concept:
+              'Total potongan harga yang diberikan ke pelanggan, seperti voucher atau diskon toko.',
+            current:
+              'Mengurangi penjualan bruto menjadi penjualan bersih, dijumlahkan dari kolom diskon tiap baris pesanan pada cakupan filter.',
+          }}
           hintMode="popover"
           icon={Tag}
           iconTone="pink"
@@ -358,7 +389,11 @@ export function SalesProfitabilityPage() {
           value={
             metrics.weightedDiscountPct === null ? '—' : formatPercent(metrics.weightedDiscountPct)
           }
-          hint="Persentase diskon terhadap penjualan bruto. Berbobot nilai, jadi beda dengan rata-rata per pesanan. Dihitung dari total diskon dibagi total penjualan bruto."
+          hint={{
+            concept:
+              'Persentase diskon terhadap penjualan bruto. Berbobot nilai, jadi beda dengan rata-rata per pesanan: pesanan besar lebih berpengaruh.',
+            current: 'Dihitung dari total diskon dibagi total penjualan bruto pada cakupan filter.',
+          }}
           hintMode="popover"
           icon={BadgePercent}
           iconTone="blue"
@@ -367,7 +402,12 @@ export function SalesProfitabilityPage() {
           {...reveal(180)}
           label="Net sales"
           value={formatUsdScaled(metrics.netSales)}
-          hint="Penjualan bersih setelah diskon. Menjadi dasar laba dan margin di halaman ini. Dihitung dari penjualan bruto dikurangi total diskon."
+          hint={{
+            concept:
+              'Total uang bersih yang diterima toko dari penjualan barang setelah dipotong semua diskon promosi (belum dikurangi modal produk).',
+            current:
+              'Menjadi dasar laba dan margin di halaman ini, dihitung dari penjualan bruto dikurangi total diskon.',
+          }}
           hintMode="popover"
           icon={Coins}
           iconTone="violet"
@@ -376,7 +416,12 @@ export function SalesProfitabilityPage() {
           {...reveal(240)}
           label="Profit"
           value={formatUsdScaled(metrics.profit)}
-          hint="Laba kotor setelah biaya produk. Menunjukkan untung sebelum biaya operasional. Dihitung dari penjualan bersih dikurangi biaya produk."
+          hint={{
+            concept:
+              'Sisa keuntungan kotor barang setelah uang penjualan dikurangi dengan harga modal beli barang (COGS).',
+            current:
+              'Total uang keuntungan riil sebelum biaya operasional kantor, dihitung dari penjualan bersih dikurangi biaya produk.',
+          }}
           hintMode="popover"
           icon={Wallet}
           iconTone="blue"
@@ -385,7 +430,14 @@ export function SalesProfitabilityPage() {
           {...reveal(300)}
           label="Margin keseluruhan"
           value={metrics.marginPct === null ? '—' : formatPercent(metrics.marginPct)}
-          hint="Persentase laba dari penjualan bersih. Berbobot nilai, bukan rata-rata per transaksi. Dihitung dari total laba dibagi total penjualan bersih."
+          hint={{
+            concept:
+              'Persentase laba dari penjualan bersih. Berbobot nilai, bukan rata-rata per transaksi, sehingga pesanan besar lebih berpengaruh.',
+            current:
+              metrics.marginPct === null
+                ? 'Margin belum tersedia pada cakupan filter ini.'
+                : `Setiap $100 penjualan bersih menyisakan sekitar ${formatUsd(metrics.marginPct, 2)} laba kotor.`,
+          }}
           hintMode="popover"
           icon={Percent}
           iconTone="pink"
@@ -394,7 +446,12 @@ export function SalesProfitabilityPage() {
           {...reveal(360)}
           label="Order"
           value={formatCountScaled(metrics.orders)}
-          hint="Jumlah pesanan yang masuk. Menggambarkan volume, bukan nilai penjualan. Satu pesanan dihitung dari satu Order ID pada cakupan filter."
+          hint={{
+            concept:
+              'Total banyaknya transaksi atau nota belanja yang tercatat di kasir pada sistem. Satu Order ID dihitung satu pesanan.',
+            current:
+              'Mengukur keramaian atau volume transaksi pelanggan, bukan besar-kecilnya nominal uang belanja.',
+          }}
           hintMode="popover"
           icon={ShoppingCart}
           iconTone="positive"
@@ -403,7 +460,11 @@ export function SalesProfitabilityPage() {
           {...reveal(420)}
           label="Nilai Kerugian"
           value={formatUsdScaled(lossTotal)}
-          hint={`Kerugian berjalan dari pesanan yang labanya minus, dihitung sebagai nilai absolut. Angka seluruh periode, tidak mengikuti filter. Berasal dari ${formatCount(lossOrders)} pesanan rugi (${formatPercent(lossShare)} dari seluruh pesanan).`}
+          hint={{
+            concept:
+              'Total kebocoran dari pesanan yang sebenarnya merugi, karena harga jual tidak menutup modal dan diskon.',
+            current: `Angka seluruh periode, tidak mengikuti filter. Berasal dari ${formatCount(lossOrders)} pesanan rugi (${formatPercent(lossShare)} dari seluruh pesanan).`,
+          }}
           hintMode="popover"
           icon={TriangleAlert}
           iconTone="pink"
@@ -526,7 +587,10 @@ export function SalesProfitabilityPage() {
                 key={point.quarter}
                 label={point.quarter}
                 value={point.marginPct === null ? '—' : formatPercent(point.marginPct)}
-                hint={`Margin keseluruhan ${point.quarter}: laba dibagi penjualan bersih kuartal. ${formatCountScaled(point.orders)} order dengan net sales ${formatUsdScaled(point.netSales)}. Gabungan seluruh tahun cakupan.`}
+                hint={{
+                  concept: `Margin keseluruhan ${point.quarter}: laba dibagi penjualan bersih kuartal tersebut.`,
+                  current: `${formatCountScaled(point.orders)} order dengan net sales ${formatUsdScaled(point.netSales)}. Gabungan seluruh tahun cakupan.`,
+                }}
                 hintMode="popover"
                 icon={CalendarRange}
               />

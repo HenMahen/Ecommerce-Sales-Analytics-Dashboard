@@ -1,12 +1,12 @@
 import { type LucideIcon } from 'lucide-react'
 import { cn } from 'cn'
-import { HintPopover } from '@/components/metrics/HintPopover'
+import { HintContent, HintPopover, type MetricHintContent } from '@/components/metrics/HintPopover'
 
 /**
  * Compact stat tile for secondary reference numbers inside a panel (same visual language as the
  * KPI cards, smaller footprint). Follows the panel it lives in: use only where the panel's scope
  * note makes the coverage explicit. `hintMode="popover"` moves the hint behind the tile's icon:
- * clicking the icon opens the short description.
+ * hovering (desktop) or tapping (touch) opens the short description.
  */
 export function StatTile({
   label,
@@ -18,7 +18,7 @@ export function StatTile({
 }: {
   label: string
   value: string
-  hint?: string
+  hint?: string | MetricHintContent
   hintMode?: 'note' | 'popover'
   /** Required when `hintMode` is 'popover': the tile's representational icon becomes the trigger. */
   icon?: LucideIcon
@@ -36,7 +36,7 @@ export function StatTile({
         {hint && hintMode === 'popover' && Icon ? (
           <HintPopover
             label={`Penjelasan ${label}`}
-            description={hint}
+            description={<HintContent hint={hint} />}
             align="start"
             className="inline-flex size-4 shrink-0 cursor-pointer items-center justify-center rounded-full text-muted-foreground transition-colors hover:text-foreground focus-visible:ring-2 focus-visible:ring-ring focus-visible:outline-none"
           >
@@ -48,7 +48,9 @@ export function StatTile({
         {value}
       </span>
       {hint && hintMode === 'note' ? (
-        <span className="text-[11px] text-muted-foreground">{hint}</span>
+        <div className="text-[11px] text-muted-foreground">
+          <HintContent hint={hint} />
+        </div>
       ) : null}
     </div>
   )

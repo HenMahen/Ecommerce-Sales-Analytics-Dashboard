@@ -3,12 +3,21 @@ import { cn } from 'cn'
 import { HintContent, HintPopover, type MetricHintContent } from '@/components/metrics/HintPopover'
 import { CHIP, CHIP_TRIGGER, ICON_TONES, type IconTone } from '@/components/metrics/iconTones'
 import { Card } from '@/components/ui/card'
+import { formatPercent } from '@/lib/format'
+import type { TrendComparison, TrendDirection } from '@/lib/trend'
+
+function trendColor(changePct: number, direction: TrendDirection): string {
+  if (changePct === 0) return 'text-muted-foreground'
+  const isGood = direction === 'higher-is-better' ? changePct > 0 : changePct < 0
+  return isGood ? 'text-positive' : 'text-brand-pink'
+}
 
 export function KpiCard({
   label,
   value,
   hint,
   hintMode = 'note',
+  trend,
   icon: Icon,
   iconTone = 'violet',
   footer,
@@ -19,6 +28,11 @@ export function KpiCard({
   label: string
   value: string
   hint?: string | MetricHintContent
+  /**
+   * Optional comparison with the previous period. Omit it when the data is insufficient; the
+   * indicator is then not rendered at all.
+   */
+  trend?: TrendComparison
   /**
    * 'note' keeps the hint visible under the value (default). 'popover' hides it behind the card
    * icon: hovering (desktop) or tapping (touch) opens the short description.
@@ -67,6 +81,23 @@ export function KpiCard({
           )
         ) : null}
       </div>
+      {trend ? (
+        <div className="mt-2.5 flex flex-wrap items-center gap-x-2 gap-y-0.5 text-xs">
+          <span
+            className={cn(
+              'font-medium tabular-nums',
+              trendColor(trend.changePct, trend.direction ?? 'higher-is-better'),
+            )}
+          >
+            <span aria-hidden="true">
+              {trend.changePct > 0 ? '▲' : trend.changePct < 0 ? '▼' : '→'}
+            </span>{' '}
+            {trend.changePct > 0 ? '+' : ''}
+            {formatPercent(trend.changePct)}
+          </span>
+          <span className="text-muted-foreground">{trend.periodLabel}</span>
+        </div>
+      ) : null}
       {hintMode === 'note' || footer ? (
         <div className="mt-3 flex flex-col gap-2">
           {hintMode === 'note' && hint ? (

@@ -65,7 +65,7 @@ export function AppShell({ children }: { children: ReactNode }) {
       <div className="flex min-h-screen min-w-0 flex-1 flex-col">
         <TopHeader onOpenMenu={() => setMobileOpen(true)} />
 
-        {route.status === 'ready' ? (
+        {route.status === 'ready' && route.id !== 'case-study' ? (
           <div className="px-4 pt-5 lg:px-6">
             <GlobalFilterBar />
           </div>

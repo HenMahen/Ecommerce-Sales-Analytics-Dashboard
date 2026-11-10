@@ -1,4 +1,4 @@
-import type { AnomalyByDimension, AnomalyDimensionRow } from '@/data/types'
+import type { AnomalyByDimension, AnomalyDimensionRow, CombinedCubeRow } from '@/data/types'
 import { sharePct, type CubeGroup } from '@/lib/filter'
 
 /**
@@ -119,6 +119,42 @@ export function buildStatusRows(groups: CubeGroup[]): StatusDisplayRow[] {
       (left, right) =>
         ORDER_STATUS_ORDER.indexOf(left.status) - ORDER_STATUS_ORDER.indexOf(right.status),
     )
+}
+
+export interface MonthlyStatusRatePoint {
+  period: string
+  orders: number
+  returnRatePct: number
+  undeliveredRatePct: number
+}
+
+/**
+ * Monthly return and undelivered rates from the combined cube. The whole-period KPI cards read the
+ * summary payload; this series only supplies the month-over-month indicator for those cards.
+ */
+export function buildMonthlyStatusRates(rows: CombinedCubeRow[]): MonthlyStatusRatePoint[] {
+  const buckets = new Map<string, { orders: number; returned: number; undelivered: number }>()
+  for (const row of rows) {
+    const bucket = buckets.get(row.period) ?? { orders: 0, returned: 0, undelivered: 0 }
+    bucket.orders += row.orders
+    if (row.order_status === 'Returned') bucket.returned += row.orders
+    if (
+      row.order_status === 'Cancelled' ||
+      row.order_status === 'Pending' ||
+      row.order_status === 'Returned'
+    ) {
+      bucket.undelivered += row.orders
+    }
+    buckets.set(row.period, bucket)
+  }
+  return [...buckets.entries()]
+    .sort(([a], [b]) => (a < b ? -1 : a > b ? 1 : 0))
+    .map(([period, bucket]) => ({
+      period,
+      orders: bucket.orders,
+      returnRatePct: bucket.orders === 0 ? 0 : (bucket.returned / bucket.orders) * 100,
+      undeliveredRatePct: bucket.orders === 0 ? 0 : (bucket.undelivered / bucket.orders) * 100,
+    }))
 }
 
 export type StatusSortKey = 'status' | 'orders' | 'sharePct' | 'netSales' | 'profit' | 'marginPct'

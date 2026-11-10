@@ -299,8 +299,12 @@ export interface GranularityPoint {
   orders: number
   netSales: number
   profit: number
+  grossSales: number
+  discountAmount: number
   /** Weighted aggregate margin of the bucket, or null when the bucket has no revenue. */
   marginPct: number | null
+  /** Weighted discount rate `sum(discount) / sum(gross sales) * 100` of the bucket. */
+  weightedDiscountPct: number | null
 }
 
 function granularityKey(period: string, granularity: TrendGranularity): string {
@@ -316,16 +320,27 @@ function granularityKey(period: string, granularity: TrendGranularity): string {
  * the underlying numbers.
  */
 export function buildGranularityPoints(
-  rows: PeriodRow[],
+  rows: Array<PeriodRow & DiscountMeasures>,
   granularity: TrendGranularity,
 ): GranularityPoint[] {
-  const buckets = new Map<string, { orders: number; netSales: number; profit: number }>()
+  const buckets = new Map<
+    string,
+    { orders: number; netSales: number; profit: number; grossSales: number; discountAmount: number }
+  >()
   for (const row of rows) {
     const key = granularityKey(row.period, granularity)
-    const bucket = buckets.get(key) ?? { orders: 0, netSales: 0, profit: 0 }
+    const bucket = buckets.get(key) ?? {
+      orders: 0,
+      netSales: 0,
+      profit: 0,
+      grossSales: 0,
+      discountAmount: 0,
+    }
     bucket.orders += row.orders
     bucket.netSales += row.net_sales
     bucket.profit += row.profit
+    bucket.grossSales += row.gross_sales
+    bucket.discountAmount += row.discount_amount
     buckets.set(key, bucket)
   }
   return [...buckets.entries()]
@@ -335,7 +350,11 @@ export function buildGranularityPoints(
       orders: bucket.orders,
       netSales: bucket.netSales,
       profit: bucket.profit,
+      grossSales: bucket.grossSales,
+      discountAmount: bucket.discountAmount,
       marginPct: bucket.netSales === 0 ? null : (bucket.profit / bucket.netSales) * 100,
+      weightedDiscountPct:
+        bucket.grossSales === 0 ? null : (bucket.discountAmount / bucket.grossSales) * 100,
     }))
 }
 

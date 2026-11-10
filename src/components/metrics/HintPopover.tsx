@@ -40,15 +40,6 @@ export function MetricHint({
   )
 }
 
-/** Renders the standard 2-part hint while keeping older plain-string copy compatible. */
-export function renderHint(hint: MetricHintContent | string): React.ReactNode {
-  return typeof hint === 'string' ? (
-    hint
-  ) : (
-    <MetricHint concept={hint.concept} current={hint.current} />
-  )
-}
-
 /**
  * The card's own icon, hoverable and clickable to open an explanation.
  *

@@ -9,6 +9,16 @@ export interface DataTableColumn<T> {
   render: (row: T, index: number) => React.ReactNode
 }
 
+export interface DataTableProps<T> {
+  columns: Array<DataTableColumn<T>>
+  rows: T[]
+  getRowKey: (row: T, index: number) => string
+  caption?: string
+  className?: string
+  /** Optional row-level accent, e.g. a soft warning background on an outlier row. */
+  rowClassName?: (row: T, index: number) => string | undefined
+}
+
 /**
  * Table styling foundation for the dashboard: soft header, numeric columns right-aligned with
  * tabular figures, subtle row separators, and horizontal scrolling on narrow screens.
@@ -19,13 +29,8 @@ export function DataTable<T>({
   getRowKey,
   caption,
   className,
-}: {
-  columns: Array<DataTableColumn<T>>
-  rows: T[]
-  getRowKey: (row: T, index: number) => string
-  caption?: string
-  className?: string
-}) {
+  rowClassName,
+}: DataTableProps<T>) {
   return (
     <div className={cn('w-full overflow-x-auto', className)}>
       <table className="w-full min-w-[560px] border-collapse text-sm">
@@ -51,7 +56,10 @@ export function DataTable<T>({
           {rows.map((row, index) => (
             <tr
               key={getRowKey(row, index)}
-              className="border-b border-border/60 transition-colors last:border-0 hover:bg-muted/50"
+              className={cn(
+                'border-b border-border/60 transition-colors last:border-0 hover:bg-muted/50',
+                rowClassName?.(row, index),
+              )}
             >
               {columns.map((column) => (
                 <td

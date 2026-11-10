@@ -48,11 +48,13 @@ import {
   formatUsdScaled,
 } from '@/lib/format'
 import { reveal } from '@/lib/reveal'
+import { monthOverMonthChange, monthOverMonthTrend } from '@/lib/trend'
 import {
   ANOMALY_DIMENSIONS,
   anomalyRateRange,
   buildAnomalyRows,
   buildDeliveryRows,
+  buildMonthlyStatusRates,
   buildStatusRows,
   nextSort,
   sortAnomalyRows,
@@ -133,6 +135,14 @@ export function TransactionExplorerPage() {
   const undeliveredOrders =
     summary.status_mix.cancelled + summary.status_mix.pending + summary.status_mix.returned
 
+  // Whole-period operational cards: their monthly indicator uses the same unfiltered basis.
+  const monthlyStatusRates = buildMonthlyStatusRates(data.cubes.cubes.combined)
+  const returnRateChange = monthOverMonthChange(monthlyStatusRates, (point) => point.returnRatePct)
+  const undeliveredRateChange = monthOverMonthChange(
+    monthlyStatusRates,
+    (point) => point.undeliveredRatePct,
+  )
+
   const anomalySortHeader = (label: string, key: AnomalySortKey) => {
     const active = anomalySort?.key === key
     const Icon = active ? (anomalySort.direction === 'desc' ? ArrowDown : ArrowUp) : ArrowUpDown
@@ -191,7 +201,11 @@ export function TransactionExplorerPage() {
       key: 'rate',
       header: anomalySortHeader('Tingkat anomali', 'anomaly_rate_pct'),
       align: 'right',
-      render: (row) => <span className="font-medium">{formatPercent(row.anomaly_rate_pct)}</span>,
+      render: (row) => (
+        <span className="font-mono font-semibold text-primary">
+          {formatPercent(row.anomaly_rate_pct)}
+        </span>
+      ),
     },
     {
       key: 'share',
@@ -377,6 +391,7 @@ export function TransactionExplorerPage() {
           {...reveal(360)}
           label="Tingkat retur"
           value={formatPercent(summary.return_rate_pct)}
+          trend={monthOverMonthTrend(returnRateChange, 'lower-is-better')}
           hint={{
             concept:
               'Porsi pesanan yang dikembalikan pelanggan, penanda masalah kualitas atau ketidaksesuaian barang.',
@@ -391,6 +406,7 @@ export function TransactionExplorerPage() {
           {...reveal(420)}
           label="Tidak dikirim"
           value={formatPercent(summary.undelivered_rate_pct)}
+          trend={monthOverMonthTrend(undeliveredRateChange, 'lower-is-better')}
           hint={{
             concept:
               'Porsi pesanan yang tidak pernah dikirim, penanda masalah operasional pengiriman.',

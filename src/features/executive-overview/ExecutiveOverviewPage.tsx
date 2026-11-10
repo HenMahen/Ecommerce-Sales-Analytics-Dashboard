@@ -19,6 +19,7 @@ import {
 import { useDashboardData } from '@/app/DataProvider'
 import { useFilter } from '@/app/FilterProvider'
 import { useRouter } from '@/app/router'
+import { cn } from 'cn'
 import { ChartCard } from '@/components/charts/ChartCard'
 import { ProfitShareDonut } from '@/components/charts/ProfitShareDonut'
 import { SeasonalityBarChart } from '@/components/charts/SeasonalityBarChart'
@@ -52,6 +53,7 @@ import {
   formatUsdScaled,
 } from '@/lib/format'
 import { reveal } from '@/lib/reveal'
+import { monthOverMonthChange, monthOverMonthTrend } from '@/lib/trend'
 import { BusinessInsights } from './BusinessInsights'
 import { buildInsights } from './insights'
 
@@ -99,6 +101,12 @@ export function ExecutiveOverviewPage() {
   )
   const segmentShares = buildSegmentShares(rows)
   const seasonMonths = buildSeasonMonths(rows, data.monthly.months)
+
+  // Latest available month vs the month before it in the active scope.
+  const netSalesChange = monthOverMonthChange(points, (point) => point.netSales)
+  const profitChange = monthOverMonthChange(points, (point) => point.profit)
+  const marginChange = monthOverMonthChange(points, (point) => point.marginPct)
+  const ordersChange = monthOverMonthChange(points, (point) => point.orders)
 
   const filterActive = isFilterActive(filter)
   const dimensionFiltered = isDimensionFiltered(filter)
@@ -167,7 +175,15 @@ export function ExecutiveOverviewPage() {
       header: 'Margin keseluruhan',
       align: 'right',
       render: (row) => (
-        <span className="font-medium">{formatPercent(row.aggregate_margin_pct)}</span>
+        <span
+          className={cn(
+            row.aggregate_margin_pct >= 35
+              ? 'font-semibold text-positive'
+              : 'font-medium text-foreground',
+          )}
+        >
+          {formatPercent(row.aggregate_margin_pct)}
+        </span>
       ),
     },
   ]
@@ -209,6 +225,7 @@ export function ExecutiveOverviewPage() {
           {...reveal(0)}
           label="Net sales"
           value={formatUsdScaled(metrics.netSales)}
+          trend={monthOverMonthTrend(netSalesChange)}
           hint={{
             concept:
               'Total uang bersih yang diterima toko dari penjualan barang setelah dipotong semua diskon promosi',
@@ -223,6 +240,7 @@ export function ExecutiveOverviewPage() {
           {...reveal(60)}
           label="Profit"
           value={formatUsdScaled(metrics.profit)}
+          trend={monthOverMonthTrend(profitChange)}
           hint={{
             concept:
               'Sisa keuntungan kotor barang setelah uang penjualan dikurangi dengan harga modal beli barang',
@@ -237,6 +255,7 @@ export function ExecutiveOverviewPage() {
           {...reveal(120)}
           label="Margin keseluruhan"
           value={metrics.marginPct === null ? '—' : formatPercent(metrics.marginPct)}
+          trend={monthOverMonthTrend(marginChange)}
           hint={{
             concept:
               'Persentase laba dari total penjualan. Berbobot nilai, jadi beda dengan rata-rata margin per pesanan: pesanan bernilai besar lebih berpengaruh.',
@@ -253,6 +272,7 @@ export function ExecutiveOverviewPage() {
           {...reveal(180)}
           label="Order"
           value={formatCountScaled(metrics.orders)}
+          trend={monthOverMonthTrend(ordersChange)}
           hint={{
             concept:
               'Total banyaknya transaksi atau nota belanja yang tercatat di kasir pada sistem. Satu Order ID dihitung satu pesanan.',

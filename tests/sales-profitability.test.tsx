@@ -451,7 +451,7 @@ describe('Sales & Profitabilitas - tampilan panel', () => {
     const view = within(annualCard)
 
     expect(view.getAllByRole('row')).toHaveLength(6) // 1 header + 5 tahun
-    for (const yoy of ['-1,14%', '0,64%', '-0,22%', '-1,07%']) {
+    for (const yoy of ['-1,14%', '+0,64%', '-0,22%', '-1,07%']) {
       expect(view.getAllByText(yoy).length, yoy).toBeGreaterThanOrEqual(1)
     }
     expect(view.getByText('$31,46 juta')).toBeDefined() // net sales 2024 dari payload

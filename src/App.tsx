@@ -3,6 +3,7 @@ import { FilterProvider } from '@/app/FilterProvider'
 import { ThemeProvider } from '@/app/ThemeProvider'
 import { RouterProvider, useRouter } from '@/app/router'
 import { AppShell } from '@/components/layout/AppShell'
+import { CaseStudyPage } from '@/features/case-study/CaseStudyPage'
 import { CustomerIntelligencePage } from '@/features/customer-intelligence/CustomerIntelligencePage'
 import { ExecutiveOverviewPage } from '@/features/executive-overview/ExecutiveOverviewPage'
 import { PlaceholderPage } from '@/features/placeholder/PlaceholderPage'
@@ -11,6 +12,7 @@ import { TransactionExplorerPage } from '@/features/transaction-explorer/Transac
 
 function RouteOutlet() {
   const { route } = useRouter()
+  if (route.id === 'case-study') return <CaseStudyPage />
   if (route.id === 'transactions') return <TransactionExplorerPage />
   if (route.id === 'customers') return <CustomerIntelligencePage />
   if (route.id === 'sales') return <SalesProfitabilityPage />

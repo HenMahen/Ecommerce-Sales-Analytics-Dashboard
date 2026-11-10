@@ -62,6 +62,7 @@ import {
   formatUsdScaled,
 } from '@/lib/format'
 import { reveal } from '@/lib/reveal'
+import { monthOverMonthChange, monthOverMonthTrend } from '@/lib/trend'
 
 const GRANULARITY_OPTIONS: Array<{ value: TrendGranularity; label: string }> = [
   { value: 'month', label: 'Bulanan' },
@@ -96,10 +97,24 @@ export function SalesProfitabilityPage() {
   const { summary, metadata } = data
   const rows = selectScopedRows(data, filter)
   const metrics = aggregateFinancials(rows)
-  const trendPoints = buildGranularityPoints(rows, granularity)
+  const monthlyPoints = buildGranularityPoints(rows, 'month')
+  const trendPoints =
+    granularity === 'month' ? monthlyPoints : buildGranularityPoints(rows, granularity)
   const yearPoints = buildGranularityPoints(rows, 'year')
   const quarterPoints = buildQuarterPoints(rows)
   const annualRows = buildAnnualScopeRows(rows)
+
+  // Latest two months inside the active scope; null hides the indicator when data is insufficient.
+  const grossSalesChange = monthOverMonthChange(monthlyPoints, (point) => point.grossSales)
+  const discountChange = monthOverMonthChange(monthlyPoints, (point) => point.discountAmount)
+  const discountRateChange = monthOverMonthChange(
+    monthlyPoints,
+    (point) => point.weightedDiscountPct,
+  )
+  const netSalesChange = monthOverMonthChange(monthlyPoints, (point) => point.netSales)
+  const profitChange = monthOverMonthChange(monthlyPoints, (point) => point.profit)
+  const marginChange = monthOverMonthChange(monthlyPoints, (point) => point.marginPct)
+  const ordersChange = monthOverMonthChange(monthlyPoints, (point) => point.orders)
 
   const channelGroups = groupCubeRows(rows, 'sales_channel')
   const channelNetSales = channelGroups.reduce((total, group) => total + group.netSales, 0)
@@ -231,7 +246,17 @@ export function SalesProfitabilityPage() {
     {
       key: 'bracket',
       header: 'Bracket diskon',
-      render: (row) => row.bracket,
+      render: (row) =>
+        row.bracket === '30%+' ? (
+          <span className="flex items-center gap-1.5 font-medium">
+            <span>{row.bracket}</span>
+            <span className="rounded border border-brand-pink/40 bg-brand-pink/15 px-1.5 py-0.5 font-mono text-[10px] font-semibold text-brand-pink">
+              Rentan Rugi
+            </span>
+          </span>
+        ) : (
+          row.bracket
+        ),
     },
     {
       key: 'orders',
@@ -261,14 +286,29 @@ export function SalesProfitabilityPage() {
       key: 'margin',
       header: 'Margin keseluruhan',
       align: 'right',
-      render: (row) =>
-        row.marginPct === null ? (
-          '—'
-        ) : (
-          <span className="font-medium">{formatPercent(row.marginPct)}</span>
-        ),
+      render: (row) => {
+        if (row.marginPct === null) {
+          return <span className="font-mono text-muted-foreground">—</span>
+        }
+        if (row.bracket === '30%+') {
+          return <span className="font-bold text-brand-pink">{formatPercent(row.marginPct)}</span>
+        }
+        if (row.marginPct >= 40) {
+          return <span className="font-semibold text-positive">{formatPercent(row.marginPct)}</span>
+        }
+        return <span className="font-medium text-foreground">{formatPercent(row.marginPct)}</span>
+      },
     },
   ]
+
+  const yoyCell = (value: number | null) => {
+    if (value === null) return <span className="text-muted-foreground">—</span>
+    if (value === 0) return <span className="text-muted-foreground">{formatPercent(value)}</span>
+    if (value > 0) {
+      return <span className="font-semibold text-positive">+{formatPercent(value)}</span>
+    }
+    return <span className="font-medium text-negative">{formatPercent(value)}</span>
+  }
 
   const annualColumns: Array<DataTableColumn<AnnualScopeRow>> = [
     {
@@ -300,22 +340,22 @@ export function SalesProfitabilityPage() {
       align: 'right',
       render: (row) =>
         row.marginPct === null ? (
-          '—'
+          <span className="text-muted-foreground">—</span>
         ) : (
-          <span className="font-medium">{formatPercent(row.marginPct)}</span>
+          <span className="font-semibold text-foreground">{formatPercent(row.marginPct)}</span>
         ),
     },
     {
       key: 'yoy_revenue',
       header: 'YoY net sales',
       align: 'right',
-      render: (row) => (row.revenueYoyPct === null ? '—' : formatPercent(row.revenueYoyPct)),
+      render: (row) => yoyCell(row.revenueYoyPct),
     },
     {
       key: 'yoy_profit',
       header: 'YoY profit',
       align: 'right',
-      render: (row) => (row.profitYoyPct === null ? '—' : formatPercent(row.profitYoyPct)),
+      render: (row) => yoyCell(row.profitYoyPct),
     },
   ]
 
@@ -359,6 +399,7 @@ export function SalesProfitabilityPage() {
           {...reveal(0)}
           label="Gross sales"
           value={formatUsdScaled(metrics.grossSales)}
+          trend={monthOverMonthTrend(grossSalesChange)}
           hint={{
             concept:
               'Total harga jual barang sebelum dipotong diskon, seperti harga yang tertulis di label rak.',
@@ -373,6 +414,7 @@ export function SalesProfitabilityPage() {
           {...reveal(60)}
           label="Total diskon diberikan"
           value={formatUsdScaled(metrics.discountAmount)}
+          trend={monthOverMonthTrend(discountChange, 'lower-is-better')}
           hint={{
             concept:
               'Total potongan harga yang diberikan ke pelanggan, seperti voucher atau diskon toko.',
@@ -389,6 +431,7 @@ export function SalesProfitabilityPage() {
           value={
             metrics.weightedDiscountPct === null ? '—' : formatPercent(metrics.weightedDiscountPct)
           }
+          trend={monthOverMonthTrend(discountRateChange, 'lower-is-better')}
           hint={{
             concept:
               'Persentase diskon terhadap penjualan bruto. Berbobot nilai, jadi beda dengan rata-rata per pesanan: pesanan besar lebih berpengaruh.',
@@ -402,6 +445,7 @@ export function SalesProfitabilityPage() {
           {...reveal(180)}
           label="Net sales"
           value={formatUsdScaled(metrics.netSales)}
+          trend={monthOverMonthTrend(netSalesChange)}
           hint={{
             concept:
               'Total uang bersih yang diterima toko dari penjualan barang setelah dipotong semua diskon promosi (belum dikurangi modal produk).',
@@ -416,6 +460,7 @@ export function SalesProfitabilityPage() {
           {...reveal(240)}
           label="Profit"
           value={formatUsdScaled(metrics.profit)}
+          trend={monthOverMonthTrend(profitChange)}
           hint={{
             concept:
               'Sisa keuntungan kotor barang setelah uang penjualan dikurangi dengan harga modal beli barang (COGS).',
@@ -430,6 +475,7 @@ export function SalesProfitabilityPage() {
           {...reveal(300)}
           label="Margin keseluruhan"
           value={metrics.marginPct === null ? '—' : formatPercent(metrics.marginPct)}
+          trend={monthOverMonthTrend(marginChange)}
           hint={{
             concept:
               'Persentase laba dari penjualan bersih. Berbobot nilai, bukan rata-rata per transaksi, sehingga pesanan besar lebih berpengaruh.',
@@ -446,6 +492,7 @@ export function SalesProfitabilityPage() {
           {...reveal(360)}
           label="Order"
           value={formatCountScaled(metrics.orders)}
+          trend={monthOverMonthTrend(ordersChange)}
           hint={{
             concept:
               'Total banyaknya transaksi atau nota belanja yang tercatat di kasir pada sistem. Satu Order ID dihitung satu pesanan.',
@@ -625,6 +672,9 @@ export function SalesProfitabilityPage() {
               columns={bracketColumns}
               rows={bracketPoints}
               getRowKey={(row) => row.bracket}
+              rowClassName={(row) =>
+                row.bracket === '30%+' ? 'bg-brand-pink/5 hover:bg-brand-pink/10' : undefined
+              }
             />
             <div className="flex flex-col gap-3 rounded-lg border border-border/70 bg-muted/30 p-4">
               <p className="text-xs font-semibold tracking-wide text-muted-foreground uppercase">

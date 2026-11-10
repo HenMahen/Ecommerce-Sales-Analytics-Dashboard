@@ -1,5 +1,12 @@
 import type { CombinedCubeRow, DashboardData, SegmentRow } from '@/data/types'
-import { groupCubeRows, periodRange, sharePct, type FilterState } from '@/lib/filter'
+import {
+  buildTrendPoints,
+  groupCubeRows,
+  periodRange,
+  selectScopedRows,
+  sharePct,
+  type FilterState,
+} from '@/lib/filter'
 import { formatCount, formatPeriodLabel } from '@/lib/format'
 
 /**
@@ -156,6 +163,61 @@ export function customerRates(
     ordersPerCustomer: totals.orders / denominator.value,
     profitPerCustomer: totals.profit / denominator.value,
   }
+}
+
+export interface MonthlyCustomerPoint {
+  period: string
+  customers: number
+  orders: number
+  profit: number
+  ordersPerCustomer: number
+  profitPerCustomer: number
+}
+
+/**
+ * Monthly customer series for the KPI trend indicator, limited to scopes where the customer
+ * denominator is validated: the whole dataset (segments partition customers) or one segment over
+ * the whole period. Each month is a distinct-customer count, never a sum across months.
+ */
+export function buildMonthlyCustomerPoints(
+  data: DashboardData,
+  filter: FilterState,
+  denominator: CustomerDenominator,
+): MonthlyCustomerPoint[] {
+  const customersByPeriod = new Map<string, number>()
+
+  if (denominator.source === 'dataset') {
+    for (const row of data.cubes.cubes.segment) {
+      customersByPeriod.set(row.period, (customersByPeriod.get(row.period) ?? 0) + row.customers)
+    }
+  } else if (denominator.source === 'segment' && filter.segment !== null) {
+    for (const row of data.cubes.cubes.segment) {
+      if (row.segment === filter.segment) customersByPeriod.set(row.period, row.customers)
+    }
+  } else {
+    return []
+  }
+
+  const measures = new Map(
+    buildTrendPoints(selectScopedRows(data, filter), null).map((point) => [point.period, point]),
+  )
+
+  return [...customersByPeriod.entries()]
+    .sort(([a], [b]) => (a < b ? -1 : a > b ? 1 : 0))
+    .flatMap(([period, customers]) => {
+      const measure = measures.get(period)
+      if (!measure || customers === 0) return []
+      return [
+        {
+          period,
+          customers,
+          orders: measure.orders,
+          profit: measure.profit,
+          ordersPerCustomer: measure.orders / customers,
+          profitPerCustomer: measure.profit / customers,
+        },
+      ]
+    })
 }
 
 export interface SegmentDistributionPoint {

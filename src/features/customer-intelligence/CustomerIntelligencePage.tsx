@@ -18,6 +18,7 @@ import {
 import { useDashboardData } from '@/app/DataProvider'
 import { useFilter } from '@/app/FilterProvider'
 import { useRouter } from '@/app/router'
+import { cn } from 'cn'
 import { ChartCard } from '@/components/charts/ChartCard'
 import { GroupedBarChart, type GroupedBarPoint } from '@/components/charts/GroupedBarChart'
 import { EmptyState } from '@/components/feedback/AsyncStates'
@@ -43,7 +44,9 @@ import {
   formatUsdScaled,
 } from '@/lib/format'
 import { reveal } from '@/lib/reveal'
+import { monthOverMonthChange, monthOverMonthTrend } from '@/lib/trend'
 import {
+  buildMonthlyCustomerPoints,
   buildSegmentDistribution,
   customerRates,
   nextSort,
@@ -58,6 +61,16 @@ interface BehaviorRow {
   grain: 'Pelanggan' | 'Transaksi'
   value: string
   basis: string
+}
+
+/** Accent dot per segment; the reference palette leads, the dataset's extra segments follow. */
+const SEGMENT_DOT_COLOR: Record<string, string> = {
+  Consumer: 'bg-primary',
+  Corporate: 'bg-secondary',
+  'Home Office': 'bg-tertiary',
+  Premium: 'bg-secondary',
+  Business: 'bg-tertiary',
+  VIP: 'bg-brand-pink',
 }
 
 /**
@@ -99,6 +112,18 @@ export function CustomerIntelligencePage() {
   const customers = denominator.value
   const rates = customerRates(metrics, denominator)
 
+  // Monthly points only exist for validated customer scopes; otherwise the indicator stays hidden.
+  const monthlyCustomers = buildMonthlyCustomerPoints(data, filter, denominator)
+  const customersChange = monthOverMonthChange(monthlyCustomers, (point) => point.customers)
+  const ordersPerCustomerChange = monthOverMonthChange(
+    monthlyCustomers,
+    (point) => point.ordersPerCustomer,
+  )
+  const profitPerCustomerChange = monthOverMonthChange(
+    monthlyCustomers,
+    (point) => point.profitPerCustomer,
+  )
+
   const distribution = buildSegmentDistribution(rows)
   const segmentRows = sortSegmentRows(segments.segments, sort.key, sort.direction)
 
@@ -126,6 +151,9 @@ export function CustomerIntelligencePage() {
 
   const bestProfitPerCustomer = [...segments.segments].sort(
     (left, right) => right.profit_per_customer - left.profit_per_customer,
+  )[0]
+  const bestMarginSegment = [...segments.segments].sort(
+    (left, right) => right.aggregate_margin_pct - left.aggregate_margin_pct,
   )[0]
 
   const deliveredOrders = summary.status_mix.completed
@@ -202,7 +230,17 @@ export function CustomerIntelligencePage() {
     {
       key: 'segment',
       header: sortHeader('Segmen', 'segment'),
-      render: (row) => <span className="font-medium text-foreground">{row.segment}</span>,
+      render: (row) => (
+        <div className="flex items-center gap-2 font-semibold text-foreground">
+          <span
+            className={cn(
+              'size-2 rounded-full',
+              SEGMENT_DOT_COLOR[row.segment] ?? 'bg-muted-foreground',
+            )}
+          />
+          <span>{row.segment}</span>
+        </div>
+      ),
     },
     {
       key: 'customers',
@@ -240,14 +278,29 @@ export function CustomerIntelligencePage() {
       header: sortHeader('Margin keseluruhan', 'aggregate_margin_pct'),
       align: 'right',
       render: (row) => (
-        <span className="font-medium">{formatPercent(row.aggregate_margin_pct)}</span>
+        <span
+          className={cn(
+            row.segment === bestMarginSegment?.segment
+              ? 'font-bold text-positive'
+              : 'font-medium text-foreground',
+          )}
+        >
+          {formatPercent(row.aggregate_margin_pct)}
+        </span>
       ),
     },
     {
       key: 'profit_per_customer',
       header: sortHeader('Profit/pelanggan', 'profit_per_customer'),
       align: 'right',
-      render: (row) => formatUsdScaled(row.profit_per_customer),
+      render: (row) =>
+        row.segment === bestProfitPerCustomer?.segment ? (
+          <span className="rounded bg-secondary/15 px-1.5 py-0.5 font-mono font-bold text-secondary">
+            {formatUsdScaled(row.profit_per_customer)}
+          </span>
+        ) : (
+          formatUsdScaled(row.profit_per_customer)
+        ),
     },
     {
       key: 'orders_per_customer',
@@ -280,7 +333,17 @@ export function CustomerIntelligencePage() {
       key: 'value',
       header: 'Nilai',
       align: 'right',
-      render: (row) => <span className="font-medium">{row.value}</span>,
+      render: (row) => (
+        <span
+          className={cn(
+            row.metric === 'Pelanggan berulang' || row.metric === 'Pangsa transaksi margin >20%'
+              ? 'font-bold text-positive'
+              : 'font-medium',
+          )}
+        >
+          {row.value}
+        </span>
+      ),
     },
     {
       key: 'basis',
@@ -329,6 +392,7 @@ export function CustomerIntelligencePage() {
           {...reveal(0)}
           label="Pelanggan aktif"
           value={customers === null ? '—' : formatCountScaled(customers)}
+          trend={monthOverMonthTrend(customersChange)}
           hint={{
             concept:
               'Jumlah orang unik yang pernah berbelanja pada cakupan aktif. Satu orang dihitung sekali walau belanja berkali-kali.',
@@ -342,6 +406,7 @@ export function CustomerIntelligencePage() {
           {...reveal(60)}
           label="Pesanan per pelanggan aktif"
           value={rates.ordersPerCustomer === null ? '—' : formatDecimal(rates.ordersPerCustomer, 3)}
+          trend={monthOverMonthTrend(ordersPerCustomerChange)}
           hint={{
             concept:
               'Rata-rata jumlah pesanan tiap pelanggan aktif, untuk melihat seberapa sering pelanggan kembali membeli.',
@@ -358,6 +423,7 @@ export function CustomerIntelligencePage() {
           {...reveal(120)}
           label="Profit per pelanggan aktif"
           value={rates.profitPerCustomer === null ? '—' : formatUsdScaled(rates.profitPerCustomer)}
+          trend={monthOverMonthTrend(profitPerCustomerChange)}
           hint={{
             concept:
               'Laba yang dihasilkan tiap pelanggan aktif, untuk membandingkan nilai pelanggan antar cakupan.',

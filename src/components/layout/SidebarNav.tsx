@@ -3,7 +3,7 @@ import { cn } from 'cn'
 import { useRouter } from '@/app/router'
 import { ROUTES } from '@/app/routes'
 
-const SECTIONS = ['Analitik'] as const
+const SECTIONS = ['Analitik', 'Referensi'] as const
 
 function SidebarContent({
   collapsed = false,

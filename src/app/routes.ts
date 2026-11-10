@@ -1,4 +1,11 @@
-import { LayoutDashboard, ListFilter, TrendingUp, Users, type LucideIcon } from 'lucide-react'
+import {
+  BookOpen,
+  LayoutDashboard,
+  ListFilter,
+  TrendingUp,
+  Users,
+  type LucideIcon,
+} from 'lucide-react'
 
 export interface AppRoute {
   id: string
@@ -47,6 +54,15 @@ export const ROUTES: AppRoute[] = [
     description: 'Anomali revenue tinggi margin rendah per dimensi.',
     icon: ListFilter,
     section: 'Analitik',
+    status: 'ready',
+  },
+  {
+    id: 'case-study',
+    path: '/case-study',
+    label: 'Studi Kasus',
+    description: 'Latar belakang masalah, temuan kunci, dan rekomendasi bisnis berbasis data.',
+    icon: BookOpen,
+    section: 'Referensi',
     status: 'ready',
   },
 ]

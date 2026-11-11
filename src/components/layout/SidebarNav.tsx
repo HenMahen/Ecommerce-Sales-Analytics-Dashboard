@@ -161,7 +161,12 @@ export function SidebarNav({
         <SidebarContent collapsed={collapsed} onToggleCollapse={onToggleCollapse} />
       </aside>
 
-      <div className={cn('fixed inset-0 z-50 lg:hidden', mobileOpen ? '' : 'pointer-events-none')}>
+      <div
+        className={cn(
+          'fixed inset-0 z-50 lg:hidden print:hidden',
+          mobileOpen ? '' : 'pointer-events-none',
+        )}
+      >
         <button
           type="button"
           aria-label="Tutup navigasi"

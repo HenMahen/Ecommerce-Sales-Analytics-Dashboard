@@ -1,14 +1,41 @@
+import { lazy, Suspense } from 'react'
 import { DataProvider } from '@/app/DataProvider'
 import { FilterProvider } from '@/app/FilterProvider'
 import { ThemeProvider } from '@/app/ThemeProvider'
 import { RouterProvider, useRouter } from '@/app/router'
+import { PanelSkeleton } from '@/components/feedback/AsyncStates'
 import { AppShell } from '@/components/layout/AppShell'
-import { CaseStudyPage } from '@/features/case-study/CaseStudyPage'
-import { CustomerIntelligencePage } from '@/features/customer-intelligence/CustomerIntelligencePage'
-import { ExecutiveOverviewPage } from '@/features/executive-overview/ExecutiveOverviewPage'
-import { PlaceholderPage } from '@/features/placeholder/PlaceholderPage'
-import { SalesProfitabilityPage } from '@/features/sales-profitability/SalesProfitabilityPage'
-import { TransactionExplorerPage } from '@/features/transaction-explorer/TransactionExplorerPage'
+
+const CaseStudyPage = lazy(() =>
+  import('@/features/case-study/CaseStudyPage').then((module) => ({
+    default: module.CaseStudyPage,
+  })),
+)
+const CustomerIntelligencePage = lazy(() =>
+  import('@/features/customer-intelligence/CustomerIntelligencePage').then((module) => ({
+    default: module.CustomerIntelligencePage,
+  })),
+)
+const ExecutiveOverviewPage = lazy(() =>
+  import('@/features/executive-overview/ExecutiveOverviewPage').then((module) => ({
+    default: module.ExecutiveOverviewPage,
+  })),
+)
+const PlaceholderPage = lazy(() =>
+  import('@/features/placeholder/PlaceholderPage').then((module) => ({
+    default: module.PlaceholderPage,
+  })),
+)
+const SalesProfitabilityPage = lazy(() =>
+  import('@/features/sales-profitability/SalesProfitabilityPage').then((module) => ({
+    default: module.SalesProfitabilityPage,
+  })),
+)
+const TransactionExplorerPage = lazy(() =>
+  import('@/features/transaction-explorer/TransactionExplorerPage').then((module) => ({
+    default: module.TransactionExplorerPage,
+  })),
+)
 
 function RouteOutlet() {
   const { route } = useRouter()
@@ -27,7 +54,15 @@ export default function App() {
         <RouterProvider>
           <FilterProvider>
             <AppShell>
-              <RouteOutlet />
+              <Suspense
+                fallback={
+                  <div className="p-6">
+                    <PanelSkeleton lines={6} />
+                  </div>
+                }
+              >
+                <RouteOutlet />
+              </Suspense>
             </AppShell>
           </FilterProvider>
         </RouterProvider>

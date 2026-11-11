@@ -1,7 +1,9 @@
-import { Menu } from 'lucide-react'
+import { Menu, Printer } from 'lucide-react'
 import { cn } from 'cn'
 import { useDashboardData } from '@/app/DataProvider'
 import { useRouter } from '@/app/router'
+import { Button } from '@/components/ui/button'
+import { ProfilePopover } from '@/components/profile/ProfilePopover'
 import { ThemeToggle } from './ThemeToggle'
 
 function Chip({
@@ -23,6 +25,22 @@ function Chip({
     >
       {children}
     </span>
+  )
+}
+
+function PrintButton() {
+  return (
+    <Button
+      type="button"
+      variant="outline"
+      size="sm"
+      onClick={() => window.print()}
+      aria-label="Export PDF / Cetak Laporan"
+      title="Export PDF / Cetak Laporan"
+    >
+      <Printer aria-hidden="true" />
+      <span className="hidden sm:inline">Export PDF</span>
+    </Button>
   )
 }
 
@@ -66,7 +84,9 @@ export function TopHeader({ onOpenMenu }: { onOpenMenu: () => void }) {
         <Chip className="hidden sm:inline-flex" title={`Periode data ${fromYear} sampai ${toYear}`}>
           {fromYear}–{toYear}
         </Chip>
+        <PrintButton />
         <ThemeToggle />
+        <ProfilePopover />
       </div>
     </header>
   )

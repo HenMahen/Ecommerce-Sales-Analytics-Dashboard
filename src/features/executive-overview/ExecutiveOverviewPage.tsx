@@ -16,6 +16,7 @@ import {
   Truck,
   Users,
 } from 'lucide-react'
+import { useMemo } from 'react'
 import { useDashboardData } from '@/app/DataProvider'
 import { useFilter } from '@/app/FilterProvider'
 import { useRouter } from '@/app/router'
@@ -92,15 +93,17 @@ export function ExecutiveOverviewPage() {
   const { route } = useRouter()
 
   const { summary, metadata } = data
-  const rows = selectScopedRows(data, filter)
-  const metrics = aggregate(rows)
+  const rows = useMemo(() => selectScopedRows(data, filter), [data, filter])
+  const metrics = useMemo(() => aggregate(rows), [rows])
   // The secondary per-row average margin is non-additive: only valid without dimension filters.
-  const points = buildTrendPoints(
-    rows,
-    isDimensionFiltered(filter) ? null : data.monthly.months_by_year,
+  const dimensionFiltered = isDimensionFiltered(filter)
+  const trendMonths = dimensionFiltered ? null : data.monthly.months_by_year
+  const points = useMemo(() => buildTrendPoints(rows, trendMonths), [rows, trendMonths])
+  const segmentShares = useMemo(() => buildSegmentShares(rows), [rows])
+  const seasonMonths = useMemo(
+    () => buildSeasonMonths(rows, data.monthly.months),
+    [data.monthly.months, rows],
   )
-  const segmentShares = buildSegmentShares(rows)
-  const seasonMonths = buildSeasonMonths(rows, data.monthly.months)
 
   // Latest available month vs the month before it in the active scope.
   const netSalesChange = monthOverMonthChange(points, (point) => point.netSales)
@@ -109,7 +112,6 @@ export function ExecutiveOverviewPage() {
   const ordersChange = monthOverMonthChange(points, (point) => point.orders)
 
   const filterActive = isFilterActive(filter)
-  const dimensionFiltered = isDimensionFiltered(filter)
   const scopeLabel = describeScope(data, filter)
   const scope = filterActive
     ? 'Mengikuti filter'

@@ -383,3 +383,132 @@
     transform: translateY(0);
   }
 }
+
+/* Print-only report masthead. */
+.print-report-header {
+  display: none;
+}
+
+@media print {
+  @page {
+    margin: 12mm;
+  }
+
+  html {
+    color-scheme: light;
+  }
+
+  html,
+  body {
+    background: #ffffff !important;
+    color: #111827 !important;
+    background-image: none !important;
+  }
+
+  *,
+  *::before,
+  *::after {
+    -webkit-print-color-adjust: exact !important;
+    color-adjust: exact !important;
+    print-color-adjust: exact !important;
+    box-shadow: none !important;
+    text-shadow: none !important;
+    animation: none !important;
+    transition: none !important;
+  }
+
+  /* The screen chrome and interactive overlays never belong in the report. */
+  header,
+  aside,
+  [aria-label='Filter global'],
+  [data-slot='popover-content'],
+  [data-slot='tooltip-content'],
+  [role='tooltip'],
+  .print-hidden {
+    display: none !important;
+  }
+
+  /* Keep the report light even when the dashboard is in dark mode. */
+  :root,
+  .dark {
+    --background: #ffffff;
+    --foreground: #111827;
+    --card: #ffffff;
+    --card-foreground: #111827;
+    --popover: #ffffff;
+    --popover-foreground: #111827;
+    --surface-container-lowest: #ffffff;
+    --surface-container-low: #f9fafb;
+    --surface-container: #f3f4f6;
+    --surface-container-high: #e5e7eb;
+    --surface-container-highest: #d1d5db;
+    --muted: #f3f4f6;
+    --muted-foreground: #374151;
+    --border: #d1d5db;
+    --border-variant: #d1d5db;
+    --input: #9ca3af;
+    --ring: #2563eb;
+    --accent: #f9fafb;
+    --accent-foreground: #111827;
+    --primary: #0037b0;
+    --primary-foreground: #ffffff;
+    --primary-hover: #1e3a8a;
+    --primary-container: #1d4ed8;
+    --on-primary-container: #cad3ff;
+    --secondary: #ac3400;
+    --secondary-foreground: #ffffff;
+    --secondary-container: #fd6b36;
+    --tertiary: #004f38;
+    --tertiary-foreground: #ffffff;
+    --tertiary-container: #00694c;
+    --positive: #047857;
+    --positive-bg: #d1fae5;
+    --negative: #b91c1c;
+    --negative-bg: #fee2e2;
+    --warning: #9a3412;
+    --warning-bg: #ffedd5;
+    --brand-violet: #0037b0;
+    --brand-blue: #1d4ed8;
+    --brand-pink: #ac3400;
+    --chart-1: #1d4ed8;
+    --chart-2: #004f38;
+    --chart-3: #ac3400;
+    --chart-4: #ea580c;
+    --chart-5: #747686;
+  }
+
+  .app-shell,
+  .app-workspace {
+    display: block !important;
+    width: 100% !important;
+    max-width: none !important;
+    min-height: 0 !important;
+  }
+
+  main {
+    width: 100% !important;
+    max-width: none !important;
+    margin: 0 !important;
+    padding: 1rem !important;
+  }
+
+  .print-report-header {
+    display: block !important;
+  }
+
+  [data-slot='card'],
+  table,
+  tr,
+  .recharts-responsive-container,
+  .recharts-wrapper,
+  figure,
+  .print-avoid-break {
+    break-inside: avoid !important;
+    page-break-inside: avoid !important;
+  }
+
+  [data-slot='card'] {
+    background: #ffffff !important;
+    border-color: #d1d5db !important;
+  }
+}

@@ -1,4 +1,4 @@
-# 📊 E-Commerce Sales & Profitability Analytics Dashboard (2021–2025)
+# E-Commerce Sales & Profitability Analytics Dashboard (2021–2025)
 
 [![TypeScript](https://img.shields.io/badge/TypeScript-5.0+-3178c6?logo=typescript&logoColor=white)](https://www.typescriptlang.org/)
 [![React](https://img.shields.io/badge/React-19.0-61dafb?logo=react&logoColor=black)](https://react.dev/)

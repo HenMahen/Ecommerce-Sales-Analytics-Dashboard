@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useMemo, useState } from 'react'
 import {
   ArrowUpNarrowWide,
   BadgePercent,
@@ -95,14 +95,16 @@ export function SalesProfitabilityPage() {
   const [granularity, setGranularity] = useState<TrendGranularity>('month')
 
   const { summary, metadata } = data
-  const rows = selectScopedRows(data, filter)
-  const metrics = aggregateFinancials(rows)
-  const monthlyPoints = buildGranularityPoints(rows, 'month')
-  const trendPoints =
-    granularity === 'month' ? monthlyPoints : buildGranularityPoints(rows, granularity)
-  const yearPoints = buildGranularityPoints(rows, 'year')
-  const quarterPoints = buildQuarterPoints(rows)
-  const annualRows = buildAnnualScopeRows(rows)
+  const rows = useMemo(() => selectScopedRows(data, filter), [data, filter])
+  const metrics = useMemo(() => aggregateFinancials(rows), [rows])
+  const monthlyPoints = useMemo(() => buildGranularityPoints(rows, 'month'), [rows])
+  const trendPoints = useMemo(
+    () => (granularity === 'month' ? monthlyPoints : buildGranularityPoints(rows, granularity)),
+    [granularity, monthlyPoints, rows],
+  )
+  const yearPoints = useMemo(() => buildGranularityPoints(rows, 'year'), [rows])
+  const quarterPoints = useMemo(() => buildQuarterPoints(rows), [rows])
+  const annualRows = useMemo(() => buildAnnualScopeRows(rows), [rows])
 
   // Latest two months inside the active scope; null hides the indicator when data is insufficient.
   const grossSalesChange = monthOverMonthChange(monthlyPoints, (point) => point.grossSales)
@@ -116,7 +118,7 @@ export function SalesProfitabilityPage() {
   const marginChange = monthOverMonthChange(monthlyPoints, (point) => point.marginPct)
   const ordersChange = monthOverMonthChange(monthlyPoints, (point) => point.orders)
 
-  const channelGroups = groupCubeRows(rows, 'sales_channel')
+  const channelGroups = useMemo(() => groupCubeRows(rows, 'sales_channel'), [rows])
   const channelNetSales = channelGroups.reduce((total, group) => total + group.netSales, 0)
   const channelPoints: ChannelPoint[] = channelGroups
     .map((group) => ({
@@ -149,11 +151,15 @@ export function SalesProfitabilityPage() {
     }))
     .sort((a, b) => DAY_TYPE_ORDER.indexOf(a.dayType) - DAY_TYPE_ORDER.indexOf(b.dayType))
 
-  const bracketPoints = dimensionFiltered
-    ? []
-    : buildBracketPoints(
-        selectCubeRows(data, 'discount_bracket', filter) as unknown as DiscountBracketCubeRow[],
-      )
+  const bracketPoints = useMemo(
+    () =>
+      dimensionFiltered
+        ? []
+        : buildBracketPoints(
+            selectCubeRows(data, 'discount_bracket', filter) as unknown as DiscountBracketCubeRow[],
+          ),
+    [data, dimensionFiltered, filter],
+  )
 
   // Sharpest descriptive drop between two adjacent brackets inside the active range.
   let bracketDropPp: number | null = null

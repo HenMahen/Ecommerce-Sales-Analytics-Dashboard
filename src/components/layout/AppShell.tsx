@@ -18,6 +18,26 @@ function readCollapsed(): boolean {
   return window.localStorage.getItem(SIDEBAR_STORAGE_KEY) === '1'
 }
 
+/** Print-only report masthead, hidden on screen by the print stylesheet. */
+function PrintReportHeader() {
+  const printDate = new Intl.DateTimeFormat('id-ID', {
+    day: 'numeric',
+    month: 'long',
+    year: 'numeric',
+  }).format(new Date())
+
+  return (
+    <div className="print-report-header mb-5 border-b border-border pb-4">
+      <p className="font-heading text-lg leading-tight font-semibold text-foreground">
+        Laporan Analitik Penjualan E-Commerce (2021–2025)
+      </p>
+      <p className="mt-1 text-xs text-muted-foreground">
+        Analis: Mahendra Agung Darmawan | Tanggal Cetak: {printDate}
+      </p>
+    </div>
+  )
+}
+
 /** Application shell: themed navigation rail + sticky top bar + work area. */
 export function AppShell({ children }: { children: ReactNode }) {
   const state = useDataState()
@@ -55,23 +75,26 @@ export function AppShell({ children }: { children: ReactNode }) {
   }
 
   return (
-    <div className="flex min-h-screen bg-background">
+    <div className="app-shell flex min-h-screen bg-background">
       <SidebarNav
         mobileOpen={mobileOpen}
         onClose={() => setMobileOpen(false)}
         collapsed={collapsed}
         onToggleCollapse={toggleCollapsed}
       />
-      <div className="flex min-h-screen min-w-0 flex-1 flex-col">
+      <div className="app-workspace flex min-h-screen min-w-0 flex-1 flex-col">
         <TopHeader onOpenMenu={() => setMobileOpen(true)} />
 
         {route.status === 'ready' && route.id !== 'case-study' ? (
-          <div className="px-4 pt-5 lg:px-6">
+          <div className="print:hidden px-4 pt-5 lg:px-6">
             <GlobalFilterBar />
           </div>
         ) : null}
 
-        <main className="flex-1 px-4 py-5 lg:px-6 lg:py-6">{children}</main>
+        <main className="flex-1 px-4 py-5 lg:px-6 lg:py-6">
+          <PrintReportHeader />
+          {children}
+        </main>
       </div>
     </div>
   )

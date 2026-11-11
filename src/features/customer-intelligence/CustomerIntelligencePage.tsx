@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useMemo, useState } from 'react'
 import {
   ArrowDown,
   ArrowUp,
@@ -99,8 +99,8 @@ export function CustomerIntelligencePage() {
   })
 
   const { summary, metadata, segments } = data
-  const rows = selectScopedRows(data, filter)
-  const metrics = aggregateFinancials(rows)
+  const rows = useMemo(() => selectScopedRows(data, filter), [data, filter])
+  const metrics = useMemo(() => aggregateFinancials(rows), [rows])
 
   const filterActive = isFilterActive(filter)
   const scopeLabel = describeScope(data, filter)
@@ -124,7 +124,7 @@ export function CustomerIntelligencePage() {
     (point) => point.profitPerCustomer,
   )
 
-  const distribution = buildSegmentDistribution(rows)
+  const distribution = useMemo(() => buildSegmentDistribution(rows), [rows])
   const segmentRows = sortSegmentRows(segments.segments, sort.key, sort.direction)
 
   const marginPoints: GroupedBarPoint[] = segments.segments.map((row) => ({

@@ -15,7 +15,7 @@ Menganalisis **138.116 transaksi tervalidasi** selama 5 tahun (Januari 2021 – 
 
 ## Tautan Penting
 
-- **Live Demo Dashboard**: [Tautan Live Demo Vercel/Netlify Anda di Sini](https://your-demo-url.vercel.app)
+- **Live Demo Dashboard**: [Web E-Commerce-Sales-Analytics-Dashboard](https://ecommerce-sales-analytics-dashboard-mahen.vercel.app/)
 - **Sumber Dataset**: [E-Commerce Sales Analytics Dataset ](https://www.kaggle.com/datasets/datascikhan/e-commerce-sales-and-customer-analytics) *(E-Commerce Sales & Customer Analytics 150K)*
 - **Studi Kasus Lengkap**: Akses menu **Studi Kasus** (`/case-study`) langsung di dalam aplikasi untuk membaca *narrative storytelling* dan rekomendasi bisnis strategis.
 

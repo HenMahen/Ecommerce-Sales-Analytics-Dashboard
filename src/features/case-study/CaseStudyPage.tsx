@@ -55,7 +55,7 @@ const FINDINGS: Finding[] = [
     value: '−$201.225',
     valueClassName: 'text-negative dark:text-brand-pink',
     description:
-      'Sebanyak 1.296 dari 138.116 pesanan (0,94%) rugi. Semua pesanan rugi itu ada di kelompok diskon 30% atau lebih. Total kerugiannya $201.225. Hubungan antara tingkat diskon dan margin kuat dan negatif (-0,707): makin besar diskon, makin kecil margin. Penurunan paling tajam terjadi saat diskon naik dari kelompok 21–30% ke kelompok 30% atau lebih, yaitu 15,29 poin persentase. Penurunan ini 2,4 kali lebih besar dari penurunan sebelumnya.',
+      '1.296 dari 138.116 pesanan (0,94%) rugi, semuanya di kelompok diskon 30% atau lebih, dengan total kerugian $201.225. Diskon dan margin berkorelasi negatif kuat (-0,707): makin besar diskon, makin tipis margin. Penurunan paling tajam terjadi dari diskon 21–30% ke 30% atau lebih, yaitu 15,29 poin persentase, 2,4 kali penurunan sebelumnya.',
     path: '/sales',
   },
   {
@@ -66,7 +66,7 @@ const FINDINGS: Finding[] = [
     value: '±1% per tahun',
     valueClassName: 'font-mono text-muted-foreground',
     description:
-      'Penjualan tahunan berada di kisaran $35,1 juta sampai $35,7 juta. Pada 2021 nilainya $35,72 juta, sedangkan pada 2025 $35,09 juta. Pertumbuhan tahunan hanya bergerak dari -1,11% sampai +0,57%. Jumlah pesanan juga stabil di sekitar 27.500 per tahun. Artinya, bisnis ini sudah matang dan tidak sedang tumbuh cepat.',
+      'Penjualan tahunan stabil di $35,1–35,7 juta: $35,72 juta pada 2021 dan $35,09 juta pada 2025. Pertumbuhan tahunan hanya -1,11% sampai +0,57%, dengan sekitar 27.500 pesanan per tahun. Bisnis sudah matang, bukan sedang tumbuh cepat.',
     path: '/sales',
   },
   {
@@ -77,7 +77,7 @@ const FINDINGS: Finding[] = [
     value: '32–33%',
     valueClassName: 'text-brand-pink',
     description:
-      'Penjualan paling besar terjadi pada November dan Desember. Namun margin di kedua bulan itu hanya 32,55% dan 32,95%, jauh di bawah rata-rata Januari sampai Oktober yang sekitar 47,5%. Penyebab utamanya diskon: rata-rata diskon pada November dan Desember 27,56%, sedangkan bulan lain 11,11%.',
+      'Penjualan terbesar terjadi pada November–Desember, tetapi marginnya hanya 32,55% dan 32,95%, jauh di bawah rata-rata Januari–Oktober (47,5%). Penyebab utamanya diskon: 27,56% pada kedua bulan itu vs 11,11% pada bulan lain.',
     path: '/sales',
   },
   {
@@ -88,7 +88,7 @@ const FINDINGS: Finding[] = [
     value: '$5,4–6,1 Juta',
     valueClassName: 'text-positive',
     description:
-      'Ada 11.659 pesanan (8,44%) dengan penjualan tinggi, tetapi margin rendah. Batasnya: penjualan bersih minimal $1.744,58 dan margin maksimal 38,88%. Rata-rata margin pesanan ini hanya 27,39%, sedangkan rata-rata keseluruhan 42,99%. Jika margin pesanan ini dinaikkan ke batas sehat, potensi laba tambahannya $5,4 juta sampai $6,1 juta.',
+      '11.659 pesanan (8,44%) berpenjualan tinggi tetapi bermargin rendah: penjualan bersih minimal $1.744,58 dan margin maksimal 38,88%. Rata-rata marginnya 27,39%, dibanding 42,99% keseluruhan. Jika margin dinaikkan ke batas sehat, potensi laba tambahan $5,4–6,1 juta.',
     path: '/transactions',
   },
 ]
@@ -100,9 +100,9 @@ const RECOMMENDATIONS: Recommendation[] = [
     finding: 1,
     title: 'Batasi diskon maksimal 20%',
     description:
-      'Semua pesanan rugi (1.296 pesanan, total $201 ribu) berasal dari kelompok diskon 30% atau lebih. Diskon di atas 20% juga membuat margin 16,9 poin persentase lebih rendah dibanding diskon 20% atau kurang. Batas 20% bisa langsung diterapkan di kasir dan platform promosi. Ini langkah paling sederhana untuk mencegah kerugian.',
+      'Semua pesanan rugi (1.296 pesanan, total $201 ribu) berasal dari diskon 30% atau lebih. Diskon di atas 20% menurunkan margin 16,9 poin persentase dibanding diskon 20% atau kurang. Batas 20% bisa langsung diterapkan di kasir dan platform promosi, langkah paling sederhana untuk mencegah kerugian.',
     basis:
-      '1.296 pesanan rugi, semuanya di kelompok diskon 30% atau lebih. Margin turun 16,9 poin persentase pada diskon di atas 20%.',
+      '1.296 pesanan rugi, semuanya dari diskon 30% atau lebih. Margin turun 16,9 poin persentase pada diskon di atas 20%.',
     icon: ShieldAlert,
     borderClassName: 'border-l-brand-pink',
     surfaceClassName: 'bg-brand-pink/10',
@@ -114,9 +114,9 @@ const RECOMMENDATIONS: Recommendation[] = [
     finding: 2,
     title: 'Fokus ke pelanggan lama dan nilai belanja',
     description:
-      'Sekitar 97,9% pelanggan aktif sudah membeli lebih dari sekali (24.387 dari 24.911). Karena penjualan tahunan datar, menambah pelanggan baru kemungkinan tidak banyak mengubah hasil. Yang lebih menjanjikan adalah menaikkan nilai transaksi rata-rata (sekarang $1.282) dan jumlah pembelian dari kelompok pelanggan Consumer, yang marginnya paling tinggi (46,09%).',
+      '97,9% pelanggan aktif sudah membeli lebih dari sekali (24.387 dari 24.911). Karena penjualan tahunan datar, menambah pelanggan baru kemungkinan tidak banyak mengubah hasil. Fokuslah pada nilai transaksi rata-rata ($1.282) dan jumlah pembelian segmen Consumer, yang marginnya paling tinggi (46,09%).',
     basis:
-      '97,9% pelanggan membeli lebih dari sekali. Penjualan tahunan hanya bergerak sekitar 1% selama lima tahun.',
+      '97,9% pelanggan membeli lebih dari sekali. Penjualan tahunan hanya bergerak sekitar 1% dalam lima tahun.',
     icon: Repeat2,
     borderClassName: 'border-l-positive',
     surfaceClassName: 'bg-positive/10',
@@ -128,9 +128,9 @@ const RECOMMENDATIONS: Recommendation[] = [
     finding: 3,
     title: 'Ubah cara promosi di akhir tahun',
     description:
-      'Penjualan kuartal 4 paling tinggi, tetapi marginnya paling rendah, yaitu 38,72%. Diskon rata-rata 27,56% pada November dan Desember perlu diganti dengan promosi yang tidak terlalu memotong margin. Contohnya diskon bertingkat untuk pembelian lebih banyak dengan batas margin minimum, atau paket produk. Targetnya, margin kuartal 4 mendekati rata-rata tahunan 42,99% tanpa kehilangan volume.',
+      'Penjualan kuartal 4 tertinggi, tetapi marginnya terendah (38,72%). Ganti diskon 27,56% pada November–Desember dengan promosi yang tidak memotong margin dalam, seperti diskon bertingkat atau paket produk. Target: margin Q4 mendekati rata-rata tahunan 42,99% tanpa kehilangan volume.',
     basis:
-      'Margin kuartal 4 sebesar 38,72% (terendah). Margin November dan Desember 32,55% dan 32,95%. Diskon November dan Desember 27,56%, sedangkan bulan lain 11,11%.',
+      'Margin Q4 38,72% (terendah); November–Desember 32,55% dan 32,95%. Diskon kedua bulan itu 27,56% vs 11,11% bulan lain.',
     icon: CalendarDays,
     borderClassName: 'border-l-primary',
     surfaceClassName: 'bg-primary/10',
@@ -146,7 +146,7 @@ export function CaseStudyPage() {
     <div className="flex flex-col gap-8">
       <PageHeader
         title="Studi Kasus & Rekomendasi Bisnis"
-        description="Analisis penjualan e-commerce dari 2021 sampai 2025. Halaman ini menjelaskan masalah yang ditemukan, temuan utama, dan langkah yang bisa diambil."
+        description="Analisis penjualan e-commerce 2021–2025: masalah utama, temuan data, dan rekomendasi bisnis."
         icon={BookOpen}
         badges={
           <>
@@ -161,14 +161,13 @@ export function CaseStudyPage() {
         icon={Database}
         iconTone="violet"
         scope="Seluruh periode 2021–2025"
-        info="Cakupan data dan masalah utama yang dibahas: 138.116 pesanan dari 2021 sampai 2025, dengan empat kelompok pelanggan."
+        info="Cakupan data dan masalah utama: 138.116 pesanan (2021–2025) dari empat kelompok pelanggan."
       >
         <div className="flex flex-col gap-5">
           <p className="max-w-prose text-sm leading-relaxed text-foreground/80">
-            Dasbor ini menganalisis penjualan e-commerce retail selama lima tahun, 2021 sampai 2025.
-            Ada dua masalah utama. Pertama, penjualan tahunan hampir tidak tumbuh, hanya sekitar 1%.
-            Kedua, laba menipis karena diskon besar, terutama pada kuartal akhir ketika penjualan
-            sedang ramai. Margin adalah persentase laba terhadap penjualan.
+            Dasbor ini menganalisis penjualan e-commerce retail 2021–2025. Ada dua masalah:
+            penjualan tahunan nyaris tidak tumbuh (±1%), dan laba menipis akibat diskon besar,
+            terutama di kuartal akhir. Margin adalah persentase laba terhadap penjualan.
           </p>
           <div className="grid grid-cols-2 gap-3 sm:grid-cols-4">
             <StatTile
@@ -230,7 +229,7 @@ export function CaseStudyPage() {
         icon={Search}
         iconTone="blue"
         scope="Seluruh periode 2021–2025"
-        info="Temuan berasal dari analisis data yang sudah dicek ulang dengan file CSV sumber. Angka ini menggambarkan data, bukan hasil uji sebab-akibat."
+        info="Temuan berasal dari data yang sudah dicek ulang dengan CSV sumber. Angka menggambarkan data, bukan hubungan sebab-akibat."
       >
         <div className="grid gap-4 md:grid-cols-2">
           {FINDINGS.map((finding) => (
@@ -275,7 +274,7 @@ export function CaseStudyPage() {
         icon={Lightbulb}
         iconTone="positive"
         scope="Dari temuan 2021–2025"
-        info="Saran ini disusun dari temuan data. Sebelum dijalankan, tetap perlu disesuaikan dengan kondisi bisnis."
+        info="Saran disusun dari temuan data. Sesuaikan dengan kondisi bisnis sebelum dijalankan."
       >
         <div className="flex flex-col gap-4">
           {RECOMMENDATIONS.map((recommendation) => {
